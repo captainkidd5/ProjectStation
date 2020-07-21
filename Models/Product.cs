@@ -22,6 +22,7 @@ namespace ProjectStation.Models
 
         public string Description { get; set; }
 
+
         public int[] Ratings { get; set; }
 
 

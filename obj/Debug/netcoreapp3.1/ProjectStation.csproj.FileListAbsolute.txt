@@ -72,3 +72,7 @@ C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\ProjectStation.dll
 C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\ProjectStation.pdb
 C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\ProjectStation.genruntimeconfig.cache
 C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\ProjectStation.csproj.CopyComplete
+C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\ProjectStation.RazorComponent.input.cache
+C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\ProductList.razor.g.cs
+C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\RazorDeclaration\ProjectStation.dll
+C:\Users\armad\Desktop\ProjectStation\obj\Debug\netcoreapp3.1\Razor\Components\ProductList.razor.g.cs

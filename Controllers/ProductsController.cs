@@ -25,5 +25,15 @@ namespace ProjectStation.Controllers
         {
             return ProductService.GetProducts();
         }
+
+        [Route("Rate")] //Products/Rate
+        [HttpGet]
+        public ActionResult Get(
+            [FromQuery]string productId,
+            [FromQuery]int rating)
+        {
+            ProductService.AddRating(productId, rating);
+            return Ok();
+        }
     }
 }
