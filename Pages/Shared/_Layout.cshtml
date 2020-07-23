@@ -10,27 +10,27 @@
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
-<body style="background-color:white;">
-    <header>
-        
-        <ul>
+<body style="background-color:lightgray;">
+
+
+        <ul class=" nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="news">News</a></li>
             <li><a href="contact">Contact</a></li>
         </ul>
         
 
-    </header>
+
         
 
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="navbar fixed-bottom">
+        <div class="container" style="background-color: lightgray;">
             &copy; 2020 - Art Gallery - <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
         </div>
     </footer>

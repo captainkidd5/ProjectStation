@@ -4,6 +4,8 @@
 
 .center{
     margin:auto;
+    left: 50%;
+
     width: 50%;
     
 }
@@ -16,18 +18,19 @@
 
 }
 
-.ul{
-    float:right;
+ul {
     list-style-type: none;
-    margin:0;
-    padding:0;
-    width:20px;
-    background-color:white;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: lightgray;
 }
 
 li a {
     display: block;
-    background-color: white;
+    background-color: none;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 li a:hover{
     background-color:white;
@@ -36,7 +39,4 @@ li a:hover{
 
 .navbar a:hover {
     background-color: white;
-}
-.displayTextRight{
-
 }
