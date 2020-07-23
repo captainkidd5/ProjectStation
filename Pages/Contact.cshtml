@@ -18,18 +18,18 @@ else
         <form method="post" asp-page-handler="OnPost">
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="Customer.Email">Email</label>
+                    <label for="fname">Email Address</label>
                 </div>
                 <div class="col-75">
-                    <input type="email" id="fname" name="email address" placeholder="Enter your email address">
+                    <input asp-for="Email"  placeholder="Enter your email address">
                 </div>
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label asp-for="Customer.Name">First Name</label>
+                    <label for="fname">First Name</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name">
+                    <input asp-for="Name" placeholder="Enter your first name">
                 </div>
             </div>
             <div class="row">
@@ -63,18 +63,7 @@ else
                     </div>
                 </div>
             </div>
-            <!--<div class="row">
-                <div class="col-25">
-                    <label for="Mailing List">Would you like to be added to our mailing list?</label>
-                </div>
-                <div class="col-75">
-                    <select name="subject">
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                    </select>
-                </div>
-            </div>
-                -->
+
             <div class="row">
                 <input type="submit" value="Submit" />
             </div>

@@ -15,6 +15,12 @@ namespace ProjectStation.Pages
         [BindProperty]
         public bool EmailNotify { get; set; }
 
+        [BindProperty]
+        public string Name { get; set; }
+
+        [BindProperty]
+        public string Email { get; set; }
+
         public string SubmitMessage { get; set; }
 
         public ContactModel()
@@ -29,6 +35,8 @@ namespace ProjectStation.Pages
 
         public void OnPost(int id)
         {
+            Customer.Name = Name;
+            Customer.Email = Email;
             SubmitMessage = "We have received your information, thanky you!" + Customer.Name + Customer.Email;
             if (EmailNotify)
             {
