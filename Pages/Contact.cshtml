@@ -15,10 +15,10 @@
 else
 {
     <div class="container">
-        <form method="post" asp-page-handler="OnSubmitContactForm">
+        <form method="post" asp-page-handler="OnPost">
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">Email Address</label>
+                    <label asp-for="Customer.Email">Email</label>
                 </div>
                 <div class="col-75">
                     <input type="email" id="fname" name="email address" placeholder="Enter your email address">
@@ -26,7 +26,7 @@ else
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="fname">First Name</label>
+                    <label asp-for="Customer.Name">First Name</label>
                 </div>
                 <div class="col-75">
                     <input type="text" id="fname" name="firstname" placeholder="Enter your first name">
@@ -55,10 +55,11 @@ else
                 <div class="col-25">
 
                     <div class="form-check">
-                        <input asp-for="EmailNotify" class="form-check-input" />
-                        <label asp-for="EmailNotify" class="form-check-label">
-                            Receive email notifications
+
+                        <label class="form-check-label">
+                            Check to receive email notifications
                         </label>
+                        <input asp-for="EmailNotify" class="form-check-input" />
                     </div>
                 </div>
             </div>

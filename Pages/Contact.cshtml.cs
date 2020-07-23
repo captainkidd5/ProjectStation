@@ -17,21 +17,29 @@ namespace ProjectStation.Pages
 
         public string SubmitMessage { get; set; }
 
+        public ContactModel()
+        {
+            Customer = new Customer();
+        }
+
         public void OnGet()
         {
 
         }
 
-        public void OnSubmitContactForm(int id)
+        public void OnPost(int id)
         {
-            if(EmailNotify)
+            SubmitMessage = "We have received your information, thanky you!" + Customer.Name + Customer.Email;
+            if (EmailNotify)
             {
-                SubmitMessage = "We have received your information, thanky you!";
+                SubmitMessage += " /n you have been added to our mailing list!";
             }
             else
             {
-
+                SubmitMessage += " /n you have opted out of our mailing list!";
             }
+
+           
         }
     }
 }
