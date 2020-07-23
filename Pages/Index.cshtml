@@ -5,11 +5,15 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Project Station</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="center">
+    <img src="~/SiteAssets/tigLogo.JPG" alt="Company logo" style="width:400px;
+height:128px;">
 </div>
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+
+
+
 
 <script src="_framework/blazor.server.js"></script>

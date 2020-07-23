@@ -16,13 +16,14 @@ namespace ProjectStation.Pages
         public JsonFileProductService ProductService;
         public IEnumerable<Product> Products { get; private set; }
 
-        public IndexModel(ILogger<IndexModel> logger, JsonFileProductService productService)
+        public IndexModel(ILogger<IndexModel> logger,
+            JsonFileProductService productService) //ask for services here from asp net (From configure services in startup)
         {
             _logger = logger;
             this.ProductService = productService;
         }
 
-        public void OnGet()
+        public void OnGet() //when someone gets this page what should we do?
         {
             Products = ProductService.GetProducts();
         }

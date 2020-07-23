@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProjectStation.Services
 {
+    /// <summary>
+    /// Job is to deserialize a list of products from the Data/Data.Json into a collection of Product objects.
+    /// </summary>
     public class JsonFileProductService
     {
         public IWebHostEnvironment WebHostEnvironment { get; private set; }
