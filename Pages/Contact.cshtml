@@ -5,10 +5,17 @@
 }
 
 <h1>Contact</h1>
-<a href="index">Home</a>>
 
 <div class="container">
     <form>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Email Address</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="email address" placeholder="Your email address..">
+            </div>
+        </div>
         <div class="row">
             <div class="col-25">
                 <label for="fname">First Name</label>
@@ -24,9 +31,19 @@
             <div class="col-75">
                 <input type="text" id="fname" name="lastname" placeholder="Your last name..">
             </div>
+
+
         </div>
         <div class="row">
-            <input type ="submit" value="Submit" />
+            <div class="col-25">
+                <label for="subject">Inquiry</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Write a question.." style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit" />
         </div>
     </form>
 </div>

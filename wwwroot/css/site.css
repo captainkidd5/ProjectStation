@@ -16,6 +16,27 @@
 
 }
 
-.displayTextLeft{
+.ul{
+    float:right;
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    width:20px;
+    background-color:white;
+}
+
+li a {
+    display: block;
+    background-color: white;
+}
+li a:hover{
+    background-color:white;
+    color:lightgray;
+}
+
+.navbar a:hover {
+    background-color: white;
+}
+.displayTextRight{
 
 }
