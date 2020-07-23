@@ -6,45 +6,82 @@
 
 <h1>Contact</h1>
 
-<div class="container">
-    <form>
-        <div class="row">
-            <div class="col-25">
-                <label for="fname">Email Address</label>
+@if (!string.IsNullOrEmpty(Model.SubmitMessage))
+{
+    <div class="alrt alert-primary">
+        @Model.SubmitMessage;
+    </div>
+}
+else
+{
+    <div class="container">
+        <form method="post" asp-page-handler="OnSubmitContactForm">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Email Address</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="fname" name="email address" placeholder="Enter your email address">
+                </div>
             </div>
-            <div class="col-75">
-                <input type="text" id="fname" name="email address" placeholder="Your email address..">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="fname">First Name</label>
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="lastname" placeholder="Enter your last name">
+                </div>
+
+
             </div>
-            <div class="col-75">
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Inquiry</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write a question.." style="height:200px"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="fname">Last Name</label>
+
+            <div class="row">
+                <div class="col-25">
+
+                    <div class="form-check">
+                        <input asp-for="EmailNotify" class="form-check-input" />
+                        <label asp-for="EmailNotify" class="form-check-label">
+                            Receive email notifications
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="col-75">
-                <input type="text" id="fname" name="lastname" placeholder="Your last name..">
+            <!--<div class="row">
+                <div class="col-25">
+                    <label for="Mailing List">Would you like to be added to our mailing list?</label>
+                </div>
+                <div class="col-75">
+                    <select name="subject">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+                -->
+            <div class="row">
+                <input type="submit" value="Submit" />
             </div>
 
 
-        </div>
-        <div class="row">
-            <div class="col-25">
-                <label for="subject">Inquiry</label>
-            </div>
-            <div class="col-75">
-                <textarea id="subject" name="subject" placeholder="Write a question.." style="height:200px"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <input type="submit" value="Submit" />
-        </div>
-    </form>
-</div>
+        </form>
+        <hr />
+    </div>
+}
+
 

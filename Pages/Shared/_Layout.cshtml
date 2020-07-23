@@ -6,22 +6,18 @@
     <title>@ViewData["Title"] - Gallery</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet"href="~/css/contact.css" />
+    <link rel="stylesheet" href="~/css/contact.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
-<body style="background-color:lightgray;">
+<body style="background-color:whitesmoke;">
 
 
-        <ul class=" nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="news">News</a></li>
-            <li><a href="contact">Contact</a></li>
-        </ul>
-        
+    
 
 
-        
+
+
 
     <div>
         <main role="main" class="pb-3">
@@ -29,11 +25,19 @@
         </main>
     </div>
 
-    <footer class="navbar fixed-bottom">
-        <div class="container" style="background-color: lightgray;">
-            &copy; 2020 - Art Gallery - <a asp-area="" asp-page="/Privacy">Privacy Policy</a>
+    <div class="contact-footer-bar">
+        <div class="navbar-inner">
+
+
+            <div class="container" style="background-color: lightgray;margin: auto;">
+                <div class="btn-lg">
+                    <a asp-page="/contact">Contact Us</a>
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
