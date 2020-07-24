@@ -14,28 +14,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body style="background-color:white;">
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Menu</button>
-        <div class="topMiddle">
-            <div id="myDropdown" class="dropdown-content">
-                <a href="/">Home</a>
-                <a href="news">News</a>
-                <a href="artist">Artist</a>
-                <a href="artist">Exhibition</a>
-                <a href="artist">About</a>
-                <a href="artist">Online Shop</a>
 
-                <a href="artist">Company</a>
-                <a href="artist">Access</a>
-                <a href="contact">Contact</a>
-                <a href="artist">Jp/Eng</a>
+    <div class="dropMenu">
+        <button onclick="myFunction()" class="dropMenuButton">Menu</button>
 
-            </div>
+    </div>
+    <div id="buttonEvent1" class="dropMenuContent">
+        <div class="dropMenuItem">
+            <a asp-page="/">Home</a>
         </div>
-        
+        <div class="dropMenuItem">
+            <a asp-page="contact">Contact</a>
+        </div>
+
+
     </div>
 
-    
 
 
 
