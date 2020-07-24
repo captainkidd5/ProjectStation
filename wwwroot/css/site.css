@@ -97,3 +97,155 @@ li a {
         .contact-footer-bar a:hover {
             background-color: lightgray;
         }
+
+
+
+@keyframes animateArrowsDown{
+
+}
+
+
+
+#masthead .arrow-animation {
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+}
+
+@keyframes arrow-down {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -238px
+}
+
+.logo-wrap {
+    width: 280px;
+    height: 300px;
+    margin-bottom: 8vh;
+    display: inline-block;
+}
+
+.top-bnr img {
+    height: calc(100vh - 20vh - (300px + 8vh) - 120px);
+    width: auto;
+    max-height: 260px;
+}
+
+path {
+    fill: none;
+    stroke: #000;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    -webkit-animation: hello 3s ease-in forwards;
+    animation: hello 3s ease-in forwards;
+}
+
+@-webkit-keyframes hello {
+    0% {
+        stroke-dashoffset: 2000;
+        fill: transparent;
+    }
+
+    50% {
+        fill: transparent;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: #333;
+    }
+}
+
+@keyframes hello {
+    0% {
+        stroke-dashoffset: 2000;
+        fill: transparent;
+    }
+
+    50% {
+        fill: transparent;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: #333;
+    }
+}
+
+.arrow-animation img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    animation-duration: 2s;
+    animation-name: arrow-down;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+#masthead .arrow-animation img:first-of-type {
+    animation-delay: 0s;
+}
+
+#masthead .arrow-animation img:last-of-type {
+    animation-delay: .6s;
+}
+
+.arrow-animation-footer.arrow-animation img:first-of-type {
+    animation-delay: .6s;
+}
+
+.arrow-animation-footer.arrow-animation img:last-of-type {
+    animation-delay: 0;
+}
+
+.arrow-animation img:nth-of-type(2) {
+    animation-delay: .3s;
+    top: -5px;
+}
+
+.arrow-animation img:last-of-type {
+    top: -10px;
+}
+
+.home #responsive-menu-button {
+    display: none !important;
+}
+
+button#responsive-menu-button {
+    border: 1px solid #9d9393 !important;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .logo-wrap {
+        width: 160px;
+        height: 172px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #masthead {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .home #responsive-menu-button {
+        display: block !important;
+    }
+}
