@@ -1,44 +1,58 @@
-﻿.dropbtn {
-    background-color: darkgray;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+﻿
 
-    .dropbtn:hover, .dropbtn:focus {
-        background-color: lightgray;
+
+
+    .dropbtn {
+        background-color: darkgray;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: ease-in, 3s, all;
     }
 
-.dropdown {
-    margin-left:80%;
-    position: relative;
-    display: inline-block;
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: lightgray;
+        }
+
+    .dropdown {
+        margin-left: 80%;
+        position: relative;
+        display: none;
+        transition: ease-in, 3s, all;
+    }
+@media only screen and (max-width: 768px) {
+    .dropdown {
+        display: inline-block;
+    }
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: darkgray;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    right: 0;
-    z-index: 1;
-}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: darkgray;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        right: 0;
+        z-index: 1;
+        transition: all 1s ease-in;
+    }
 
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+    .dropdown a:hover {
+        background-color: lightgray;
+        transition: ease-in, 3s, all;
+    }
+
+    .show {
         display: block;
     }
-
-.dropdown a:hover {
-    background-color: lightgray;
-}
-
-.show {
-    display: block;
-}
