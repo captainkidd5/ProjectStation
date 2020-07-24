@@ -1,4 +1,8 @@
 ﻿
+
+
+
+
 .wrapper {
     height: 2000px;
     overflow: scroll;
@@ -41,6 +45,11 @@
     float: left;
     padding-left:20px;
     width: 70px;
+}
+
+.img{
+    max-width:100%;
+    display:block;
 }
 
 ul {
@@ -98,6 +107,16 @@ li a {
             background-color: lightgray;
         }
 
+
+.dropMenu{
+
+}
+
+
+@media screen and (max-width:959px) {
+
+
+}
 
 
 @keyframes animateArrowsDown{
