@@ -1,9 +1,5 @@
 ﻿[
   {
-    "outputFile": "wwwroot/css/newsheet.css",
-    "inputFile": "wwwroot/css/newsheet.scss"
-  },
-  {
     "outputFile": "wwwroot/css/contact.css",
     "inputFile": "wwwroot/css/contact.scss"
   },
@@ -12,7 +8,7 @@
     "inputFile": "wwwroot/css/DropDownMenu.scss"
   },
   {
-    "outputFile": "wwwroot/css/siteWideScreen.css",
-    "inputFile": "wwwroot/css/siteWideScreen.scss"
+    "outputFile": "wwwroot/css/style.css",
+    "inputFile": "wwwroot/css/style.scss"
   }
 ]

@@ -77,6 +77,11 @@ li a{
     position: relative;
     margin-left: 450px;
     margin-top: 0px;
+
+    &:hover {
+        filter: invert(50);
+        transition: ease-in 1s;
+    }
 }
 
 #instagramButton {
@@ -93,6 +98,8 @@ li a{
 .img {
     max-width: 100%;
     display: block;
+
+   
 }
 
 
@@ -111,6 +118,10 @@ li a{
     position: relative;
 }
 
+.mediumHeader a{
+    font-size: 12px;
+}
+
 @mixin bottomBlockStyle {
     list-style-type: none;
     padding: 0;
@@ -118,14 +129,42 @@ li a{
     background-color: none;
 }
 
-ul.leftBottomBlock {
+.leftBottomBlock {
     margin-left: -2200%;
     @include bottomBlockStyle;
 }
 
-ul.rightBottomBlock {
+.rightBottomBlock {
     margin-left: 10%;
     @include bottomBlockStyle;
+}
+
+.leftBottomBlock ul {
+    font-size: 12px;
+    display: inline-block;
+    height: 25px;
+    font-weight: 800;
+    color: $secondayGray;
+    position: relative;
+    background-color: transparent;
+    list-style:none;
+
+
+    &:after {
+        content: "";
+        border-bottom: 2px solid $secondayGray;
+        position: absolute;
+        width: inherit;
+        bottom: -25px;
+        left: 0px;
+    }
+}
+
+
+
+
+.rightBottomBlock ul{
+
 }
 
 $fadedLineWidth: 500px;
@@ -145,43 +184,9 @@ $fadedLineWidth: 500px;
     font-size: .3em;
 }
 
-li.newsSnippet {
-    width: $fadedLineWidth;
-    display: inline-block;
-    padding-top: 15px;
-    height: 25px;
-    @include standardFont;
-    font-weight: 400;
-    color: $secondayGray;
-    position: relative;
-    background-color: transparent;
 
 
-    &:after {
-        content: "";
-        border-bottom: 2px solid $secondayGray;
-        position: absolute;
-        width:inherit;
-        bottom: -25px;
-        left: 0px;
-    }
-}
 
-
-.mediumHeader.li{
-    display: inline;
-    padding-top: 10px;
-    font-family: $standardFont;
-    font-size: .3em;
-    font-weight: 800;
-    color: $secondayGray;
-    position: relative;
-
-    &:hover {
-        color: black;
-        background-color: $backGroundColor;
-    }
-}
 
 a.readMore {
     display: block;
@@ -198,6 +203,17 @@ a.readMore {
         background-color: $secondayGray;
         color: black;
         text-decoration: none;
+    }
+}
+
+.vrImage {
+    padding-top:50px;
+    width: $fadedLineWidth;
+    height: 300px;
+
+    &:hover{
+        transition:ease-in-out .15s;
+        opacity:.8;
     }
 }
 /*FOOTER*/
@@ -246,21 +262,11 @@ a.readMore {
         margin-left: 350px;
     }
 
-    ul.leftBottomBlock {
-        margin-left: -1800%;
-    }
-
-    ul.rightBottomBlock {
-        margin-left: 10%;
-    }
 
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
 
-    li.newsSnippet{
-        width: $fadedLineWidth - 100px;
-    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -278,20 +284,11 @@ a.readMore {
     }
 
 
-    ul.leftBottomBlock {
-        margin-left: -1400%;
-    }
-
-    ul.rightBottomBlock {
-        margin-left: 10%;
-    }
 
     .fadedLine {
         width: $fadedLineWidth - 200px;
     }
-    li.newsSnippet {
-        width: $fadedLineWidth - 200px;
-    }
+
 
 }
 

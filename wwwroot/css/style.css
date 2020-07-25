@@ -52,6 +52,9 @@ li a {
   position: relative;
   margin-left: 450px;
   margin-top: 0px; }
+  .socialMediaIcons:hover {
+    filter: invert(50);
+    transition: ease-in 1s; }
 
 #instagramButton {
   float: left;
@@ -79,19 +82,39 @@ li a {
   color: darkGray;
   position: relative; }
 
-ul.leftBottomBlock {
+.mediumHeader a {
+  font-size: 12px; }
+
+.leftBottomBlock {
   margin-left: -2200%;
   list-style-type: none;
   padding: 0;
   width: 25px;
   background-color: none; }
 
-ul.rightBottomBlock {
+.rightBottomBlock {
   margin-left: 10%;
   list-style-type: none;
   padding: 0;
   width: 25px;
   background-color: none; }
+
+.leftBottomBlock ul {
+  font-size: 12px;
+  display: inline-block;
+  height: 25px;
+  font-weight: 800;
+  color: darkGray;
+  position: relative;
+  background-color: transparent;
+  list-style: none; }
+  .leftBottomBlock ul:after {
+    content: "";
+    border-bottom: 2px solid darkGray;
+    position: absolute;
+    width: inherit;
+    bottom: -25px;
+    left: 0px; }
 
 .fadedLine {
   height: 5px;
@@ -100,37 +123,6 @@ ul.rightBottomBlock {
   width: 500px;
   padding-top: 5px;
   position: absolute; }
-
-li.newsSnippet {
-  width: 500px;
-  display: inline-block;
-  padding-top: 15px;
-  height: 25px;
-  font-family: Courier New, Courier, monospace;
-  font-size: .3em;
-  font-weight: 400;
-  color: darkGray;
-  position: relative;
-  background-color: transparent; }
-  li.newsSnippet:after {
-    content: "";
-    border-bottom: 2px solid darkGray;
-    position: absolute;
-    width: inherit;
-    bottom: -25px;
-    left: 0px; }
-
-.mediumHeader.li {
-  display: inline;
-  padding-top: 10px;
-  font-family: Courier New, Courier, monospace;
-  font-size: .3em;
-  font-weight: 800;
-  color: darkGray;
-  position: relative; }
-  .mediumHeader.li:hover {
-    color: black;
-    background-color: white; }
 
 a.readMore {
   display: block;
@@ -146,6 +138,14 @@ a.readMore {
     background-color: darkGray;
     color: black;
     text-decoration: none; }
+
+.vrImage {
+  padding-top: 50px;
+  width: 500px;
+  height: 300px; }
+  .vrImage:hover {
+    transition: ease-in-out .15s;
+    opacity: .8; }
 
 /*FOOTER*/
 .contact-footer-bar {
@@ -179,13 +179,7 @@ a.readMore {
     margin-left: -450px; }
   .socialMediaIcons {
     margin-left: 350px; }
-  ul.leftBottomBlock {
-    margin-left: -1800%; }
-  ul.rightBottomBlock {
-    margin-left: 10%; }
   .fadedLine {
-    width: 400px; }
-  li.newsSnippet {
     width: 400px; } }
 
 @media only screen and (max-width: 990px) {
@@ -195,13 +189,7 @@ a.readMore {
     margin-left: -350px; }
   .socialMediaIcons {
     margin-left: 250px; }
-  ul.leftBottomBlock {
-    margin-left: -1400%; }
-  ul.rightBottomBlock {
-    margin-left: 10%; }
   .fadedLine {
-    width: 300px; }
-  li.newsSnippet {
     width: 300px; } }
 
 @media only screen and (max-width: 880px) {
