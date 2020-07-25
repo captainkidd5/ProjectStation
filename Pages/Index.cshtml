@@ -16,9 +16,9 @@
         <div id="tigLogo">
             <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
         </div>
-        <div id="left-nav">
+        <div class="left-nav">
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="index">Home</a></li>
                 <li><a href="news">News</a></li>
                 <li><a href="news">Artist</a></li>
                 <li><a href="news">Exhibition</a></li>
@@ -28,7 +28,7 @@
 
 
         </div>
-        <div id="right-nav">
+        <div class ="right-nav">
             <ul>
                 <li><a href="/">Company</a></li>
                 <li><a href="news">Access</a></li>
@@ -47,13 +47,43 @@
             </div>
         </div>
 
-        <br />
-        <br />
-
     </div>
-    <!--at(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
-    -->
+    <br />
 
+
+    <div class="bottomHalf">
+
+        <div class="left-nav">
+            <div class="mediumHeader">
+                <div class="headerLeft">
+                    News
+                    <div class="fadedLine">
+
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+        <div class="right-nav">
+            <div class="mediumHeader">
+                <div class="headerRight">
+                    Exhibition
+                    <div class="fadedLine">
+
+                    </div>
+
+                </div>
+               
+            </div>
+            
+        </div>
     </div>
+
+
+
+</div>
 
     <script src="_framework/blazor.server.js"></script>

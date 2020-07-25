@@ -22,7 +22,11 @@ window.onclick = function (event) {
                 openDropdown.classList.remove('show');
             }
         }
+        if (document.getElementById("titlePage").classList.contains('hide')) {
+            document.getElementById("titlePage").classList.remove('hide');
 
-        var titlePage = this.document.getElementById("titlePage").classList.toggle("hide");
+
+
+        }
     }
 }
