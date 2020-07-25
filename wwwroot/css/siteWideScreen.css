@@ -1,297 +1,212 @@
-﻿
-.wrapper {
-    height: 2000px;
-    overflow: scroll;
-    display: block;
-    overflow-x:hidden;
-}
+﻿.wrapper {
+  height: 2000px;
+  overflow: scroll;
+  display: block;
+  overflow-x: hidden; }
 
 .hide {
-    display: none;
-}
+  display: none; }
 
 .titleBlock {
-    margin-top: 250px;
-    position: relative;
-    margin-left: 50%;
-}
+  margin-top: 250px;
+  position: relative;
+  margin-left: 50%; }
 
 #tigLogo {
-    margin-left: -100px;
-}
+  margin-left: -100px; }
 
 .iSideable {
-    display: block;
-    position: absolute;
-}
-
+  display: block;
+  position: absolute; }
 
 .left-nav {
-    
-    margin-left: -550px;
-    margin-top: -250px;
-}
-
-
+  margin-left: -550px;
+  margin-top: -250px; }
 
 .right-nav {
-
-    margin-left: 450px;
-    margin-top: -250px;
-}
+  margin-left: 450px;
+  margin-top: -250px; }
 
 .socialMediaIcons {
-    position: relative;
-    margin-left: 450px;
-    margin-top: 0px;
-}
+  position: relative;
+  margin-left: 450px;
+  margin-top: 0px; }
 
 #instagramButton {
-    float: left;
-    width: 50px;
-}
+  float: left;
+  width: 50px; }
 
 #facebookButton {
-    float: left;
-    padding-left: 20px;
-    width: 70px;
-}
-
-
+  float: left;
+  padding-left: 20px;
+  width: 70px; }
 
 .img {
-    max-width: 100%;
-    display: block;
-}
+  max-width: 100%;
+  display: block; }
 
 ul {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
+  list-style-type: none;
+  padding: 0;
+  width: 25px;
+  background-color: none; }
 
 li a {
-    font-family: Courier New, Courier, monospace;
-    font-size: 1.4rem;
-    color: #9d9393;
-    display: block;
-    background-color: white;
-    padding: 16px 16px;
-    text-decoration: none;
-    line-height: .9em;
-}
+  font-family: Courier New, Courier, monospace;
+  font-size: 1.4rem;
+  color: #9d9393;
+  display: block;
+  background-color: white;
+  padding: 16px 16px;
+  text-decoration: none;
+  line-height: .9em; }
 
-    li a:hover {
-        background-color: white;
-        color: lightgray;
-        text-decoration-line: underline;
-        text-decoration-color: black;
-    }
+li a:hover {
+  background-color: white;
+  color: lightgray;
+  text-decoration-line: underline;
+  text-decoration-color: black; }
 
-    /*BOTTOM HALF OF PAGE*/
+/*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 400px;
-    position: relative;
-    margin-left: 50%;
-}
+  margin-top: 400px;
+  position: relative;
+  margin-left: 50%; }
 
 .mediumHeader {
-    font-family: Courier New, Courier, monospace;
-    font-size: 2.5em;
-    font-weight:700;
-    color: darkgray;
-    position: relative;
-}
+  font-family: Courier New, Courier, monospace;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: darkgray;
+  position: relative; }
 
 ul.leftBottomBlock {
-    margin-left: -2200%;
-}
+  margin-left: -2200%; }
+
 ul.rightBottomBlock {
-    margin-left: 10%;
-}
+  margin-left: 10%; }
 
 .fadedLine {
-    height: 5px;
-    background-image: linear-gradient(to right,red,white);
-    background-color: red;
-    width: 500px;
-    padding-top: 5px;
-    position: absolute;
-}
-
+  height: 5px;
+  background-image: linear-gradient(to right, red, white);
+  background-color: red;
+  width: 500px;
+  padding-top: 5px;
+  position: absolute; }
 
 li.newsSnippet {
-    width:500px;
-    display:inline-block;
-    
-    padding-top: 10px;
-    font-family: Courier New, Courier, monospace;
-    font-size: .3em;
-    font-weight: 400;
-    color: darkgray;
-    position: relative;
-}
-li.newsSnippet:after{
-    border-bottom:solid;
-    border-bottom-color:lightgray;
-    height:100%;
-    border-bottom:3px;
-}
+  width: 500px;
+  display: inline-block;
+  padding-top: 10px;
+  font-family: Courier New, Courier, monospace;
+  font-size: .3em;
+  font-weight: 400;
+  color: darkgray;
+  position: relative; }
+
+li.newsSnippet:after {
+  border-bottom: solid;
+  border-bottom-color: lightgray;
+  height: 100%;
+  border-bottom: 3px; }
 
 .newsSnippetLink {
-    display: inline;
-    padding-top: 10px;
-    font-family: Courier New, Courier, monospace;
-    font-size: .3em;
-    font-weight: 800;
-    color: darkgray;
-    position: relative;
-}
+  display: inline;
+  padding-top: 10px;
+  font-family: Courier New, Courier, monospace;
+  font-size: .3em;
+  font-weight: 800;
+  color: darkgray;
+  position: relative; }
 
-a.readMore{
-    display:block;
-    padding:8px 5px;
-    border-color: darkgray;
-    border-width: 2px;
-    border: solid;
-    margin-left: 250px;
-    width: 200px;
+a.readMore {
+  display: block;
+  padding: 8px 5px;
+  border-color: darkgray;
+  border-width: 2px;
+  border: solid;
+  margin-left: 250px;
+  width: 200px; }
 
-}
 /*FOOTER*/
 .contact-footer-bar {
-    overflow: hidden;
-    background-color: white;
-    position: absolute;
-    bottom: -150%;
-    width: 100%;
+  overflow: hidden;
+  background-color: white;
+  position: absolute;
+  bottom: -150%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.contact-footer-bar a {
+  color: white;
+  background-color: darkgray;
+  text-align: center;
+  display: inline-block;
+  border-radius: 40px;
+  padding: 20px 40px;
+  text-decoration: none;
+  font-size: 24px;
+  margin-bottom: 20px; }
 
-    .contact-footer-bar a {
-        color: white;
-        background-color: darkgray;
-        text-align: center;
-        display: inline-block;
-        border-radius: 40px;
-        padding: 20px 40px;
-        text-decoration: none;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-
-        .contact-footer-bar a:hover {
-            background-color: lightgray;
-        }
-
-
+.contact-footer-bar a:hover {
+  background-color: lightgray; }
 
 /*RESIZING*/
-
 @media only screen and (max-width: 1200px) {
-
-    .right-nav {
-        margin-left: 350px;
-    }
-
-    .left-nav {
-        margin-left: -450px;
-    }
-
-    .socialMediaIcons {
-        margin-left: 350px;
-    }
-    ul.leftBottomBlock {
-        margin-left: -1800%;
-    }
-
-    ul.rightBottomBlock {
-        margin-left: 10%;
-    }
-
-   
-}
+  .right-nav {
+    margin-left: 350px; }
+  .left-nav {
+    margin-left: -450px; }
+  .socialMediaIcons {
+    margin-left: 350px; }
+  ul.leftBottomBlock {
+    margin-left: -1800%; }
+  ul.rightBottomBlock {
+    margin-left: 10%; } }
 
 @media only screen and (max-width: 990px) {
-
-    .right-nav {
-        margin-left: 250px;
-    }
-
-    .left-nav {
-        margin-left: -350px;
-    }
-
-    .socialMediaIcons {
-        margin-left: 250px;
-    }
-
-
-    ul.leftBottomBlock {
-        margin-left: -1400%;
-    }
-
-    ul.rightBottomBlock {
-        margin-left: 10%;
-    }
-}
+  .right-nav {
+    margin-left: 250px; }
+  .left-nav {
+    margin-left: -350px; }
+  .socialMediaIcons {
+    margin-left: 250px; }
+  ul.leftBottomBlock {
+    margin-left: -1400%; }
+  ul.rightBottomBlock {
+    margin-left: 10%; } }
 
 @media only screen and (max-width: 880px) {
-    .leftBottomBlock {
-        margin-left: -380%;
-    }
+  .leftBottomBlock {
+    margin-left: -380%; }
+  .rightBottomBlock {
+    margin-left: 2%; } }
 
-    .rightBottomBlock {
-        margin-left: 2%;
-    }
-}
+@media only screen and (max-width: 768px) {
+  #tigLogo {
+    margin-top: -150px; }
+  .right-nav {
+    margin-left: 150px;
+    display: none; }
+  .left-nav {
+    margin-left: -250px;
+    display: none; }
+  .socialMediaIcons {
+    margin-left: -60px;
+    margin-top: 60px; }
+  .leftBottomBlock {
+    margin-left: -250%;
+    display: flex; }
+  .rightBottomBlock {
+    margin-left: -147%;
+    margin-top: 150%;
+    display: flex; } }
 
-    @media only screen and (max-width: 768px) {
-        #tigLogo {
-            margin-top: -150px;
-        }
-
-        .right-nav {
-            margin-left: 150px;
-            display: none;
-        }
-
-        .left-nav {
-            margin-left: -250px;
-            display: none;
-        }
-
-        .socialMediaIcons {
-            margin-left: -60px;
-            margin-top: 60px;
-        }
-
-        .leftBottomBlock {
-            margin-left: -250%;
-            display:flex;
-        }
-
-        .rightBottomBlock {
-            margin-left: -147%;
-            margin-top: 150%;
-            display: flex;
-        }
-    }
-
-    @media only screen and (max-width: 290) {
-        #tigLogo {
-            display: block;
-        }
-
-
-
-        .socialMediaIcons {
-            margin-left: -60px;
-            margin-top: 60px;
-        }
-    }
+@media only screen and (max-width: 290) {
+  #tigLogo {
+    display: block; }
+  .socialMediaIcons {
+    margin-left: -60px;
+    margin-top: 60px; } }

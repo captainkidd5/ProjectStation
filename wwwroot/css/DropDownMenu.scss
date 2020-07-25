@@ -1,0 +1,74 @@
+﻿
+
+
+
+.dropMenu {
+    left: 70%;
+    padding-top: 50px;
+    position: absolute;
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .dropMenu{
+        display: block;
+    }
+}
+
+.dropMenuButton {
+    display: block;
+    background-color: darkgray;
+    padding: 16px 8px;
+    border-radius: 20px;
+    position:relative;
+    color: lightgray;
+    box-shadow:none;
+    outline:none;
+}
+
+    .dropMenuButton:hover {
+        background-color: lightgray;
+        transition: 1s;
+    }
+
+    .dropMenuButton:focus {
+        background-color: lightgray;
+        outline: none;
+       
+    }
+
+.dropMenuContent {
+    display: block;
+    width: 100%;
+    position: absolute;
+    background-color: darkgray;
+    overflow: hidden;
+    height: 0px;
+    overflow-y: hidden;
+    transition: height .6s ease-out;
+    font-family: Courier New, Courier, monospace;
+    color: #9d9393;
+    font-size: 2em;
+}
+.show {
+    height: 600px;
+}
+
+.dropMenuItem {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+
+    display: block;
+ 
+}
+
+    .dropMenuItem:hover {
+        background-color: lightgray;
+        transition: 1s;
+    }
+
+
+
+
