@@ -17,14 +17,12 @@
   color: lightgray;
   box-shadow: none;
   outline: none; }
-
-.dropMenuButton:hover {
-  background-color: lightgray;
-  transition: 1s; }
-
-.dropMenuButton:focus {
-  background-color: lightgray;
-  outline: none; }
+  .dropMenuButton:hover {
+    background-color: lightgray;
+    transition: 1s; }
+  .dropMenuButton:focus {
+    background-color: lightgray;
+    outline: none; }
 
 .dropMenuContent {
   display: block;
@@ -47,7 +45,6 @@
   height: 50px;
   text-align: center;
   display: block; }
-
-.dropMenuItem:hover {
-  background-color: lightgray;
-  transition: 1s; }
+  .dropMenuItem:hover {
+    background-color: lightgray;
+    transition: 1s; }

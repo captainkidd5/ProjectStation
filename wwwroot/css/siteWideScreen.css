@@ -62,8 +62,7 @@ li a {
   line-height: .9em; }
 
 li a:hover {
-  background-color: white;
-  color: lightgray;
+  background-color: lightGray;
   text-decoration-line: underline;
   text-decoration-color: black; }
 
@@ -77,7 +76,7 @@ li a:hover {
   font-family: Courier New, Courier, monospace;
   font-size: 2.5em;
   font-weight: 700;
-  color: darkgray;
+  color: darkGray;
   position: relative; }
 
 ul.leftBottomBlock {
@@ -101,14 +100,13 @@ li.newsSnippet {
   font-family: Courier New, Courier, monospace;
   font-size: .3em;
   font-weight: 400;
-  color: darkgray;
+  color: darkGray;
   position: relative; }
-
-li.newsSnippet:after {
-  border-bottom: solid;
-  border-bottom-color: lightgray;
-  height: 100%;
-  border-bottom: 3px; }
+  li.newsSnippet:after {
+    border-bottom: solid;
+    border-bottom-color: lightGray;
+    height: 100%;
+    border-bottom: 3px; }
 
 .newsSnippetLink {
   display: inline;
@@ -116,13 +114,13 @@ li.newsSnippet:after {
   font-family: Courier New, Courier, monospace;
   font-size: .3em;
   font-weight: 800;
-  color: darkgray;
+  color: darkGray;
   position: relative; }
 
 a.readMore {
   display: block;
   padding: 8px 5px;
-  border-color: darkgray;
+  border-color: darkGray;
   border-width: 2px;
   border: solid;
   margin-left: 250px;
@@ -141,7 +139,7 @@ a.readMore {
 
 .contact-footer-bar a {
   color: white;
-  background-color: darkgray;
+  background-color: darkGray;
   text-align: center;
   display: inline-block;
   border-radius: 40px;
@@ -149,9 +147,8 @@ a.readMore {
   text-decoration: none;
   font-size: 24px;
   margin-bottom: 20px; }
-
-.contact-footer-bar a:hover {
-  background-color: lightgray; }
+  .contact-footer-bar a:hover {
+    background-color: lightGray; }
 
 /*RESIZING*/
 @media only screen and (max-width: 1200px) {

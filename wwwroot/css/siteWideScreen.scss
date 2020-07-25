@@ -1,4 +1,8 @@
 ﻿
+$primaryColor: lightGray;
+$secondayGray: darkGray;
+$standardFont:Courier New, Courier, monospace;
+
 .wrapper {
     height: 2000px;
     overflow: scroll;
@@ -72,7 +76,7 @@ ul {
 }
 
 li a {
-    font-family: Courier New, Courier, monospace;
+    font-family: $standardFont;
     font-size: 1.4rem;
     color: #9d9393;
     display: block;
@@ -82,12 +86,11 @@ li a {
     line-height: .9em;
 }
 
-    li a:hover {
-        background-color: white;
-        color: lightgray;
-        text-decoration-line: underline;
-        text-decoration-color: black;
-    }
+li a:hover {
+    background-color: $primaryColor;
+    text-decoration-line: underline;
+    text-decoration-color: black;
+}
 
     /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
@@ -97,10 +100,10 @@ li a {
 }
 
 .mediumHeader {
-    font-family: Courier New, Courier, monospace;
+    font-family: $standardFont;
     font-size: 2.5em;
-    font-weight:700;
-    color: darkgray;
+    font-weight: 700;
+    color: $secondayGray;
     position: relative;
 }
 
@@ -121,43 +124,47 @@ ul.rightBottomBlock {
 }
 
 
-li.newsSnippet {
-    width:500px;
-    display:inline-block;
-    
-    padding-top: 10px;
-    font-family: Courier New, Courier, monospace;
+@mixin standardFont {
+    font-family: $standardFont;
     font-size: .3em;
+}
+
+li.newsSnippet {
+    width: 500px;
+    display: inline-block;
+    padding-top: 10px;
+    @include standardFont;
     font-weight: 400;
-    color: darkgray;
+    color: $secondayGray;
     position: relative;
+
+    &:after {
+        border-bottom: solid;
+        border-bottom-color: $primaryColor;
+        height: 100%;
+        border-bottom: 3px;
+    }
 }
-li.newsSnippet:after{
-    border-bottom:solid;
-    border-bottom-color:lightgray;
-    height:100%;
-    border-bottom:3px;
-}
+
 
 .newsSnippetLink {
     display: inline;
     padding-top: 10px;
-    font-family: Courier New, Courier, monospace;
+    font-family: $standardFont;
     font-size: .3em;
     font-weight: 800;
-    color: darkgray;
+    color: $secondayGray;
     position: relative;
 }
 
-a.readMore{
-    display:block;
-    padding:8px 5px;
-    border-color: darkgray;
+a.readMore {
+    display: block;
+    padding: 8px 5px;
+    border-color: $secondayGray;
     border-width: 2px;
     border: solid;
     margin-left: 250px;
     width: 200px;
-
 }
 /*FOOTER*/
 .contact-footer-bar {
@@ -172,22 +179,21 @@ a.readMore{
     justify-content: center;
 }
 
-    .contact-footer-bar a {
-        color: white;
-        background-color: darkgray;
-        text-align: center;
-        display: inline-block;
-        border-radius: 40px;
-        padding: 20px 40px;
-        text-decoration: none;
-        font-size: 24px;
-        margin-bottom: 20px;
+.contact-footer-bar a {
+    color: white;
+    background-color: $secondayGray;
+    text-align: center;
+    display: inline-block;
+    border-radius: 40px;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    &:hover {
+        background-color: $primaryColor;
     }
-
-
-        .contact-footer-bar a:hover {
-            background-color: lightgray;
-        }
+}
 
 
 

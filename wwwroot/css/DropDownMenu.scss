@@ -11,7 +11,7 @@
 
 
 @media only screen and (max-width: 768px) {
-    .dropMenu{
+    .dropMenu {
         display: block;
     }
 }
@@ -21,22 +21,21 @@
     background-color: darkgray;
     padding: 16px 8px;
     border-radius: 20px;
-    position:relative;
+    position: relative;
     color: lightgray;
-    box-shadow:none;
-    outline:none;
-}
+    box-shadow: none;
+    outline: none;
 
-    .dropMenuButton:hover {
+    &:hover {
         background-color: lightgray;
         transition: 1s;
     }
 
-    .dropMenuButton:focus {
+    &:focus {
         background-color: lightgray;
         outline: none;
-       
     }
+}
 
 .dropMenuContent {
     display: block;
@@ -51,6 +50,7 @@
     color: #9d9393;
     font-size: 2em;
 }
+
 .show {
     height: 600px;
 }
@@ -59,16 +59,10 @@
     width: 100%;
     height: 50px;
     text-align: center;
-
     display: block;
- 
-}
 
-    .dropMenuItem:hover {
+    &:hover {
         background-color: lightgray;
         transition: 1s;
     }
-
-
-
-
+}
