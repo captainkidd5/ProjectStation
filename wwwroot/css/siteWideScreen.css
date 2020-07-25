@@ -256,11 +256,13 @@ li.newsSnippet {
 
         .leftBottomBlock {
             margin-left: -250%;
+            display:flex;
         }
 
         .rightBottomBlock {
             margin-left: -147%;
             margin-top: 150%;
+            display: flex;
         }
     }
 
