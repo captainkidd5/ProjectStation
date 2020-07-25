@@ -1,13 +1,14 @@
 ﻿
+$backGroundColor: white;
 $primaryColor: lightGray;
 $secondayGray: darkGray;
-$standardFont:Courier New, Courier, monospace;
+$standardFont: Courier New, Courier, monospace;
 
 .wrapper {
     height: 2000px;
     overflow: scroll;
     display: block;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 .hide {
@@ -31,17 +32,47 @@ $standardFont:Courier New, Courier, monospace;
 
 
 .left-nav {
-    
     margin-left: -550px;
     margin-top: -250px;
 }
 
+.right-nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 25px;
+    background-color: none;
+}
 
 
 .right-nav {
-
     margin-left: 450px;
     margin-top: -250px;
+}
+
+.left-nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 25px;
+    background-color: none;
+}
+
+
+li a {
+    font-family: $standardFont;
+    font-size: 1.4rem;
+    color: #9d9393;
+    display: block;
+    background-color: $backGroundColor;
+    padding: 16px 16px;
+    text-decoration: none;
+    line-height: .9em;
+}
+
+li a:hover {
+    background-color: $backGroundColor;
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    transition:ease-in 3s;
 }
 
 .socialMediaIcons {
@@ -68,31 +99,9 @@ $standardFont:Courier New, Courier, monospace;
     display: block;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
 
-li a {
-    font-family: $standardFont;
-    font-size: 1.4rem;
-    color: #9d9393;
-    display: block;
-    background-color: white;
-    padding: 16px 16px;
-    text-decoration: none;
-    line-height: .9em;
-}
 
-li a:hover {
-    background-color: $primaryColor;
-    text-decoration-line: underline;
-    text-decoration-color: black;
-}
-
-    /*BOTTOM HALF OF PAGE*/
+/*BOTTOM HALF OF PAGE*/
 .bottomHalf {
     margin-top: 400px;
     position: relative;
@@ -109,16 +118,27 @@ li a:hover {
 
 ul.leftBottomBlock {
     margin-left: -2200%;
+    list-style-type: none;
+    padding: 0;
+    width: 25px;
+    background-color: none;
 }
+
 ul.rightBottomBlock {
     margin-left: 10%;
+    list-style-type: none;
+    padding: 0;
+    width: 25px;
+    background-color: none;
 }
+
+$fadedLineWidth: 500px;
 
 .fadedLine {
     height: 5px;
-    background-image: linear-gradient(to right,red,white);
+    background-image: linear-gradient(to right,red,$backGroundColor );
     background-color: red;
-    width: 500px;
+    width: $fadedLineWidth;
     padding-top: 5px;
     position: absolute;
 }
@@ -132,17 +152,19 @@ ul.rightBottomBlock {
 li.newsSnippet {
     width: 500px;
     display: inline-block;
-    padding-top: 10px;
+    padding-top: 15px;
     @include standardFont;
     font-weight: 400;
     color: $secondayGray;
     position: relative;
 
     &:after {
-        border-bottom: solid;
-        border-bottom-color: $primaryColor;
-        height: 100%;
-        border-bottom: 3px;
+        content: "";
+        border-bottom: 3px solid $secondayGray;
+        position: absolute;
+        width: 500px;
+        bottom: -25px;
+        left: 0px;
     }
 }
 
@@ -155,32 +177,45 @@ li.newsSnippet {
     font-weight: 800;
     color: $secondayGray;
     position: relative;
+
+    &:hover {
+        color: black;
+        background-color: $backGroundColor;
+    }
 }
 
 a.readMore {
     display: block;
     padding: 8px 5px;
+    text-align: center;
     border-color: $secondayGray;
     border-width: 2px;
     border: solid;
     margin-left: 250px;
+    margin-top: 50px;
     width: 200px;
+
+    &:hover {
+        background-color: $secondayGray;
+        border-color: $primaryColor;
+        color: black;
+        text-decoration: none;
+    }
 }
 /*FOOTER*/
 .contact-footer-bar {
     overflow: hidden;
-    background-color: white;
+    background-color: $backGroundColor;
     position: absolute;
     bottom: -150%;
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contact-footer-bar a {
-    color: white;
+    color: $backGroundColor;
     background-color: $secondayGray;
     text-align: center;
     display: inline-block;
@@ -212,6 +247,7 @@ a.readMore {
     .socialMediaIcons {
         margin-left: 350px;
     }
+
     ul.leftBottomBlock {
         margin-left: -1800%;
     }
@@ -220,7 +256,9 @@ a.readMore {
         margin-left: 10%;
     }
 
-   
+    .fadedLine {
+        width: $fadedLineWidth - 100px;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -245,6 +283,10 @@ a.readMore {
     ul.rightBottomBlock {
         margin-left: 10%;
     }
+
+    .fadedLine {
+        width: $fadedLineWidth - 200px;
+    }
 }
 
 @media only screen and (max-width: 880px) {
@@ -257,47 +299,47 @@ a.readMore {
     }
 }
 
-    @media only screen and (max-width: 768px) {
-        #tigLogo {
-            margin-top: -150px;
-        }
-
-        .right-nav {
-            margin-left: 150px;
-            display: none;
-        }
-
-        .left-nav {
-            margin-left: -250px;
-            display: none;
-        }
-
-        .socialMediaIcons {
-            margin-left: -60px;
-            margin-top: 60px;
-        }
-
-        .leftBottomBlock {
-            margin-left: -250%;
-            display:flex;
-        }
-
-        .rightBottomBlock {
-            margin-left: -147%;
-            margin-top: 150%;
-            display: flex;
-        }
+@media only screen and (max-width: 768px) {
+    #tigLogo {
+        margin-top: -150px;
     }
 
-    @media only screen and (max-width: 290) {
-        #tigLogo {
-            display: block;
-        }
-
-
-
-        .socialMediaIcons {
-            margin-left: -60px;
-            margin-top: 60px;
-        }
+    .right-nav {
+        margin-left: 150px;
+        display: none;
     }
+
+    .left-nav {
+        margin-left: -250px;
+        display: none;
+    }
+
+    .socialMediaIcons {
+        margin-left: -60px;
+        margin-top: 60px;
+    }
+
+    .leftBottomBlock {
+        margin-left: -250%;
+        display: flex;
+    }
+
+    .rightBottomBlock {
+        margin-left: -147%;
+        margin-top: 150%;
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 290) {
+    #tigLogo {
+        display: block;
+    }
+
+
+
+    .socialMediaIcons {
+        margin-left: -60px;
+        margin-top: 60px;
+    }
+}
