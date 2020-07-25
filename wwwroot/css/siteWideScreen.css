@@ -122,19 +122,26 @@ ul.rightBottomBlock {
 
 
 li.newsSnippet {
-    width:400px;
+    width:500px;
     display:inline-block;
-    padding-top: 20px;
+    
+    padding-top: 10px;
     font-family: Courier New, Courier, monospace;
     font-size: .3em;
     font-weight: 400;
     color: darkgray;
     position: relative;
 }
+li.newsSnippet:after{
+    border-bottom:solid;
+    border-bottom-color:lightgray;
+    height:100%;
+    border-bottom:3px;
+}
 
 .newsSnippetLink {
     display: inline;
-    padding-top: 20px;
+    padding-top: 10px;
     font-family: Courier New, Courier, monospace;
     font-size: .3em;
     font-weight: 800;
@@ -142,6 +149,16 @@ li.newsSnippet {
     position: relative;
 }
 
+a.readMore{
+    display:block;
+    padding:8px 5px;
+    border-color: darkgray;
+    border-width: 2px;
+    border: solid;
+    margin-left: 250px;
+    width: 200px;
+
+}
 /*FOOTER*/
 .contact-footer-bar {
     overflow: hidden;
