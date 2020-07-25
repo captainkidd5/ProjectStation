@@ -36,11 +36,15 @@ $standardFont: Courier New, Courier, monospace;
     margin-top: -250px;
 }
 
-.right-nav ul {
+@mixin navUl {
     list-style-type: none;
     padding: 0;
     width: 25px;
     background-color: none;
+}
+
+.titleBlock ul {
+    @include navUl;
 }
 
 
@@ -49,15 +53,8 @@ $standardFont: Courier New, Courier, monospace;
     margin-top: -250px;
 }
 
-.left-nav ul {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
 
-
-li a {
+li a{
     font-family: $standardFont;
     font-size: 1.4rem;
     color: #9d9393;
@@ -66,14 +63,15 @@ li a {
     padding: 16px 16px;
     text-decoration: none;
     line-height: .9em;
+
+    &:hover{
+        background-color: $backGroundColor;
+        text-decoration-line: underline;
+        text-decoration-color: black;
+        transition: ease-in 1s;
+    }
 }
 
-li a:hover {
-    background-color: $backGroundColor;
-    text-decoration-line: underline;
-    text-decoration-color: black;
-    transition:ease-in 3s;
-}
 
 .socialMediaIcons {
     position: relative;
@@ -92,13 +90,10 @@ li a:hover {
     width: 70px;
 }
 
-
-
 .img {
     max-width: 100%;
     display: block;
 }
-
 
 
 /*BOTTOM HALF OF PAGE*/
@@ -116,20 +111,21 @@ li a:hover {
     position: relative;
 }
 
-ul.leftBottomBlock {
-    margin-left: -2200%;
+@mixin bottomBlockStyle {
     list-style-type: none;
     padding: 0;
     width: 25px;
     background-color: none;
 }
 
+ul.leftBottomBlock {
+    margin-left: -2200%;
+    @include bottomBlockStyle;
+}
+
 ul.rightBottomBlock {
     margin-left: 10%;
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
+    @include bottomBlockStyle;
 }
 
 $fadedLineWidth: 500px;
@@ -150,26 +146,29 @@ $fadedLineWidth: 500px;
 }
 
 li.newsSnippet {
-    width: 500px;
+    width: $fadedLineWidth;
     display: inline-block;
     padding-top: 15px;
+    height: 25px;
     @include standardFont;
     font-weight: 400;
     color: $secondayGray;
     position: relative;
+    background-color: transparent;
+
 
     &:after {
         content: "";
-        border-bottom: 3px solid $secondayGray;
+        border-bottom: 2px solid $secondayGray;
         position: absolute;
-        width: 500px;
+        width:inherit;
         bottom: -25px;
         left: 0px;
     }
 }
 
 
-.newsSnippetLink {
+.mediumHeader.li{
     display: inline;
     padding-top: 10px;
     font-family: $standardFont;
@@ -197,7 +196,6 @@ a.readMore {
 
     &:hover {
         background-color: $secondayGray;
-        border-color: $primaryColor;
         color: black;
         text-decoration: none;
     }
@@ -259,6 +257,10 @@ a.readMore {
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
+
+    li.newsSnippet{
+        width: $fadedLineWidth - 100px;
+    }
 }
 
 @media only screen and (max-width: 990px) {
@@ -287,6 +289,10 @@ a.readMore {
     .fadedLine {
         width: $fadedLineWidth - 200px;
     }
+    li.newsSnippet {
+        width: $fadedLineWidth - 200px;
+    }
+
 }
 
 @media only screen and (max-width: 880px) {
