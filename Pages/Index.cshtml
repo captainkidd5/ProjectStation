@@ -6,6 +6,7 @@
 }
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <div id="titlePage" class="wrapper">
@@ -16,26 +17,32 @@
         <div id="tigLogo">
             <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
         </div>
-        <div class="left-nav">
-            <ul>
-                <li><a href="index">Home</a></li>
-                <li><a href="news">News</a></li>
-                <li><a href="news">Artist</a></li>
-                <li><a href="news">Exhibition</a></li>
-                <li><a href="news">About</a></li>
-                <li><a href="news">Online Shop</a></li>
-            </ul>
+        <div class="iSideable">
+            <div class="left-nav">
+                <ul>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="news">News</a></li>
+                    <li><a href="news">Artist</a></li>
+                    <li><a href="news">Exhibition</a></li>
+                    <li><a href="news">About</a></li>
+                    <li><a href="news">Online Shop</a></li>
+                </ul>
 
 
+            </div>
         </div>
-        <div class ="right-nav">
-            <ul>
-                <li><a href="/">Company</a></li>
-                <li><a href="news">Access</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="news">Jp/Eng</a></li>
-            </ul>
+        <div class="iSideable">
 
+
+            <div class="right-nav">
+                <ul>
+                    <li><a href="/">Company</a></li>
+                    <li><a href="news">Access</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="news">Jp/Eng</a></li>
+                </ul>
+
+            </div>
         </div>
         <div class="socialMediaIcons">
             <div id="instagramButton">
@@ -53,32 +60,47 @@
 
     <div class="bottomHalf">
 
-        <div class="left-nav">
+        <div class="iSideable">
             <div class="mediumHeader">
-                <div class="headerLeft">
+                <ul class="leftBottomBlock">
                     News
-                    <div class="fadedLine">
+                    <li class="fadedLine">
 
-                    </div>
-                </div>
+                    </li>
+                    <li class="newsSnippet">
+
+                        2020.05.07 ＜休廊延長のお知らせ＞
+                    </li>
+
+                    <li class="newsSnippetLink"> href ="contact" </li> 
+
+                    <li> class="newsSnippet">
+
+                        2020.04.13 ＜休廊のお知らせ＞
+
+                    </li>
+
+
+                </ul>
             </div>
 
-            
-            
+
+
+
         </div>
 
-        <div class="right-nav">
+        <div class="iSideable">
             <div class="mediumHeader">
-                <div class="headerRight">
+                <div class="rightBottomBlock">
                     Exhibition
                     <div class="fadedLine">
 
                     </div>
 
                 </div>
-               
+
             </div>
-            
+
         </div>
     </div>
 
@@ -86,4 +108,4 @@
 
 </div>
 
-    <script src="_framework/blazor.server.js"></script>
+<script src="_framework/blazor.server.js"></script>
