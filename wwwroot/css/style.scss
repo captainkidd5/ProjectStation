@@ -4,19 +4,17 @@ $primaryColor: lightGray;
 $secondayGray: darkGray;
 $standardFont: Courier New, Courier, monospace;
 
-
+$leftOffset:-450px;
+$rightOffset:500px;
 .wrapper {
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
+   
 }
 
 .hide {display: none;}
 
-.titleBlock {margin-top: 250px;}
+.titleBlock {margin-top: 250px; margin-left:50%;}
 
 .titleBlock img {
-    margin-left:50%;
     transform:translate(-50%,0);
     position:absolute;
 }
@@ -25,12 +23,13 @@ $standardFont: Courier New, Courier, monospace;
 
 .titleBlock li{
 
-    margin: 15px;
+    margin-bottom: 15px;
+    margin-right:0px;
 
 }
 .titleBlock li a {
     font-family: $standardFont;
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: relative;
     bottom: 15px;
     color: $secondayGray;
@@ -44,22 +43,25 @@ $standardFont: Courier New, Courier, monospace;
 }
 
 .leftBar {
-    text-align: center;
-    margin-left: 15%;
-    transform: translate(-50%,0);
     position: absolute;
+    text-align: left;
+    margin-left:$leftOffset;
+    transform: translate(-50%,0);
+
 }
 
 
 .rightBar {
-    position: relative;
-    margin-left: 85%;
+    position: absolute;
+    padding-top:10px;
+    margin-left:$rightOffset;
     transform: translate(-50%,0);
+    border:0px;
 }
 
 
 .socialMediaIcons {
-    width:100px;
+    width:50px;
     height:auto;
     transform: translate(-50%,0);
     position:absolute;
@@ -78,22 +80,22 @@ $standardFont: Courier New, Courier, monospace;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 20%;
-    position: relative;
+    margin-top: 550px;
+    position: absolute;
 }
 
 
 .leftBottomBlock {
     position: absolute;
-    margin-left: 20%;
-    transform: translate(-50%,0);
+    margin-left:$leftOffset - 50px;
+
 }
 
 $fadedLineWidth: 500px;
 
 .fadedLine {
     height: 5px;
-    background-image: linear-gradient(to right,red,$backGroundColor );
+    background-image: linear-gradient(.9turn,$backGroundColor,red );
     background-color: red;
     width: $fadedLineWidth;
     padding-top: 5px;
@@ -111,7 +113,9 @@ $fadedLineWidth: 500px;
 
 
 .rightBottomBlock {
-    margin-left: 10%;
+    position: absolute;
+    margin-left:50%;
+
 }
 
 .leftBottomBlock ul {
@@ -215,8 +219,16 @@ a.readMore {
 
 @media only screen and (max-width: 1200px) {
 
+    .leftBar{
+        margin-left:$leftOffset + 100px;
+    }
+    .rightBar{
+        margin-left:$rightOffset - 100px;
+    }
 
-
+    .leftBottomBlock {
+        margin-left: $leftOffset + 50px;
+    }
 
     .fadedLine {
         width: $fadedLineWidth - 100px;
@@ -226,50 +238,106 @@ a.readMore {
 
 @media only screen and (max-width: 990px) {
 
+    .leftBar {
+        margin-left: $leftOffset + 150px;
+    }
 
+    .rightBar {
+        margin-left: 350px;
+    }
+
+    .leftBottomBlock {
+        margin-left: $leftOffset + 100px;
+    }
 
     .fadedLine {
-        width: $fadedLineWidth - 200px;
+        width: $fadedLineWidth - 150px;
     }
 
 
 }
 
 @media only screen and (max-width: 880px) {
+    .leftBar {
+        margin-left: $leftOffset + 200px;
+    }
 
+    .rightBar {
+        margin-left: $rightOffset - 200px;
+    }
+    .leftBottomBlock {
+        margin-left: $leftOffset + 150px;
+    }
+
+    .fadedLine {
+        width: $fadedLineWidth - 200px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
 
 
-    .leftBar{ display: none;}
-
-    .rightBar li{ display: none;}
-
-    .rightBar{
-        position:absolute;
-        margin-left:50%;
-        
+    .leftBar {
+        margin-left: $leftOffset + 250px;
     }
 
-    .socialMediaIcons {
-        position:absolute;
-        margin-left:-180%;
-        margin-top: 250px;
+    .rightBar {
+        margin-left: $rightOffset - 250px;
+    }
+    .leftBottomBlock {
+        margin-left: $leftOffset + 200px;
+    }
 
+    .fadedLine {
+        width: $fadedLineWidth - 250px;
     }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 640px) {
+    .leftBar {
+        display: none;
+    }
 
+    .rightBar li {
+        display: none;
+    }
+
+    .rightBar {
+        position: absolute;
+        margin-left: 0px;
+    }
+
+    .leftBottomBlock {
+        margin-left:-50vw;
+    }
+
+    .fadedLine {
+        width:100vw;
+    }
+    .bottomHalf {
+        position: absolute;
+        margin-left: 0%;
+    }
+
+
+
+    .rightBottomBlock {
+        margin-top: 950px;
+        margin-left: -50vw;
+    }
+
+    .socialMediaIcons {
+        position: absolute;
+        margin-left: -180%;
+        margin-top: 250px;
+    }
 }
 
 @media only screen and (max-width: 233px) {
     
    .titleBlock img
    {
-      margin-left:auto;
-      transform:none;
+      margin-left:0vw ;
    }
    .rightBar{
        position:absolute;
