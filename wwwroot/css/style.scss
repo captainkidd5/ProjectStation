@@ -11,13 +11,9 @@ $standardFont: Courier New, Courier, monospace;
     flex-wrap:wrap;
 }
 
-.hide {
-    display: none;
-}
+.hide {display: none;}
 
-.titleBlock {
-    margin-top: 250px;
-}
+.titleBlock {margin-top: 250px;}
 
 .titleBlock img {
     margin-left:50%;
@@ -25,14 +21,26 @@ $standardFont: Courier New, Courier, monospace;
     position:absolute;
 }
 
-.titleBlock ul {
-    list-style: none;
-    
-}
+.titleBlock ul {list-style: none;}
 
-.titleBlock li a{
+.titleBlock li{
+
+    margin: 15px;
+
+}
+.titleBlock li a {
+    font-family: $standardFont;
+    font-size: 1.5em;
+    position: relative;
+    bottom: 15px;
     color: $secondayGray;
-    font-size: 20px;
+
+    &:hover {
+        background-color: $backGroundColor;
+        text-decoration-line: underline;
+        text-decoration-color: black;
+        transition: ease-in 1s;
+    }
 }
 
 .leftBar {
@@ -51,108 +59,59 @@ $standardFont: Courier New, Courier, monospace;
 
 
 .socialMediaIcons {
-
     width:100px;
     height:auto;
     transform: translate(-50%,0);
     position:absolute;
     display:inline-flex;
     padding-left:50px;
-
     &:hover {
         filter: invert(50);
         transition: ease-in 1s;
     }
 }
 
-#instagramButton {
-    
+#instagramButton {}
 
-
-}
-
-#facebookButton {
-    padding-left:80px;
-}
-
-
-
-.iSideable {
-    display: inline-block;
-    position: absolute;
-
-}
-
-.iSideable ul{
-    list-style:none;
-}
-.iSideable li a{
-    font-family: $standardFont;
-    font-size: 1.4rem;
-    color: #9d9393;
-    display: block;
-    background-color: $backGroundColor;
-    padding: 16px 16px;
-    text-decoration: none;
-    line-height: .9em;
-
-    &:hover {
-        background-color: $backGroundColor;
-        text-decoration-line: underline;
-        text-decoration-color: black;
-        transition: ease-in 1s;
-    }
-}
-
-
-@mixin navUl {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
-
-
-
-
-
-
+#facebookButton {padding-left:80px;}
 
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 800px;
-    position: absolute;
-    margin-left: 0%;
+    margin-top: 20%;
+    position: relative;
 }
+
+
+.leftBottomBlock {
+    position: absolute;
+    margin-left: 20%;
+    transform: translate(-50%,0);
+}
+
+$fadedLineWidth: 500px;
+
+.fadedLine {
+    height: 5px;
+    background-image: linear-gradient(to right,red,$backGroundColor );
+    background-color: red;
+    width: $fadedLineWidth;
+    padding-top: 5px;
+}
+
 
 .mediumHeader {
     font-family: $standardFont;
     font-size: 2.5em;
     font-weight: 700;
     color: $secondayGray;
-    position: absolute;
 }
 
-.mediumHeader a{
-    font-size: 12px;
-}
 
-@mixin bottomBlockStyle {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
 
-.leftBottomBlock {
-
-    @include bottomBlockStyle;
-}
 
 .rightBottomBlock {
     margin-left: 10%;
-    @include bottomBlockStyle;
 }
 
 .leftBottomBlock ul {
@@ -183,16 +142,6 @@ $standardFont: Courier New, Courier, monospace;
 
 }
 
-$fadedLineWidth: 500px;
-
-.fadedLine {
-    height: 5px;
-    background-image: linear-gradient(to right,red,$backGroundColor );
-    background-color: red;
-    width: $fadedLineWidth;
-    padding-top: 5px;
-    position: absolute;
-}
 
 
 @mixin standardFont {
@@ -293,19 +242,16 @@ a.readMore {
 @media only screen and (max-width: 768px) {
 
 
-    .leftBar {
-        display: none;
-    }
+    .leftBar{ display: none;}
 
-    .rightBar li{
-        display: none;
-        
-    }
+    .rightBar li{ display: none;}
+
     .rightBar{
-        position:fixed;
+        position:absolute;
         margin-left:50%;
         
     }
+
     .socialMediaIcons {
         position:absolute;
         margin-left:-180%;
@@ -325,9 +271,15 @@ a.readMore {
       margin-left:auto;
       transform:none;
    }
+   .rightBar{
+       position:absolute;
+       margin-left:50%;
+   }
 
     .socialMediaIcons {
-        max-width:100%;
-        max-height:100%;
+        position:absolute;
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: -180%;
     }
 }
