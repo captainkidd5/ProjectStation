@@ -4,11 +4,11 @@ $primaryColor: lightGray;
 $secondayGray: darkGray;
 $standardFont: Courier New, Courier, monospace;
 
+
 .wrapper {
-    height: 2000px;
-    overflow: scroll;
-    display: block;
-    overflow-x: hidden;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
 }
 
 .hide {
@@ -17,44 +17,76 @@ $standardFont: Courier New, Courier, monospace;
 
 .titleBlock {
     margin-top: 250px;
-    position: relative;
-    margin-left: 50%;
 }
 
-#tigLogo {
-    margin-left: -100px;
+.titleBlock img {
+    margin-left:50%;
+    transform:translate(-50%,0);
+    position:absolute;
 }
 
-.iSideable {
-    display: block;
+.titleBlock ul {
+    list-style: none;
+    
+}
+
+.titleBlock li a{
+    color: $secondayGray;
+    font-size: 20px;
+}
+
+.leftBar {
+    text-align: center;
+    margin-left: 15%;
+    transform: translate(-50%,0);
     position: absolute;
 }
 
 
-.left-nav {
-    margin-left: -550px;
-    margin-top: -250px;
-}
-
-@mixin navUl {
-    list-style-type: none;
-    padding: 0;
-    width: 25px;
-    background-color: none;
-}
-
-.titleBlock ul {
-    @include navUl;
+.rightBar {
+    position: relative;
+    margin-left: 85%;
+    transform: translate(-50%,0);
 }
 
 
-.right-nav {
-    margin-left: 450px;
-    margin-top: -250px;
+.socialMediaIcons {
+
+    width:100px;
+    height:auto;
+    transform: translate(-50%,0);
+    position:absolute;
+    display:inline-flex;
+    padding-left:50px;
+
+    &:hover {
+        filter: invert(50);
+        transition: ease-in 1s;
+    }
+}
+
+#instagramButton {
+    
+
+
+}
+
+#facebookButton {
+    padding-left:80px;
 }
 
 
-li a{
+
+.iSideable {
+    display: inline-block;
+    position: absolute;
+
+}
+
+.iSideable ul{
+    list-style:none;
+}
+.iSideable li a{
     font-family: $standardFont;
     font-size: 1.4rem;
     color: #9d9393;
@@ -64,7 +96,7 @@ li a{
     text-decoration: none;
     line-height: .9em;
 
-    &:hover{
+    &:hover {
         background-color: $backGroundColor;
         text-decoration-line: underline;
         text-decoration-color: black;
@@ -73,41 +105,25 @@ li a{
 }
 
 
-.socialMediaIcons {
-    position: relative;
-    margin-left: 450px;
-    margin-top: 0px;
-
-    &:hover {
-        filter: invert(50);
-        transition: ease-in 1s;
-    }
+@mixin navUl {
+    list-style-type: none;
+    padding: 0;
+    width: 25px;
+    background-color: none;
 }
 
-#instagramButton {
-    float: left;
-    width: 50px;
-}
 
-#facebookButton {
-    float: left;
-    padding-left: 20px;
-    width: 70px;
-}
 
-.img {
-    max-width: 100%;
-    display: block;
 
-   
-}
+
+
 
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 400px;
-    position: relative;
-    margin-left: 50%;
+    margin-top: 800px;
+    position: absolute;
+    margin-left: 0%;
 }
 
 .mediumHeader {
@@ -115,7 +131,7 @@ li a{
     font-size: 2.5em;
     font-weight: 700;
     color: $secondayGray;
-    position: relative;
+    position: absolute;
 }
 
 .mediumHeader a{
@@ -130,7 +146,7 @@ li a{
 }
 
 .leftBottomBlock {
-    margin-left: -2200%;
+
     @include bottomBlockStyle;
 }
 
@@ -145,7 +161,7 @@ li a{
     height: 25px;
     font-weight: 800;
     color: $secondayGray;
-    position: relative;
+    position: absolute;
     background-color: transparent;
     list-style:none;
 
@@ -250,17 +266,7 @@ a.readMore {
 
 @media only screen and (max-width: 1200px) {
 
-    .right-nav {
-        margin-left: 350px;
-    }
 
-    .left-nav {
-        margin-left: -450px;
-    }
-
-    .socialMediaIcons {
-        margin-left: 350px;
-    }
 
 
     .fadedLine {
@@ -270,18 +276,6 @@ a.readMore {
 }
 
 @media only screen and (max-width: 990px) {
-
-    .right-nav {
-        margin-left: 250px;
-    }
-
-    .left-nav {
-        margin-left: -350px;
-    }
-
-    .socialMediaIcons {
-        margin-left: 250px;
-    }
 
 
 
@@ -293,56 +287,47 @@ a.readMore {
 }
 
 @media only screen and (max-width: 880px) {
-    .leftBottomBlock {
-        margin-left: -380%;
-    }
 
-    .rightBottomBlock {
-        margin-left: 2%;
-    }
 }
 
 @media only screen and (max-width: 768px) {
-    #tigLogo {
-        margin-top: -150px;
-    }
 
-    .right-nav {
-        margin-left: 150px;
+
+    .leftBar {
         display: none;
     }
 
-    .left-nav {
-        margin-left: -250px;
+    .rightBar li{
         display: none;
+        
     }
-
+    .rightBar{
+        position:fixed;
+        margin-left:50%;
+        
+    }
     .socialMediaIcons {
-        margin-left: -60px;
-        margin-top: 60px;
-    }
+        position:absolute;
+        margin-left:-180%;
+        margin-top: 250px;
 
-    .leftBottomBlock {
-        margin-left: -250%;
-        display: flex;
-    }
-
-    .rightBottomBlock {
-        margin-left: -147%;
-        margin-top: 150%;
-        display: flex;
     }
 }
 
-@media only screen and (max-width: 290) {
-    #tigLogo {
-        display: block;
-    }
+@media only screen and (max-width: 560px) {
 
+}
 
+@media only screen and (max-width: 233px) {
+    
+   .titleBlock img
+   {
+      margin-left:auto;
+      transform:none;
+   }
 
     .socialMediaIcons {
-        margin-left: -60px;
-        margin-top: 60px;
+        max-width:100%;
+        max-height:100%;
     }
 }
