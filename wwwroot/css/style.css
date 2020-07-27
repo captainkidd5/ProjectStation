@@ -42,19 +42,22 @@
   right: 0;
   border: 0px; }
 
-.socialMediaIcons:hover {
-  filter: invert(50);
-  transition: ease-in 1s; }
+.socialMediaIcons {
+  position: absolute;
+  right: -50px;
+  top: 200px; }
+  .socialMediaIcons:hover {
+    filter: invert(50);
+    transition: ease-in 1s; }
 
 #instagramButton {
-  display: inline-block;
-  position: absolute;
-  margin: 50%; }
+  position: relative; }
 
 #facebookButton {
   position: absolute;
-  margin-left: 20px;
-  padding-bottom: 50px; }
+  width: 100%;
+  right: 50px;
+  top: 0; }
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
@@ -223,7 +226,7 @@ a.readMore {
 @media only screen and (max-width: 1200px) {
   .titleBlock {
     width: 650px; }
-    .titleBlock img {
+    .titleBlock logo {
       width: auto; }
   .leftSideImage {
     width: 80%; }
@@ -251,15 +254,21 @@ a.readMore {
 
 @media only screen and (max-width: 880px) {
   .titleBlock {
-    width: 450px; }
-    .titleBlock img {
-      width: 50%; }
-  .fadedLine {
-    width: 300px; } }
+    width: 450px; } }
 
 @media only screen and (max-width: 768px) {
   .titleBlock {
     width: 350px; }
+    .titleBlock img {
+      width: 50%; }
+  .socialMediaIcons {
+    left: 0; }
+  #instagramButton {
+    width: 25%;
+    left: 40%; }
+  #facebookButton {
+    right: 100px;
+    width: 100%; }
   .leftBar {
     display: none; }
   .rightBar li {
@@ -267,10 +276,6 @@ a.readMore {
   .rightBar {
     position: absolute;
     margin-left: 0px; }
-  .socialMediaIcons {
-    position: absolute;
-    margin-left: -180%;
-    margin-top: 250px; }
   .fadedLine {
     width: 250px; }
   .fadedLine {
@@ -282,11 +287,13 @@ a.readMore {
       width: 100vw; }
   .leftSideImage {
     width: 100vw; }
+  .listImageContainer {
+    width: 100vw; }
   .rightBottomBlock {
     display: block;
     margin-left: -50vw;
     position: relative; }
-    .rightBottomBlock a {
+    .rightBottomBlock img {
       width: 100vw; } }
 
 @media only screen and (max-width: 640px) {
@@ -304,9 +311,6 @@ a.readMore {
   .leftBottomBlock {
     width: auto;
     height: auto; }
-  .readMore {
-    width: auto;
-    height: auto; }
   .rightBottomBlock {
     width: auto;
     height: auto; } }
@@ -316,9 +320,4 @@ a.readMore {
     overflow: auto; }
   .rightBar {
     position: absolute;
-    margin-left: 50%; }
-  .socialMediaIcons {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    margin-left: -180%; } }
+    margin-left: 50%; } }

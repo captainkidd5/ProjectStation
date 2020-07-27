@@ -71,7 +71,10 @@ $rightOffset: 300px;
 
 
 .socialMediaIcons {
-
+    
+    position:absolute;
+    right:-50px;
+    top:200px;
     &:hover {
         filter: invert(50);
         transition: ease-in 1s;
@@ -79,15 +82,15 @@ $rightOffset: 300px;
 }
 
 #instagramButton {
-    display: inline-block;
-    position: absolute;
-    margin: 50%;
+    position: relative;
+
 }
 
 #facebookButton {
     position: absolute;
-    margin-left: 20px;
-    padding-bottom: 50px;
+    width:100%;
+    right: 50px;
+    top:0;
 }
 
 
@@ -314,7 +317,7 @@ a.readMore {
     .titleBlock {
         width: 650px;
 
-        img {
+        logo{
             width: auto;
         }
     }
@@ -369,20 +372,31 @@ a.readMore {
 
     .titleBlock {
         width: 450px;
-        img{
-            width:50%;
-        }
+
     }
 
 
-    .fadedLine {
-        width: $fadedLineWidth - 200px;
-    }
+
 }
 
 @media only screen and (max-width: 768px) {
     .titleBlock {
         width: 350px;
+        img{
+            width:50%;
+        }
+    }
+    .socialMediaIcons{
+        left:0;
+        
+    }
+    #instagramButton {
+        width: 25%;
+        left:40%;
+    }
+    #facebookButton {
+        right: 100px;
+        width: 100%;
     }
     .leftBar {
         display: none;
@@ -398,11 +412,6 @@ a.readMore {
     }
 
 
-    .socialMediaIcons {
-        position: absolute;
-        margin-left: -180%;
-        margin-top: 250px;
-    }
 
     .fadedLine {
         width: $fadedLineWidth - 250px;
@@ -426,15 +435,18 @@ a.readMore {
     .leftSideImage {
         width: 100vw;
     }
-
+    .listImageContainer{
+        width:100vw;
+    }
     .rightBottomBlock {
-        display:block;
+        display: block;
         margin-left: -50vw;
         position: relative;
-
-        a{
-            width:100vw;
+        img {
+            width: 100vw;
         }
+
+
     }
 }
 
@@ -460,10 +472,7 @@ a.readMore {
         height:auto;
     }
 
-    .readMore {
-        width: auto;
-        height: auto;
-    }
+
 
     .rightBottomBlock {
         width: auto;
@@ -482,10 +491,5 @@ a.readMore {
             margin-left: 50%;
         }
 
-        .socialMediaIcons {
-            position: absolute;
-            max-width: 100%;
-            max-height: 100%;
-            margin-left: -180%;
-        }
+
     }
