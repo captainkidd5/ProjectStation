@@ -143,6 +143,8 @@ $fadedLineWidth: 500px;
     /*position: absolute;*/
     display: inline-block;
     margin-left: 0%;
+    width: $fadedLineWidth;
+    vertical-align: top;
 
     img {
         position: absolute;

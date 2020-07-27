@@ -101,7 +101,9 @@
 .rightBottomBlock {
   /*position: absolute;*/
   display: inline-block;
-  margin-left: 0%; }
+  margin-left: 0%;
+  width: 500px;
+  vertical-align: top; }
   .rightBottomBlock img {
     position: absolute;
     margin-left: 0%;
