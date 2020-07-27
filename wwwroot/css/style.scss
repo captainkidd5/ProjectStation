@@ -16,13 +16,15 @@ $rightOffset: 300px;
 }
 
 .titleBlock {
-    position:relative;
-   top:250px;
+    position: relative;
+    top: 200px;
+    margin: 0 auto;
+    width: 1050px;
 
-    margin:0 auto;
-    width:850px;
     ul {
         list-style: none;
+        
+
         li {
 
             a {
@@ -31,6 +33,8 @@ $rightOffset: 300px;
                 position: relative;
                 bottom: 15px;
                 color: $secondayGray;
+ 
+                line-height:55px;
                 &:hover {
                     background-color: $backGroundColor;
                     text-decoration-line: underline;
@@ -40,8 +44,11 @@ $rightOffset: 300px;
             }
         }
     }
+
     img {
-        left:50%;
+        width:25%;
+        height:auto;
+        left: 50%;
         transform: translate(-50%,0);
         position: relative;
     }
@@ -58,7 +65,7 @@ $rightOffset: 300px;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-50%,0);
+
     border: 0px;
 }
 
@@ -86,7 +93,7 @@ $rightOffset: 300px;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 600px;
+    margin-top: 700px;
     position: relative;
     margin-left: 50%;
 
@@ -98,7 +105,7 @@ $fadedLineWidth: 500px;
     margin-left: $leftOffset + 200px;
     display: inline-block;
     width: $fadedLineWidth;
-    list-style:none;
+    list-style: none;
 
     ul {
         position: relative;
@@ -114,12 +121,11 @@ $fadedLineWidth: 500px;
             margin-left: -40px;
             margin-top: 20px;
             border-bottom: 2px solid $secondayGray;
-
             font-size: 18px;
             line-height: 50px;
 
-            a{
-                color:black;
+            a {
+                color: black;
             }
         }
     }
@@ -142,6 +148,29 @@ $fadedLineWidth: 500px;
     font-weight: 600;
     color: black;
 }
+.listImageContainer{
+    position:relative;
+
+}
+.imageOverlay {
+    position: absolute;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 1;
+    width:100%;
+    height:30%; 
+    bottom:50px;    
+}
+
+.textImageOverlay {
+    position:absolute;
+    font-family: $standardFont;
+    font-size: 20px;
+    bottom:50%;
+    left:0;
+    width:100%;
+    text-align:center;
+    text-wrap:normal;
+}
 
 .rightBottomBlock {
     display: inline-block;
@@ -151,15 +180,21 @@ $fadedLineWidth: 500px;
 
     ul {
         list-style: none;
+
+        li {
+            margin-left: -40px;
+
+        }
     }
 
     img {
-        margin-left: 0%;
+        position:relative;
+        left: 0;
         padding-bottom: 50px;
         padding-top: 26px;
         width: 100%;
         list-style: none;
-
+        z-index:-1;
 
         &:hover {
             transition: ease-in-out .15s;
@@ -261,6 +296,13 @@ a.readMore {
 
     .titleBlock {
         width: 650px;
+
+        img {
+            width: auto;
+        }
+    }
+    .leftSideImage{
+        width:80%;
     }
     .leftBottomBlock {
         margin-left: $leftOffset + 250px;
@@ -268,13 +310,19 @@ a.readMore {
 
     .rightBottomBlock {
         margin-left: - 50px;
+        position:absolute;
     }
 
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
-    .leftBottomBlock ul li{
-        border-bottom-width: $fadedLineWidth - 100px;
+
+    .leftBottomBlock ul li {
+        width: $fadedLineWidth - 100px;
+    }
+
+    .rightBottomBlock img{
+        width: 80%;
     }
 }
 
@@ -282,33 +330,29 @@ a.readMore {
     .titleBlock {
         width: 550px;
     }
-
+ 
 
     .leftBottomBlock {
         margin-left: $leftOffset + 300px;
     }
-    .rightBottomBlock {
-        margin-left: -100px;
-    }
+
 
     .fadedLine {
         width: $fadedLineWidth - 150px;
     }
+
+
 }
 
 @media only screen and (max-width: 880px) {
 
     .titleBlock {
         width: 450px;
+        img{
+            width:50%;
+        }
     }
 
-
-    .leftBottomBlock {
-        margin-left: $leftOffset + 350px;
-    }
-    .rightBottomBlock {
-        margin-left: -150px;
-    }
 
     .fadedLine {
         width: $fadedLineWidth - 200px;
@@ -319,22 +363,6 @@ a.readMore {
     .titleBlock {
         width: 350px;
     }
-
-    .rightBottomBlock {
-        margin-left: -200px;
-    }
-    .fadedLine {
-        width: $fadedLineWidth - 250px;
-    }
-}
-
-@media only screen and (max-width: 640px) {
-/*
-    .wrapper{
-        overflow-x:hidden;
-        overflow-y:scroll;
-        height:100%;
-    }*/
     .leftBar {
         display: none;
     }
@@ -348,26 +376,47 @@ a.readMore {
         margin-left: 0px;
     }
 
-    .leftBottomBlock {
-        margin-left: -50vw;
-
-    }
-
-
-    .rightBottomBlock {
-        margin-left: -50vw;
-
-    }
-    .fadedLine {
-        width: 100vw;
-        display:block;
-    }
 
     .socialMediaIcons {
         position: absolute;
         margin-left: -180%;
         margin-top: 250px;
     }
+
+    .fadedLine {
+        width: $fadedLineWidth - 250px;
+    }
+
+    .fadedLine {
+        width: 100vw;
+        display: block;
+    }
+
+    .leftBottomBlock {
+        margin-left: -50vw;
+
+        ul {
+            li {
+                width: 100vw;
+            }
+        }
+    }
+
+    .rightBottomBlock {
+        display:block;
+        margin-left: -50vw;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+/*
+    .wrapper{
+        overflow-x:hidden;
+        overflow-y:scroll;
+        height:100%;
+    }*/
+
 
 
 }
