@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="~/css/style.min.css" />
     <link rel="stylesheet" href="~/css/contact.scss/contact.min.css" />
     <link rel="stylesheet" href="~/css/DropDownMenu.min.css" />
+    <link rel="stylesheet" href="~/css/Universal.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet" />
 </head>
-<body style="background-color:white;">
+<body style="background-color:ghostwhite;">
 
     <div class="dropMenu">
-        <button onclick="myFunction()" class="dropMenuButton">Menu</button>
+        <button onclick="myFunction()" class="dropMenuButton"></button>
 
     </div>
     <div id="buttonEvent1" class="dropMenuContent">
@@ -43,18 +44,14 @@
 
     </div>
 
+
+
     <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    @*<div class="contact-footer-bar">
-        <div class="navbar-inner">
-            <a asp-page="/contact">Contact Us</a>
-        </div>
-
-    </div>*@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

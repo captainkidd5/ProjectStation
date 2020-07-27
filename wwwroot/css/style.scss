@@ -278,35 +278,7 @@ a.readMore {
         opacity: .8;
     }
 }
-/*FOOTER*/
-.contact-footer-bar {
-    display:none;
-    overflow: hidden;
-    background-color: $backGroundColor;
-    position: absolute;
-    bottom: -150%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.contact-footer-bar a {
-    display: none;
-    color: $backGroundColor;
-    background-color: $secondayGray;
-    text-align: center;
-    display: inline-block;
-    border-radius: 40px;
-    padding: 20px 40px;
-    text-decoration: none;
-    font-size: 24px;
-    margin-bottom: 20px;
-
-    &:hover {
-        background-color: $primaryColor;
-    }
-}
 
 
 

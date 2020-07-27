@@ -1,0 +1,23 @@
+﻿/*FOOTER*/
+.footer {
+  position: fixed; }
+
+.contact-footer-bar {
+  background-color: gray;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.contact-footer-bar a {
+  color: white;
+  background-color: gray;
+  text-align: center;
+  display: inline-block;
+  border-radius: 40px;
+  padding: 20px 40px;
+  text-decoration: none;
+  font-size: 24px; }
+  .contact-footer-bar a:hover {
+    background-color: gray; }

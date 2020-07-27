@@ -10,9 +10,10 @@
 
 .dropMenuButton {
   display: block;
-  background-color: darkgray;
+  background-color: ghostwhite;
+  width: 50px;
   padding: 16px 8px;
-  border-radius: 20px;
+  border-radius: 12px;
   position: relative;
   color: lightgray;
   box-shadow: none;
@@ -34,7 +35,7 @@
   overflow-y: hidden;
   transition: height .6s ease-out;
   font-family: Courier New, Courier, monospace;
-  color: white !important;
+  color: white;
   font-size: 2em; }
 
 .show {
@@ -45,7 +46,7 @@
   height: 50px;
   text-align: center;
   display: block;
-  color: white !important;
+  color: white;
   z-index: 2; }
   .dropMenuItem:hover {
     background-color: lightgray;
