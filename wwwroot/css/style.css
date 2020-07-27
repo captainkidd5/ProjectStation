@@ -5,43 +5,38 @@
   display: none; }
 
 .titleBlock {
-  display: block;
   position: relative;
-  margin-top: 250px;
-  margin-left: 50%; }
+  top: 250px;
+  margin: 0 auto;
+  width: 850px; }
   .titleBlock ul {
     list-style: none; }
-    .titleBlock ul li {
-      margin-bottom: 15px;
-      margin-right: 0px; }
-      .titleBlock ul li a {
-        font-family: Courier New, Courier, monospace;
-        font-size: 1.2em;
-        position: relative;
-        bottom: 15px;
-        color: darkGray; }
-        .titleBlock ul li a:hover {
-          background-color: white;
-          text-decoration-line: underline;
-          text-decoration-color: black;
-          transition: ease-in 1s; }
+    .titleBlock ul li a {
+      font-family: Courier New, Courier, monospace;
+      font-size: 1.2em;
+      position: relative;
+      bottom: 15px;
+      color: darkGray; }
+      .titleBlock ul li a:hover {
+        background-color: white;
+        text-decoration-line: underline;
+        text-decoration-color: black;
+        transition: ease-in 1s; }
   .titleBlock img {
-    display: inline-block;
+    left: 50%;
     transform: translate(-50%, 0);
     position: relative; }
 
 .leftBar {
-  display: inline-block;
   position: absolute;
   text-align: left;
-  margin-left: -700px;
+  top: 0;
   transform: translate(-50%, 0); }
 
 .rightBar {
-  display: inline-block;
   position: absolute;
-  padding-top: 10px;
-  margin-left: 300px;
+  top: 0;
+  right: 0;
   transform: translate(-50%, 0);
   border: 0px; }
 
@@ -61,28 +56,33 @@
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-  margin-top: 500px;
-  position: relative; }
+  margin-top: 600px;
+  position: relative;
+  margin-left: 50%; }
 
 .leftBottomBlock {
   position: relative;
   margin-left: -500px;
   display: inline-block;
-  width: 500px; }
+  width: 500px;
+  list-style: none; }
   .leftBottomBlock ul {
     position: relative;
     font-size: 12px;
     display: inline-block;
     height: 25px;
     list-style: none;
-    color: lightgray; }
+    color: lightgray;
+    width: inherit; }
     .leftBottomBlock ul li {
-      position: relative;
+      width: inherit;
       margin-left: -40px;
       margin-top: 20px;
       border-bottom: 2px solid darkGray;
       font-size: 18px;
       line-height: 50px; }
+      .leftBottomBlock ul li a {
+        color: black; }
 
 .fadedLine {
   position: absolute;
@@ -99,17 +99,18 @@
   color: black; }
 
 .rightBottomBlock {
-  /*position: absolute;*/
   display: inline-block;
   margin-left: 0%;
   width: 500px;
   vertical-align: top; }
+  .rightBottomBlock ul {
+    list-style: none; }
   .rightBottomBlock img {
-    position: absolute;
     margin-left: 0%;
     padding-bottom: 50px;
-    padding-top: 15px;
-    width: 50%; }
+    padding-top: 26px;
+    width: 100%;
+    list-style: none; }
     .rightBottomBlock img:hover {
       transition: ease-in-out .15s;
       opacity: .8; }
@@ -135,8 +136,7 @@ a.readMore {
     text-decoration: none; }
 
 .leftSideImage {
-  position: relative;
-  margin-left: 50%;
+  margin-left: 0;
   padding-top: 50px;
   width: 100%; }
   .leftSideImage:hover {
@@ -145,7 +145,7 @@ a.readMore {
 
 .rightSideImage {
   position: absolute;
-  margin-left: 210px;
+  margin-left: 0;
   margin-bottom: 250px;
   width: 500px; }
   .rightSideImage:hover {
@@ -154,6 +154,7 @@ a.readMore {
 
 /*FOOTER*/
 .contact-footer-bar {
+  display: none;
   overflow: hidden;
   background-color: white;
   position: absolute;
@@ -164,6 +165,7 @@ a.readMore {
   justify-content: center; }
 
 .contact-footer-bar a {
+  display: none;
   color: white;
   background-color: darkGray;
   text-align: center;
@@ -178,22 +180,20 @@ a.readMore {
 
 /*RESIZING*/
 @media only screen and (max-width: 1200px) {
-  .leftBar {
-    margin-left: -650px; }
-  .rightBar {
-    margin-left: 200px; }
+  .titleBlock {
+    width: 650px; }
   .leftBottomBlock {
     margin-left: -450px; }
   .rightBottomBlock {
     margin-left: -50px; }
   .fadedLine {
-    width: 400px; } }
+    width: 400px; }
+  .leftBottomBlock ul li {
+    border-bottom-width: 400px; } }
 
 @media only screen and (max-width: 990px) {
-  .leftBar {
-    margin-left: -550px; }
-  .rightBar {
-    margin-left: 150px; }
+  .titleBlock {
+    width: 550px; }
   .leftBottomBlock {
     margin-left: -400px; }
   .rightBottomBlock {
@@ -202,10 +202,8 @@ a.readMore {
     width: 350px; } }
 
 @media only screen and (max-width: 880px) {
-  .leftBar {
-    margin-left: -500px; }
-  .rightBar {
-    margin-left: 100px; }
+  .titleBlock {
+    width: 450px; }
   .leftBottomBlock {
     margin-left: -350px; }
   .rightBottomBlock {
@@ -214,18 +212,20 @@ a.readMore {
     width: 300px; } }
 
 @media only screen and (max-width: 768px) {
-  .leftBar {
-    margin-left: -450px; }
-  .rightBar {
-    margin-left: 30px; }
-  .leftBottomBlock {
-    margin-left: -300px; }
+  .titleBlock {
+    width: 350px; }
   .rightBottomBlock {
     margin-left: -200px; }
   .fadedLine {
     width: 250px; } }
 
 @media only screen and (max-width: 640px) {
+  /*
+    .wrapper{
+        overflow-x:hidden;
+        overflow-y:scroll;
+        height:100%;
+    }*/
   .leftBar {
     display: none; }
   .rightBar li {
@@ -234,10 +234,8 @@ a.readMore {
     position: absolute;
     margin-left: 0px; }
   .leftBottomBlock {
-    margin-left: -50vw;
-    display: block; }
+    margin-left: -50vw; }
   .rightBottomBlock {
-    display: block;
     margin-left: -50vw; }
   .fadedLine {
     width: 100vw;

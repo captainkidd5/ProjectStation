@@ -34,7 +34,7 @@
   overflow-y: hidden;
   transition: height .6s ease-out;
   font-family: Courier New, Courier, monospace;
-  color: #9d9393;
+  color: white !important;
   font-size: 2em; }
 
 .show {
@@ -44,7 +44,9 @@
   width: 100%;
   height: 50px;
   text-align: center;
-  display: block; }
+  display: block;
+  color: white !important;
+  z-index: 2; }
   .dropMenuItem:hover {
     background-color: lightgray;
     transition: 1s; }

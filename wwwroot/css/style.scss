@@ -16,15 +16,15 @@ $rightOffset: 300px;
 }
 
 .titleBlock {
-    display:block;
     position:relative;
-    margin-top: 250px;
-    margin-left: 50%;
+   top:250px;
+
+    margin:0 auto;
+    width:850px;
     ul {
         list-style: none;
         li {
-            margin-bottom: 15px;
-            margin-right: 0px;
+
             a {
                 font-family: $standardFont;
                 font-size: 1.2em;
@@ -41,29 +41,25 @@ $rightOffset: 300px;
         }
     }
     img {
-        display:inline-block;
+        left:50%;
         transform: translate(-50%,0);
         position: relative;
     }
 }
 
 .leftBar {
-    display: inline-block;
     position: absolute;
     text-align: left;
-    margin-left: -700px;
+    top:0;
     transform: translate(-50%,0);
 }
 
 .rightBar {
-    display: inline-block;
     position: absolute;
-    padding-top: 10px;
-    margin-left: $rightOffset;
+    top: 0;
+    right: 0;
     transform: translate(-50%,0);
     border: 0px;
-
-    
 }
 
 
@@ -90,8 +86,9 @@ $rightOffset: 300px;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 500px;
+    margin-top: 600px;
     position: relative;
+    margin-left: 50%;
 
 }
 
@@ -101,6 +98,7 @@ $fadedLineWidth: 500px;
     margin-left: $leftOffset + 200px;
     display: inline-block;
     width: $fadedLineWidth;
+    list-style:none;
 
     ul {
         position: relative;
@@ -109,14 +107,20 @@ $fadedLineWidth: 500px;
         height: 25px;
         list-style: none;
         color: lightgray;
+        width: inherit;
 
         li {
-            position: relative;
+            width: inherit;
             margin-left: -40px;
             margin-top: 20px;
             border-bottom: 2px solid $secondayGray;
+
             font-size: 18px;
             line-height: 50px;
+
+            a{
+                color:black;
+            }
         }
     }
 }
@@ -140,18 +144,22 @@ $fadedLineWidth: 500px;
 }
 
 .rightBottomBlock {
-    /*position: absolute;*/
     display: inline-block;
     margin-left: 0%;
     width: $fadedLineWidth;
     vertical-align: top;
 
+    ul {
+        list-style: none;
+    }
+
     img {
-        position: absolute;
         margin-left: 0%;
         padding-bottom: 50px;
-        padding-top: 15px;
-        width: 50%;
+        padding-top: 26px;
+        width: 100%;
+        list-style: none;
+
 
         &:hover {
             transition: ease-in-out .15s;
@@ -194,8 +202,7 @@ a.readMore {
 }
 
 .leftSideImage {
-    position: relative;
-    margin-left: 50%;
+    margin-left: 0;
     padding-top: 50px;
     width: 100%;
 
@@ -207,7 +214,7 @@ a.readMore {
 
 .rightSideImage {
     position: absolute;
-    margin-left: 210px;
+    margin-left: 0;
     margin-bottom: 250px;
     width: $fadedLineWidth;
 
@@ -218,6 +225,7 @@ a.readMore {
 }
 /*FOOTER*/
 .contact-footer-bar {
+    display:none;
     overflow: hidden;
     background-color: $backGroundColor;
     position: absolute;
@@ -229,6 +237,7 @@ a.readMore {
 }
 
 .contact-footer-bar a {
+    display: none;
     color: $backGroundColor;
     background-color: $secondayGray;
     text-align: center;
@@ -250,14 +259,9 @@ a.readMore {
 
 @media only screen and (max-width: 1200px) {
 
-    .leftBar {
-        margin-left: $leftOffset + 50px;
+    .titleBlock {
+        width: 650px;
     }
-
-    .rightBar {
-        margin-left: $rightOffset - 100px;
-    }
-
     .leftBottomBlock {
         margin-left: $leftOffset + 250px;
     }
@@ -269,17 +273,16 @@ a.readMore {
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
+    .leftBottomBlock ul li{
+        border-bottom-width: $fadedLineWidth - 100px;
+    }
 }
 
 @media only screen and (max-width: 990px) {
-
-    .leftBar {
-        margin-left: $leftOffset + 150px;
+    .titleBlock {
+        width: 550px;
     }
 
-    .rightBar {
-        margin-left: $rightOffset - 150px;
-    }
 
     .leftBottomBlock {
         margin-left: $leftOffset + 300px;
@@ -294,13 +297,11 @@ a.readMore {
 }
 
 @media only screen and (max-width: 880px) {
-    .leftBar {
-        margin-left: $leftOffset + 200px;
+
+    .titleBlock {
+        width: 450px;
     }
 
-    .rightBar {
-        margin-left: $rightOffset - 200px;
-    }
 
     .leftBottomBlock {
         margin-left: $leftOffset + 350px;
@@ -315,19 +316,10 @@ a.readMore {
 }
 
 @media only screen and (max-width: 768px) {
-
-
-    .leftBar {
-        margin-left: $leftOffset + 250px;
+    .titleBlock {
+        width: 350px;
     }
 
-    .rightBar {
-        margin-left: $rightOffset - 270px;
-    }
-
-    .leftBottomBlock {
-        margin-left: $leftOffset + 400px;
-    }
     .rightBottomBlock {
         margin-left: -200px;
     }
@@ -337,6 +329,12 @@ a.readMore {
 }
 
 @media only screen and (max-width: 640px) {
+/*
+    .wrapper{
+        overflow-x:hidden;
+        overflow-y:scroll;
+        height:100%;
+    }*/
     .leftBar {
         display: none;
     }
@@ -352,13 +350,11 @@ a.readMore {
 
     .leftBottomBlock {
         margin-left: -50vw;
-        display: block;
 
     }
 
 
     .rightBottomBlock {
-        display: block;
         margin-left: -50vw;
 
     }

@@ -47,7 +47,7 @@
     overflow-y: hidden;
     transition: height .6s ease-out;
     font-family: Courier New, Courier, monospace;
-    color: #9d9393;
+    color: white !important;
     font-size: 2em;
 }
 
@@ -60,7 +60,8 @@
     height: 50px;
     text-align: center;
     display: block;
-
+    color: white !important;
+    z-index:2;
     &:hover {
         background-color: lightgray;
         transition: 1s;
