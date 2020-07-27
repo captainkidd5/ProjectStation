@@ -152,6 +152,23 @@ $fadedLineWidth: 500px;
     position:relative;
 
 }
+
+.imageHashTag {
+    position: absolute;
+    font-family: $standardFont;
+    font-size: 20px;
+    width: 100%;
+    left: 0;
+    top: 20px;
+    color: lightgray;
+
+    &:hover {
+        color:black;
+        text-decoration-line: underline;
+        text-decoration-color: black;
+        transition: ease-in 1s;
+    }
+}
 .imageOverlay {
     position: absolute;
     background-color: rgba(255, 255, 255, .5);
@@ -191,7 +208,7 @@ $fadedLineWidth: 500px;
         position:relative;
         left: 0;
         padding-bottom: 50px;
-        padding-top: 26px;
+        padding-top: 50px;
         width: 100%;
         list-style: none;
         z-index:-1;
@@ -206,7 +223,7 @@ $fadedLineWidth: 500px;
 
 
 .leftBottomBlock a:link {
-    font-size: 18px;
+    font-size: 14px;
     color: black !important;
 }
 
@@ -335,6 +352,10 @@ a.readMore {
     .leftBottomBlock {
         margin-left: $leftOffset + 300px;
     }
+    .rightBottomBlock {
+        margin-left: - 100px;
+    }
+
 
 
     .fadedLine {
@@ -402,10 +423,18 @@ a.readMore {
         }
     }
 
+    .leftSideImage {
+        width: 100vw;
+    }
+
     .rightBottomBlock {
         display:block;
         margin-left: -50vw;
         position: relative;
+
+        a{
+            width:100vw;
+        }
     }
 }
 
@@ -420,23 +449,43 @@ a.readMore {
 
 
 }
+@media only screen and (max-width: 382px) {
 
-@media only screen and (max-width: 233px) {
-
-
-    .wrapper{
-        overflow:auto;
+    .titleBlock{
+        height:auto;
+        width:auto;
+    }
+    .leftBottomBlock{
+        width:auto;
+        height:auto;
     }
 
-    .rightBar {
-        position: absolute;
-        margin-left: 50%;
+    .readMore {
+        width: auto;
+        height: auto;
     }
 
-    .socialMediaIcons {
-        position: absolute;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: -180%;
+    .rightBottomBlock {
+        width: auto;
+        height: auto;
     }
 }
+    @media only screen and (max-width: 233px) {
+
+
+        .wrapper {
+            overflow: auto;
+        }
+
+        .rightBar {
+            position: absolute;
+            margin-left: 50%;
+        }
+
+        .socialMediaIcons {
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            margin-left: -180%;
+        }
+    }

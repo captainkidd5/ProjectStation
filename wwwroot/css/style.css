@@ -103,6 +103,20 @@
 .listImageContainer {
   position: relative; }
 
+.imageHashTag {
+  position: absolute;
+  font-family: Courier New, Courier, monospace;
+  font-size: 20px;
+  width: 100%;
+  left: 0;
+  top: 20px;
+  color: lightgray; }
+  .imageHashTag:hover {
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    transition: ease-in 1s; }
+
 .imageOverlay {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.5);
@@ -134,7 +148,7 @@
     position: relative;
     left: 0;
     padding-bottom: 50px;
-    padding-top: 26px;
+    padding-top: 50px;
     width: 100%;
     list-style: none;
     z-index: -1; }
@@ -143,7 +157,7 @@
       opacity: .8; }
 
 .leftBottomBlock a:link {
-  font-size: 18px;
+  font-size: 14px;
   color: black !important; }
 
 a.readMore {
@@ -230,6 +244,8 @@ a.readMore {
     width: 550px; }
   .leftBottomBlock {
     margin-left: -400px; }
+  .rightBottomBlock {
+    margin-left: -100px; }
   .fadedLine {
     width: 350px; } }
 
@@ -264,10 +280,14 @@ a.readMore {
     margin-left: -50vw; }
     .leftBottomBlock ul li {
       width: 100vw; }
+  .leftSideImage {
+    width: 100vw; }
   .rightBottomBlock {
     display: block;
     margin-left: -50vw;
-    position: relative; } }
+    position: relative; }
+    .rightBottomBlock a {
+      width: 100vw; } }
 
 @media only screen and (max-width: 640px) {
   /*
@@ -276,6 +296,20 @@ a.readMore {
         overflow-y:scroll;
         height:100%;
     }*/ }
+
+@media only screen and (max-width: 382px) {
+  .titleBlock {
+    height: auto;
+    width: auto; }
+  .leftBottomBlock {
+    width: auto;
+    height: auto; }
+  .readMore {
+    width: auto;
+    height: auto; }
+  .rightBottomBlock {
+    width: auto;
+    height: auto; } }
 
 @media only screen and (max-width: 233px) {
   .wrapper {
