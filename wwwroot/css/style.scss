@@ -101,7 +101,6 @@ $fadedLineWidth: 500px;
     margin-left: $leftOffset + 200px;
     display: inline-block;
     width: $fadedLineWidth;
-    height: 300px;
 
     ul {
         position: relative;
@@ -141,16 +140,18 @@ $fadedLineWidth: 500px;
 }
 
 .rightBottomBlock {
-    position: absolute;
+    /*position: absolute;*/
     display: inline-block;
     margin-left: 0%;
+    width: $fadedLineWidth;
+    vertical-align: top;
 
-     img {
+    img {
         position: absolute;
-        margin-left:0%;
+        margin-left: 0%;
         padding-bottom: 50px;
-        padding-top:15px;
-        width:50%;
+        padding-top: 15px;
+        width: 50%;
 
         &:hover {
             transition: ease-in-out .15s;
