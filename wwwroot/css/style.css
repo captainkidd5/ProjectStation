@@ -4,29 +4,25 @@
 .titleBlock {
   margin-top: 250px;
   margin-left: 50%; }
-
-.titleBlock img {
-  transform: translate(-50%, 0);
-  position: absolute; }
-
-.titleBlock ul {
-  list-style: none; }
-
-.titleBlock li {
-  margin-bottom: 15px;
-  margin-right: 0px; }
-
-.titleBlock li a {
-  font-family: Courier New, Courier, monospace;
-  font-size: 1.2em;
-  position: relative;
-  bottom: 15px;
-  color: darkGray; }
-  .titleBlock li a:hover {
-    background-color: white;
-    text-decoration-line: underline;
-    text-decoration-color: black;
-    transition: ease-in 1s; }
+  .titleBlock ul {
+    list-style: none; }
+    .titleBlock ul li {
+      margin-bottom: 15px;
+      margin-right: 0px; }
+      .titleBlock ul li a {
+        font-family: Courier New, Courier, monospace;
+        font-size: 1.2em;
+        position: relative;
+        bottom: 15px;
+        color: darkGray; }
+        .titleBlock ul li a:hover {
+          background-color: white;
+          text-decoration-line: underline;
+          text-decoration-color: black;
+          transition: ease-in 1s; }
+  .titleBlock img {
+    transform: translate(-50%, 0);
+    position: absolute; }
 
 .leftBar {
   position: absolute;
@@ -62,7 +58,25 @@
 
 .leftBottomBlock {
   position: absolute;
-  margin-left: -500px; }
+  margin-left: -500px;
+  display: inline-block; }
+  .leftBottomBlock ul {
+    font-size: 12px;
+    display: inline-block;
+    height: 25px;
+    list-style: none;
+    color: lightgray; }
+    .leftBottomBlock ul li {
+      margin-left: -40px;
+      margin-top: 20px;
+      border-bottom: 2px solid darkGray;
+      font-size: 18px;
+      line-height: 50px; }
+  .leftBottomBlock img {
+    position: absolute;
+    margin-left: 50%;
+    margin-bottom: 250px;
+    padding-bottom: 25px; }
 
 .fadedLine {
   height: 5px;
@@ -74,50 +88,62 @@
 .mediumHeader {
   font-family: Courier New, Courier, monospace;
   font-size: 2.5em;
-  font-weight: 700;
-  color: darkGray; }
+  font-weight: 600;
+  color: black; }
 
 .rightBottomBlock {
   position: absolute;
-  margin-left: 50%; }
+  display: block;
+  margin-left: 100%; }
+  .rightBottomBlock ul {
+    font-size: 12px;
+    display: block;
+    height: 25px;
+    list-style: none; }
+    .rightBottomBlock ul li {
+      position: absolute;
+      margin-left: 210px;
+      margin-bottom: 250px;
+      padding-bottom: 25px; }
+      .rightBottomBlock ul li:hover {
+        transition: ease-in-out .15s;
+        opacity: .8; }
 
-.leftBottomBlock ul {
-  font-size: 12px;
-  display: inline-block;
-  height: 25px;
-  font-weight: 800;
-  color: darkGray;
-  position: absolute;
-  background-color: transparent;
-  list-style: none; }
-  .leftBottomBlock ul:after {
-    content: "";
-    border-bottom: 2px solid darkGray;
-    position: absolute;
-    width: inherit;
-    bottom: -25px;
-    left: 0px; }
+.leftBottomBlock a:link {
+  font-size: 18px;
+  color: black !important; }
 
 a.readMore {
   display: block;
   padding: 8px 5px;
   text-align: center;
-  border-color: darkGray;
-  border-width: 2px;
+  border-color: darkGray !important;
+  border-width: 1px;
   border: solid;
-  margin-left: 250px;
+  margin-left: inherit;
   margin-top: 50px;
+  color: gray !important;
   width: 200px; }
   a.readMore:hover {
     background-color: darkGray;
-    color: black;
+    color: black !important;
     text-decoration: none; }
 
-.vrImage {
+.leftSideImage {
+  position: absolute;
+  margin-left: 250px;
   padding-top: 50px;
-  width: 500px;
-  height: 300px; }
-  .vrImage:hover {
+  width: 100%; }
+  .leftSideImage:hover {
+    transition: ease-in-out .15s;
+    opacity: .8; }
+
+.rightSideImage {
+  position: absolute;
+  margin-left: 210px;
+  margin-bottom: 250px;
+  width: 500px; }
+  .rightSideImage:hover {
     transition: ease-in-out .15s;
     opacity: .8; }
 
@@ -195,19 +221,24 @@ a.readMore {
     position: absolute;
     margin-left: 0px; }
   .leftBottomBlock {
+    margin-left: -50vw;
+    display: block; }
+  .rightBottomBlock {
+    display: block;
     margin-left: -50vw; }
   .fadedLine {
-    width: 100vw; }
+    width: 100vw;
+    display: block; }
   .bottomHalf {
     position: absolute;
     margin-left: 0%; }
-  .rightBottomBlock {
-    margin-top: 950px;
-    margin-left: -50vw; }
   .socialMediaIcons {
     position: absolute;
     margin-left: -180%;
-    margin-top: 250px; } }
+    margin-top: 250px; }
+  .vrImage {
+    transform: translate(-50%, 0);
+    margin-left: 0vw; } }
 
 @media only screen and (max-width: 233px) {
   .titleBlock img {

@@ -4,78 +4,81 @@ $primaryColor: lightGray;
 $secondayGray: darkGray;
 $standardFont: Courier New, Courier, monospace;
 
-$leftOffset:-450px;
-$rightOffset:500px;
+$leftOffset: -450px;
+$rightOffset: 500px;
+
 .wrapper {
-   
 }
 
-.hide {display: none;}
-
-.titleBlock {margin-top: 250px; margin-left:50%;}
-
-.titleBlock img {
-    transform:translate(-50%,0);
-    position:absolute;
+.hide {
+    display: none;
 }
 
-.titleBlock ul {list-style: none;}
-
-.titleBlock li{
-
-    margin-bottom: 15px;
-    margin-right:0px;
-
-}
-.titleBlock li a {
-    font-family: $standardFont;
-    font-size: 1.2em;
-    position: relative;
-    bottom: 15px;
-    color: $secondayGray;
-
-    &:hover {
-        background-color: $backGroundColor;
-        text-decoration-line: underline;
-        text-decoration-color: black;
-        transition: ease-in 1s;
+.titleBlock {
+    margin-top: 250px;
+    margin-left: 50%;
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 15px;
+            margin-right: 0px;
+            a {
+                font-family: $standardFont;
+                font-size: 1.2em;
+                position: relative;
+                bottom: 15px;
+                color: $secondayGray;
+                &:hover {
+                    background-color: $backGroundColor;
+                    text-decoration-line: underline;
+                    text-decoration-color: black;
+                    transition: ease-in 1s;
+                }
+            }
+        }
+    }
+    img {
+        transform: translate(-50%,0);
+        position: absolute;
     }
 }
 
 .leftBar {
     position: absolute;
     text-align: left;
-    margin-left:$leftOffset;
+    margin-left: $leftOffset;
     transform: translate(-50%,0);
-
 }
-
 
 .rightBar {
     position: absolute;
-    padding-top:10px;
-    margin-left:$rightOffset;
+    padding-top: 10px;
+    margin-left: $rightOffset;
     transform: translate(-50%,0);
-    border:0px;
+    border: 0px;
 }
 
 
 .socialMediaIcons {
-    width:50px;
-    height:auto;
+    width: 50px;
+    height: auto;
     transform: translate(-50%,0);
-    position:absolute;
-    display:inline-flex;
-    padding-left:50px;
+    position: absolute;
+    display: inline-flex;
+    padding-left: 50px;
+
     &:hover {
         filter: invert(50);
         transition: ease-in 1s;
     }
 }
 
-#instagramButton {}
+#instagramButton {
+}
 
-#facebookButton {padding-left:80px;}
+#facebookButton {
+    padding-left: 80px;
+}
 
 
 /*BOTTOM HALF OF PAGE*/
@@ -87,8 +90,31 @@ $rightOffset:500px;
 
 .leftBottomBlock {
     position: absolute;
-    margin-left:$leftOffset - 50px;
+    margin-left: $leftOffset - 50px;
+    display: inline-block;
 
+    ul {
+        font-size: 12px;
+        display: inline-block;
+        height: 25px;
+        list-style: none;
+        color: lightgray;
+
+        li {
+            margin-left: -40px;
+            margin-top: 20px;
+            border-bottom: 2px solid $secondayGray;
+            font-size: 18px;
+            line-height: 50px;
+        }
+    }
+
+    img {
+        position: absolute;
+        margin-left: 50%;
+        margin-bottom: 250px;
+        padding-bottom: 25px;
+    }
 }
 
 $fadedLineWidth: 500px;
@@ -101,51 +127,40 @@ $fadedLineWidth: 500px;
     padding-top: 5px;
 }
 
-
 .mediumHeader {
     font-family: $standardFont;
     font-size: 2.5em;
-    font-weight: 700;
-    color: $secondayGray;
+    font-weight: 600;
+    color: black;
 }
-
-
-
 
 .rightBottomBlock {
     position: absolute;
-    margin-left:50%;
-
-}
-
-.leftBottomBlock ul {
-    font-size: 12px;
-    display: inline-block;
-    height: 25px;
-    font-weight: 800;
-    color: $secondayGray;
-    position: absolute;
-    background-color: transparent;
-    list-style:none;
-
-
-    &:after {
-        content: "";
-        border-bottom: 2px solid $secondayGray;
-        position: absolute;
-        width: inherit;
-        bottom: -25px;
-        left: 0px;
+    display:block;
+   margin-left:100%;
+    ul {
+        font-size: 12px;
+        display: block;
+        height: 25px;
+        list-style: none;
+        li {
+            position: absolute;
+            margin-left: 210px;
+            margin-bottom: 250px;
+            padding-bottom: 25px;
+            &:hover {
+                transition: ease-in-out .15s;
+                opacity: .8;
+            }
+        }
     }
 }
 
 
-
-
-.rightBottomBlock ul{
-
+.leftBottomBlock a:link {
+    font-size: 18px;
+    color: black !important;
 }
-
 
 
 @mixin standardFont {
@@ -154,35 +169,46 @@ $fadedLineWidth: 500px;
 }
 
 
-
-
-
 a.readMore {
     display: block;
     padding: 8px 5px;
     text-align: center;
-    border-color: $secondayGray;
-    border-width: 2px;
+    border-color: $secondayGray !important;
+    border-width: 1px;
     border: solid;
-    margin-left: 250px;
+    margin-left: inherit;
     margin-top: 50px;
+    color: gray !important;
     width: 200px;
 
     &:hover {
         background-color: $secondayGray;
-        color: black;
+        color: black !important;
         text-decoration: none;
     }
 }
 
-.vrImage {
-    padding-top:50px;
-    width: $fadedLineWidth;
-    height: 300px;
+.leftSideImage {
+    position: absolute;
+    margin-left: 250px;
+    padding-top: 50px;
+    width: 100%;
 
-    &:hover{
-        transition:ease-in-out .15s;
-        opacity:.8;
+    &:hover {
+        transition: ease-in-out .15s;
+        opacity: .8;
+    }
+}
+
+.rightSideImage {
+    position: absolute;
+    margin-left: 210px;
+    margin-bottom: 250px;
+    width: $fadedLineWidth;
+
+    &:hover {
+        transition: ease-in-out .15s;
+        opacity: .8;
     }
 }
 /*FOOTER*/
@@ -219,11 +245,12 @@ a.readMore {
 
 @media only screen and (max-width: 1200px) {
 
-    .leftBar{
-        margin-left:$leftOffset + 100px;
+    .leftBar {
+        margin-left: $leftOffset + 100px;
     }
-    .rightBar{
-        margin-left:$rightOffset - 100px;
+
+    .rightBar {
+        margin-left: $rightOffset - 100px;
     }
 
     .leftBottomBlock {
@@ -233,7 +260,6 @@ a.readMore {
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
-
 }
 
 @media only screen and (max-width: 990px) {
@@ -253,8 +279,6 @@ a.readMore {
     .fadedLine {
         width: $fadedLineWidth - 150px;
     }
-
-
 }
 
 @media only screen and (max-width: 880px) {
@@ -265,6 +289,7 @@ a.readMore {
     .rightBar {
         margin-left: $rightOffset - 200px;
     }
+
     .leftBottomBlock {
         margin-left: $leftOffset + 150px;
     }
@@ -284,6 +309,7 @@ a.readMore {
     .rightBar {
         margin-left: $rightOffset - 250px;
     }
+
     .leftBottomBlock {
         margin-left: $leftOffset + 200px;
     }
@@ -308,12 +334,20 @@ a.readMore {
     }
 
     .leftBottomBlock {
-        margin-left:-50vw;
+        margin-left: -50vw;
+        display:block;
     }
 
-    .fadedLine {
-        width:100vw;
+
+    .rightBottomBlock {
+        display:block;
+        margin-left: -50vw;
     }
+    .fadedLine {
+        width: 100vw;
+        display:block;
+    }
+
     .bottomHalf {
         position: absolute;
         margin-left: 0%;
@@ -321,31 +355,31 @@ a.readMore {
 
 
 
-    .rightBottomBlock {
-        margin-top: 950px;
-        margin-left: -50vw;
-    }
-
     .socialMediaIcons {
         position: absolute;
         margin-left: -180%;
         margin-top: 250px;
     }
+
+    .vrImage {
+        transform: translate(-50%,0);
+        margin-left: 0vw;
+    }
 }
 
 @media only screen and (max-width: 233px) {
-    
-   .titleBlock img
-   {
-      margin-left:0vw ;
-   }
-   .rightBar{
-       position:absolute;
-       margin-left:50%;
-   }
+
+    .titleBlock img {
+        margin-left: 0vw;
+    }
+
+    .rightBar {
+        position: absolute;
+        margin-left: 50%;
+    }
 
     .socialMediaIcons {
-        position:absolute;
+        position: absolute;
         max-width: 100%;
         max-height: 100%;
         margin-left: -180%;
