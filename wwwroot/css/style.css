@@ -2,6 +2,8 @@
   display: none; }
 
 .titleBlock {
+  display: block;
+  position: relative;
   margin-top: 250px;
   margin-left: 50%; }
   .titleBlock ul {
@@ -21,19 +23,22 @@
           text-decoration-color: black;
           transition: ease-in 1s; }
   .titleBlock img {
+    display: inline-block;
     transform: translate(-50%, 0);
-    position: absolute; }
+    position: relative; }
 
 .leftBar {
+  display: inline-block;
   position: absolute;
   text-align: left;
-  margin-left: -450px;
+  margin-left: -700px;
   transform: translate(-50%, 0); }
 
 .rightBar {
+  display: inline-block;
   position: absolute;
   padding-top: 10px;
-  margin-left: 500px;
+  margin-left: 300px;
   transform: translate(-50%, 0);
   border: 0px; }
 
@@ -53,13 +58,14 @@
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-  margin-top: 550px;
-  position: absolute; }
+  margin-top: 50%;
+  position: relative; }
 
 .leftBottomBlock {
-  position: absolute;
-  margin-left: -500px;
-  display: inline-block; }
+  position: relative;
+  margin-left: -700px;
+  display: inline-block;
+  width: 500px; }
   .leftBottomBlock ul {
     font-size: 12px;
     display: inline-block;
@@ -72,13 +78,9 @@
       border-bottom: 2px solid darkGray;
       font-size: 18px;
       line-height: 50px; }
-  .leftBottomBlock img {
-    position: absolute;
-    margin-left: 50%;
-    margin-bottom: 250px;
-    padding-bottom: 25px; }
 
 .fadedLine {
+  position: absolute;
   height: 5px;
   background-image: linear-gradient(0.9turn, white, red);
   background-color: red;
@@ -92,22 +94,18 @@
   color: black; }
 
 .rightBottomBlock {
-  position: absolute;
-  display: block;
-  margin-left: 100%; }
-  .rightBottomBlock ul {
-    font-size: 12px;
-    display: block;
-    height: 25px;
-    list-style: none; }
-    .rightBottomBlock ul li {
-      position: absolute;
-      margin-left: 210px;
-      margin-bottom: 250px;
-      padding-bottom: 25px; }
-      .rightBottomBlock ul li:hover {
-        transition: ease-in-out .15s;
-        opacity: .8; }
+  position: relative;
+  display: inline-block;
+  margin-left: 0%; }
+  .rightBottomBlock img {
+    position: absolute;
+    margin-left: 0%;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    width: 50%; }
+    .rightBottomBlock img:hover {
+      transition: ease-in-out .15s;
+      opacity: .8; }
 
 .leftBottomBlock a:link {
   font-size: 18px;
@@ -130,8 +128,8 @@ a.readMore {
     text-decoration: none; }
 
 .leftSideImage {
-  position: absolute;
-  margin-left: 250px;
+  position: relative;
+  margin-left: 50%;
   padding-top: 50px;
   width: 100%; }
   .leftSideImage:hover {
@@ -174,41 +172,41 @@ a.readMore {
 /*RESIZING*/
 @media only screen and (max-width: 1200px) {
   .leftBar {
-    margin-left: -350px; }
+    margin-left: -650px; }
   .rightBar {
-    margin-left: 400px; }
+    margin-left: 200px; }
   .leftBottomBlock {
-    margin-left: -400px; }
+    margin-left: -600px; }
   .fadedLine {
     width: 400px; } }
 
 @media only screen and (max-width: 990px) {
   .leftBar {
-    margin-left: -300px; }
+    margin-left: -550px; }
   .rightBar {
-    margin-left: 350px; }
+    margin-left: 150px; }
   .leftBottomBlock {
-    margin-left: -350px; }
+    margin-left: -600px; }
   .fadedLine {
     width: 350px; } }
 
 @media only screen and (max-width: 880px) {
   .leftBar {
-    margin-left: -250px; }
+    margin-left: -500px; }
   .rightBar {
-    margin-left: 300px; }
+    margin-left: 100px; }
   .leftBottomBlock {
-    margin-left: -300px; }
+    margin-left: -550px; }
   .fadedLine {
     width: 300px; } }
 
 @media only screen and (max-width: 768px) {
   .leftBar {
-    margin-left: -200px; }
+    margin-left: -450px; }
   .rightBar {
-    margin-left: 250px; }
+    margin-left: 50px; }
   .leftBottomBlock {
-    margin-left: -250px; }
+    margin-left: -500px; }
   .fadedLine {
     width: 250px; } }
 

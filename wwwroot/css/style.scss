@@ -4,8 +4,8 @@ $primaryColor: lightGray;
 $secondayGray: darkGray;
 $standardFont: Courier New, Courier, monospace;
 
-$leftOffset: -450px;
-$rightOffset: 500px;
+$leftOffset: -700px;
+$rightOffset: 300px;
 
 .wrapper {
 }
@@ -15,6 +15,8 @@ $rightOffset: 500px;
 }
 
 .titleBlock {
+    display:block;
+    position:relative;
     margin-top: 250px;
     margin-left: 50%;
     ul {
@@ -38,19 +40,22 @@ $rightOffset: 500px;
         }
     }
     img {
+        display:inline-block;
         transform: translate(-50%,0);
-        position: absolute;
+        position: relative;
     }
 }
 
 .leftBar {
+    display: inline-block;
     position: absolute;
     text-align: left;
-    margin-left: $leftOffset;
+    margin-left: -700px;
     transform: translate(-50%,0);
 }
 
 .rightBar {
+    display: inline-block;
     position: absolute;
     padding-top: 10px;
     margin-left: $rightOffset;
@@ -83,15 +88,16 @@ $rightOffset: 500px;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 550px;
-    position: absolute;
+    margin-top: 50%;
+    position: relative;
 }
 
-
+$fadedLineWidth: 500px;
 .leftBottomBlock {
-    position: absolute;
-    margin-left: $leftOffset - 50px;
+    position: relative;
+    margin-left: $leftOffset;
     display: inline-block;
+    width:$fadedLineWidth;
 
     ul {
         font-size: 12px;
@@ -108,18 +114,12 @@ $rightOffset: 500px;
             line-height: 50px;
         }
     }
-
-    img {
-        position: absolute;
-        margin-left: 50%;
-        margin-bottom: 250px;
-        padding-bottom: 25px;
-    }
 }
 
-$fadedLineWidth: 500px;
+
 
 .fadedLine {
+    position:absolute;
     height: 5px;
     background-image: linear-gradient(.9turn,$backGroundColor,red );
     background-color: red;
@@ -135,26 +135,24 @@ $fadedLineWidth: 500px;
 }
 
 .rightBottomBlock {
-    position: absolute;
-    display:block;
-   margin-left:100%;
-    ul {
-        font-size: 12px;
-        display: block;
-        height: 25px;
-        list-style: none;
-        li {
-            position: absolute;
-            margin-left: 210px;
-            margin-bottom: 250px;
-            padding-bottom: 25px;
-            &:hover {
-                transition: ease-in-out .15s;
-                opacity: .8;
-            }
+    position: relative;
+    display: inline-block;
+    margin-left: 0%;
+
+     img {
+        position: absolute;
+        margin-left:0%;
+        padding-bottom: 50px;
+        padding-top:15px;
+        width:50%;
+
+        &:hover {
+            transition: ease-in-out .15s;
+            opacity: .8;
         }
     }
 }
+
 
 
 .leftBottomBlock a:link {
@@ -189,8 +187,8 @@ a.readMore {
 }
 
 .leftSideImage {
-    position: absolute;
-    margin-left: 250px;
+    position: relative;
+    margin-left: 50%;
     padding-top: 50px;
     width: 100%;
 
@@ -246,7 +244,7 @@ a.readMore {
 @media only screen and (max-width: 1200px) {
 
     .leftBar {
-        margin-left: $leftOffset + 100px;
+        margin-left: $leftOffset + 50px;
     }
 
     .rightBar {
@@ -254,7 +252,7 @@ a.readMore {
     }
 
     .leftBottomBlock {
-        margin-left: $leftOffset + 50px;
+        margin-left: $leftOffset + 100px;
     }
 
     .fadedLine {
@@ -269,7 +267,7 @@ a.readMore {
     }
 
     .rightBar {
-        margin-left: 350px;
+        margin-left: $rightOffset - 150px;
     }
 
     .leftBottomBlock {
