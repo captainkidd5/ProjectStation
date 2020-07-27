@@ -1,4 +1,7 @@
-﻿.hide {
+﻿.wrapper {
+  overflow-x: hidden; }
+
+.hide {
   display: none; }
 
 .titleBlock {
@@ -42,37 +45,40 @@
   transform: translate(-50%, 0);
   border: 0px; }
 
-.socialMediaIcons {
-  width: 50px;
-  height: auto;
-  transform: translate(-50%, 0);
+.socialMediaIcons:hover {
+  filter: invert(50);
+  transition: ease-in 1s; }
+
+#instagramButton {
+  display: inline-block;
   position: absolute;
-  display: inline-flex;
-  padding-left: 50px; }
-  .socialMediaIcons:hover {
-    filter: invert(50);
-    transition: ease-in 1s; }
+  margin: 50%; }
 
 #facebookButton {
-  padding-left: 80px; }
+  position: absolute;
+  margin-left: 20px;
+  padding-bottom: 50px; }
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-  margin-top: 50%;
+  margin-top: 500px;
   position: relative; }
 
 .leftBottomBlock {
   position: relative;
-  margin-left: -700px;
+  margin-left: -500px;
   display: inline-block;
-  width: 500px; }
+  width: 500px;
+  height: 300px; }
   .leftBottomBlock ul {
+    position: relative;
     font-size: 12px;
     display: inline-block;
     height: 25px;
     list-style: none;
     color: lightgray; }
     .leftBottomBlock ul li {
+      position: relative;
       margin-left: -40px;
       margin-top: 20px;
       border-bottom: 2px solid darkGray;
@@ -94,7 +100,7 @@
   color: black; }
 
 .rightBottomBlock {
-  position: relative;
+  position: absolute;
   display: inline-block;
   margin-left: 0%; }
   .rightBottomBlock img {
@@ -176,7 +182,9 @@ a.readMore {
   .rightBar {
     margin-left: 200px; }
   .leftBottomBlock {
-    margin-left: -600px; }
+    margin-left: -450px; }
+  .rightBottomBlock {
+    margin-left: -50px; }
   .fadedLine {
     width: 400px; } }
 
@@ -186,7 +194,9 @@ a.readMore {
   .rightBar {
     margin-left: 150px; }
   .leftBottomBlock {
-    margin-left: -600px; }
+    margin-left: -400px; }
+  .rightBottomBlock {
+    margin-left: -100px; }
   .fadedLine {
     width: 350px; } }
 
@@ -196,7 +206,9 @@ a.readMore {
   .rightBar {
     margin-left: 100px; }
   .leftBottomBlock {
-    margin-left: -550px; }
+    margin-left: -350px; }
+  .rightBottomBlock {
+    margin-left: -150px; }
   .fadedLine {
     width: 300px; } }
 
@@ -204,9 +216,11 @@ a.readMore {
   .leftBar {
     margin-left: -450px; }
   .rightBar {
-    margin-left: 50px; }
+    margin-left: 30px; }
   .leftBottomBlock {
-    margin-left: -500px; }
+    margin-left: -300px; }
+  .rightBottomBlock {
+    margin-left: -200px; }
   .fadedLine {
     width: 250px; } }
 
@@ -227,20 +241,14 @@ a.readMore {
   .fadedLine {
     width: 100vw;
     display: block; }
-  .bottomHalf {
-    position: absolute;
-    margin-left: 0%; }
   .socialMediaIcons {
     position: absolute;
     margin-left: -180%;
-    margin-top: 250px; }
-  .vrImage {
-    transform: translate(-50%, 0);
-    margin-left: 0vw; } }
+    margin-top: 250px; } }
 
 @media only screen and (max-width: 233px) {
-  .titleBlock img {
-    margin-left: 0vw; }
+  .wrapper {
+    overflow: auto; }
   .rightBar {
     position: absolute;
     margin-left: 50%; }

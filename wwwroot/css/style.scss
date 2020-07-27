@@ -8,6 +8,7 @@ $leftOffset: -700px;
 $rightOffset: 300px;
 
 .wrapper {
+    overflow-x:hidden;
 }
 
 .hide {
@@ -61,16 +62,12 @@ $rightOffset: 300px;
     margin-left: $rightOffset;
     transform: translate(-50%,0);
     border: 0px;
+
+    
 }
 
 
 .socialMediaIcons {
-    width: 50px;
-    height: auto;
-    transform: translate(-50%,0);
-    position: absolute;
-    display: inline-flex;
-    padding-left: 50px;
 
     &:hover {
         filter: invert(50);
@@ -79,27 +76,35 @@ $rightOffset: 300px;
 }
 
 #instagramButton {
+    display: inline-block;
+    position: absolute;
+    margin: 50%;
 }
 
 #facebookButton {
-    padding-left: 80px;
+    position: absolute;
+    margin-left: 20px;
+    padding-bottom: 50px;
 }
 
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-    margin-top: 50%;
+    margin-top: 500px;
     position: relative;
+
 }
 
 $fadedLineWidth: 500px;
 .leftBottomBlock {
     position: relative;
-    margin-left: $leftOffset;
+    margin-left: $leftOffset + 200px;
     display: inline-block;
-    width:$fadedLineWidth;
+    width: $fadedLineWidth;
+    height: 300px;
 
     ul {
+        position: relative;
         font-size: 12px;
         display: inline-block;
         height: 25px;
@@ -107,6 +112,7 @@ $fadedLineWidth: 500px;
         color: lightgray;
 
         li {
+            position: relative;
             margin-left: -40px;
             margin-top: 20px;
             border-bottom: 2px solid $secondayGray;
@@ -135,7 +141,7 @@ $fadedLineWidth: 500px;
 }
 
 .rightBottomBlock {
-    position: relative;
+    position: absolute;
     display: inline-block;
     margin-left: 0%;
 
@@ -252,7 +258,11 @@ a.readMore {
     }
 
     .leftBottomBlock {
-        margin-left: $leftOffset + 100px;
+        margin-left: $leftOffset + 250px;
+    }
+
+    .rightBottomBlock {
+        margin-left: - 50px;
     }
 
     .fadedLine {
@@ -271,7 +281,10 @@ a.readMore {
     }
 
     .leftBottomBlock {
-        margin-left: $leftOffset + 100px;
+        margin-left: $leftOffset + 300px;
+    }
+    .rightBottomBlock {
+        margin-left: -100px;
     }
 
     .fadedLine {
@@ -289,7 +302,10 @@ a.readMore {
     }
 
     .leftBottomBlock {
-        margin-left: $leftOffset + 150px;
+        margin-left: $leftOffset + 350px;
+    }
+    .rightBottomBlock {
+        margin-left: -150px;
     }
 
     .fadedLine {
@@ -305,13 +321,15 @@ a.readMore {
     }
 
     .rightBar {
-        margin-left: $rightOffset - 250px;
+        margin-left: $rightOffset - 270px;
     }
 
     .leftBottomBlock {
-        margin-left: $leftOffset + 200px;
+        margin-left: $leftOffset + 400px;
     }
-
+    .rightBottomBlock {
+        margin-left: -200px;
+    }
     .fadedLine {
         width: $fadedLineWidth - 250px;
     }
@@ -333,25 +351,20 @@ a.readMore {
 
     .leftBottomBlock {
         margin-left: -50vw;
-        display:block;
+        display: block;
+
     }
 
 
     .rightBottomBlock {
-        display:block;
+        display: block;
         margin-left: -50vw;
+
     }
     .fadedLine {
         width: 100vw;
         display:block;
     }
-
-    .bottomHalf {
-        position: absolute;
-        margin-left: 0%;
-    }
-
-
 
     .socialMediaIcons {
         position: absolute;
@@ -359,16 +372,14 @@ a.readMore {
         margin-top: 250px;
     }
 
-    .vrImage {
-        transform: translate(-50%,0);
-        margin-left: 0vw;
-    }
+
 }
 
 @media only screen and (max-width: 233px) {
 
-    .titleBlock img {
-        margin-left: 0vw;
+
+    .wrapper{
+        overflow:auto;
     }
 
     .rightBar {
