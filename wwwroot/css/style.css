@@ -71,8 +71,23 @@
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
   margin-top: 700px;
+  left: 0;
   position: relative;
-  margin-left: 50%; }
+  width: 100%; }
+
+.leftBottomBlock {
+  display: inline-block;
+  width: 50%;
+  list-style: none; }
+
+.mediumHeader {
+  padding-top: 100px;
+  font-family: Courier New, Courier, monospace;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: black;
+  width: inherit;
+  display: inline-block; }
 
 /*ul*/
 .leftSideList {
@@ -89,31 +104,30 @@
     border-bottom: 2px solid darkGray;
     font-size: 20px;
     line-height: 50px; }
-    .leftSideList li a {
-      color: black; }
+    .leftSideList li img {
+      width: inherit; }
 
-.leftBottomBlock {
-  margin-left: -500px;
-  display: inline-block;
-  width: 500px;
-  list-style: none; }
+.leftSideLink {
+  color: black;
+  width: inherit; }
 
 .fadedLine {
-  position: absolute;
   height: 5px;
   background-image: linear-gradient(0.9turn, white, red);
   background-color: red;
-  width: 500px;
+  width: inherit;
   padding-top: 5px; }
 
-.mediumHeader {
-  font-family: Courier New, Courier, monospace;
-  font-size: 2.5em;
-  font-weight: 600;
-  color: black; }
-
 .listImageContainer {
-  position: relative; }
+  position: relative;
+  width: inherit; }
+
+.leftSideImage {
+  padding-top: 50px;
+  width: inherit; }
+  .leftSideImage:hover {
+    transition: ease-in-out .15s;
+    opacity: .8; }
 
 .imageHashTag {
   position: absolute;
@@ -147,26 +161,6 @@
   text-align: center;
   text-wrap: normal; }
 
-.rightBottomBlock {
-  display: inline-block;
-  width: 500px;
-  vertical-align: top; }
-  .rightBottomBlock ul {
-    list-style: none; }
-    .rightBottomBlock ul li {
-      margin-left: -40px; }
-  .rightBottomBlock img {
-    position: relative;
-    left: 0;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    width: 100%;
-    list-style: none;
-    z-index: -1; }
-    .rightBottomBlock img:hover {
-      transition: ease-in-out .15s;
-      opacity: .8; }
-
 .leftBottomBlock a:link {
   font-size: 14px;
   color: black !important; }
@@ -188,55 +182,25 @@ a.readMore {
     color: black !important;
     text-decoration: none; }
 
-.leftSideImage {
-  margin-left: 0;
-  padding-top: 50px;
-  width: 100%; }
-  .leftSideImage:hover {
-    transition: ease-in-out .15s;
-    opacity: .8; }
-
-.rightSideImage {
-  margin-left: 0;
-  margin-bottom: 250px;
-  width: 500px; }
-  .rightSideImage:hover {
-    transition: ease-in-out .15s;
-    opacity: .8; }
-
 /*RESIZING*/
 @media only screen and (max-width: 1200px) {
   .titleBlock {
     width: 650px; }
     .titleBlock logo {
       width: auto; }
-  .leftSideImage {
-    width: 80%; }
-  .leftBottomBlock {
-    margin-left: -450px; }
-  .rightBottomBlock {
-    margin-left: -50px;
-    position: absolute; }
-  .fadedLine {
-    width: 400px; }
-  .leftBottomBlock ul li {
-    width: 400px; }
-  .rightBottomBlock img {
-    width: 80%; }
-  .imageOverlay {
-    width: 80%; }
-  .textImageOverlay {
-    width: 80%; } }
+  /*
+    .fadedLine {
+        width: $fadedLineWidth - 100px;
+    }
+*/ }
 
 @media only screen and (max-width: 990px) {
   .titleBlock {
     width: 550px; }
-  .leftBottomBlock {
-    margin-left: -400px; }
-  .rightBottomBlock {
-    margin-left: -100px; }
-  .fadedLine {
-    width: 350px; } }
+  /*
+    .fadedLine {
+        width: $fadedLineWidth - 150px;
+    }*/ }
 
 @media only screen and (max-width: 880px) {
   .titleBlock {
@@ -262,29 +226,8 @@ a.readMore {
   .rightBar {
     position: absolute;
     margin-left: 0px; }
-  .fadedLine {
-    width: 95vw;
-    display: block; }
-  .leftBottomBlock {
-    display: inline-block;
-    margin-left: -45vw;
-    width: 95vw; }
-    .leftBottomBlock ul li {
-      width: 95vw; }
-  .leftSideImage {
-    width: 95vw; }
-  .listImageContainer {
-    width: 95vw; }
-  .rightBottomBlock {
-    display: block;
-    margin-left: -45vw;
-    position: relative; }
-    .rightBottomBlock img {
-      width: 95vw; }
-  .imageOverlay {
-    width: 95vw; }
-  .textImageOverlay {
-    width: 95vw; } }
+  .bottomHalf {
+    width: 100%; } }
 
 @media only screen and (max-width: 640px) {
   /*
@@ -299,9 +242,6 @@ a.readMore {
     height: auto;
     width: auto; }
   .leftBottomBlock {
-    width: auto;
-    height: auto; }
-  .rightBottomBlock {
     width: auto;
     height: auto; } }
 

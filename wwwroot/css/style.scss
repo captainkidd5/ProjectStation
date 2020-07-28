@@ -103,13 +103,33 @@ $mobileViewWidth: 95vw;
     padding: 10px 10px 10px 10px;
     border-style: none;
 }
+$fadedLineWidth: 50%;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
     margin-top: 700px;
+    left:0;
     position: relative;
-    margin-left: 50%;
+    width:100%;
+}
 
+
+
+.leftBottomBlock {
+    display: inline-block;
+    width:50%;
+    list-style: none;
+}
+
+
+.mediumHeader {
+    padding-top:100px;
+    font-family: $standardFont;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: black;
+    width:inherit;
+    display:inline-block;
 }
 
 /*ul*/
@@ -118,6 +138,8 @@ $mobileViewWidth: 95vw;
     display: inline-block;
     height: 25px;
     list-style: none;
+
+
     color: darkgray;
     width: inherit;
 
@@ -129,43 +151,42 @@ $mobileViewWidth: 95vw;
         font-size: 20px;
         line-height: 50px;
 
-        a {
-            color: black;
+
+        img {
+            width: inherit;
         }
     }
 }
 
-$fadedLineWidth: 500px;
-.leftBottomBlock {
-    
-    margin-left: $leftOffset + 200px;
-    display: inline-block;
-    width: $fadedLineWidth;
-    list-style: none;
-
+.leftSideLink {
+    color: black;
+    width: inherit;
 }
-
 
 
 .fadedLine {
-    position:absolute;
     height: 5px;
     background-image: linear-gradient(.9turn,$backGroundColor,red );
     background-color: red;
-    width: $fadedLineWidth;
+    width: inherit;
     padding-top: 5px;
 }
 
-.mediumHeader {
-    font-family: $standardFont;
-    font-size: 2.5em;
-    font-weight: 600;
-    color: black;
-}
 
 .listImageContainer{
     position:relative;
+    width:inherit;
 
+}
+
+.leftSideImage {
+    padding-top: 50px;
+    width: inherit;
+
+    &:hover {
+        transition: ease-in-out .15s;
+        opacity: .8;
+    }
 }
 
 .imageHashTag {
@@ -204,37 +225,6 @@ $fadedLineWidth: 500px;
     text-wrap:normal;
 }
 
-.rightBottomBlock {
-    display: inline-block;
-  
-    width: $fadedLineWidth;
-    vertical-align: top;
-
-    ul {
-        list-style: none;
-
-        li {
-            margin-left: -40px;
-
-        }
-    }
-
-    img {
-        position:relative;
-        left: 0;
-        padding-bottom: 50px;
-        padding-top: 50px;
-        width: 100%;
-        list-style: none;
-        z-index:-1;
-
-        &:hover {
-            transition: ease-in-out .15s;
-            opacity: .8;
-        }
-    }
-}
-
 
 
 .leftBottomBlock a:link {
@@ -269,27 +259,6 @@ a.readMore {
     }
 }
 
-.leftSideImage {
-    margin-left: 0;
-    padding-top: 50px;
-    width: 100%;
-
-    &:hover {
-        transition: ease-in-out .15s;
-        opacity: .8;
-    }
-}
-
-.rightSideImage {
-    margin-left: 0;
-    margin-bottom: 250px;
-    width: $fadedLineWidth;
-
-    &:hover {
-        transition: ease-in-out .15s;
-        opacity: .8;
-    }
-}
 
 
 
@@ -305,36 +274,18 @@ a.readMore {
             width: auto;
         }
     }
-    .leftSideImage{
-        width:80%;
-    }
-    .leftBottomBlock {
-        margin-left: $leftOffset + 250px;
-    }
 
-    .rightBottomBlock {
-        margin-left: - 50px;
-        position:absolute;
-    }
 
+
+/*
     .fadedLine {
         width: $fadedLineWidth - 100px;
     }
+*/
 
-    .leftBottomBlock ul li {
-        width: $fadedLineWidth - 100px;
-    }
 
-    .rightBottomBlock img{
 
-        width: 80%;
-    }
-    .imageOverlay{
-        width:80%;
-    }
-    .textImageOverlay{
-        width:80%;
-    }
+
 }
 
 @media only screen and (max-width: 990px) {
@@ -343,18 +294,10 @@ a.readMore {
     }
  
 
-    .leftBottomBlock {
-        margin-left: $leftOffset + 300px;
-    }
-    .rightBottomBlock {
-        margin-left: - 100px;
-    }
-
-
-
+/*
     .fadedLine {
         width: $fadedLineWidth - 150px;
-    }
+    }*/
 
 
 }
@@ -402,48 +345,10 @@ a.readMore {
         margin-left: 0px;
     }
 
-
-
-    .fadedLine {
-        width: $mobileViewWidth;
-        display: block;
+    .bottomHalf{
+        width:100%;
     }
 
-    .leftBottomBlock {
-        display: inline-block;
-        margin-left: -45vw;
-        width: $mobileViewWidth;
-
-        ul {
-            li {
-                width: $mobileViewWidth;
-            }
-        }
-    }
-
-
-    .leftSideImage {
-        width: $mobileViewWidth;
-    }
-    .listImageContainer {
-        width: $mobileViewWidth;
-    }
-    .rightBottomBlock {
-        display: block;
-        margin-left: -45vw;
-        position: relative;
-
-        img {
-            width: $mobileViewWidth;
-        }
-    }
-    .imageOverlay {
-        width: $mobileViewWidth;
-    }
-
-    .textImageOverlay {
-        width: $mobileViewWidth;
-    }
 
 
 }
@@ -471,11 +376,6 @@ a.readMore {
     }
 
 
-
-    .rightBottomBlock {
-        width: auto;
-        height: auto;
-    }
 }
     @media only screen and (max-width: 233px) {
 
