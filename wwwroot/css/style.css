@@ -28,11 +28,13 @@
     height: auto;
     left: 50%;
     transform: translate(-50%, 0);
-    position: relative; }
+    position: relative;
+    z-index: -1; }
 
 .leftBar {
   position: absolute;
   text-align: left;
+  left: 100px;
   top: 0;
   transform: translate(-50%, 0); }
 
@@ -170,10 +172,11 @@ a.readMore {
   border-color: darkGray !important;
   border-width: 1px;
   border: solid;
-  margin-left: inherit;
+  margin-left: 50%;
   margin-top: 50px;
   color: gray !important;
-  width: 200px; }
+  width: 200px;
+  transform: translate(-50%); }
   a.readMore:hover {
     background-color: darkGray;
     color: black !important;
@@ -254,28 +257,28 @@ a.readMore {
     position: absolute;
     margin-left: 0px; }
   .fadedLine {
-    width: 250px; }
-  .fadedLine {
-    width: 90vw;
+    width: 95vw;
     display: block; }
   .leftBottomBlock {
-    margin-left: -45vw; }
+    display: inline-block;
+    margin-left: -45vw;
+    width: 95vw; }
     .leftBottomBlock ul li {
-      width: 90vw; }
+      width: 95vw; }
   .leftSideImage {
-    width: 90vw; }
+    width: 95vw; }
   .listImageContainer {
-    width: 90vw; }
+    width: 95vw; }
   .rightBottomBlock {
     display: block;
     margin-left: -45vw;
     position: relative; }
     .rightBottomBlock img {
-      width: 90vw; }
+      width: 95vw; }
   .imageOverlay {
-    width: 90vw; }
+    width: 95vw; }
   .textImageOverlay {
-    width: 90vw; } }
+    width: 95vw; } }
 
 @media only screen and (max-width: 640px) {
   /*

@@ -26,7 +26,7 @@
     color: lightgray;
     box-shadow: none;
     outline: none;
-
+    z-index:2;
     &:hover {
         background-color: lightgray;
         transition: 1s;
@@ -42,14 +42,14 @@
     display: block;
     width: 100%;
     position: absolute;
-    background-color: darkgray;
-    overflow: hidden;
+    background-color: #9d9393;
     height: 0px;
     overflow-y: hidden;
-    transition: height .6s ease-out;
-    font-family: Courier New, Courier, monospace;
+    transition: height .5s ease-out;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
     color: white;
-    font-size: 2em;
+    font-size: 1.2rem;
+    font-weight:400;
 }
 
 .show {
@@ -62,13 +62,13 @@
     text-align: center;
     display: block;
     color: white;
-    background-color: darkgray;
     z-index: 2;
     opacity: 1;
 
     a {
         font-family: Courier New, Courier, monospace;
         color: white;
+        z-index: 2;
     }
 
     &:hover {

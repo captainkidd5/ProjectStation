@@ -7,7 +7,7 @@ $standardFont: Courier New, Courier, monospace;
 $leftOffset: -700px;
 $rightOffset: 300px;
 
-$mobileViewWidth: 90vw;
+$mobileViewWidth: 95vw;
 
 .wrapper {
     overflow-x:hidden;
@@ -25,7 +25,7 @@ $mobileViewWidth: 90vw;
 
     ul {
         list-style: none;
-        
+
 
         li {
 
@@ -35,8 +35,8 @@ $mobileViewWidth: 90vw;
                 position: relative;
                 bottom: 15px;
                 color: $secondayGray;
- 
-                line-height:55px;
+                line-height: 55px;
+
                 &:hover {
                     background-color: $backGroundColor;
                     text-decoration-line: underline;
@@ -48,17 +48,19 @@ $mobileViewWidth: 90vw;
     }
 
     img {
-        width:25%;
-        height:auto;
+        width: 25%;
+        height: auto;
         left: 50%;
         transform: translate(-50%,0);
         position: relative;
+        z-index: -1;
     }
 }
 
 .leftBar {
     position: absolute;
     text-align: left;
+    left:100px;
     top:0;
     transform: translate(-50%,0);
 }
@@ -129,6 +131,7 @@ $mobileViewWidth: 90vw;
 
 $fadedLineWidth: 500px;
 .leftBottomBlock {
+    
     margin-left: $leftOffset + 200px;
     display: inline-block;
     width: $fadedLineWidth;
@@ -153,6 +156,7 @@ $fadedLineWidth: 500px;
     font-weight: 600;
     color: black;
 }
+
 .listImageContainer{
     position:relative;
 
@@ -246,10 +250,11 @@ a.readMore {
     border-color: $secondayGray !important;
     border-width: 1px;
     border: solid;
-    margin-left: inherit;
+    margin-left: 50%;
     margin-top: 50px;
     color: gray !important;
     width: 200px;
+    transform:translate(-50%);
 
     &:hover {
         background-color: $secondayGray;
@@ -394,16 +399,14 @@ a.readMore {
 
 
     .fadedLine {
-        width: $fadedLineWidth - 250px;
-    }
-
-    .fadedLine {
         width: $mobileViewWidth;
         display: block;
     }
 
     .leftBottomBlock {
+        display: inline-block;
         margin-left: -45vw;
+        width: $mobileViewWidth;
 
         ul {
             li {

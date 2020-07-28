@@ -17,7 +17,8 @@
   position: relative;
   color: lightgray;
   box-shadow: none;
-  outline: none; }
+  outline: none;
+  z-index: 2; }
   .dropMenuButton:hover {
     background-color: lightgray;
     transition: 1s; }
@@ -29,14 +30,14 @@
   display: block;
   width: 100%;
   position: absolute;
-  background-color: darkgray;
-  overflow: hidden;
+  background-color: #9d9393;
   height: 0px;
   overflow-y: hidden;
-  transition: height .6s ease-out;
-  font-family: Courier New, Courier, monospace;
+  transition: height .5s ease-out;
+  font-family: 'arial', 'Noto Sans JP', sans-serif;
   color: white;
-  font-size: 2em; }
+  font-size: 1.2rem;
+  font-weight: 400; }
 
 .show {
   height: 600px; }
@@ -47,12 +48,12 @@
   text-align: center;
   display: block;
   color: white;
-  background-color: darkgray;
   z-index: 2;
   opacity: 1; }
   .dropMenuItem a {
     font-family: Courier New, Courier, monospace;
-    color: white; }
+    color: white;
+    z-index: 2; }
   .dropMenuItem:hover {
     opacity: 1;
     background-color: lightgray;
