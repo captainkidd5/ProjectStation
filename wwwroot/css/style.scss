@@ -118,6 +118,7 @@ $fadedLineWidth: 50%;
 .leftBottomBlock {
     display: inline-block;
     width:49%;
+    padding-left:50px;
     list-style: none;
     vertical-align: top;
 }
@@ -129,7 +130,7 @@ $fadedLineWidth: 50%;
     font-size: 2.5em;
     font-weight: 600;
     color: black;
-    width:inherit;
+    width:100%;
     display:inline-block;
 }
 
@@ -139,13 +140,11 @@ $fadedLineWidth: 50%;
     display: inline-block;
     height: 25px;
     list-style: none;
-
-
     color: darkgray;
-    width: inherit;
+    width: 100%;
 
     li {
-        width: inherit;
+        width: 100%;
         margin-left: -40px;
         margin-top: 20px;
         border-bottom: 2px solid $secondayGray;

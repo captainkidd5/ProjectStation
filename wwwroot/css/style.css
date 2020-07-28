@@ -78,6 +78,7 @@
 .leftBottomBlock {
   display: inline-block;
   width: 49%;
+  padding-left: 50px;
   list-style: none;
   vertical-align: top; }
 
@@ -87,7 +88,7 @@
   font-size: 2.5em;
   font-weight: 600;
   color: black;
-  width: inherit;
+  width: 100%;
   display: inline-block; }
 
 /*ul*/
@@ -97,9 +98,9 @@
   height: 25px;
   list-style: none;
   color: darkgray;
-  width: inherit; }
+  width: 100%; }
   .leftSideList li {
-    width: inherit;
+    width: 100%;
     margin-left: -40px;
     margin-top: 20px;
     border-bottom: 2px solid darkGray;
