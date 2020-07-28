@@ -214,6 +214,10 @@ a.readMore {
   .leftBottomBlock ul li {
     width: 400px; }
   .rightBottomBlock img {
+    width: 80%; }
+  .imageOverlay {
+    width: 80%; }
+  .textImageOverlay {
     width: 80%; } }
 
 @media only screen and (max-width: 990px) {
@@ -268,7 +272,11 @@ a.readMore {
     margin-left: -50vw;
     position: relative; }
     .rightBottomBlock img {
-      width: 100vw; } }
+      width: 100vw; }
+  .imageOverlay {
+    width: 100vw; }
+  .textImageOverlay {
+    width: 100vw; } }
 
 @media only screen and (max-width: 640px) {
   /*

@@ -1,23 +1,52 @@
 ﻿/*FOOTER*/
-.footer {
-  position: fixed; }
+.footerWrapper {
+  position: relative; }
 
 .contact-footer-bar {
-  background-color: gray;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  margin-left: 50%; }
 
-.contact-footer-bar a {
+.contact-footer-bar > a {
+  position: absolute;
+  white-space: nowrap;
   color: white;
   background-color: gray;
-  text-align: center;
-  display: inline-block;
+  top: 100px;
   border-radius: 40px;
-  padding: 20px 40px;
-  text-decoration: none;
-  font-size: 24px; }
-  .contact-footer-bar a:hover {
+  padding: 20px 120px;
+  transform: translate(-50%);
+  font-size: 22px; }
+  .contact-footer-bar > a:hover {
     background-color: gray; }
+
+.footerLogo {
+  position: relative;
+  border-top: 1px solid gray;
+  margin-top: 100px;
+  height: auto;
+  width: 80vw;
+  top: 250px;
+  transform: translate(-50%); }
+  .footerLogo img {
+    position: relative;
+    width: 150px;
+    top: 16px;
+    padding-bottom: 150px;
+    left: 50vw;
+    transform: translate(-50%); }
+
+.footerLogoText {
+  position: absolute;
+  left: 60vw;
+  top: 50px; }
+
+@media only screen and (max-width: 768) {
+  .contact-footer-bar > a {
+    width: auto;
+    height: auto;
+    padding-right: 80px;
+    font-size: 14px; }
+  .contact-footer-bar {
+    width: auto; }
+  .footerLogoText {
+    left: 50%;
+    top: 250px; } }

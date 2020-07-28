@@ -314,7 +314,14 @@ a.readMore {
     }
 
     .rightBottomBlock img{
+
         width: 80%;
+    }
+    .imageOverlay{
+        width:80%;
+    }
+    .textImageOverlay{
+        width:80%;
     }
 }
 
@@ -417,9 +424,16 @@ a.readMore {
         img {
             width: 100vw;
         }
-
-
     }
+    .imageOverlay {
+        width: 100vw;
+    }
+
+    .textImageOverlay {
+        width: 100vw;
+    }
+
+
 }
 
 @media only screen and (max-width: 640px) {
