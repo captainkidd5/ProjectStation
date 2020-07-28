@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet" />
 </head>
 <body style="background-color:ghostwhite;">
-
+    
     <div class="dropMenu">
         <button onclick="myFunction()" class="dropMenuButton"></button>
 
@@ -47,7 +47,7 @@
 
 
     <div>
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3" id="section1">
             @RenderBody()
         </main>
     </div>
@@ -56,13 +56,13 @@
         <div class="footerWrapper">
             
             <div class="contact-footer-bar">
-                <a asp-page="contact">Contact Us</a>
-                <button class="faderArrowContainer" onclick="scrollToTop()" id="scrollToTop">
+                <a class="footerbar_link" asp-page="contact">Contact Us</a>
+                <a href="#section1" class="faderArrowContainer" id="scrollToTop">
                     <div class="faderArrow1"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
                     <div class="faderArrow2"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
                     <div class="faderArrow3"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
 
-                </button>
+                </a>
                 <div class="footerLogo">
 
                     <a href="https/instagram.com"><img src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>

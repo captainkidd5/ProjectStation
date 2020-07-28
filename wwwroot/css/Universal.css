@@ -1,4 +1,5 @@
-﻿/*FADER ARROWS*/
+﻿/*SECTIONS*/
+/*FADER ARROWS*/
 .faderArrowContainer {
   position: absolute;
   top: 25%;
@@ -49,7 +50,7 @@
 .contact-footer-bar {
   margin-left: 50%; }
 
-.contact-footer-bar > a {
+.footerbar_link {
   position: absolute;
   white-space: nowrap;
   color: white;
@@ -61,7 +62,7 @@
   font-size: 22px;
   text-align: center;
   margin: auto; }
-  .contact-footer-bar > a:hover {
+  .footerbar_link:hover {
     background-color: gray; }
 
 .footerLogo {

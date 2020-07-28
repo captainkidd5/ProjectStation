@@ -1,4 +1,15 @@
-﻿/*FADER ARROWS*/////////////
+﻿
+/*SECTIONS*/
+
+#section1{
+    //Fader arrow botom will go here. This is at the top of the page.
+}
+
+#section2{
+    //Fader Arrow Top will go here. This is just after the title content.
+}
+
+/*FADER ARROWS*/////////////
 
 .faderArrowContainer{
     position:absolute;
@@ -8,7 +19,13 @@
     border-style:none;
 }
 
-@mixin arrowMixin{
+@mixin arrowTopMixin {
+    margin-top: 5px;
+    -webkit-animation: fade 1s alternate infinite;
+    animation: fade 1s alternate infinite;
+}
+
+@mixin arrowBottomMixin{
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
     margin-top: 5px;
@@ -16,15 +33,15 @@
     animation: fade 1s alternate infinite;
 }
 .faderArrow1 {
-    @include arrowMixin;
-    animation-delay:.75s;
+    @include arrowBottomMixin;
+    animation-delay: .75s;
 }
 .faderArrow2 {
-    @include arrowMixin;
+    @include arrowBottomMixin;
     animation-delay: .5s;
 }
 .faderArrow3 {
-    @include arrowMixin;
+    @include arrowBottomMixin;
     animation-delay: .25s;
 }
 
@@ -62,7 +79,9 @@
 
 }
 
-.contact-footer-bar > a {
+
+
+.footerbar_link {
     position: absolute;
     white-space: nowrap;
     color: white;
