@@ -47,7 +47,13 @@
   text-align: center;
   display: block;
   color: white;
-  z-index: 2; }
+  background-color: darkgray;
+  z-index: 2;
+  opacity: 1; }
+  .dropMenuItem a {
+    font-family: Courier New, Courier, monospace;
+    color: white; }
   .dropMenuItem:hover {
+    opacity: 1;
     background-color: lightgray;
     transition: 1s; }

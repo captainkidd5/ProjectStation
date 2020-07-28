@@ -7,6 +7,8 @@ $standardFont: Courier New, Courier, monospace;
 $leftOffset: -700px;
 $rightOffset: 300px;
 
+$mobileViewWidth: 90vw;
+
 .wrapper {
     overflow-x:hidden;
 }
@@ -102,36 +104,36 @@ $rightOffset: 300px;
 
 }
 
+/*ul*/
+.leftSideList {
+    font-size: 12px;
+    display: inline-block;
+    height: 25px;
+    list-style: none;
+    color: lightgray;
+    width: inherit;
+
+    li {
+        width: inherit;
+        margin-left: -40px;
+        margin-top: 20px;
+        border-bottom: 2px solid $secondayGray;
+        font-size: 18px;
+        line-height: 50px;
+
+        a {
+            color: black;
+        }
+    }
+}
+
 $fadedLineWidth: 500px;
 .leftBottomBlock {
-    position: relative;
     margin-left: $leftOffset + 200px;
     display: inline-block;
     width: $fadedLineWidth;
     list-style: none;
 
-    ul {
-        position: relative;
-        font-size: 12px;
-        display: inline-block;
-        height: 25px;
-        list-style: none;
-        color: lightgray;
-        width: inherit;
-
-        li {
-            width: inherit;
-            margin-left: -40px;
-            margin-top: 20px;
-            border-bottom: 2px solid $secondayGray;
-            font-size: 18px;
-            line-height: 50px;
-
-            a {
-                color: black;
-            }
-        }
-    }
 }
 
 
@@ -268,7 +270,6 @@ a.readMore {
 }
 
 .rightSideImage {
-    position: absolute;
     margin-left: 0;
     margin-bottom: 250px;
     width: $fadedLineWidth;
@@ -397,40 +398,42 @@ a.readMore {
     }
 
     .fadedLine {
-        width: 100vw;
+        width: $mobileViewWidth;
         display: block;
     }
 
     .leftBottomBlock {
-        margin-left: -50vw;
+        margin-left: -45vw;
 
         ul {
             li {
-                width: 100vw;
+                width: $mobileViewWidth;
             }
         }
     }
 
+
     .leftSideImage {
-        width: 100vw;
+        width: $mobileViewWidth;
     }
-    .listImageContainer{
-        width:100vw;
+    .listImageContainer {
+        width: $mobileViewWidth;
     }
     .rightBottomBlock {
         display: block;
-        margin-left: -50vw;
+        margin-left: -45vw;
         position: relative;
+
         img {
-            width: 100vw;
+            width: $mobileViewWidth;
         }
     }
     .imageOverlay {
-        width: 100vw;
+        width: $mobileViewWidth;
     }
 
     .textImageOverlay {
-        width: 100vw;
+        width: $mobileViewWidth;
     }
 
 
