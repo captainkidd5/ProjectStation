@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ProjectStation.Pages.Shared
+namespace ProjectStation.Pages
 {
-    public class _FooterModel : PageModel
+    public class NewsModel : PageModel
     {
         public void OnGet()
         {

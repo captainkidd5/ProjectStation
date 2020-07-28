@@ -14,7 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;subset=japanese" rel="stylesheet">
 </head>
 <body style="background-color:ghostwhite; overflow-x:hidden;">
-    
+
+
+
+
     <div class="dropMenu">
         <button onclick="myFunction()" class="dropMenuButton"></button>
 
@@ -44,6 +47,21 @@
         </div>
 
     </div>
+    <div id="tileBlock">
+        @if (IsSectionDefined("TitleBlock")){
+        @RenderSection("TitleBlock")
+        }
+        else {
+        <div class="titleBlock">
+
+            <div id="logo">
+
+
+                <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
+            </div>
+        </div>
+            }
+    </div>
 
 
 
@@ -55,13 +73,13 @@
 
     <footer>
         <div class="footerWrapper">
-            
+
             <div class="contact-footer-bar">
                 <a class="footerbar_link" asp-page="contact">Contact Us</a>
                 <a href="#section1" class="faderArrowContainer" id="scrollToTop">
-                    <div class="faderArrow1"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                    <div class="faderArrow2"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                    <div class="faderArrow3"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                    <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                    <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                    <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
 
                 </a>
                 <div class="footerLogo">

@@ -18,6 +18,8 @@
     border-style:none;
 }
 
+
+
 @mixin arrowTopMixin {
     margin-top: 5px;
     -webkit-animation: fade 1s alternate infinite;
@@ -31,17 +33,32 @@
     -webkit-animation: fade 1s alternate infinite;
     animation: fade 1s alternate infinite;
 }
-.faderArrow1 {
+.faderArrow1Bottom{
     @include arrowBottomMixin;
     animation-delay: .75s;
 }
-.faderArrow2 {
+.faderArrow2Bottom {
     @include arrowBottomMixin;
     animation-delay: .5s;
 }
-.faderArrow3 {
+.faderArrow3Bottom {
     @include arrowBottomMixin;
     animation-delay: .25s;
+}
+
+.faderArrow1Top {
+    @include arrowTopMixin;
+    animation-delay: .25s;
+}
+
+.faderArrow2Top {
+    @include arrowTopMixin;
+    animation-delay: .5s;
+}
+
+.faderArrow3Top {
+    @include arrowTopMixin;
+    animation-delay: .75s;
 }
 
 @-webkit-keyframes fade{

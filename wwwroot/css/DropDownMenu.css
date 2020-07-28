@@ -1,6 +1,6 @@
 ﻿.dropMenu {
-  left: 70%;
-  padding-top: 50px;
+  left: 80%;
+  padding-top: 25px;
   position: absolute;
   display: none; }
 
@@ -28,7 +28,7 @@
 
 .dropMenuContent {
   display: block;
-  width: 100%;
+  width: 120vw;
   position: absolute;
   background-color: #9d9393;
   height: 0px;
@@ -43,7 +43,7 @@
   height: 600px; }
 
 .dropMenuItem {
-  width: 100%;
+  width: 100vw;
   height: 50px;
   text-align: center;
   display: block;
