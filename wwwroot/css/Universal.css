@@ -1,4 +1,28 @@
 ﻿/*SECTIONS*/
+/*DEFAULT HEADER (non home page)*/
+.headerBlock {
+  position: relative;
+  top: 200px;
+  margin: 0 auto; }
+
+.logo {
+  position: relative;
+  width: 200px;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: -1; }
+
+.returnHomeButton {
+  top: 300px;
+  width: 200px;
+  height: auto;
+  right: 400px;
+  position: absolute; }
+  .returnHomeButton:hover {
+    transition: ease-in-out .15s;
+    opacity: .8; }
+
 /*FADER ARROWS*/
 .faderArrowContainer {
   position: absolute;
