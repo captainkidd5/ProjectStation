@@ -1,4 +1,56 @@
-﻿/*FOOTER*/
+﻿/*FADER ARROWS*/////////////
+
+.faderArrowContainer{
+    position:absolute;
+    top:25%;
+    padding:10px 10px 10px 10px;
+    left:75%;
+    border-style:none;
+}
+
+@mixin arrowMixin{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    margin-top: 5px;
+    -webkit-animation: fade 1s alternate infinite;
+    animation: fade 1s alternate infinite;
+}
+.faderArrow1 {
+    @include arrowMixin;
+    animation-delay:.75s;
+}
+.faderArrow2 {
+    @include arrowMixin;
+    animation-delay: .5s;
+}
+.faderArrow3 {
+    @include arrowMixin;
+    animation-delay: .25s;
+}
+
+@-webkit-keyframes fade{
+    0%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes fade{
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
+}
+////////////////////////////
+
+
+/*FOOTER*/
 
 
 .footerWrapper{
