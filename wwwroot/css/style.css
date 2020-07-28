@@ -77,8 +77,9 @@
 
 .leftBottomBlock {
   display: inline-block;
-  width: 50%;
-  list-style: none; }
+  width: 49%;
+  list-style: none;
+  vertical-align: top; }
 
 .mediumHeader {
   padding-top: 100px;
