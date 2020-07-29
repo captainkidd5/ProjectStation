@@ -17,16 +17,17 @@
 }
 
 .dropMenuButton {
-    display: block;
+    position:fixed;
+    top:0;
     background-color: ghostwhite;
     width:50px;
     padding: 16px 8px;
     border-radius: 12px;
-    position: relative;
     color: lightgray;
     box-shadow: none;
     outline: none;
-    z-index:2;
+    z-index:3;
+    top:0;
     &:hover {
         background-color: lightgray;
         transition: 1s;

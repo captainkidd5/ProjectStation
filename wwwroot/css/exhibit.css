@@ -2,7 +2,8 @@
   height: 5px;
   background-image: linear-gradient(0.9turn, gray, red);
   background-color: red;
-  width: 100%;
+  margin-left: 20px;
+  width: 90%;
   padding-top: 5px; }
 
 .unborderedListElement {

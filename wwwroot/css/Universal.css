@@ -9,16 +9,16 @@
   left: 50%;
   transform: translate(-50%, 0);
   top: 100px;
-  padding-bottom: 200px; }
+  padding-bottom: 200px;
+  z-index: -1; }
 
 .returnHomeButton {
   position: absolute;
-  z-index: 10;
   width: 200px;
   height: 80px;
   margin-top: 400px;
-  margin-left: -70px;
-  transform: translate(-50%, 0); }
+  margin-left: 0px;
+  z-index: -1; }
   .returnHomeButton a:hover {
     transition: ease-in-out .15s;
     opacity: .8; }
@@ -153,4 +153,6 @@
     width: auto; }
   .footerLogoText {
     left: 50%;
-    top: 250px; } }
+    top: 250px; }
+  .returnHomeButton {
+    left: 0; } }

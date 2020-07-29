@@ -23,18 +23,18 @@
     transform: translate(-50%,0);
     top: 100px;
     padding-bottom:200px;
+    z-index:-1;
+
 }
 
 .returnHomeButton {
     position:absolute;
-    z-index:10;
     width: 200px;
     height: 80px;
     margin-top:400px;
-    margin-left:-70px;
+    margin-left:0px;
 
-    transform: translate(-50%,0);
-
+    z-index:-1;
 
     a {
         &:hover {
@@ -222,5 +222,8 @@
         top: 250px;
     }
 
+    .returnHomeButton{
+        left:0;
+    }
 
 }

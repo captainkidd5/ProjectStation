@@ -115,9 +115,10 @@ $fadedLineWidth: 50%;
 
 .halfContentBlock {
     display: inline-block;
-    width: 100%;
+    width: 90%;
     list-style: none;
     vertical-align: top;
+
 
 }
 
@@ -140,6 +141,22 @@ $fadedLineWidth: 50%;
     display: inline-block;
 }
 
+.halfSideList {
+    font-size: 14px;
+    display: inline-block;
+    height: 25px;
+    list-style: none;
+    color: #D4D0D0;
+    margin-left: 10%;
+    width: 75%;
+
+
+    img {
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
 /*ul*/
 .sideList {
     font-size: 14px;
@@ -147,6 +164,8 @@ $fadedLineWidth: 50%;
     height: 25px;
     list-style: none;
     color: #D4D0D0;
+    margin-left:0%;
+    width:100%;
    
 
         img {
@@ -199,7 +218,7 @@ $fadedLineWidth: 50%;
 }
 
 .imageHashTag {
-    position: absolute;
+    display:inline;
     font-family: $standardFont;
     width: 100%;
     left: 0;
@@ -375,6 +394,9 @@ $fadedLineWidth: 50%;
         width:100%;
     }
 
+    .halfContentBlock{
+        width:100%;
+    }
 
 
 }
