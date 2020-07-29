@@ -1,11 +1,11 @@
 ﻿
 /*SECTIONS*/
 
-#section1{
+#section1 {
     //Fader arrow botom will go here. This is at the top of the page.
 }
 
-#section2{
+#section2 {
     //Fader Arrow Top will go here. This is just after the title content.
 }
 
@@ -13,42 +13,44 @@
 /*DEFAULT HEADER (non home page)*/
 
 .headerBlock {
-    position: relative;
-    top: 200px;
-    margin: 0 auto;
-
- 
+    overflow-x:hidden;
 }
 
 .logo {
-    position:relative;
-    width: 200px;
-    height: auto;
+    position: relative;
+    display: inline-block;
     left: 50%;
     transform: translate(-50%,0);
-    z-index: -1;
+    top: 100px;
+    padding-bottom:200px;
 }
 
 .returnHomeButton {
-    top: 300px;
+    position:absolute;
+    z-index:10;
     width: 200px;
-    height: auto;
-    right:400px;
-   position:absolute;
+    height: 80px;
+    margin-top:400px;
+    margin-left:-70px;
 
-    &:hover {
-        transition: ease-in-out .15s;
-        opacity: .8;
+    transform: translate(-50%,0);
+
+
+    a {
+        &:hover {
+            transition: ease-in-out .15s;
+            opacity: .8;
+        }
     }
 }
 
-/*FADER ARROWS*/////////////
-.faderArrowContainer{
-    position:absolute;
-    top:25%;
-    padding:10px 10px 10px 10px;
-    left:75%;
-    border-style:none;
+/*FADER ARROWS*/ ////////////
+.faderArrowContainer {
+    position: absolute;
+    top: 25%;
+    padding: 10px 10px 10px 10px;
+    left: 75%;
+    border-style: none;
 }
 
 
@@ -59,21 +61,24 @@
     animation: fade 1s alternate infinite;
 }
 
-@mixin arrowBottomMixin{
+@mixin arrowBottomMixin {
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
     margin-top: 5px;
     -webkit-animation: fade 1s alternate infinite;
     animation: fade 1s alternate infinite;
 }
-.faderArrow1Bottom{
+
+.faderArrow1Bottom {
     @include arrowBottomMixin;
     animation-delay: .75s;
 }
+
 .faderArrow2Bottom {
     @include arrowBottomMixin;
     animation-delay: .5s;
 }
+
 .faderArrow3Bottom {
     @include arrowBottomMixin;
     animation-delay: .25s;
@@ -94,17 +99,17 @@
     animation-delay: .75s;
 }
 
-@-webkit-keyframes fade{
-    0%{
-        opacity:1;
+@-webkit-keyframes fade {
+    0% {
+        opacity: 1;
     }
 
-    100%{
-        opacity:0;
+    100% {
+        opacity: 0;
     }
 }
 
-@keyframes fade{
+@keyframes fade {
     100% {
         opacity: 1;
     }
@@ -119,13 +124,12 @@
 /*FOOTER*/
 
 
-.footerWrapper{
-    position:relative;
+.footerWrapper {
+    position: relative;
 }
+
 .contact-footer-bar {
-
-    margin-left:50%;
-
+    margin-left: 50%;
 }
 
 
@@ -186,11 +190,12 @@
     }
 }
 
+@media only screen and (max-width:1200px) {
 
+}
 
 @media only screen and (max-width: 768px) {
     .contact-footer-bar > a {
-
         font-size: 14px;
         padding: 20px 60px;
     }
@@ -203,4 +208,6 @@
         left: 50%;
         top: 250px;
     }
+
+
 }

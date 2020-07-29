@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;subset=japanese" rel="stylesheet">
 </head>
-<body id ="section1"style="background-color:white; overflow-x:hidden;">
+<body id="section1" style="background-color:white; overflow-x:hidden; max-width:100%">
 
 
 
@@ -48,20 +48,23 @@
 
     </div>
 
-        @if (IsSectionDefined("TitleBlock")){
-        @RenderSection("TitleBlock")
+    @if (IsSectionDefined("TitleBlock")){
+    @RenderSection("TitleBlock")
         }
         else {
-        <div class="headerBlock">
+<div class="headerBlock">
 
-            <div class="logo">
-                <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
-                <a asp-page="/index" class="returnHomeButton"><img src="~/SiteAssets/return_home.svg" alt="Return Home"></a>
-            </div>
+    <div class="logo">
+        <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
 
-         
+    </div>
 
-        </div>
+        <a asp-page="/index" ><img class=" returnHomeButton" src="~/SiteAssets/return_home.svg" title="instagram page"></a>
+
+
+</div>
+   
+
             }
 
 

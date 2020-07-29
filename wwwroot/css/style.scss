@@ -113,9 +113,16 @@ $fadedLineWidth: 50%;
     width:100%;
 }
 
+.halfContentBlock {
+    display: inline-block;
+    width: 100%;
+    padding-left: 50px;
+    list-style: none;
+    vertical-align: top;
 
+}
 
-.leftBottomBlock {
+.contentBlock {
     display: inline-block;
     width:49%;
     padding-left:50px;
@@ -125,7 +132,7 @@ $fadedLineWidth: 50%;
 
 
 .mediumHeader {
-    padding-top:100px;
+    padding-top:50px;
     font-family: $standardFont;
     font-size: 2.5em;
     font-weight: 600;
@@ -227,7 +234,7 @@ $fadedLineWidth: 50%;
 
 
 
-.leftBottomBlock a:link {
+.contentBlock a:link {
     font-size: 14px;
     color: black !important;
 }
@@ -239,23 +246,34 @@ $fadedLineWidth: 50%;
 }
 
 
-a.readMore {
-    display: block;
-    padding: 8px 5px;
+.readMore {
+    vertical-align: top;
+    display: inline-block;
+    padding: 8px 100px;
     text-align: center;
-    border-color: $secondayGray !important;
+    border-color: $secondayGray;
     border-width: 1px;
     border: solid;
+    color: gray;
+    transform: translate(-50%);
     margin-left: 50%;
-    margin-top: 50px;
-    color: gray !important;
-    width: 200px;
-    transform:translate(-50%);
+    margin-top: 25%;
+    border-bottom: 2px solid $secondayGray;
+    line-height: 50px;
+
+
+    a {
+        font-size: 30px;
+        color: black;
+        width: 50%;
+    }
 
     &:hover {
         background-color: $secondayGray;
-        color: black !important;
-        text-decoration: none;
+        transition: ease-in-out .15s;
+        opacity: .8;
+        text-decoration-line: none;
+        text-decoration-color: black;
     }
 }
 
@@ -361,6 +379,10 @@ a.readMore {
         height:100%;
     }*/
 
+    .contentBlock {
+        display: block;
+        width: 100%;
+    }
 
 
 }
@@ -370,9 +392,9 @@ a.readMore {
         height:auto;
         width:auto;
     }
-    .leftBottomBlock{
-        width:auto;
-        height:auto;
+    .contentBlock {
+        width: auto;
+        height: auto;
     }
 
 
