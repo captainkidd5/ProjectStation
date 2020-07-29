@@ -2,31 +2,37 @@
   height: 5px;
   background-image: linear-gradient(0.9turn, gray, red);
   background-color: red;
-  margin-left: 10%;
-  width: 80%;
+  width: 200%;
   padding-top: 5px; }
+
+.fullMediumHeader {
+  padding-left: 10%;
+  padding-top: 50px;
+  font-family: 'arial', 'Noto Sans JP', sans-serif;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #707070;
+  width: 100%;
+  display: inline-block; }
 
 .unborderedListElement {
   margin-top: 80px;
   width: 80%;
   margin-right: 20px;
-  margin-left: 10%;
-  font-size: 20px;
-  line-height: 50px; }
+  margin-left: 10%; }
 
 .underImageText {
   display: block;
-  padding: 0px 20px;
+  padding: 0px 0px;
   text-align: left;
   white-space: nowrap;
   vertical-align: top;
   color: black;
-  margin-left: 5px; }
-
-.readMoreWrapper {
-  margin-left: 200px;
-  margin-top: 10%;
-  margin-bottom: 100px; }
+  margin-left: 5px;
+  margin-top: 7px;
+  font-weight: 300;
+  line-height: 10px;
+  font-size: 10px; }
 
 .readMoreAllignLeft {
   display: inline-block;
@@ -37,16 +43,10 @@
   border-width: 1px;
   border: solid;
   color: gray;
-  transform: translate(-50%);
-  white-space: nowrap;
-  vertical-align: top; }
+  margin-left: 0; }
   .readMoreAllignLeft a {
-    font-size: 20px !important;
-    color: gray;
-    width: 50%;
-    white-space: nowrap; }
+    color: gray; }
   .readMoreAllignLeft:hover {
-    background-color: darkgray;
     transition: ease-in-out .15s;
     opacity: .8;
     text-decoration-line: none;

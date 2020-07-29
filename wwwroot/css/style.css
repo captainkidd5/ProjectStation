@@ -98,18 +98,6 @@
   width: 100%;
   display: inline-block; }
 
-.halfSideList {
-  font-size: 14px;
-  display: inline-block;
-  height: 25px;
-  list-style: none;
-  color: #D4D0D0;
-  margin-left: 10%;
-  width: 75%; }
-  .halfSideList img {
-    width: 100%;
-    margin-top: 40px; }
-
 /*ul*/
 .sideList {
   font-size: 14px;
@@ -219,12 +207,7 @@
   .titleBlock {
     width: 650px; }
     .titleBlock logo {
-      width: auto; }
-  /*
-    .fadedLine {
-        width: $fadedLineWidth - 100px;
-    }
-*/ }
+      width: auto; } }
 
 @media only screen and (max-width: 990px) {
   .titleBlock {

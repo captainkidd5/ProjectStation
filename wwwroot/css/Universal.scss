@@ -13,9 +13,9 @@
 /*DEFAULT HEADER (non home page)*/
 
 .headerBlock {
-    overflow-x:hidden;
-    margin-bottom:200px;
-    margin-top:100px;
+    overflow-x: hidden;
+    margin-bottom: 200px;
+    margin-top: 100px;
 }
 
 .logo {
@@ -23,24 +23,22 @@
     display: inline-block;
     left: 50%;
     transform: translate(-50%,0);
-    z-index:-1;
-
+    z-index: -1;
 }
 
 .returnHomeButton {
-    position:absolute;
+    position: absolute;
     width: 200px;
     height: 80px;
-    margin-top:400px;
-    margin-left:0px;
-
-    z-index:1;
+    margin-top: 400px;
+    margin-left: 0px;
+    z-index: 1;
 
     a {
         &:hover {
             transition: ease-in-out .15s;
             opacity: .8;
-            cursor:pointer;
+            cursor: pointer;
         }
     }
 }
@@ -48,24 +46,23 @@
 
 
 .unclickableContentImage {
-    position:relative;
-    display:inline;
-        padding-top: 50px;
+    display: inline;
+    width: 100%;
+    padding-top: 50px;
 
-        &:hover {
-            transition: ease-in-out .15s;
-            opacity: .8;
-        }
-    
+    &:hover {
+        transition: ease-in-out .15s;
+        opacity: .8;
+    }
 }
 
 .imageDescription {
-    position:absolute;
-    display:inline;
-    margin-top:15%;
-    margin-left:20px;
+    position: absolute;
+    display: inline;
+    margin-top: 15%;
+    margin-left: 0px;
     font-size: 20px;
-    width:50%;
+    width: 50%;
 }
 
 /*FADER ARROWS*/ ////////////
@@ -184,7 +181,7 @@
         background-color: gray;
         text-decoration-line: none;
         text-decoration-color: black;
-        color:white;
+        color: white;
     }
 }
 
@@ -226,12 +223,10 @@
     }
 }
 
-.accessButton{
-
+.accessButton {
 }
 
 @media only screen and (max-width:1200px) {
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -249,22 +244,18 @@
         top: 250px;
     }
 
-    .returnHomeButton{
-        left:0;
+    .returnHomeButton {
+        left: 0;
     }
-
 }
 
 @media only screen and (max-width: 640) {
 
-    .unclickableContentImage{
-        position:static;    
-        display:block;
-        width:100vw;
-    }
-    .imageDescription{
-        position:static;
-        display:block;
-    }
+    .unclickableContentImage {
+
     }
 
+    .imageDescription {
+ 
+    }
+}

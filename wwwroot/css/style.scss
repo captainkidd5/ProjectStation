@@ -142,21 +142,6 @@ $fadedLineWidth: 50%;
     display: inline-block;
 }
 
-.halfSideList {
-    font-size: 14px;
-    display: inline-block;
-    height: 25px;
-    list-style: none;
-    color: #D4D0D0;
-    margin-left: 10%;
-    width: 75%;
-
-
-    img {
-        width: 100%;
-        margin-top: 40px;
-    }
-}
 
 /*ul*/
 .sideList {
@@ -321,17 +306,6 @@ $fadedLineWidth: 50%;
         }
     }
 
-
-
-/*
-    .fadedLine {
-        width: $fadedLineWidth - 100px;
-    }
-*/
-
-
-
-
 }
 
 @media only screen and (max-width: 990px) {
@@ -419,9 +393,6 @@ $fadedLineWidth: 50%;
         padding-left:5px;
         padding-right:5px;
     }
-    
-    
-
 
 }
 @media only screen and (max-width: 382px) {

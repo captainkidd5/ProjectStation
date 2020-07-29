@@ -25,8 +25,8 @@
     cursor: pointer; }
 
 .unclickableContentImage {
-  position: relative;
   display: inline;
+  width: 100%;
   padding-top: 50px; }
   .unclickableContentImage:hover {
     transition: ease-in-out .15s;
@@ -36,7 +36,7 @@
   position: absolute;
   display: inline;
   margin-top: 15%;
-  margin-left: 20px;
+  margin-left: 0px;
   font-size: 20px;
   width: 50%; }
 
@@ -176,12 +176,3 @@
     top: 250px; }
   .returnHomeButton {
     left: 0; } }
-
-@media only screen and (max-width: 640) {
-  .unclickableContentImage {
-    position: static;
-    display: block;
-    width: 100vw; }
-  .imageDescription {
-    position: static;
-    display: block; } }
