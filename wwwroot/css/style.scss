@@ -177,6 +177,15 @@ $fadedLineWidth: 50%;
     padding-top: 5px;
 }
 
+//For use on pages where you want two content blocks with a single header
+.fullFadedLine {
+    height: 5px;
+    background-image: linear-gradient(.9turn,$backGroundColor,red );
+    background-color: red;
+    width: 100%;
+    padding-top: 5px;
+}
+
 
 .listImageContainer{
     position:relative;
