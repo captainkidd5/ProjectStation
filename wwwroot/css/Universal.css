@@ -24,6 +24,22 @@
     opacity: .8;
     cursor: pointer; }
 
+.unclickableContentImage {
+  position: relative;
+  display: inline;
+  padding-top: 50px; }
+  .unclickableContentImage:hover {
+    transition: ease-in-out .15s;
+    opacity: .8; }
+
+.imageDescription {
+  position: absolute;
+  display: inline;
+  margin-top: 15%;
+  margin-left: 20px;
+  font-size: 20px;
+  width: 50%; }
+
 /*FADER ARROWS*/
 .faderArrowContainer {
   position: absolute;
@@ -160,3 +176,12 @@
     top: 250px; }
   .returnHomeButton {
     left: 0; } }
+
+@media only screen and (max-width: 640) {
+  .unclickableContentImage {
+    position: static;
+    display: block;
+    width: 100vw; }
+  .imageDescription {
+    position: static;
+    display: block; } }
