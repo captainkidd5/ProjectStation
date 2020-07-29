@@ -78,7 +78,6 @@
 .halfContentBlock {
   display: inline-block;
   width: 100%;
-  padding-left: 50px;
   list-style: none;
   vertical-align: top; }
 
@@ -144,7 +143,7 @@
   left: 0;
   top: -5px;
   color: black;
-  font-size: 30px !important; }
+  font-size: 15px !important; }
   .imageHashTag:hover {
     color: black;
     text-decoration-line: underline;
@@ -257,15 +256,8 @@
     display: block;
     width: 100%; }
   .mediumHeader {
-    padding-left: 0; } }
-
-@media only screen and (max-width: 382px) {
-  .titleBlock {
-    height: auto;
-    width: auto; }
-  .contentBlock {
-    width: auto;
-    height: auto; } }
+    padding-left: 5px;
+    padding-right: 5px; } }
 
 @media only screen and (max-width: 233px) {
   .wrapper {

@@ -116,7 +116,6 @@ $fadedLineWidth: 50%;
 .halfContentBlock {
     display: inline-block;
     width: 100%;
-    padding-left: 50px;
     list-style: none;
     vertical-align: top;
 
@@ -203,7 +202,7 @@ $fadedLineWidth: 50%;
     top: -5px;
     color: black;
 
-        font-size: 30px !important;
+        font-size: 15px !important;
 
 
     &:hover {
@@ -389,7 +388,8 @@ $fadedLineWidth: 50%;
     }
 
     .mediumHeader{
-        padding-left:0;
+        padding-left:5px;
+        padding-right:5px;
     }
     
     
@@ -398,14 +398,7 @@ $fadedLineWidth: 50%;
 }
 @media only screen and (max-width: 382px) {
 
-    .titleBlock{
-        height:auto;
-        width:auto;
-    }
-    .contentBlock {
-        width: auto;
-        height: auto;
-    }
+
 
 
 }

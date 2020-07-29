@@ -26,9 +26,17 @@
 /*FADER ARROWS*/
 .faderArrowContainer {
   position: absolute;
+  top: 0;
+  padding: 10px 10px 10px 10px;
+  left: 50%;
+  border-style: none;
+  transform: translate(-50%, 0); }
+
+.faderArrowContainerTop {
+  position: absolute;
   top: 25%;
   padding: 10px 10px 10px 10px;
-  left: 45%;
+  left: 0;
   border-style: none;
   transform: translate(-50%, 0); }
 
@@ -98,7 +106,7 @@
   white-space: nowrap;
   color: white;
   background-color: gray;
-  top: 100px;
+  top: 125px;
   border-radius: 40px;
   padding: 20px 120px;
   transform: translate(-50%);
