@@ -125,49 +125,48 @@ $fadedLineWidth: 50%;
 .contentBlock {
     display: inline-block;
     width:49%;
-    padding-left:50px;
     list-style: none;
     vertical-align: top;
 }
 
 
 .mediumHeader {
-    padding-top:50px;
-    font-family: $standardFont;
+    padding-left:10%;
+    padding-top: 50px;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
     font-size: 2.5em;
     font-weight: 600;
-    color: black;
-    width:100%;
-    display:inline-block;
+    color: #707070;
+    width: 100%;
+    display: inline-block;
 }
 
 /*ul*/
-.leftSideList {
+.sideList {
     font-size: 14px;
     display: inline-block;
     height: 25px;
     list-style: none;
-    color: darkgray;
-    width: 100%;
-
+    color: #D4D0D0;
     li {
-        width: 100%;
-        margin-left: -40px;
+        
         margin-top: 20px;
+        margin-left:-40px;
         border-bottom: 2px solid $secondayGray;
         font-size: 20px;
         line-height: 50px;
 
 
         img {
-            width: inherit;
+            width: 100%;
+            margin-top: 40px;
         }
     }
 }
 
 .leftSideLink {
     color: black;
-    width: inherit;
+    width: 100%;
 }
 
 
@@ -188,7 +187,7 @@ $fadedLineWidth: 50%;
 
 .leftSideImage {
     padding-top: 50px;
-    width: inherit;
+    width: 100%;
 
     &:hover {
         transition: ease-in-out .15s;
@@ -199,14 +198,16 @@ $fadedLineWidth: 50%;
 .imageHashTag {
     position: absolute;
     font-family: $standardFont;
-    font-size: 20px;
     width: 100%;
     left: 0;
-    top: 20px;
+    top: -5px;
     color: black;
 
+        font-size: 30px !important;
+
+
     &:hover {
-        color:black;
+        color: black;
         text-decoration-line: underline;
         text-decoration-color: black;
         transition: ease-in 1s;
@@ -218,17 +219,18 @@ $fadedLineWidth: 50%;
     z-index: 1;
     width:100%;
     height:30%; 
-    bottom:50px;    
+    bottom:0;   
 }
 
 .textImageOverlay {
     position:absolute;
     font-family: $standardFont;
     font-size: 20px;
-    bottom:50%;
+    bottom:5px;
     left:0;
     width:100%;
     text-align:center;
+    color:black;
     text-wrap:normal;
 }
 
@@ -249,7 +251,7 @@ $fadedLineWidth: 50%;
 .readMore {
     vertical-align: top;
     display: inline-block;
-    padding: 8px 100px;
+    padding: 0px 30px;
     text-align: center;
     border-color: $secondayGray;
     border-width: 1px;
@@ -257,15 +259,17 @@ $fadedLineWidth: 50%;
     color: gray;
     transform: translate(-50%);
     margin-left: 50%;
-    margin-top: 25%;
-    border-bottom: 2px solid $secondayGray;
-    line-height: 50px;
+    margin-top: 35%;
+
+
+    white-space: nowrap;
 
 
     a {
-        font-size: 30px;
-        color: black;
+        font-size: 30px !important;
+        color: gray;
         width: 50%;
+        white-space: nowrap;
     }
 
     &:hover {
@@ -383,6 +387,12 @@ $fadedLineWidth: 50%;
         display: block;
         width: 100%;
     }
+
+    .mediumHeader{
+        padding-left:0;
+    }
+    
+    
 
 
 }

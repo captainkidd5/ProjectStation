@@ -85,40 +85,39 @@
 .contentBlock {
   display: inline-block;
   width: 49%;
-  padding-left: 50px;
   list-style: none;
   vertical-align: top; }
 
 .mediumHeader {
+  padding-left: 10%;
   padding-top: 50px;
-  font-family: Courier New, Courier, monospace;
+  font-family: 'arial', 'Noto Sans JP', sans-serif;
   font-size: 2.5em;
   font-weight: 600;
-  color: black;
+  color: #707070;
   width: 100%;
   display: inline-block; }
 
 /*ul*/
-.leftSideList {
+.sideList {
   font-size: 14px;
   display: inline-block;
   height: 25px;
   list-style: none;
-  color: darkgray;
-  width: 100%; }
-  .leftSideList li {
-    width: 100%;
-    margin-left: -40px;
+  color: #D4D0D0; }
+  .sideList li {
     margin-top: 20px;
+    margin-left: -40px;
     border-bottom: 2px solid darkGray;
     font-size: 20px;
     line-height: 50px; }
-    .leftSideList li img {
-      width: inherit; }
+    .sideList li img {
+      width: 100%;
+      margin-top: 40px; }
 
 .leftSideLink {
   color: black;
-  width: inherit; }
+  width: 100%; }
 
 .fadedLine {
   height: 5px;
@@ -133,7 +132,7 @@
 
 .leftSideImage {
   padding-top: 50px;
-  width: inherit; }
+  width: 100%; }
   .leftSideImage:hover {
     transition: ease-in-out .15s;
     opacity: .8; }
@@ -141,11 +140,11 @@
 .imageHashTag {
   position: absolute;
   font-family: Courier New, Courier, monospace;
-  font-size: 20px;
   width: 100%;
   left: 0;
-  top: 20px;
-  color: black; }
+  top: -5px;
+  color: black;
+  font-size: 30px !important; }
   .imageHashTag:hover {
     color: black;
     text-decoration-line: underline;
@@ -158,16 +157,17 @@
   z-index: 1;
   width: 100%;
   height: 30%;
-  bottom: 50px; }
+  bottom: 0; }
 
 .textImageOverlay {
   position: absolute;
   font-family: Courier New, Courier, monospace;
   font-size: 20px;
-  bottom: 50%;
+  bottom: 5px;
   left: 0;
   width: 100%;
   text-align: center;
+  color: black;
   text-wrap: normal; }
 
 .contentBlock a:link {
@@ -177,7 +177,7 @@
 .readMore {
   vertical-align: top;
   display: inline-block;
-  padding: 8px 100px;
+  padding: 0px 30px;
   text-align: center;
   border-color: darkGray;
   border-width: 1px;
@@ -185,13 +185,13 @@
   color: gray;
   transform: translate(-50%);
   margin-left: 50%;
-  margin-top: 25%;
-  border-bottom: 2px solid darkGray;
-  line-height: 50px; }
+  margin-top: 35%;
+  white-space: nowrap; }
   .readMore a {
-    font-size: 30px;
-    color: black;
-    width: 50%; }
+    font-size: 30px !important;
+    color: gray;
+    width: 50%;
+    white-space: nowrap; }
   .readMore:hover {
     background-color: darkGray;
     transition: ease-in-out .15s;
@@ -255,7 +255,9 @@
     }*/
   .contentBlock {
     display: block;
-    width: 100%; } }
+    width: 100%; }
+  .mediumHeader {
+    padding-left: 0; } }
 
 @media only screen and (max-width: 382px) {
   .titleBlock {

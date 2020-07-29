@@ -28,8 +28,9 @@
   position: absolute;
   top: 25%;
   padding: 10px 10px 10px 10px;
-  left: 75%;
-  border-style: none; }
+  left: 45%;
+  border-style: none;
+  transform: translate(-50%, 0); }
 
 .faderArrow1Bottom {
   -webkit-transform: scaleY(-1);
