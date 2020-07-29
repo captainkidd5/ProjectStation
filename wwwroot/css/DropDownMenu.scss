@@ -42,7 +42,8 @@
 .dropMenuContent {
     display: block;
     width: 120vw;
-    position: absolute;
+    position: fixed;
+    top:0;
     background-color: #9d9393;
     height: 0px;
     overflow-y: hidden;
