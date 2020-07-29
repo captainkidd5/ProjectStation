@@ -147,21 +147,24 @@ $fadedLineWidth: 50%;
     height: 25px;
     list-style: none;
     color: #D4D0D0;
-    li {
-        
-        margin-top: 20px;
-        margin-left:-40px;
-        border-bottom: 2px solid $secondayGray;
-        font-size: 20px;
-        line-height: 50px;
-
+   
 
         img {
             width: 100%;
             margin-top: 40px;
         }
-    }
+    
 }
+
+.borderedListElement {
+    margin-top: 20px;
+    margin-left: -40px;
+    border-bottom: 2px solid $secondayGray;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+
 
 .leftSideLink {
     color: black;
@@ -177,14 +180,6 @@ $fadedLineWidth: 50%;
     padding-top: 5px;
 }
 
-//For use on pages where you want two content blocks with a single header
-.fullFadedLine {
-    height: 5px;
-    background-image: linear-gradient(.9turn,$backGroundColor,red );
-    background-color: red;
-    width: 100%;
-    padding-top: 5px;
-}
 
 
 .listImageContainer{
@@ -255,26 +250,9 @@ $fadedLineWidth: 50%;
     font-size: .3em;
 }
 
-
-.readMore {
-    vertical-align: top;
-    display: inline-block;
-    padding: 0px 30px;
-    text-align: center;
-    border-color: $secondayGray;
-    border-width: 1px;
-    border: solid;
-    color: gray;
-    transform: translate(-50%);
-    margin-left: 50%;
-    margin-top: 35%;
-
-
-    white-space: nowrap;
-
-
+@mixin readMoreHover {
     a {
-        font-size: 30px !important;
+        font-size: 20px !important;
         color: gray;
         width: 50%;
         white-space: nowrap;
@@ -288,6 +266,24 @@ $fadedLineWidth: 50%;
         text-decoration-color: black;
     }
 }
+.readMore {
+    vertical-align: top;
+    display: inline-block;
+    padding: 0px 30px;
+    text-align: center;
+    border-color: $secondayGray;
+    border-width: 1px;
+    border: solid;
+    color: gray;
+    transform: translate(-50%);
+    margin-left: 50%;
+    margin-top: 35%;
+    white-space: nowrap;
+
+    @include readMoreHover;
+}
+
+
 
 
 

@@ -14,5 +14,9 @@
   {
     "outputFile": "wwwroot/css/Universal.css",
     "inputFile": "wwwroot/css/Universal.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/exhibit.css",
+    "inputFile": "wwwroot/css/exhibit.scss"
   }
 ]

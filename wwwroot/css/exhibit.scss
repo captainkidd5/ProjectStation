@@ -1,0 +1,60 @@
+﻿
+//For use on pages where you want two content blocks with a single header
+.fullFadedLine {
+    height: 5px;
+    background-image: linear-gradient(.9turn,gray,red );
+    background-color: red;
+    width: 100%;
+    padding-top: 5px;
+}
+.unborderedListElement {
+    margin-top: 80px;
+    margin-left: -40px;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.underImageText {
+    display: block;
+    padding: 0px 20px;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: top;
+    color:black;
+    margin-left:5px;
+}
+
+.readMoreWrapper {
+    margin-left: 200px;
+    margin-top: 10%;
+    margin-bottom: 100px;
+}
+
+.readMoreAllignLeft {
+    display: inline-block;
+    padding: 0px 20px;
+    text-align: center;
+    border-color: darkgray;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border: solid;
+    color: gray;
+    transform: translate(-50%);
+    white-space: nowrap;
+    vertical-align: top;
+
+    a {
+        font-size: 20px !important;
+        color: gray;
+        width: 50%;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        background-color: darkgray;
+        transition: ease-in-out .15s;
+        opacity: .8;
+        text-decoration-line: none;
+        text-decoration-color: black;
+    }
+}

@@ -104,15 +104,16 @@
   height: 25px;
   list-style: none;
   color: #D4D0D0; }
-  .sideList li {
-    margin-top: 20px;
-    margin-left: -40px;
-    border-bottom: 2px solid darkGray;
-    font-size: 20px;
-    line-height: 50px; }
-    .sideList li img {
-      width: 100%;
-      margin-top: 40px; }
+  .sideList img {
+    width: 100%;
+    margin-top: 40px; }
+
+.borderedListElement {
+  margin-top: 20px;
+  margin-left: -40px;
+  border-bottom: 2px solid darkGray;
+  font-size: 20px;
+  line-height: 50px; }
 
 .leftSideLink {
   color: black;
@@ -123,13 +124,6 @@
   background-image: linear-gradient(0.9turn, white, red);
   background-color: red;
   width: inherit;
-  padding-top: 5px; }
-
-.fullFadedLine {
-  height: 5px;
-  background-image: linear-gradient(0.9turn, white, red);
-  background-color: red;
-  width: 100%;
   padding-top: 5px; }
 
 .listImageContainer {
@@ -194,7 +188,7 @@
   margin-top: 35%;
   white-space: nowrap; }
   .readMore a {
-    font-size: 30px !important;
+    font-size: 20px !important;
     color: gray;
     width: 50%;
     white-space: nowrap; }
