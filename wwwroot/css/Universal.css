@@ -21,7 +21,8 @@
   z-index: 1; }
   .returnHomeButton a:hover {
     transition: ease-in-out .15s;
-    opacity: .8; }
+    opacity: .8;
+    cursor: pointer; }
 
 /*FADER ARROWS*/
 .faderArrowContainer {
@@ -114,7 +115,10 @@
   text-align: center;
   margin: auto; }
   .footerbar_link:hover {
-    background-color: gray; }
+    background-color: gray;
+    text-decoration-line: none;
+    text-decoration-color: black;
+    color: white; }
 
 .footerLogo {
   position: relative;

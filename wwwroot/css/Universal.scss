@@ -40,6 +40,7 @@
         &:hover {
             transition: ease-in-out .15s;
             opacity: .8;
+            cursor:pointer;
         }
     }
 }
@@ -158,6 +159,9 @@
 
     &:hover {
         background-color: gray;
+        text-decoration-line: none;
+        text-decoration-color: black;
+        color:white;
     }
 }
 
