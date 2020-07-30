@@ -21,7 +21,7 @@
     position: fixed;
     top: 50px;
     right: 50px;
-    background-color: ghostwhite;
+    background-color: white;
     border-color: #9D9393;
     padding: 32px 32px;
     border-radius: 15px;
@@ -54,7 +54,7 @@
     display: block;
     width: 120vw;
     position: fixed;
-    top:0;
+    top: 0;
     background-color: #9d9393;
     height: 0px;
     overflow-y: hidden;
@@ -62,7 +62,8 @@
     font-family: 'arial', 'Noto Sans JP', sans-serif;
     color: white;
     font-size: 1.2rem;
-    font-weight:400;
+    font-weight: 400;
+    z-index: 2;
 }
 
 .show {
@@ -75,7 +76,7 @@
     text-align: center;
     display: block;
     color: white;
-    z-index: 2;
+    z-index: 3;
     opacity: 1;
 
     a {
