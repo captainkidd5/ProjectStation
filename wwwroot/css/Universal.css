@@ -1,4 +1,5 @@
-﻿/*SECTIONS*/
+﻿@charset "UTF-8";
+/*SECTIONS*/
 /*DEFAULT HEADER (non home page)*/
 .headerBlock {
   overflow-x: hidden;
@@ -194,6 +195,17 @@
 
 .rowData {
   padding-left: 50px; }
+
+.mapsWrapper {
+  padding-top: 50px; }
+
+.directionsHeader {
+  margin-top: 50px; }
+  .directionsHeader h3:before {
+    content: "• "; }
+
+.directionsList {
+  font-size: 16px; }
 
 @media only screen and (max-width: 768px) {
   .contact-footer-bar > a {
