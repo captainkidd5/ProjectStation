@@ -27,14 +27,14 @@
   display: block;
   padding: 0px 0px;
   text-align: left;
-  white-space: nowrap;
   vertical-align: top;
   color: black;
   margin-left: 5px;
   margin-top: 7px;
   font-weight: 300;
-  line-height: 10px;
-  font-size: 10px; }
+  line-height: 22px;
+  font-size: 10px;
+  width: 100%; }
 
 .underImageTextOfficial {
   display: block;
