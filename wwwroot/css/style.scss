@@ -134,14 +134,17 @@ $fadedLineWidth: 50%;
 .mediumHeader {
     padding-left:10%;
     padding-top: 50px;
-    font-family: 'arial', 'Noto Sans JP', sans-serif;
-    font-size: 2.5em;
-    font-weight: 600;
-    color: #707070;
+
     width: 100%;
     display: inline-block;
 }
 
+.mediumHeaderStyle {
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #707070;
+}
 
 /*ul*/
 .sideList {
@@ -173,6 +176,9 @@ $fadedLineWidth: 50%;
 .leftSideLink {
     color: black;
     width: 100%;
+    &:hover{
+        color:black;
+    }
 }
 
 
@@ -283,6 +289,7 @@ $fadedLineWidth: 50%;
     margin-left: 50%;
     margin-top: 35%;
     white-space: nowrap;
+
 
     @include readMoreHover;
 }

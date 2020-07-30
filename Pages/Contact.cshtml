@@ -4,72 +4,48 @@
     ViewData["Title"] = "Contact";
 }
 
-<h1>Contact</h1>
-
-@if (!string.IsNullOrEmpty(Model.SubmitMessage))
-{
-    <div class="alrt alert-primary">
-        @Model.SubmitMessage;
-    </div>
-}
-else
-{
-    <div class="container">
-        <form method="post" asp-page-handler="OnPost">
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname">Name</label>
-                </div>
-                <div class="col-75">
-                    <input asp-for="Name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="rName">Name (reading)</label>
-                </div>
-                <div class="col-75">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="phone">Phone Number</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="phone" name="lastname" >
-                </div>
+<div class=" wrapper">
+    <div class="halfContentBlock">
+        <div class="mediumHeader">
+            <div class=" mediumHeaderStyle">Contact</div>
+            
+            <div class="fadedLine"></div>
+            <div class="containerTable">
 
 
-            </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="subject">Inquiry</label>
-                </div>
-                <div class="col-75">
-                    <textarea id="subject" name="subject" placeholder="Write a question.." style="height:200px"></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-25">
-
-                    <div class="form-check">
-
-                        <label class="form-check-label">
-                            Check to receive email notifications
-                        </label>
-                        <input asp-for="EmailNotify" class="form-check-input" />
+                <form action="/contact" >
+                    <div class="contactRow">
+                        <div class="col-25">
+                            <label for="fname">Name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname">
+                        </div>
                     </div>
-                </div>
+                    <div class="contactRow">
+                        <div class="col-25">
+                            <label for="lname">Name (reading) </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="lname" name="lastname">
+                        </div>
+                    </div>
+
+                    <div class="contactRow">
+                        <div class="col-25">
+                            <label for="phone">Phone Number </label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="phone" name="lastname">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
-
-            <div class="row">
-                <input type="submit" value="Submit" />
-            </div>
-
-
-        </form>
-        <hr />
+        </div>
     </div>
-}
+
+</div>

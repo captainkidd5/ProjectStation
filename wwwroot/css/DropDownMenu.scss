@@ -3,8 +3,9 @@
 
 
 .dropMenu {
-    left: 70%;
+    left: 80%;
     padding-top: 25px;
+
     position: absolute;
     display: none;
 }
@@ -17,17 +18,17 @@
 }
 
 .dropMenuButton {
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 50px;
+    right: 50px;
     background-color: ghostwhite;
-    width:50px;
-    padding: 16px 8px;
-    border-radius: 12px;
-    color: lightgray;
-    box-shadow: none;
-    outline: none;
-    z-index:3;
-    top:0;
+    border-color: #9D9393;
+    padding: 32px 32px;
+    border-radius: 15px;
+    color: #9D9393;
+
+    z-index: 3;
+
     &:hover {
         background-color: lightgray;
         transition: 1s;
@@ -37,6 +38,16 @@
         background-color: lightgray;
         outline: none;
     }
+}
+
+.hamburgerContents {
+    position: absolute;
+    top: 25%;
+    height: 1px;
+    width: 50px;
+    background-color: #9D9393;
+    padding-top: 4px;
+    transform: translate(-50%);
 }
 
 .dropMenuContent {

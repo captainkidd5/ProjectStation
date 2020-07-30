@@ -51,9 +51,6 @@ window.onclick = function (event) {
         }
         if (document.getElementById("titlePage").classList.contains('hide')) {
             document.getElementById("titlePage").classList.remove('hide');
-
-
-
         }
     }
 }

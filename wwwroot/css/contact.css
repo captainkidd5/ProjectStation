@@ -5,9 +5,11 @@
   border-radius: 4px;
   resize: vertical; }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block; }
+.contactLabel {
+  margin-top: 50px;
+  width: 50%;
+  border-radius: 5px;
+  background-color: #9D9393 !important; }
 
 input[type=submit] {
   background-color: #4CAF50;
@@ -21,26 +23,35 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049; }
 
-.container {
+.containerTable {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px; }
+  background-color: #9D9393 !important;
+  padding: 20px;
+  font-size: 12px;
+  box-sizing: border-box; }
 
 .col-25 {
   float: left;
   width: 25%;
-  margin-top: 6px; }
+  margin-top: 25px; }
 
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px; }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both; }
+.contactRow {
+  color: white;
+  font-size: 20px;
+  line-height: 25px;
+  margin-left: 30px;
+  margin-top: 25px; }
+  .contactRow .after {
+    content: "";
+    display: table;
+    clear: both; }
 
+/* Clear floats after the columns */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, input[type=submit] {
     width: 100%;
