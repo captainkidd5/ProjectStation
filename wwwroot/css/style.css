@@ -13,11 +13,11 @@
   .titleBlock ul {
     list-style: none; }
     .titleBlock ul li a {
-      font-family: Courier New, Courier, monospace;
-      font-size: 1.2em;
+      font-family: 'arial', 'Noto Sans JP', sans-serif;
+      font-size: 20px;
       position: relative;
       bottom: 15px;
-      color: darkGray;
+      color: #9D9393;
       line-height: 55px; }
       .titleBlock ul li a:hover {
         background-color: white;
@@ -114,7 +114,7 @@
 .borderedListElement {
   margin-top: 20px;
   margin-left: -40px;
-  border-bottom: 2px solid darkGray;
+  border-bottom: 2px solid #9D9393;
   font-size: 20px;
   line-height: 50px; }
 
@@ -184,7 +184,7 @@
   display: inline-block;
   padding: 0px 30px;
   text-align: center;
-  border-color: darkGray;
+  border-color: #9D9393;
   border-width: 1px;
   border: solid;
   color: gray;
@@ -198,7 +198,7 @@
     width: 50%;
     white-space: nowrap; }
   .readMore:hover {
-    background-color: darkGray;
+    background-color: #9D9393;
     transition: ease-in-out .15s;
     opacity: .8;
     text-decoration-line: none;

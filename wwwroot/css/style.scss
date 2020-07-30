@@ -1,7 +1,7 @@
 ﻿
 $backGroundColor: white;
 $primaryColor: lightGray;
-$secondayGray: darkGray;
+$secondayGray: #9D9393;
 $standardFont: Courier New, Courier, monospace;
 
 $leftOffset: -700px;
@@ -31,8 +31,8 @@ $mobileViewWidth: 95vw;
         li {
 
             a {
-                font-family: $standardFont;
-                font-size: 1.2em;
+                font-family: 'arial', 'Noto Sans JP', sans-serif;
+                font-size: 20px;
                 position: relative;
                 bottom: 15px;
                 color: $secondayGray;
