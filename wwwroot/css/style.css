@@ -100,11 +100,9 @@
 
 /*ul*/
 .sideList {
-  font-size: 14px;
   display: inline-block;
   height: 25px;
   list-style: none;
-  color: #D4D0D0;
   margin-left: 0%;
   width: 100%; }
   .sideList img {
@@ -202,6 +200,10 @@
     text-decoration-line: none;
     text-decoration-color: black; }
 
+.sideParagraph {
+  margin-top: 50%;
+  width: 100%; }
+
 /*RESIZING*/
 @media only screen and (max-width: 1200px) {
   .titleBlock {
@@ -258,7 +260,9 @@
     width: 100%; }
   .mediumHeader {
     padding-left: 5px;
-    padding-right: 5px; } }
+    padding-right: 5px; }
+  .sideParagraph {
+    margin-top: -30%; } }
 
 @media only screen and (max-width: 233px) {
   .wrapper {

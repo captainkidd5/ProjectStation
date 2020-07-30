@@ -145,11 +145,10 @@ $fadedLineWidth: 50%;
 
 /*ul*/
 .sideList {
-    font-size: 14px;
+ 
     display: inline-block;
     height: 25px;
     list-style: none;
-    color: #D4D0D0;
     margin-left:0%;
     width:100%;
    
@@ -288,7 +287,10 @@ $fadedLineWidth: 50%;
     @include readMoreHover;
 }
 
-
+.sideParagraph {
+    margin-top: 50%;
+    width: 100%;
+}
 
 
 
@@ -392,6 +394,11 @@ $fadedLineWidth: 50%;
     .mediumHeader{
         padding-left:5px;
         padding-right:5px;
+    }
+
+    .sideParagraph{
+        margin-top:-30%;
+        
     }
 
 }
