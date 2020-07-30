@@ -174,21 +174,26 @@
   margin-bottom: 5px; }
 
 .companyTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: 'arial', 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  color: black;
   border-collapse: collapse;
+  margin-top: 100px;
   width: 100%;
   border: 1px solid black; }
-  .companyTable .td {
-    border: 1px solid #ddd;
-    padding: 8px; }
 
 .tableRow {
-  border: 1px solid white; }
+  border: 1px solid #dddddd; }
 
 .rowName {
   color: white;
   border: 1px solid white;
-  background-color: #9D9393; }
+  background-color: #9D9393;
+  padding: 24px; }
+
+.rowData {
+  padding-left: 50px; }
 
 @media only screen and (max-width: 768px) {
   .contact-footer-bar > a {
