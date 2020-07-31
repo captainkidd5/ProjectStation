@@ -46,10 +46,11 @@
   .portrait p {
     overflow: auto;
     display: block; }
-  .portrait img {
-    margin-right: 50px;
-    float: left;
-    clear: both;
-    width: 300px;
-    height: 500px;
-    object-fit: cover; }
+
+.portraitImg {
+  margin-right: 50px;
+  float: left;
+  clear: both;
+  width: 300px;
+  height: 500px;
+  object-fit: cover; }
