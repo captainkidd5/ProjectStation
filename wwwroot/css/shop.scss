@@ -1,8 +1,8 @@
 ﻿
 
-.smallLogo{
-    margin-right:200px;
-    width:25%;
+.smallLogo {
+    margin-right: 200px;
+    width: 25%;
 }
 
 .inlineNavBar {
@@ -27,17 +27,17 @@
                 text-decoration: none;
                 font-size: 18px;
                 font-family: 'arial', 'Noto Sans JP', sans-serif;
-                font-weight:800;
+                font-weight: 800;
             }
         }
     }
 }
 
 
-.centralImage{
-    transform:translate(-50%);
-    margin-left:50%;
-    width:50%;
+.centralImage {
+    transform: translate(-50%);
+    margin-left: 55%;
+    width: 80%;
 }
 
 
@@ -47,15 +47,14 @@
 }
 
 .centerTitle {
- 
-    margin-top:100px;
-        color: #333333;
-        text-decoration: none;
-        font-size: 24px;
-        font-family: 'arial', 'Noto Sans JP', sans-serif;
-        font-weight: 800;;
-        margin-left: 50%;
-    
+    margin-top: 100px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
+    font-weight: 800;
+    ;
+    margin-left: 50%;
 }
 
 .portrait {
@@ -64,12 +63,9 @@
     height: 400px;
 
     p {
-
         overflow: auto;
         display: block;
     }
-
-    
 }
 
 .portraitImg {
@@ -81,4 +77,14 @@
     object-fit: cover;
 }
 
-
+@media only screen and (max-width: 768px) {
+    .inlineNavBar{
+        display:none;
+    }
+    .bodyAllignment{
+       // margin-left:05
+    }
+    .portraitImg{
+        float:none;
+    }
+}

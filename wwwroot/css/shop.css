@@ -23,8 +23,8 @@
 
 .centralImage {
   transform: translate(-50%);
-  margin-left: 50%;
-  width: 50%; }
+  margin-left: 55%;
+  width: 80%; }
 
 .bodyAllignment {
   position: relative;
@@ -54,3 +54,9 @@
   width: 300px;
   height: 500px;
   object-fit: cover; }
+
+@media only screen and (max-width: 768px) {
+  .inlineNavBar {
+    display: none; }
+  .portraitImg {
+    float: none; } }
