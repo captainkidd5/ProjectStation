@@ -14,7 +14,7 @@
     list-style: none; }
     .titleBlock ul li a {
       font-family: 'arial', 'Noto Sans JP', sans-serif;
-      font-size: 20px;
+      font-size: 20unpx;
       position: relative;
       bottom: 15px;
       color: #9D9393;

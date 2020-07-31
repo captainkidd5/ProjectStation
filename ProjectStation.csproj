@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Pages\ArtistStuff\chichen-itza-preview.jpg" />
+    <Content Include="Pages\ArtistStuff\chichen-itza.jpg" />
+    <Content Include="Pages\ArtistStuff\vrImage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
 

@@ -3,6 +3,22 @@
 
 // Write your Javascript code.
 
+window.addEventListener('load', onVrViewLoad);
+function onVrViewLoad() {
+    // Selector '#vrview' finds element with id 'vrview'.
+
+    var vrView = new VRView.Player('#vrview', {
+        width: '100%',
+        height: 300,
+        image: 'https://storage.googleapis.com/vrview/examples/coral.jpg',
+        is_stereo: true,
+        is_autopan_off: true
+    });
+
+
+}
+
+
 
 $(document).ready(function () {
     // Add smooth scrolling to all links

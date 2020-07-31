@@ -21,10 +21,10 @@
             <p class="hamburgerContents">
 
             </p>
-            <p class="hamburgerContents"style="margin-top:15px;">
+            <p class="hamburgerContents" style="margin-top:15px;">
 
             </p>
-            <p class="hamburgerContents"style="margin-top:30px;">
+            <p class="hamburgerContents" style="margin-top:30px;">
 
             </p>
         </button>
@@ -36,7 +36,7 @@
         <a asp-page="news" class="dropMenuItem">News</a>
         <a asp-page="exhibition" class="dropMenuItem">Exhibition</a>
 
-        <a asp-page="artist" class="dropMenuItem">Artist</a>
+        <a asp-page="artiststuff/artist" class="dropMenuItem">Artist</a>
 
 
 
@@ -50,24 +50,26 @@
 
     </div>
 
-    @if (IsSectionDefined("TitleBlock")){
-    @RenderSection("TitleBlock")
-        }
-        else {
-<div class="headerBlock">
+    @if (IsSectionDefined("TitleBlock"))
+    {
+        @RenderSection("TitleBlock")
+    }
+    else
+    {
+        <div class="headerBlock">
 
-    <div class="logo">
-        <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
+            <div class="logo">
+                <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
 
-    </div>
+            </div>
 
-        <a asp-page="/index" ><img class=" returnHomeButton" src="~/SiteAssets/return_home.svg" title="instagram page"></a>
+            <a asp-page="/index"><img class=" returnHomeButton" src="~/SiteAssets/return_home.svg" title="instagram page"></a>
 
 
-</div>
-   
+        </div>
 
-            }
+
+    }
 
 
 
@@ -109,7 +111,9 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
 
     @RenderSection("Scripts", required: false)
 
