@@ -7,21 +7,6 @@
 //SHOP
 
 
-//widnow.addEventListener('load',onShopLoad)
-
-
-//function onShopLoad() {
-//    var myIndex = 0;
-//    var i;
-//    var x = document.getElementsByClassName("mySlides");
-//    for (i = 0; i < x.length; i++) {
-//        x[i].style.display = "none";
-//    }
-//    myIndex++;
-//    if (myIndex > x.length) { myIndex = 1 }
-//    x[myIndex - 1].style.display = "block";
-//    setTimeout(carousel, 9000);
-//}
 
 
 window.addEventListener('load', onVrViewLoad);
@@ -39,8 +24,7 @@ function onVrViewLoad() {
 
 }
 
-
-
+//for use with those three little fading arrows that let you scroll up and down.
 $(document).ready(function () {
     // Add smooth scrolling to all links
     $("a").on('click', function (event) {

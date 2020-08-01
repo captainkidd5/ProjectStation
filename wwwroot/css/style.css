@@ -1,5 +1,4 @@
 ﻿.wrapper {
-  overflow-x: hidden;
   z-index: -1; }
 
 .hide {
@@ -9,7 +8,9 @@
   position: relative;
   top: 200px;
   margin: 0 auto;
-  width: 1050px; }
+  width: 1050px;
+  overflow-x: hidden;
+  overflow-y: hidden; }
   .titleBlock ul {
     list-style: none; }
     .titleBlock ul li a {

@@ -10,8 +10,9 @@ $rightOffset: 300px;
 $mobileViewWidth: 95vw;
 
 .wrapper {
-    overflow-x:hidden;
+   
     z-index:-1;
+  
 }
 
 .hide {
@@ -23,6 +24,8 @@ $mobileViewWidth: 95vw;
     top: 200px;
     margin: 0 auto;
     width: 1050px;
+    overflow-x:hidden;
+    overflow-y:hidden;
 
     ul {
         list-style: none;
@@ -103,6 +106,7 @@ $mobileViewWidth: 95vw;
     margin-left:50%;
     padding: 10px 10px 10px 10px;
     border-style: none;
+
 }
 $fadedLineWidth: 50%;
 
