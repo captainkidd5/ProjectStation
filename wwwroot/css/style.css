@@ -10,7 +10,8 @@
   margin: 0 auto;
   width: 1050px;
   overflow-x: hidden;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  height: 500px; }
   .titleBlock ul {
     list-style: none; }
     .titleBlock ul li a {
@@ -47,21 +48,25 @@
   border: 0px; }
 
 .socialMediaIcons {
+  width: 100px;
   position: absolute;
   right: -50px;
   top: 200px; }
-  .socialMediaIcons:hover {
+
+#instagramButton {
+  width: 50% !important;
+  display: inline; }
+  #instagramButton:hover {
     filter: invert(50);
     transition: ease-in 1s; }
 
-#instagramButton {
-  position: relative; }
-
 #facebookButton {
-  position: absolute;
-  width: 100%;
-  right: 50px;
+  display: inline;
+  width: 50px;
   top: 0; }
+  #facebookButton:hover {
+    filter: invert(50);
+    transition: ease-in 1s; }
 
 .faderArrowContainerTop {
   position: absolute;
@@ -72,7 +77,7 @@
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
-  margin-top: 700px;
+  margin-top: 400px;
   left: 0;
   position: relative;
   width: 100%; }
