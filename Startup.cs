@@ -28,6 +28,7 @@ namespace ProjectStation
             services.AddServerSideBlazor();
             services.AddControllers();
             services.AddTransient<JsonFileProductService>(); //transient comes and goes. You'll get a new one every time it is called.
+            services.AddMvc().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

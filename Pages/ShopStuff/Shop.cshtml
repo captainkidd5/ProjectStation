@@ -5,21 +5,8 @@
 }
 
 @section TitleBlock {
-    <div class="wrapper">
-
-        <nav class="inlineNavBar">
-            <ul>
-                <li> <img class ="smallLogo"src="~/SiteAssets/shopstuff/logo_2.jpg"></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="project">PROJECT</a></li>
-                <li><a href="asiansquat">Asian Squat</a></li>
-                <li><a href="login">LOGIN</a></li>
-                <li><a href="cart">CART</a></li>
-                <li><a href="japanese">Japanese</a></li>
-            </ul>
-
-        </nav>
-    </div>
+html.RenderPartial
+    <partial name="_ShopNavBarPartial" / >
 }
 
 <body>
