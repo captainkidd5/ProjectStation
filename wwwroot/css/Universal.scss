@@ -171,21 +171,18 @@
 }
 
 .thinSeparator {
-    margin-left: 50%;
+
     margin-top: 100px;
     border-bottom: 2px solid black;
     border-bottom-color: #9D9393;
-    width: 80%;
+    width: 250%;
     transform: translate(-50%);
 }
 
 .footerLogo {
-    position:relative;
-    display:inline;
-    margin-top: 130px;
-    width: 10%;
-    margin-top:20px;
-    margin-left: 60%;
+    margin-top:50px;
+    max-width:300px;
+
     transform: translate(-50%);
 }
 
@@ -277,29 +274,3 @@
     font-size: 16px;
 }
 
-@media only screen and (max-width:1200px) {
-}
-
-@media only screen and (max-width: 768px) {
-
-    .faderArrowContainer{
-        left:50%;
-        margin-bottom:100px;
-    }
-    .contactUsButton{
-        margin-top:150px;
-    }
-    .thinSeparator{
-        margin-top:100px;
-    }
-
-    .footerLogo{
-         margin-left:50%;
-         width:20%;
-    }
-
-}
-
-@media only screen and (max-width: 640) {
-
-}
