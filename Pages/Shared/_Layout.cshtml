@@ -59,18 +59,19 @@
     }
     else
     {
-        <div class="headerBlock">
-
-            <div class="logo">
-                <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
-
+        <div class="container">
+            <div class="row" style="margin-top:200px;">
+                <div class="col-md-12">
+                    <img src="~/SiteAssets/tigLogo.png" style="max-width:300px;display:block;margin:auto;" alt="Company logo">
+                </div>
             </div>
-
-            <a asp-page="/index"><img class=" returnHomeButton" src="~/SiteAssets/return_home.svg" title="instagram page"></a>
-
-
+            <div class="row">
+                <div class="col-md-1 ">
+                    <a asp-page="/index"><img class="col-md-1 returnHomeButton" src="~/SiteAssets/return_home.svg" title="return home"></a>
+                </div>
+               
+            </div>
         </div>
-
 
     }
 

@@ -4,6 +4,10 @@
 .hide {
   display: none; }
 
+.titleListFormat {
+  list-style: none;
+  text-align: center; }
+
 .titleBlock {
   position: relative;
   top: 200px;
@@ -17,7 +21,6 @@
     .titleBlock ul li a {
       font-family: 'arial', 'Noto Sans JP', sans-serif;
       font-size: 20px;
-      position: relative;
       bottom: 15px;
       color: #9D9393;
       line-height: 55px; }
@@ -27,25 +30,12 @@
         text-decoration-color: black;
         transition: ease-in 1s; }
   .titleBlock img {
-    width: 25%;
     height: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: relative;
     z-index: -1; }
 
-.leftBar {
-  position: absolute;
-  text-align: left;
-  left: 100px;
-  top: 0;
-  transform: translate(-50%, 0); }
-
-.rightBar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0px; }
+.logo {
+  max-width: 300px;
+  z-index: -1; }
 
 .socialMediaIcons {
   width: 100px;
@@ -95,10 +85,7 @@
   vertical-align: top; }
 
 .mediumHeader {
-  padding-left: 10%;
-  padding-top: 50px;
-  width: 100%;
-  display: inline-block; }
+  padding-top: 50px; }
 
 .mediumHeaderStyle {
   font-family: 'arial', 'Noto Sans JP', sans-serif;
@@ -106,13 +93,8 @@
   font-weight: 600;
   color: #707070; }
 
-/*ul*/
 .sideList {
-  display: inline-block;
-  height: 25px;
-  list-style: none;
-  margin-left: 0%;
-  width: 100%; }
+  list-style: none; }
   .sideList img {
     width: 100%;
     margin-top: 40px; }
@@ -142,8 +124,7 @@
   width: inherit; }
 
 .leftSideImage {
-  padding-top: 50px;
-  width: 100%; }
+  padding-top: 50px; }
   .leftSideImage:hover {
     transition: ease-in-out .15s;
     opacity: .8; }
@@ -215,68 +196,3 @@
   width: 100%; }
 
 /*RESIZING*/
-@media only screen and (max-width: 1200px) {
-  .titleBlock {
-    width: 650px; }
-    .titleBlock logo {
-      width: auto; } }
-
-@media only screen and (max-width: 990px) {
-  .titleBlock {
-    width: 550px; }
-  /*
-    .fadedLine {
-        width: $fadedLineWidth - 150px;
-    }*/ }
-
-@media only screen and (max-width: 880px) {
-  .titleBlock {
-    width: 450px; } }
-
-@media only screen and (max-width: 768px) {
-  .titleBlock {
-    width: 350px; }
-    .titleBlock img {
-      width: 50%; }
-  .socialMediaIcons {
-    left: 0; }
-  #instagramButton {
-    width: 25%;
-    left: 40%; }
-  #facebookButton {
-    right: 100px;
-    width: 100%; }
-  .leftBar {
-    display: none; }
-  .rightBar li {
-    display: none; }
-  .rightBar {
-    position: absolute;
-    margin-left: 0px; }
-  .bottomHalf {
-    width: 100%; }
-  .halfContentBlock {
-    width: 100%; } }
-
-@media only screen and (max-width: 640px) {
-  /*
-    .wrapper{
-        overflow-x:hidden;
-        overflow-y:scroll;
-        height:100%;
-    }*/
-  .contentBlock {
-    display: block;
-    width: 100%; }
-  .mediumHeader {
-    padding-left: 5px;
-    padding-right: 5px; }
-  .sideParagraph {
-    margin-top: -30%; } }
-
-@media only screen and (max-width: 233px) {
-  .wrapper {
-    overflow: auto; }
-  .rightBar {
-    position: absolute;
-    margin-left: 50%; } }

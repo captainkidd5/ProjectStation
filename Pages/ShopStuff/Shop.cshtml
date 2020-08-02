@@ -1,12 +1,25 @@
-﻿@page
+﻿@page "shopstuff/shop"
 @model ProjectStation.Pages.ShopStuff.ShopModel
 @{
     ViewData["Title"] = "Shop";
 }
 
 @section TitleBlock {
-html.RenderPartial
-    <partial name="_ShopNavBarPartial" / >
+    <div class="wrapper">
+
+        <nav class="inlineNavBar">
+            <ul>
+                <li> <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg"></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="project">PROJECT</a></li>
+                <li><a href="asiansquat">Asian Squat</a></li>
+                <li><a href="login">LOGIN</a></li>
+                <li><a href="cart">CART</a></li>
+                <li><a href="japanese">Japanese</a></li>
+            </ul>
+
+        </nav>
+    </div>
 }
 
 <body>
@@ -55,7 +68,7 @@ html.RenderPartial
         </ul>
 
         <button class="blackMoreButton">MORE >></button>
-        </div>
+    </div>
 </body>
 
 <nav class="mobileNavBar">
@@ -67,18 +80,18 @@ html.RenderPartial
 </nav>
 
 <script>
-var myIndex = 0;
-carousel();
+    var myIndex = 0;
+    carousel();
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 9000);
     }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 9000);
-}
 </script>

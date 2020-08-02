@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjectStation.Models;
+using ProjectStation.Services;
 
 namespace ProjectStation.Pages
 {
@@ -23,14 +24,20 @@ namespace ProjectStation.Pages
 
         public string SubmitMessage { get; set; }
 
-        public ContactModel()
+
+        public IClientRepository ClientRepository { get; }
+
+        public IEnumerable<Client> Clients { get; set; }
+
+        public ContactModel(IClientRepository clientRepository)
         {
             Customer = new Customer();
+            this.ClientRepository = clientRepository;
         }
 
         public void OnGet()
         {
-
+            Clients = ClientRepository.GetAllClients();
         }
 
         public void OnPost(int id)

@@ -19,6 +19,11 @@ $mobileViewWidth: 95vw;
     display: none;
 }
 
+.titleListFormat{
+    list-style:none;
+    text-align:center;
+}
+
 .titleBlock {
     position: relative;
     top: 200px;
@@ -30,14 +35,11 @@ $mobileViewWidth: 95vw;
 
     ul {
         list-style: none;
-
-
         li {
-
             a {
                 font-family: 'arial', 'Noto Sans JP', sans-serif;
                 font-size: 20px;
-                position: relative;
+    
                 bottom: 15px;
                 color: $secondayGray;
                 line-height: 55px;
@@ -53,30 +55,20 @@ $mobileViewWidth: 95vw;
     }
 
     img {
-        width: 25%;
+      
         height: auto;
-        left: 50%;
-        transform: translate(-50%,0);
-        position: relative;
+        
         z-index: -1;
     }
 }
 
-.leftBar {
-    position: absolute;
-    text-align: left;
-    left:100px;
-    top:0;
-    transform: translate(-50%,0);
+.logo {
+    max-width:300px;
+    z-index: -1;
+
 }
 
-.rightBar {
-    position: absolute;
-    top: 0;
-    right: 0;
 
-    border: 0px;
-}
 
 
 .socialMediaIcons {
@@ -143,11 +135,8 @@ $fadedLineWidth: 50%;
 
 
 .mediumHeader {
-    padding-left:10%;
     padding-top: 50px;
 
-    width: 100%;
-    display: inline-block;
 }
 
 .mediumHeaderStyle {
@@ -157,15 +146,10 @@ $fadedLineWidth: 50%;
     color: #707070;
 }
 
-/*ul*/
 .sideList {
  
-    display: inline-block;
-    height: 25px;
-    list-style: none;
-    margin-left:0%;
-    width:100%;
    
+    list-style: none;
 
         img {
             width: 100%;
@@ -211,7 +195,6 @@ $fadedLineWidth: 50%;
 
 .leftSideImage {
     padding-top: 50px;
-    width: 100%;
 
     &:hover {
         transition: ease-in-out .15s;
@@ -318,125 +301,14 @@ $fadedLineWidth: 50%;
 
 @media only screen and (max-width: 1200px) {
 
-    .titleBlock {
-        width: 650px;
 
-        logo{
-            width: auto;
-        }
-    }
 
 }
 
 @media only screen and (max-width: 990px) {
-    .titleBlock {
-        width: 550px;
-    }
- 
-
-/*
-    .fadedLine {
-        width: $fadedLineWidth - 150px;
-    }*/
-
-
-}
-
-@media only screen and (max-width: 880px) {
-
-    .titleBlock {
-        width: 450px;
-
-    }
 
 
 
 }
 
-@media only screen and (max-width: 768px) {
-    .titleBlock {
-        width: 350px;
-        img{
-            width:50%;
-        }
-    }
-    .socialMediaIcons{
-        left:0;
-        
-    }
-    #instagramButton {
-        width: 25%;
-        left:40%;
-    }
-    #facebookButton {
-        right: 100px;
-        width: 100%;
-    }
-    .leftBar {
-        display: none;
-    }
 
-    .rightBar li {
-        display: none;
-    }
-
-    .rightBar {
-        position: absolute;
-        margin-left: 0px;
-    }
-
-    .bottomHalf{
-        width:100%;
-    }
-
-    .halfContentBlock{
-        width:100%;
-    }
-
-
-}
-
-@media only screen and (max-width: 640px) {
-/*
-    .wrapper{
-        overflow-x:hidden;
-        overflow-y:scroll;
-        height:100%;
-    }*/
-
-    .contentBlock {
-        display: block;
-        width: 100%;
-    }
-
-    .mediumHeader{
-        padding-left:5px;
-        padding-right:5px;
-    }
-
-    .sideParagraph{
-        margin-top:-30%;
-        
-    }
-
-}
-@media only screen and (max-width: 382px) {
-
-
-
-
-}
-    @media only screen and (max-width: 233px) {
-
-
-        .wrapper {
-            overflow: auto;
-        }
-
-        .rightBar {
-            position: absolute;
-            margin-left: 50%;
-        }
-
-
-    }

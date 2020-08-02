@@ -4,18 +4,15 @@
 @{
     ViewData["Title"] = "Tokyo International Gallery | Official Site";
 }
-<div class="wrapper">
-    @section TitleBlock {
 
-        <div class="titleBlock">
-
-            <div id="logo">
+@section TitleBlock {
 
 
-                <img src="~/SiteAssets/tigLogo.png" alt="Company logo">
-            </div>
-            <div class="leftBar">
-                <ul>
+    <div class="container">
+        <div class="row" style="margin-top:200px;margin-bottom:400px">
+            <div class="col-md-2">
+
+                <ul class="titleListFormat">
                     <li><a asp-page="index">Home</a></li>
                     <li><a asp-page="news">News</a></li>
                     <li><a asp-page="artiststuff/artist">Artist</a></li>
@@ -23,46 +20,42 @@
                     <li><a asp-page="about">About</a></li>
                     <li><a asp-page="shopstuff/shop">Online Shop</a></li>
                 </ul>
-            </div>
 
-            <div class="rightBar">
-                <ul>
+            </div>
+            <div class="col-md-8">
+                <img src="~/SiteAssets/tigLogo.png" style="max-width:300px;display:block;margin:auto;" alt="Company logo">
+            </div>
+           
+
+
+            <div class="col-md-2">
+
+                <ul class="titleListFormat">
                     <li><a asp-page="company">Company</a></li>
                     <li><a asp-page="access">Access</a></li>
                     <li><a asp-page="contact">Contact</a></li>
                     <li><a asp-page="news">Jp/Eng</a></li>
                 </ul>
 
-                <div id="instagramButton">
-                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " title="instagram page" /> </a>
-                    <div id="facebookButton">
-                        <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" title="facebook page" /> </a>
-                    </div>
-                </div>
             </div>
-
-            <div class="socialMediaIcons">
-                
-
-
-            </div>
-
         </div>
-    }
-    <a href="#section2" class="faderArrowContainerTop" id="scrollToTop">
-        <div class="faderArrow1Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-        <div class="faderArrow2Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-        <div class="faderArrow3Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+        <div class="row">
+            <a href="#section2" class="faderArrowContainerTop" id="scrollToTop">
+                <div class="faderArrow1Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                <div class="faderArrow2Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                <div class="faderArrow3Top"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
 
-    </a>
-    <div class="bottomHalf" id="section2">
+            </a>
+        </div>
 
-        <div class="contentBlock">
-            <div class="mediumHeader">
-                <div class=" mediumHeaderStyle">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mediumHeader">
+                    <div class=" mediumHeaderStyle">
+                        News
+                    </div>
 
 
-                    News
                     <div class="fadedLine"></div>
                     <ul class="sideList">
                         <li class="borderedListElement">2020.05.07 <a href="contact" class="leftSideLink">＜休廊延長のお知らせ＞</a></li>
@@ -73,86 +66,51 @@
                         <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
                         <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> ONLINE SHOP OPEN</a></li>
                         <li class="borderedListElement">
-                            <div class=" listImageContainer">
-                                <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
-                            </div>
+                            <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
                         </li>
                     </ul>
-                    <div class="readMore">
-                        <a href="contact">Read More</a>
-
-
-                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="contentBlock">
-            <div class="mediumHeader">
-                <div class=" mediumHeaderStyle">
 
 
-                    Exhibition
+
+            <div class="col-md-6">
+                <div class="mediumHeader">
+                    <div class=" mediumHeaderStyle">
+                        Exhibition
+                    </div>
                     <div class="fadedLine"></div>
+
+                  
+
+
                     <ul class="sideList">
                         <li class="borderedListElement">
-                            <div class="listImageContainer">
-                                <a href="contact" class="imageHashTag">#EXHIBITION</a>
-                                <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
-
-                                <div class="imageOverlay">
-                                    <div class="textImageOverlay">I_AM_BECOME.pdf</div>
-
-                                </div>
-                            </div>
+                            <a href="https/instagram.com"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
                         </li>
+                        <li class="borderedListElement">2020.05.07 <a href="contact" class="leftSideLink">＜休廊延長のお知らせ＞</a></li>
+                        <li class="borderedListElement"> 2020.04.13 <a href="contact" class="leftSideLink">＜休廊のお知らせ＞</a></li>
+                        <li class="borderedListElement"> 2020.03.18 <a href="contact" class="leftSideLink">＜ART CENTRAL × ARTSY 2020＞</a></li>
 
+                        <li class="borderedListElement"> 2020.01.07 <a href="contact" class="leftSideLink">＜ニュース掲載のお知らせ＞　〜DAILY BRUIN〜</a></li>
+                        <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
+                        <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> ONLINE SHOP OPEN</a></li>
                         <li class="borderedListElement">
-                            <div class="listImageContainer">
-                                <a href="contact" class="imageHashTag">#ART FAIR</a>
-                                <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/tobi.jpg" title="instagram page"></a>
 
-                                <div class="imageOverlay">
-                                    <div class="textImageOverlay">
-                                        12-14 October 2018 Tobi Art Fair 2018
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
 
                         </li>
-                        <li class="borderedListElement">
-                            <div class="listImageContainer">
-                                <a href="contact" class="imageHashTag">#ART FAIR #Hong Kong</a>
-                                <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/hongkong.jpg" title="instagram page"></a>
-
-
-                                <div class="imageOverlay">
-                                    <div class="textImageOverlay">17-22 March 2020 ART CENTRAL 2020</div>
-                                </div>
-                            </div>
-                        </li>
-
                     </ul>
-                    <div class="readMore">
-                        <a href="contact">Read More</a>
-                    </div>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
 
-    <br />
+
+}
 
 
 
-
-
-
-</div>
 
 
 @section Scripts {
