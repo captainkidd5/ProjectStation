@@ -22,13 +22,14 @@ $mobileViewWidth: 95vw;
 .titleListFormat {
     list-style: none;
     text-align: center;
-
+    white-space:nowrap;
     a {
         font-family: 'arial', 'Noto Sans JP', sans-serif;
         font-size: 20px;
         bottom: 15px;
         color: $secondayGray;
         line-height: 55px;
+        
 
         &:hover {
             background-color: $backGroundColor;
@@ -259,14 +260,6 @@ $fadedLineWidth: 50%;
 
     @include readMoreHover;
 }
-
-.sideParagraph {
-    margin-top: 50%;
-    width: 100%;
-}
-
-
-
 
 
 /*RESIZING*/

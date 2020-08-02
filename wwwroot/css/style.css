@@ -6,7 +6,8 @@
 
 .titleListFormat {
   list-style: none;
-  text-align: center; }
+  text-align: center;
+  white-space: nowrap; }
   .titleListFormat a {
     font-family: 'arial', 'Noto Sans JP', sans-serif;
     font-size: 20px;
@@ -168,9 +169,5 @@
     opacity: .8;
     text-decoration-line: none;
     text-decoration-color: black; }
-
-.sideParagraph {
-  margin-top: 50%;
-  width: 100%; }
 
 /*RESIZING*/

@@ -67,9 +67,9 @@
             </div>
             <div class="row">
                 <div class="col-md-1 ">
-                    <a asp-page="/index"><img class="col-md-1 returnHomeButton" src="~/SiteAssets/return_home.svg" title="return home"></a>
+                    <a asp-page="/index"><img class="returnHomeButton" src="~/SiteAssets/return_home.svg" title="return home"></a>
                 </div>
-               
+
             </div>
         </div>
 
@@ -103,78 +103,82 @@
                 <div class="col-md-6 offset-6">
                     <div class="thinSeparator"></div>
                 </div>
-              
+
             </div>
 
-            <div class="row">
-                <div class="col-md-3 offset-7">
-                    <a asp-page="/index"><img class="footerLogo" src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
+            <div class="row" style=" margin-top: 50px;margin-bottom:100px;">
+                <div class="col-md-2 offset-5">
+                    <a asp-page="/index"><img class="footerLogo  col-md-2 offset-7" src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
                 </div>
-                <div class="col-md-2 offset-10">
+                <div class="col-md-4 offset-1"style="text-align:center;">
+                    <a asp-page="/index" style="font-weight:800;font-size:18px;">Tokyo International Gallery</a>
                     <p>
                         2nd floor, Ginza Hacchoume Juban Building,
-
                     </p>
+                    <p>8-10-8 Ginza, Chūō, Tokyo, 104-0061</p>
+                    <a class="accessButton" href="contact">Access</a>
                 </div>
+
             </div>
+
         </footer>
     </div>
-    
+
 
     @*<footer class="footerWrapper">
-        <a class=" contactUsButton" href="/contact">Contact Us</a>
-        <a href="#section1" class="faderArrowContainer" id="scrollToTop">
-            <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-            <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-            <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+            <a class=" contactUsButton" href="/contact">Contact Us</a>
+            <a href="#section1" class="faderArrowContainer" id="scrollToTop">
+                <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
 
-        </a>
-        <div class="thinSeparator"></div>
-        <a asp-page="/index" ><img class="footerLogo"src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
-        <div class="footerLink">
-            <a asp-page="/index">Tokyo International Gallery</a>
-            <p>
-                2nd floor, Ginza Hacchoume Juban Building,
+            </a>
+            <div class="thinSeparator"></div>
+            <a asp-page="/index" ><img class="footerLogo"src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
+            <div class="footerLink">
+                <a asp-page="/index">Tokyo International Gallery</a>
+                <p>
+                    2nd floor, Ginza Hacchoume Juban Building,
 
-            </p>
-            <p>8-10-8 Ginza, Chūō, Tokyo, 104-0061</p>
-            <div> <a class="accessButton" href="contact">Access</a></div>
-        </div>
-        
+                </p>
+                <p>8-10-8 Ginza, Chūō, Tokyo, 104-0061</p>
+                <div> <a class="accessButton" href="contact">Access</a></div>
+            </div>
 
-    </footer>*@
+
+        </footer>*@
 
     @section shopNavBar{
 
     }
 
     @*<footer>
-        <div class="footerWrapper">
+            <div class="footerWrapper">
 
-            <div class="contact-footer-bar">
-                <a class="footerbar_link" asp-page="contact">Contact Us</a>
-                <a href="#section1" class="faderArrowContainer" id="scrollToTop">
-                    <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                    <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                    <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                <div class="contact-footer-bar">
+                    <a class="footerbar_link" asp-page="contact">Contact Us</a>
+                    <a href="#section1" class="faderArrowContainer" id="scrollToTop">
+                        <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                        <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
+                        <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
 
-                </a>
-                <div class="footerLogo">
+                    </a>
+                    <div class="footerLogo">
 
-                    <a asp-page="/index"><img src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
-                    <div class="footerLogoText">
-                        <a asp-page="/index">Tokyo International Gallery</a>
-                        <p>
-                            2nd floor, Ginza Hacchoume Juban Building,
-                            8-10-8 Ginza, Chūō, Tokyo, 104-0061
-                        </p>
-                        +
+                        <a asp-page="/index"><img src="~/SiteAssets/tigLogo.png" title="Tokyo International Gallery"></a>
+                        <div class="footerLogoText">
+                            <a asp-page="/index">Tokyo International Gallery</a>
+                            <p>
+                                2nd floor, Ginza Hacchoume Juban Building,
+                                8-10-8 Ginza, Chūō, Tokyo, 104-0061
+                            </p>
+                            +
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </footer>*@
+            </div>
+        </footer>*@
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
