@@ -11,19 +11,19 @@ namespace ProjectStation.Pages.Users
 {
     public class DetailsModel : PageModel
     {
-        private readonly IUserRepository userRepository;
+        private readonly IClientRepository userRepository;
 
-        public DetailsModel(IUserRepository userRepository)
+        public DetailsModel(IClientRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
-        public User UserEntity { get; private set; }
+        public Client UserEntity { get; private set; }
 
         public IActionResult OnGet(int id )
         {
 
-            UserEntity = userRepository.GetUser(id);
+            UserEntity = userRepository.GetClient(id);
             if(UserEntity==null)
             {
                 return RedirectToPage("/NotFound");

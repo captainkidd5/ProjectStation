@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public enum UserType
+    public enum ClientType
     {
         None,
         Client,

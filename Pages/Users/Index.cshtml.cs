@@ -12,11 +12,11 @@ namespace ProjectStation.Pages.Users
     public class IndexModel : PageModel
     {
 
-        private IUserRepository userRepository;
+        private IClientRepository userRepository;
 
-        public IEnumerable<User> Users { get; set; }
+        public IEnumerable<Client> Users { get; set; }
 
-        public IndexModel(IUserRepository userRepository)
+        public IndexModel(IClientRepository userRepository)
         {
             this.userRepository = userRepository;
             
@@ -25,7 +25,7 @@ namespace ProjectStation.Pages.Users
 
         public void OnGet()
         {
-            Users = userRepository.GetAllUsers();
+            Users = userRepository.GetAllClients();
         }
     }
 }

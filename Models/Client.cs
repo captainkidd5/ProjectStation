@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Models
 {
-    public class User
+    public class Client
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string PhotoPath { get; set; }
-        public UserType? UserType { get; set; }
+        public ClientType? ClientType { get; set; }
     }
 }

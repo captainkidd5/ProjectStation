@@ -11,30 +11,30 @@ namespace ProjectStation.Pages.Users
 {
     public class EditModel : PageModel
     {
-        private readonly IUserRepository userRepository;
+        private readonly IClientRepository userRepository;
 
-        public EditModel(IUserRepository userRepository)
+        public EditModel(IClientRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
-        [BindProperty]
-        public User UserEntity{ get; set; }
-
+        
 
         public IActionResult OnGet(int id)
         {
-            UserEntity = userRepository.GetUser(id);
-            if(UserEntity == null)
+            Client = userRepository.GetClient(id);
+            if(Client == null)
             {
                 return RedirectToPage("/NotFound");
             }
             return Page();
         }
+        [BindProperty]
+        public Client Client { get; set; }
 
-        public IActionResult OnPost(User user)
+        public IActionResult OnPost(Client client)
         {
-            UserEntity = userRepository.Update(user);
+            Client = userRepository.Update(client);
             return RedirectToPage("Index");
         }
     }
