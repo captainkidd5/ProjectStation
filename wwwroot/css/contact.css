@@ -16,11 +16,9 @@ input[type=submit] {
   background-color: white;
   margin-top: 75px;
   border-radius: 40px;
-  padding: 20px 120px;
-  transform: translate(-50%);
+  padding: 20px 60px;
   font-size: 28px;
-  text-align: center;
-  margin-left: 50%; }
+  text-align: center; }
   input[type=submit]:hover {
     background-color: gray;
     text-decoration-line: none;
@@ -37,6 +35,9 @@ input[type=submit]:hover {
   padding: 20px;
   font-size: 12px;
   box-sizing: border-box; }
+  .containerTable label, .containerTable p {
+    color: white;
+    font-size: 18px; }
 
 .col-25 {
   display: inline-block;

@@ -18,11 +18,9 @@ input[type=submit] {
     background-color: white;
     margin-top: 75px;
     border-radius: 40px;
-    padding: 20px 120px;
-    transform: translate(-50%);
+    padding: 20px 60px;
     font-size: 28px;
     text-align: center;
-    margin-left:50%;
 
     &:hover {
         background-color: gray;
@@ -45,6 +43,11 @@ input[type=submit]:hover {
 
     box-sizing:border-box;
 
+
+    label, p{
+        color:white;
+        font-size:18px;
+    }
 }
 
 .col-25 {
