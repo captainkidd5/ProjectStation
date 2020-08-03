@@ -1,18 +1,15 @@
 ﻿
 
 .smallLogo {
-    margin-right: 200px;
-    width: 25%;
+    max-width:300px;
 }
 
 .inlineNavBar {
-    position: relative;
-    width: 100%;
+
     text-align: center;
 
     ul {
         list-style: none;
-
 
         li {
             display: inline-block;
@@ -20,7 +17,6 @@
             margin-right: auto;
             padding-left: 24px;
             padding-right: 24px;
-
 
             a {
                 color: #333333;

@@ -5,77 +5,105 @@
 }
 
 @section TitleBlock {
-    <div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg">
+            </div>
+            <div class="col-md-10 offset1">
+                <nav class="inlineNavBar">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="project">PROJECT</a></li>
+                        <li><a href="asiansquat">Asian Squat</a></li>
+                        <li><a href="login">LOGIN</a></li>
+                        <li><a href="cart">CART</a></li>
+                        <li><a href="japanese">Japanese</a></li>
+                    </ul>
 
-        <nav class="inlineNavBar">
-            <ul>
-                <li> <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg"></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="project">PROJECT</a></li>
-                <li><a href="asiansquat">Asian Squat</a></li>
-                <li><a href="login">LOGIN</a></li>
-                <li><a href="cart">CART</a></li>
-                <li><a href="japanese">Japanese</a></li>
-            </ul>
+                </nav>
+            </div>
 
-        </nav>
+        </div>
+
     </div>
 }
 
 <body>
-    <img class="centralImage" src="~/SiteAssets/shopstuff/asian_squat.jpg">
-
-    <h1 class="centerTitle">ARTIST</h1>
-
-    <div class="bodyAllignment">
-
-        <div class="portrait">
-
-            <a asp-page="/index"><img class="portraitImg" src="~/SiteAssets/shopstuff/mh_profile.jpg" title="michael ho"></a>
-            <p class="portraitFloatRightText">
-                Michael Ho was born and raised on the Big Island of Hawaii in 1996. He graduated summa cum laude with a BA in fine arts from the University of California at Los Angeles (UCLA) in 2018.
-                Shortly after graduating, he moved to Tokyo, Japan in 2018 and began showing work in Tokyo and Hong Kong. Focusing on the visual semantics and quasi didacticism, his paintings and sculptures take from fleeting moments of American pop culture, investigating the more
-                intricate ability for painting to engage in a contentious, active conversation with the viewer.
-
-
-            </p>
-            <p class="portraitFloatRightText">
-                マイケル・ホー
-                1996年、アメリカ・ハワイ島で生まれ、同島で育つ。カリフォルニア大学ロサンゼルス校（UCLA）
-                芸術学部で美術を学び、2018年に最優等賞を取得して卒業。美術学士。2018年、大学卒業後まもなく 拠点を東京に移し、東京と香港で作品の発表を開始。視覚意味論と疑似教訓主義に焦点を当てた絵画 や彫刻にアメリカのポップカルチャーを取り入れ、見る者との間に活発な対話が生じるような、より 複雑な絵画の可能性を追求している。
-            </p>
-
+    <div class="container">
+        <div class="row">
+            <img class="centralImage" src="~/SiteAssets/shopstuff/asian_squat.jpg">
         </div>
-        <p class="underImageTextOfficial" style="float:left;">
-            MICHAEL HO
-        </p>
-
-
-        <div class="w3-content w3-section " style="max-width:800px; padding-top:100px;">
-            <img class="mySlides w3-animate-fading" style="width:100%;" src="~/SiteAssets/shopstuff/m_04.jpg" title="michael ho">
-            <img class="mySlides w3-animate-fading" style=" width: 100%;" src="~/SiteAssets/shopstuff/m_05.jpg" title="michael ho">
-            <img class="mySlides w3-animate-fading" style="width: 100%;" src="~/SiteAssets/shopstuff/m_02.jpg" title="michael ho">
+        <div class="row">
+            <h1 class="centerTitle">ARTIST</h1>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a asp-page="/index"><img class="portraitImg" src="~/SiteAssets/shopstuff/mh_profile.jpg" title="michael ho"></a>
+                <p class="underImageTextOfficial" style="float:left;">
+                    MICHAEL HO
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Michael Ho was born and raised on the Big Island of Hawaii in 1996. He graduated summa cum laude with a BA in fine arts from the University of California at Los Angeles (UCLA) in 2018.
+                    Shortly after graduating, he moved to Tokyo, Japan in 2018 and began showing work in Tokyo and Hong Kong. Focusing on the visual semantics and quasi didacticism, his paintings and sculptures take from fleeting moments of American pop culture, investigating the more
+                    intricate ability for painting to engage in a contentious, active conversation with the viewer.
+                </p>
+                <p>
+                    マイケル・ホー
+                    1996年、アメリカ・ハワイ島で生まれ、同島で育つ。カリフォルニア大学ロサンゼルス校（UCLA）
+                    芸術学部で美術を学び、2018年に最優等賞を取得して卒業。美術学士。2018年、大学卒業後まもなく 拠点を東京に移し、東京と香港で作品の発表を開始。視覚意味論と疑似教訓主義に焦点を当てた絵画 や彫刻にアメリカのポップカルチャーを取り入れ、見る者との間に活発な対話が生じるような、より 複雑な絵画の可能性を追求している。
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="w3-content w3-section " style="max-width:800px; padding-top:100px;">
+                <img class="mySlides w3-animate-fading" style="width:100%;" src="~/SiteAssets/shopstuff/m_04.jpg" title="michael ho">
+                <img class="mySlides w3-animate-fading" style=" width: 100%;" src="~/SiteAssets/shopstuff/m_05.jpg" title="michael ho">
+                <img class="mySlides w3-animate-fading" style="width: 100%;" src="~/SiteAssets/shopstuff/m_02.jpg" title="michael ho">
+            </div>
+        </div>
+
+        <div class="row">
+            <h1 class="centerTitle">TOPICS</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <ul class="sideList">
+                    <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
+                    <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> SEQUENCE 1 Pop Up Shop</a></li>
+                    <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> Sequence 1</a></li>
+                </ul>
+            </div>
+            <button class="blackMoreButton">MORE </button>
+        </div>
+
     </div>
-    <h1 class="centerTitle">TOPICS</h1>
 
-    <div class="bodyAllignment">
 
-        <ul class="sideList">
-            <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
-            <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> SEQUENCE 1 Pop Up Shop</a></li>
-            <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> Sequence 1</a></li>
-        </ul>
-
-        <button class="blackMoreButton">MORE >></button>
-    </div>
 </body>
 
 <nav class="mobileNavBar">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Home</a></li>
+        <li>
+            <a href="#" class="btn btn-info btn-lg">
+                <i class="fas fa-user"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn btn-info btn-lg">
+                <i class="fas fa-search"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="btn btn-info btn-lg">
+                <i class="fas fa-shopping-basket"></i>
+            </a>
+        </li>
     </ul>
 </nav>
 

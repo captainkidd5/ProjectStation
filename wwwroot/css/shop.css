@@ -1,10 +1,7 @@
 ﻿.smallLogo {
-  margin-right: 200px;
-  width: 25%; }
+  max-width: 300px; }
 
 .inlineNavBar {
-  position: relative;
-  width: 100%;
   text-align: center; }
   .inlineNavBar ul {
     list-style: none; }
