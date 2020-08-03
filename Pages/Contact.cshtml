@@ -5,93 +5,98 @@
 }
 
 
-    <div class="container">
-        <div class="mediumHeader">
-            <div class=" mediumHeaderStyle">Contact</div>
+<div class="container">
+    <div class="mediumHeader">
+        <div class=" mediumHeaderStyle">Contact</div>
 
-            <div class="fadedLine"></div>
-            <div class="containerTable">
+        <div class="fadedLine"></div>
 
 
-                <form action="/contact">
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="fname">Name※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="fname" name="firstname">
-                        </div>
-                    </div>
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="lname">Name (reading)※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="lname" name="lastname">
-                        </div>
-                    </div>
+        <form action="/contact" class="containerTable">
+            <div class="form-group row">
+                <label for="fname" class="col-md-2 col-control-label mr-2">Name※</label>
+                <div class="col-md-8">
+                    <input class="form-control" placeholder="Name" type="text" id="fname" name="firstname">
+                </div>
 
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="phone">Phone Number※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="phone" name="phone">
-                        </div>
-                    </div>
 
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="email">Email※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="email" name="email">
-                        </div>
-                    </div>
-
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="address">Address※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="address" name="address">
-                        </div>
-                    </div>
-
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="cname">Company Name※</label>
-                        </div>
-                        <div class="col-75">
-                            <input type="text" id="cname" name="cname">
-                        </div>
-                        <div class=" sideNote">
-                            Enter "individual" if you are an indiviual customer.
-                        </div>
-                    </div>
-
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="cname">Your Inquiry※</label>
-                        </div>
-                        <textarea class="textArea">
-                        </textarea>
-                    </div>
-
-                    <div class="contactRow">
-                        <div class="col-25">
-                            <label for="cname">About Privacy Policy※</label>
-                        </div>
-                        <div class="col-75" spellcheck style="background-color:white;">
-                            Please review our Privacy Policy.
-                            <input class="checkBox" type="checkbox" id="privacyAgree" name="privacyAgree">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
             </div>
-        </div>
+            <div class="form-group row">
+
+                <label for="lname" class="col-md-2 col-control-label mr-2">Name (reading)※</label>
+
+                <div class="col-md-8">
+                    <input class="form-control" type="text" placeholder="Name (reading)" id="lname" name="lastname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <label for="phone" class="col-md-2 col-control-label mr-2">Phone Number※</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="number" placeholder="Phone Number" id="phone" name="phone">
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <label for="email" class="col-md-2 col-control-label mr-2">Email※</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="email" placeholder="Email Address" id="email" name="email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <label for="address" class="col-md-2 col-control-label mr-2">Address※</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" placeholder="Address" id="address" name="address">
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <label for="address" class="col-md-2 col-control-label mr-2">Company Name※</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" placeholder="Company Name" id="companyname" name="companyname">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+
+                <label for="inquiry" class="col-md-2 col-control-label mr-2">Your Inquiry※</label>
+                <div class="col-md-8">
+                    <textarea class="form-control" type="text" placeholder="Description" id="inquiry" rows="5" name="companyname"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+            </div>
+
+            <div class="col-md-8 offset-2">
+                <p>How did you hear about Tokyo International Gallery?</p>
+                <select class="form-control">
+
+                    <option>Gallery Directory</option>
+                    <option>Through a Friend</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-check-inline col-md-8 offset-2">
+                <label>
+                    <input type="checkbox" value="I have reviewed the privacy policy." />
+                    I have reviewed the privacy policy.
+                </label>
+            </div>
+
+            <div class="col-md-8 offset-2">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+
     </div>
+</div>
