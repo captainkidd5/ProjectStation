@@ -1,0 +1,27 @@
+﻿@Model Client
+@{ 
+    string photoPath = "~/SiteAssets/Users/" + (Model.PhotoPath ?? "anon.png");
+    var showButtons = (bool)ViewData["ShowButtons"];
+}
+
+
+    <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
+        <div class="card-header">
+            <h3>@Model.Name</h3>
+        </div>
+
+        <img class="card-img-top img-thumbnail" src="@photoPath" asp-append-version="true" />
+
+        @if (showButtons)
+        {
+            <div class="card-footer text-center">
+                <a asp-page="/Users/Details" asp-route-ID="@Model.Id" class="btn btn-primary m-1">View</a>
+                <a asp-page="/Users/Edit" asp-route-ID="@Model.Id" class="btn btn-primary m-1">Edit</a>
+
+                <a asp-page="/Users/DeleteUser" asp-route-ID="@Model.Id" class="btn btn-danger m-1">Delete</a>
+
+            </div>
+        }
+
+
+    </div>

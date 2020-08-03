@@ -25,9 +25,16 @@ namespace ProjectStation.Pages.Users
 
 
 
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet(int? id)
         {
-            Client = userRepository.GetClient(id);
+            if(id.HasValue)
+            {
+                Client = userRepository.GetClient(id.Value);
+            }
+            else
+            {
+                Client= new Client();
+            }
             if (Client == null)
             {
                 return RedirectToPage("/NotFound");
@@ -62,8 +69,14 @@ namespace ProjectStation.Pages.Users
                     }
                     Client.PhotoPath = ProcessUploadedFile();
                 }
-
-                Client = userRepository.Update(Client);
+                if(Client.Id > 0)
+                {
+                    Client = userRepository.Update(Client);
+                }
+                {
+                    Client = userRepository.AddClient(Client);
+                }
+               
                 return RedirectToPage("Index");
             }
             return Page();

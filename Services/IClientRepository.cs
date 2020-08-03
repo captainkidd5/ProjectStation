@@ -10,5 +10,8 @@ namespace Services
         IEnumerable<Client> GetAllClients();
         Client GetClient(int id);
         Client Update(Client updatedClient);
+        Client AddClient(Client newClient);
+        Client Delete(int id);
+        IEnumerable<ClientTypHeadCount> ClientCountByType(ClientType? clientType);
     }
 }

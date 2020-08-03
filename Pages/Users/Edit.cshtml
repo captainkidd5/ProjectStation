@@ -1,8 +1,9 @@
-﻿@page "{id:min(1)}/{handler?}"
+﻿@page "{id:min(1)?}/{handler?}"
 @model ProjectStation.Pages.Users.EditModel
 @{
     ViewData["Title"] = "Edit";
     string photoPath = "~/SiteAssets/Users/" + (@Model.Client.PhotoPath ?? "anon.png");
+    var pageHeader = Model.Client.Id > 0 ? "Edit" : "Create";
 }
 
 <h1>Notification Preferences</h1>
@@ -25,7 +26,7 @@
 
 <hr />
 
-<h1>Edit</h1>
+<h1>@pageHeader</h1>
 
 <form method="post" class="mt-3" enctype="multipart/form-data"
       asp-page-handler="OnPost">
@@ -54,6 +55,7 @@
                     asp-items="Html.GetEnumSelectList<Models.ClientType>()">
                 <option value="">Please Select</option>
             </select>
+            <span asp-validation-for="Client.ClientType" class="text-danger"></span>
         </div>
     </div>
 
@@ -75,7 +77,7 @@
 
     <div class="form-group row">
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Save</button>
             <a asp-page="/Users/Index" class="btn btn-primary">Cancel</a>
         </div>
     </div>
@@ -89,6 +91,8 @@
                 });
             });
         </script>
+
+    <partial name="_ValidationScriptsPartial" />
     }
 
 </form>

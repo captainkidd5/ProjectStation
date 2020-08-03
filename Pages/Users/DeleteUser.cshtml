@@ -1,0 +1,17 @@
+﻿@page "{id}"
+@model ProjectStation.Pages.Users.DeleteUserModel
+@{
+    ViewData["Title"] = "DeleteUser";
+    ViewData["ShowButtons"] = false;
+}
+
+<h1>Delete Confirmation</h1>
+
+<div class="alert alert-danger">
+    <partial name="_DisplayUserPartial" model="Model.Client" view-data="ViewData"/>
+    <h5>Are you sure you want to delete client - @Model.Client.Name</h5>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a class="btn btn-primary" asp-page="/Users/Index">No</a>
+    </form>
+</div>

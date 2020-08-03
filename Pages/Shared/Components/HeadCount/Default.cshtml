@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Models.ClientTypHeadCount>
+
+<h3>Client Head Count Summary</h3>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>Type</th>
+            <th>Head Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var typeHeadCount in Model)
+        {
+            <tr>
+                <td>
+                    @typeHeadCount.ClientType
+                </td>
+                <td>
+                    @typeHeadCount.Count
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
