@@ -9,27 +9,33 @@ using Services;
 
 namespace ProjectStation.Pages.Users
 {
-    public class DetailsModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IUserRepository userRepository;
 
-        public DetailsModel(IUserRepository userRepository)
+        public EditModel(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
-        public User UserEntity { get; private set; }
+        [BindProperty]
+        public User UserEntity{ get; set; }
 
-        public IActionResult OnGet(int id )
+
+        public IActionResult OnGet(int id)
         {
-
             UserEntity = userRepository.GetUser(id);
-            if(UserEntity==null)
+            if(UserEntity == null)
             {
                 return RedirectToPage("/NotFound");
             }
-
             return Page();
+        }
+
+        public IActionResult OnPost(User user)
+        {
+            UserEntity = userRepository.Update(user);
+            return RedirectToPage("Index");
         }
     }
 }

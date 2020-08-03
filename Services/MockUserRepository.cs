@@ -31,5 +31,18 @@ namespace Services
         {
             return userList.FirstOrDefault(x => x.Id == id);
         }
+
+        public User Update(User updatedUser)
+        {
+            User user = userList.FirstOrDefault(x => x.Id == updatedUser.Id);
+            if(user != null)
+            {
+                user.Name = updatedUser.Name;
+                user.Email = updatedUser.Email;
+                user.UserType = updatedUser.UserType;
+            }
+
+            return user;
+        }
     }
 }
