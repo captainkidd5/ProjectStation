@@ -1,0 +1,31 @@
+﻿@page
+@model ProjectStation.Pages.Users.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Users</h1>
+
+<h3>@Model.Users.Count()</h3>
+
+<div class="card-deck">
+    @foreach(var user in Model.Users)
+    {
+        string photoPath = "~/SiteAssets/Users/" + (user.PhotoPath ?? "anon.png");
+
+        <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
+            <div class="card-header">
+                <h3>@user.Name</h3>
+            </div>
+
+            <img class="card-img-top img-thumbnail" src="@photoPath" asp-append-version="true"/>
+
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-primary m-1">View</a>
+                <a href="#" class="btn btn-primary m-1">Edit</a>
+                <a href="#" class="btn btn-primary m-1">Edit</a>
+            </div>
+
+        </div>
+    }
+</div>
