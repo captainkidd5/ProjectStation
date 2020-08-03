@@ -35,7 +35,7 @@ namespace ProjectStation
             services.Configure<RouteOptions>(options =>
             {
                 options.LowercaseUrls = true;
-                options.LowercaseQueryStrings = true;
+                options.LowercaseQueryStrings = false;
                 options.AppendTrailingSlash = true;
             });
 

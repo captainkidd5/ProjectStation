@@ -40,6 +40,7 @@ namespace Services
                 user.Name = updatedUser.Name;
                 user.Email = updatedUser.Email;
                 user.ClientType = updatedUser.ClientType;
+                user.PhotoPath = updatedUser.PhotoPath;
             }
 
             return user;

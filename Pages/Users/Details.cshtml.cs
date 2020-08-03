@@ -31,5 +31,8 @@ namespace ProjectStation.Pages.Users
 
             return Page();
         }
+
+        [TempData]
+        public string Message { get; set; }
     }
 }
