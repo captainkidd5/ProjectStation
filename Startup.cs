@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProjectStation.Services;
+
 
 namespace ProjectStation
 {
@@ -27,8 +27,7 @@ namespace ProjectStation
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddControllers();
-            services.AddTransient<JsonFileProductService>(); //transient comes and goes. You'll get a new one every time it is called.
-            services.AddSingleton<IClientRepository,MockClientRepository>(); //transient comes and goes. You'll get a new one every time it is called.
+
             services.AddMvc().AddRazorRuntimeCompilation();
         }
 
