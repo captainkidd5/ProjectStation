@@ -4,6 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    .btn{
+        width:75px;
+    }
+</style>
+
 <h1>Users</h1>
 
 <h3>@Model.Users.Count()</h3>
@@ -21,9 +27,10 @@
             <img class="card-img-top img-thumbnail" src="@photoPath" asp-append-version="true"/>
 
             <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary m-1">View</a>
+                <a asp-page="/Users/Details"
+                   asp-route-ID="@user.Id" class="btn btn-primary m-1">View</a>
                 <a href="#" class="btn btn-primary m-1">Edit</a>
-                <a href="#" class="btn btn-primary m-1">Edit</a>
+                <a href="#" class="btn btn-danger m-1">Delete</a>
             </div>
 
         </div>

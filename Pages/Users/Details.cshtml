@@ -1,0 +1,31 @@
+﻿@page
+@model ProjectStation.Pages.Users.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+    string photoPath = "~/SiteAssets/Users/" + (@Model.UserEntity.PhotoPath ?? "anon.png");
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.UserEntity.Name</h1>
+                
+            </div>
+            <div class="card-body text-center">
+                <img class=" card-img-top" src="@photoPath" asp-append-version="true" />
+
+                <h4>User ID : @Model.UserEntity.Id</h4>
+                <h4>Email : @Model.UserEntity.Email</h4>
+                <h4>User Type: @Model.UserEntity.UserType</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-page="index" class="btn btn-primary">Back
+                </a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+

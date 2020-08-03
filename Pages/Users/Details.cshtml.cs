@@ -9,23 +9,19 @@ using Services;
 
 namespace ProjectStation.Pages.Users
 {
-    public class IndexModel : PageModel
+    public class DetailsModel : PageModel
     {
+        private readonly IUserRepository userRepository;
 
-        private IUserRepository userRepository;
-
-        public IEnumerable<User> Users { get; set; }
-
-        public IndexModel(IUserRepository userRepository)
+        public DetailsModel(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
-            
         }
 
-
-        public void OnGet()
+        public User UserEntity { get; set; }
+        public void OnGet(int id)
         {
-            Users = userRepository.GetAllUsers();
+            UserEntity = userRepository.GetUser(id);
         }
     }
 }

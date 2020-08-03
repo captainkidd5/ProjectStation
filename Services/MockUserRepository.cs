@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services
@@ -21,9 +22,14 @@ namespace Services
             };
             
         }
-        public IEnumerable<User> GetAllClients()
+        public IEnumerable<User> GetAllUsers()
         {
             return userList;
+        }
+
+        public User GetUser(int id)
+        {
+            return userList.FirstOrDefault(x => x.Id == id);
         }
     }
 }
