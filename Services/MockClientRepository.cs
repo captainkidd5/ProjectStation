@@ -66,6 +66,16 @@ namespace Services
             return clientList.FirstOrDefault(x => x.Id == id);
         }
 
+        public IEnumerable<Client> Search(string searchTerm)
+        {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return clientList;
+            }
+
+            return clientList.Where(x => x.Name.Contains(searchTerm) || x.Email.Contains(searchTerm));
+        }
+
         public Client Update(Client updatedUser)
         {
             Client user = clientList.FirstOrDefault(x => x.Id == updatedUser.Id);

@@ -2,7 +2,7 @@
 @model ProjectStation.Pages.Users.DetailsModel
 @{
     ViewData["Title"] = "Details";
-    string photoPath = "~/SiteAssets/Users/" + (@Model.UserEntity.PhotoPath ?? "anon.png");
+    string photoPath = "~/SiteAssets/Users/" + (@Model.Client.PhotoPath ?? "anon.png");
 }
 
 <div class="row justify-content-center m-3">
@@ -17,20 +17,21 @@
     }
 
     <div class="col-sm-8">
-        @await Component.InvokeAsync("HeadCount"); 
+        @*@await Component.InvokeAsync("HeadCount", new { clientType = Model.Client.ClientType});*@ 
+        <vc:head-count client-type-name="@Model.Client.ClientType"></vc:head-count>
     </div>
     <div class="col-sm-8">
         <div class="card">
             <div class="card-header">
-                <h1>@Model.UserEntity.Name</h1>
+                <h1>@Model.Client.Name</h1>
                 
             </div>
             <div class="card-body text-center">
                 <img class=" card-img-top" src="@photoPath" asp-append-version="true" />
 
-                <h4>User ID : @Model.UserEntity.Id</h4>
-                <h4>Email : @Model.UserEntity.Email</h4>
-                <h4>User Type: @Model.UserEntity.ClientType</h4>
+                <h4>User ID : @Model.Client.Id</h4>
+                <h4>Email : @Model.Client.Email</h4>
+                <h4>User Type: @Model.Client.ClientType</h4>
             </div>
             <div class="card-footer text-center">
                 <a asp-page="index" class="btn btn-primary">Back

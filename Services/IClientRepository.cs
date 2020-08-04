@@ -7,6 +7,7 @@ namespace Services
 {
     public interface IClientRepository
     {
+        IEnumerable<Client> Search(string searchTerm);
         IEnumerable<Client> GetAllClients();
         Client GetClient(int id);
         Client Update(Client updatedClient);

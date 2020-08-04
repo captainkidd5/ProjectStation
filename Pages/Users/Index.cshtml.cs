@@ -16,6 +16,9 @@ namespace ProjectStation.Pages.Users
 
         public IEnumerable<Client> Users { get; set; }
 
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
+
         public IndexModel(IClientRepository userRepository)
         {
             this.userRepository = userRepository;
@@ -25,7 +28,7 @@ namespace ProjectStation.Pages.Users
 
         public void OnGet()
         {
-            Users = userRepository.GetAllClients();
+            Users = userRepository.Search(SearchTerm);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Models;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace ProjectStation.Components
             this.clientRepository = clientRepository;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(ClientType? clientTypeName = null)
         {
-            var result = clientRepository.ClientCountByType();
+            var result = clientRepository.ClientCountByType(clientTypeName);
             return View(result);
         }
     }

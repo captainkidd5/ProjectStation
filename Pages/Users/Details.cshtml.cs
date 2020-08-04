@@ -18,13 +18,13 @@ namespace ProjectStation.Pages.Users
             this.userRepository = userRepository;
         }
 
-        public Client UserEntity { get; private set; }
+        public Client Client { get; private set; }
 
         public IActionResult OnGet(int id )
         {
 
-            UserEntity = userRepository.GetClient(id);
-            if(UserEntity==null)
+            Client = userRepository.GetClient(id);
+            if(Client==null)
             {
                 return RedirectToPage("/NotFound");
             }

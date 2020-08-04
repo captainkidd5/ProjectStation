@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Models;
 using Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectStation
 {
@@ -26,6 +27,10 @@ namespace ProjectStation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<AppDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("ClientDbConnection"));
+            });
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddControllers();

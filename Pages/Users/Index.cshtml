@@ -6,11 +6,21 @@
 }
 
 <style>
-    .btn{
-        width:75px;
+    .btn {
+        width: 75px;
     }
 </style>
 
+<form method="get">
+    <div class="input-group">
+        <input class="form-control" asp-for="SearchTerm" />
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search </button>
+        </div>
+    </div>
+</form>
+
+<vc:head-count client-type-name="@null"></vc:head-count>
 <h1>Clients</h1>
 
 <div class="card-deck">
