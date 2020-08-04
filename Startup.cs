@@ -35,7 +35,7 @@ namespace ProjectStation
             services.AddServerSideBlazor();
             services.AddControllers();
 
-            services.AddSingleton<IClientRepository, MockClientRepository>();
+            services.AddScoped<IClientRepository, SQLClientRepository>();
 
             services.Configure<RouteOptions>(options =>
             {
