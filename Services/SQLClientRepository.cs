@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Models;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,14 @@ namespace Services
         }
         public Client AddClient(Client newClient)
         {
-            context.Clients.Add(newClient);
-            context.SaveChanges();
+
+            context.Database.ExecuteSqlRaw("spInsertClient {0},{1},{2},{3}",
+                                            newClient.Name,
+                                            newClient.Email,
+                                            newClient.PhotoPath,
+                                            newClient.ClientType);
+
+
             return newClient;
         }
 
@@ -53,12 +60,16 @@ namespace Services
 
         public IEnumerable<Client> GetAllClients()
         {
-            return context.Clients;
+            return context.Clients
+                .FromSqlRaw<Client>("SELECT * FROM Clients")
+                .ToList();
         }
 
         public Client GetClient(int id)
         {
-            return context.Clients.FromSqlRaw<Client>("spGetClientById {0}", id)
+            SqlParameter parameter = new SqlParameter("Id", id);
+
+            return context.Clients.FromSqlRaw<Client>("spGetClientById @Id", parameter)
                 .ToList()
                 .FirstOrDefault();
         }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Models;
 using Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ProjectStation
 {
@@ -31,11 +32,15 @@ namespace ProjectStation
             {
                 options.UseSqlServer(Configuration.GetConnectionString("ClientDbConnection"));
             });
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddControllers();
 
             services.AddScoped<IClientRepository, SQLClientRepository>();
+            services.AddScoped<IAccountRepository, SQLAccountRepository>();
 
             services.Configure<RouteOptions>(options =>
             {
@@ -67,7 +72,7 @@ namespace ProjectStation
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
