@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Models.Models
 {
-    public class RegisterViewModel
+    public class UserAccount
     {
         [Required]
         [EmailAddress]

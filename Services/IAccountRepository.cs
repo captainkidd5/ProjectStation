@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Services
 {
-    interface IAccountRepository
+    public interface IAccountRepository
     {
     }
 }
