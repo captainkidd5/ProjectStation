@@ -4,6 +4,8 @@
     ViewData["Title"] = "Shop";
 }
 
+@inject SignInManager<IdentityUser> signInManager;
+
 @section TitleBlock {
     <div class="container">
         <div class="row">
@@ -21,7 +23,22 @@
                         <li><a href="japanese">Japanese</a></li>
                         <li><a asp-page="/Users/Index">View Users</a></li>
                         <li><a asp-page="/Users/Edit">Add User</a></li>
-                        <li><a asp-page="/ShopStuff/Login">Login</a></li>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li>
+                                <form method="post" asp-controller="/Account/Register" asp-action="OnLogout"  >
+                                    <button type="submit" class="nav-link btn btn-link py-0">
+                                        Logout @User.Identity.Name
+                                    </button>
+                                </form>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li><a asp-page="/ShopStuff/Login">Login</a></li>
+                        }
+
                     </ul>
 
                 </nav>

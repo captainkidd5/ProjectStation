@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models.Models;
@@ -12,34 +13,54 @@ namespace ProjectStation.Pages.Account
     public class RegisterModel : PageModel
     {
         private readonly IAccountRepository accountRepository;
+        private readonly UserManager<IdentityUser> userManager;
 
-        public RegisterModel(IAccountRepository accountRepository)
+        public RegisterModel(IAccountRepository accountRepository,UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager)
         {
             this.accountRepository = accountRepository;
+            this.userManager = userManager;
+            this.SignInManager = signInManager;
         }
         [BindProperty]
         public UserAccount UserAccount { get; set; }
-        public void OnGet()
+        public SignInManager<IdentityUser> SignInManager { get; }
+
+        public void OnGet(bool logout)
         {
             UserAccount = new UserAccount();
+
+            if(logout)
+            {
+       
+            }
+        }
+
+        public async Task<IActionResult> OnLogout()
+        {
+           await SignInManager.SignOutAsync();
+            return RedirectToPage("Shop");
         }
 
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost(UserAccount userAccount)
         {
             if (ModelState.IsValid)
             {
+                var user = new IdentityUser { UserName = userAccount.Email, Email = userAccount.Email };
+                var result = await userManager.CreateAsync(user, userAccount.Password);
 
+                if(result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToPage("/Shop");
+                }
 
-                //if (Client.Id > 0)
-                //{
-                //    Client = userRepository.Update(Client);
-                //}
-                //{
-                //    Client = userRepository.AddClient(Client);
-                //}
-
-                return RedirectToPage("/Shop");
+                foreach(var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                
             }
             return Page();
         }

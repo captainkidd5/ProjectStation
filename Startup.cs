@@ -33,7 +33,10 @@ namespace ProjectStation
                 options.UseSqlServer(Configuration.GetConnectionString("ClientDbConnection"));
             });
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-
+            services.Configure<IdentityOptions>(options =>
+            {
+                //options.Password
+            });
 
             services.AddRazorPages();
             services.AddServerSideBlazor();

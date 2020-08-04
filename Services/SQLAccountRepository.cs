@@ -1,4 +1,5 @@
-﻿using Models.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,11 +9,14 @@ namespace Services
     public class SQLAccountRepository : IAccountRepository
     {
         private readonly AppDbContext context;
-
+      
         public SQLAccountRepository(AppDbContext context)
         {
             this.context = context;
+
         }
+
+        public UserManager<IdentityUser> UserManager { get; }
 
         public UserAccount AddUserAccount(UserAccount newUserAccount)
         {
