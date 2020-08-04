@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,9 @@ namespace Services
 
         public Client GetClient(int id)
         {
-            return context.Clients.Find(id);
+            return context.Clients.FromSqlRaw<Client>("spGetClientById {0}", id)
+                .ToList()
+                .FirstOrDefault();
         }
 
         public IEnumerable<Client> Search(string searchTerm)
