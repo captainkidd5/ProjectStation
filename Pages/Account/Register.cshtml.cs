@@ -23,5 +23,25 @@ namespace ProjectStation.Pages.Account
         {
             UserAccount = new UserAccount();
         }
+
+
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+
+
+                //if (Client.Id > 0)
+                //{
+                //    Client = userRepository.Update(Client);
+                //}
+                //{
+                //    Client = userRepository.AddClient(Client);
+                //}
+
+                return RedirectToPage("/Shop");
+            }
+            return Page();
+        }
     }
 }
