@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Services
@@ -19,73 +21,59 @@ namespace Services
 
             context.Database.ExecuteSqlRaw("spInsertClient {0},{1},{2},{3}",
                                             newProduct.Name,
-                                            newProduct.Email,
-                                            newProduct.PhotoPath,
-                                            newProduct.ClientType);
+                                            newProduct.Description,
+                                            newProduct.Price,
+                                            newProduct.PhotoPath);
 
 
             return newProduct;
         }
 
-        public IEnumerable<ClientTypHeadCount> ClientCountByType(ClientType? clientType)
-        {
-            IEnumerable<Client> query = context.Clients;
-            if (clientType.HasValue)
-            {
-                query = query.Where(x => x.ClientType == clientType.Value);
-            }
-            return query.GroupBy(x => x.ClientType)
-                .Select(g => new ClientTypHeadCount()
-                {
-                    ClientType = g.Key.Value,
-                    Count = g.Count(),
-                }).ToList();
-        }
 
-        public Client Delete(int id)
+        public Product Delete(int id)
         {
-            Client client = context.Clients.Find(id);
-            if (client != null)
+            Product product = context.Products.Find(id);
+            if (product != null)
             {
-                context.Clients.Remove(client);
+                context.Products.Remove(product);
                 context.SaveChanges();
             }
-            return client;
+            return product;
 
         }
 
-        public IEnumerable<Client> GetAllClients()
+        public IEnumerable<Product> GetAllProducts()
         {
-            return context.Clients
-                .FromSqlRaw<Client>("SELECT * FROM Clients")
+            return context.Products
+                .FromSqlRaw<Product>("SELECT * FROM Products")
                 .ToList();
         }
 
-        public Client GetClient(int id)
+        public Product GetProduct(int id)
         {
             SqlParameter parameter = new SqlParameter("Id", id);
 
-            return context.Clients.FromSqlRaw<Client>("spGetClientById @Id", parameter)
+            return context.Products.FromSqlRaw<Product>("spGetProductById @Id", parameter)
                 .ToList()
                 .FirstOrDefault();
         }
 
-        public IEnumerable<Client> Search(string searchTerm)
+        public IEnumerable<Product> Search(string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm))
             {
-                return context.Clients;
+                return context.Products;
             }
 
-            return context.Clients.Where(x => x.Name.Contains(searchTerm) || x.Email.Contains(searchTerm));
+            return context.Products.Where(x => x.Name.Contains(searchTerm));
         }
 
-        public Client Update(Client updatedClient)
+        public Product Update(Product updatedProduct)
         {
-            var client = context.Clients.Attach(updatedClient);
-            client.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var product = context.Products.Attach(updatedProduct);
+            product.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
-            return updatedClient;
+            return updatedProduct;
         }
     }
 }

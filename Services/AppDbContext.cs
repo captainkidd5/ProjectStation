@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Services
         }
 
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Product> Products { get; set; }
 
     }
 }
