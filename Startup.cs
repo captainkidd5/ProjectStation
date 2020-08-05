@@ -13,6 +13,7 @@ using Models;
 using Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Services.News;
 
 namespace ProjectStation
 {
@@ -94,6 +95,7 @@ namespace ProjectStation
 
             services.AddScoped<IClientRepository, SQLClientRepository>();
             services.AddScoped<IAccountRepository, SQLAccountRepository>();
+            services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
 
             services.Configure<RouteOptions>(options =>
             {

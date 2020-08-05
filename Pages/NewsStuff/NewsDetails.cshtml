@@ -1,0 +1,21 @@
+﻿@page "/News/{id:range(1,10000)}"
+@model ProjectStation.Pages.NewsStuff.NewsDetailsModel
+@{
+    ViewData["Title"] = Model.NewsSnippet.Title;
+}
+
+    <h1>Model.NewsSnippet.Title</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mediumHeader">
+                    <div class=" mediumHeaderStyle">
+                        Model.NewsSnippet.Title
+                        <div class="fadedLine"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

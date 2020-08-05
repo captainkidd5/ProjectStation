@@ -4,6 +4,7 @@ using Models;
 using Models.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Services
@@ -17,6 +18,7 @@ namespace Services
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<NewsSnippet> NewsSnippets{ get; set; }
 
     }
 }
