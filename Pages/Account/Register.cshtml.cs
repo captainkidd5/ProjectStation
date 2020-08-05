@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace ProjectStation.Pages.Account
         private readonly UserManager<IdentityUser> userManager;
         private readonly ILogger<RegisterModel> logger;
 
-        public RegisterModel(IAccountRepository accountRepository,UserManager<IdentityUser> userManager,
+        public RegisterModel(IAccountRepository accountRepository, UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager, ILogger<RegisterModel> logger)
         {
             this.accountRepository = accountRepository;
@@ -34,38 +35,40 @@ namespace ProjectStation.Pages.Account
         {
             UserAccount = new UserAccount();
 
-   
+
         }
 
         public async Task<IActionResult> OnLogout()
         {
-           await SignInManager.SignOutAsync();
+            await SignInManager.SignOutAsync();
             return RedirectToPage("Shop");
         }
 
-        public async Task<IActionResult> OnConfirmEmail(string userID,string token)
+        public async Task<IActionResult> ConfirmEmail(string userID, string token)
         {
-            if(userID==null || token ==null)
+            
+
+            if (userID == null || token == null)
             {
                 return RedirectToPage("/index");
             }
 
             var user = await userManager.FindByIdAsync(userID);
 
-            if(user == null)
+            if (user == null)
             {
 
             }
             var result = await userManager.ConfirmEmailAsync(user, token);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 return RedirectToPage("/Account/ConfirmEmail");
             }
             return RedirectToPage("/Account/ConfirmEmail");
         }
 
-            [BindProperty]
+        [BindProperty]
         public string RegisterMessage { get; set; }
 
 
@@ -77,29 +80,45 @@ namespace ProjectStation.Pages.Account
                 var user = new IdentityUser { UserName = userAccount.Email, Email = userAccount.Email };
                 var result = await userManager.CreateAsync(user, userAccount.Password);
 
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
-                    var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var token = userManager.GenerateEmailConfirmationTokenAsync(user).Result;
 
                     var confirmationLink = Url.Action("ConfirmEmail", "Account",
                         new { userId = user.Id, token = token }, Request.Scheme);
 
                     logger.Log(LogLevel.Warning, confirmationLink);
 
+                    using (var client = new SmtpClient())
+                    {
 
-                    RegisterMessage = "Registration Successsful. \n Before you can Login, please confirm " +
-                    "your email, by clicking on the confirmation link we have emailed to you";
+                        client.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
+                        string pickupstring = @"C:\Users\armad\Desktop\emailTexter";
+                        client.PickupDirectoryLocation = pickupstring;
 
+                        var message = new MailMessage();
+                        message.To.Add("joe@gmail.com");
+                        message.Subject = "Fourth Coffee - New Order";
+                        message.Body = confirmationLink;
+                        message.IsBodyHtml = true;
+                        message.From = new MailAddress("sales@fourthcoffee.com");
+                        await client.SendMailAsync(message);
+                    }
+                    //return RedirectToAction("Login","Account);
                     //await SignInManager.SignInAsync(user, isPersistent: false);
                     //return RedirectToPage("/Shop");
-                }
-                
 
-                foreach(var error in result.Errors)
+
+
+
+                }
+
+
+                foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-                
+
             }
             return Page();
         }
