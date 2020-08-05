@@ -10,20 +10,24 @@ using Services;
 
 namespace ProjectStation.Pages.Account
 {
-    public class LoginViewModel : PageModel
+    public class LoginModel : PageModel
     {
         private readonly IAccountRepository accountRepository;
         private readonly UserManager<IdentityUser> userManager;
 
-        public LoginViewModel(IAccountRepository accountRepository, UserManager<IdentityUser> userManager,
+        public LoginModel(IAccountRepository accountRepository, UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
         {
             this.accountRepository = accountRepository;
             this.userManager = userManager;
             this.SignInManager = signInManager;
         }
+
         [BindProperty]
-        public UserAccount UserAccount { get; set; }
+        public string Email { get; set; }
+
+        [BindProperty]
+        public string Password { get; set; }
 
         [BindProperty]
         public bool RememberMe { get; set; }
@@ -31,20 +35,13 @@ namespace ProjectStation.Pages.Account
 
         public void OnGet()
         {
-            UserAccount = new UserAccount();
-
-
+            
         }
-
- 
-
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
             {
-
-                var result = await SignInManager.PasswordSignInAsync(UserAccount.Email, UserAccount.Password, RememberMe, false);
-
+                var result = await SignInManager.PasswordSignInAsync(Email,Password, RememberMe, false);
 
                 if (result.Succeeded)
                 {
@@ -53,7 +50,6 @@ namespace ProjectStation.Pages.Account
 
                     ModelState.AddModelError("", "Invalid Login Attempt");
                 
-
             }
             return Page();
         }
