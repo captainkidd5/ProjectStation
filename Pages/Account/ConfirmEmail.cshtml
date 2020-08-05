@@ -1,0 +1,17 @@
+﻿@page
+@model ProjectStation.Pages.Account.ConfirmEmailModel
+@{
+    ViewData["Title"] = "ConfirmEmail";
+}
+
+@if (Model.Message != null)
+{
+    <a asp-page="/shop" class="btn btn-primary">
+        @Model.Message
+    </a>
+}
+else
+{
+
+}
+

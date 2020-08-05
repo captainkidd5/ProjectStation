@@ -32,9 +32,7 @@ namespace ProjectStation
             {
                 options.UseSqlServer(Configuration.GetConnectionString("ClientDbConnection"));
             });
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-
-            services.Configure<IdentityOptions>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 // Password settings.
                 options.Password.RequireDigit = true;
@@ -50,10 +48,34 @@ namespace ProjectStation
                 options.Lockout.AllowedForNewUsers = true;
 
                 // User settings.
+                options.SignIn.RequireConfirmedEmail = true;
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                options.User.RequireUniqueEmail = false;
-            });
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
+
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    // Password settings.
+            //    options.Password.RequireDigit = true;
+            //    options.Password.RequireLowercase = true;
+            //    options.Password.RequireNonAlphanumeric = true;
+            //    options.Password.RequireUppercase = true;
+            //    options.Password.RequiredLength = 6;
+            //    options.Password.RequiredUniqueChars = 1;
+
+            //    // Lockout settings.
+            //    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            //    options.Lockout.MaxFailedAccessAttempts = 10;
+            //    options.Lockout.AllowedForNewUsers = true;
+
+            //    // User settings.
+            //    options.SignIn.RequireConfirmedEmail = true;
+            //    options.User.AllowedUserNameCharacters =
+            //    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+            //    options.User.RequireUniqueEmail = true;
+            //});
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -96,6 +118,7 @@ namespace ProjectStation
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -103,7 +126,7 @@ namespace ProjectStation
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-           
+            app.UseStatusCodePagesWithRedirects("/Error");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

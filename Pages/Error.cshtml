@@ -7,9 +7,13 @@
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
-@if (Model.ShowRequestId)
+<a asp-page="/Index" class="btn btn-primary">
+    Click here to return to the home page.
+</a>
+
+@*@if (Model.ShowRequestId)
 {
     <p>
         <strong>Request ID:</strong> <code>@Model.RequestId</code>
     </p>
-}
+}*@

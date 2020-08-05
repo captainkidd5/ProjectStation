@@ -41,6 +41,14 @@ namespace ProjectStation.Pages.Account
         {
             if (ModelState.IsValid)
             {
+
+                var user = await userManager.FindByEmailAsync(Email);
+
+                if (user != null && !user.EmailConfirmed && (await userManager.CheckPasswordAsync(user, Password))) 
+                {
+                    ModelState.AddModelError(string.Empty, "Email not confirmed yet");
+                    return Page();
+                }
                 var result = await SignInManager.PasswordSignInAsync(Email,Password, RememberMe, false);
 
                 if (result.Succeeded)
