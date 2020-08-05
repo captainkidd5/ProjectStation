@@ -1,0 +1,11 @@
+﻿@page
+@model ProjectStation.Pages.Shared._AccountRegistryModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+    <form method="post" asp-action="OnLogout">
+        <button type="submit" class="nav-link btn btn-link py-0">
+            Logout @User.Identity.Name
+        </button>
+    </form>

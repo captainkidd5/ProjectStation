@@ -1,0 +1,13 @@
+﻿@page
+@model ProjectStation.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<h1>Logout</h1>
+
+<form method="post" asp-action="OnPost">
+    <button type="submit" class="nav-link btn btn-link py-0">
+        Click here to log out of @User.Identity.Name
+    </button>
+</form>
