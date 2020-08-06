@@ -13,13 +13,11 @@
                         News
                         <div class="fadedLine"></div>
                         <ul class="sideList">
-                            <li class="borderedListElement">2020.05.07 <a href="contact" class="leftSideLink">＜休廊延長のお知らせ＞</a></li>
-                            <li class="borderedListElement"> 2020.04.13 <a href="contact" class="leftSideLink">＜休廊のお知らせ＞</a></li>
-                            <li class="borderedListElement"> 2020.03.18 <a href="contact" class="leftSideLink">＜ART CENTRAL × ARTSY 2020＞</a></li>
-
-                            <li class="borderedListElement"> 2020.01.07 <a href="contact" class="leftSideLink">＜ニュース掲載のお知らせ＞　〜DAILY BRUIN〜</a></li>
-                            <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
-                            <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> ONLINE SHOP OPEN</a></li>
+                            @foreach(var newSnippet in Model.NewsSnippets)
+                                    {
+                                        <li class="borderedListElement">@newSnippet.Date <a href = "contact" class="leftSideLink">@newSnippet.Title</a></li>
+                            }
+                            
                         </ul>
                     </div>
                 </div>

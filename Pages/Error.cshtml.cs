@@ -59,8 +59,8 @@ namespace ProjectStation.Pages
             _logger.LogError($"Error RequestID: {RequestId.ToString()} ");
 
 
-            _logger.LogError($"The path {exceptionDetails.Path} threw an exception " +
-                $"{exceptionDetails.Error}");
+            //_logger.LogError($"The path {exceptionDetails.Path} threw an exception " +
+            //    $"{exceptionDetails.Error}");
 
             return Page();
 
