@@ -16,7 +16,7 @@
             </div>
             <div class="fadedLine"></div>
             <p class="newsSnippetDate">@Model.NewsSnippet.Date</p>
-            <p class="newsSnippetDate" style="color:black;">@Model.NewsSnippet.Description</p>
+            @(new Microsoft.AspNetCore.Html.HtmlString(Model.NewsSnippet.Description))
 
 
 
