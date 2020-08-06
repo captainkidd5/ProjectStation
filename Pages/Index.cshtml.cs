@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-
+using Models.Models;
+using Services.News;
 
 namespace ProjectStation.Pages
 {
@@ -13,15 +14,20 @@ namespace ProjectStation.Pages
     {
 
 
-        public IndexModel()
-        {
+        public List<NewsSnippet> NewsSnippets { get; set; }
+        INewsSnippetRepository newsSnippetRepository;
 
+
+        public IndexModel(INewsSnippetRepository newsSnippetRepository)
+        {
+            this.newsSnippetRepository = newsSnippetRepository;
         }
 
-        public void OnGet() //when someone gets this page what should we do?
+        public void OnGet()
         {
-
+            this.NewsSnippets = newsSnippetRepository.GetAllNewsSnippets().ToList();
         }
+
     }
 
 }
