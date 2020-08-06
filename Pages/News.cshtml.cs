@@ -11,7 +11,7 @@ namespace ProjectStation.Pages
 {
     public class NewsModel : PageModel
     {
-        public IEnumerable<NewsSnippet> NewsSnippets{ get; set; }
+        public List<NewsSnippet> NewsSnippets{ get; set; }
         INewsSnippetRepository newsSnippetRepository;
 
 
@@ -22,7 +22,7 @@ namespace ProjectStation.Pages
 
         public void OnGet()
         {
-            this.NewsSnippets = newsSnippetRepository.GetAllNewsSnippets();
+            this.NewsSnippets = newsSnippetRepository.GetAllNewsSnippets().ToList();
         }
 
 
