@@ -4,20 +4,39 @@
     ViewData["Title"] = Model.NewsSnippet.Title;
 }
 
-    <h1>Model.NewsSnippet.Title</h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="mediumHeader">
-                    <div class=" mediumHeaderStyle">
-                        @Model.NewsSnippet.Title
-                        <div class="fadedLine"></div>
-                        <p>@Model.NewsSnippet.Date</p>
-                        <p>@Model.NewsSnippet.Description</p>
-                    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mediumHeader">
+                <div class=" mediumHeaderStyle">
+                    @Model.NewsSnippet.Title
                 </div>
             </div>
+            <div class="fadedLine"></div>
+            <p class="newsSnippetDate">@Model.NewsSnippet.Date</p>
+            <p class="newsSnippetDate" style="color:black;">@Model.NewsSnippet.Description</p>
+
+
+
         </div>
     </div>
+    <div class="row">
+        @if (Model.NewsSnippetBackward != null)
+        {
+            <div class="col-md-3 offset-0"style="display:  inline-flex; flex-wrap: wrap;">
+                <a class="newsSnippetDate"  asp-page="/NewsStuff/NewsDetails" asp-route-id="@Model.NewsSnippetBackward.Id"> &#171; @Model.NewsSnippetBackward.Title</a>
+            </div>
+        }
 
+        @if (Model.NewsSnippetForward != null)
+        {
+            <div class="col-md-3 offset-8"style="display: inline-flex; flex-wrap: wrap;">
+                <a class="newsSnippetDate" asp-page="/NewsStuff/NewsDetails" asp-route-id="@Model.NewsSnippetForward.Id">@Model.NewsSnippetForward.Title&#187;</a>
+            </div>
+        }
+
+    </div>
+
+</div>

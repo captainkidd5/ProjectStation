@@ -170,4 +170,9 @@
     text-decoration-line: none;
     text-decoration-color: black; }
 
+.newsSnippetDate {
+  color: #D4D0D0;
+  font-size: 12px;
+  font-family: 'arial', 'Noto Sans JP', sans-serif; }
+
 /*RESIZING*/

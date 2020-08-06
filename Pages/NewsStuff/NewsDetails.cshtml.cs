@@ -14,6 +14,9 @@ namespace ProjectStation.Pages.NewsStuff
         private readonly INewsSnippetRepository newsSnippetRepository;
 
         public NewsSnippet NewsSnippet{ get; set; }
+
+        public NewsSnippet NewsSnippetForward { get; set; }
+        public NewsSnippet NewsSnippetBackward { get; set; }
         public NewsDetailsModel(INewsSnippetRepository newsSnippetRepository)
         {
             this.newsSnippetRepository = newsSnippetRepository;
@@ -21,6 +24,10 @@ namespace ProjectStation.Pages.NewsStuff
         public void OnGet(int id)
         {
             this.NewsSnippet = newsSnippetRepository.GetNewsSnippet(id);
+
+            NewsSnippetForward = newsSnippetRepository.GetNewsSnippet(id + 1);
+
+            NewsSnippetBackward = newsSnippetRepository.GetNewsSnippet(id - 1);
 
         }
     }

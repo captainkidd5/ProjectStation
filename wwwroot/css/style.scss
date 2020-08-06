@@ -223,6 +223,7 @@ $fadedLineWidth: 50%;
 .contentBlock a:link {
     font-size: 14px;
     color: black !important;
+
 }
 
 
@@ -260,6 +261,14 @@ $fadedLineWidth: 50%;
 
     @include readMoreHover;
 }
+
+.newsSnippetDate {
+    color: #D4D0D0;
+    font-size: 12px;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
+}
+
+
 
 
 /*RESIZING*/
