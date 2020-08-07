@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TIG</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.min.css" />
+    <link rel="stylesheet" href="~/css/contact.min.css" />
+    <link rel="stylesheet" href="~/css/DropDownMenu.min.css" />
+    <link rel="stylesheet" href="~/css/Universal.min.css" />
+    <link rel="stylesheet" href="~/css/exhibit.min.css" />
+    <link rel="stylesheet" href="~/css/shop.min.css" />
+    <link rel="stylesheet" href="~/css/images.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+@inject SignInManager<IdentityUser> signInManager;
+
+<body>
+
+    @if (IsSectionDefined("TitleBlock"))
+    {
+        @RenderSection("TitleBlock")
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg">
+                </div>
+                <div class="col-md-10 offset1">
+                    <nav class="inlineNavBar">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="project">PROJECT</a></li>
+                            <li><a href="asiansquat">Asian Squat</a></li>
+
+                            @if (signInManager.IsSignedIn(User))
+                            {
+                                <li>
+                                    <form method="post" asp-page="/Account/Logout">
+                                        <button type="submit" class="nav-link btn btn-link py-0">
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
+
+                            }
+                            else
+                            {
+                                <li><a asp-page="/Account/Login">LOGIN</a></li>
+                            }
+
+                            <li><a href="cart">CART</a></li>
+                            <li><a href="japanese">Japanese</a></li>
+                            @*<li><a asp-page="/Users/Index">View Users</a></li>
+                            <li><a asp-page="/Users/Edit">Add User</a></li>*@
+
+
+
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

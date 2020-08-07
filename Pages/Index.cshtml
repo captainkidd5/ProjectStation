@@ -68,16 +68,21 @@
 
                 <div class="fadedLine"></div>
                 <ul class="sideList">
+          
                     @for (int i = Model.NewsSnippets.Count() - 1; i >= 0; i--)
                     {
                         Models.Models.NewsSnippet newsSnippet = Model.NewsSnippets[i];
-                        <li class="borderedListElement">@newsSnippet.Date <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a></li>
+                        <li class="borderedListElement">
+                            <div class="newsSnippetDate" style="display:inline;">@newsSnippet.Date </div>
+                    <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a></li>
                     }
-                    <li class="borderedListElement">
-                        <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
-                        <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
 
-                    </li>
+                <li class="borderedListElement">
+                    <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
+                    <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
+
+
+                </li>
                 </ul>
 
             </div>

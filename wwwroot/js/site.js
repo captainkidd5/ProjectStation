@@ -3,8 +3,8 @@
 
 // Write your Javascript code.
 
+//for dropdown menu
 
-//SHOP
 
 
 
@@ -55,13 +55,24 @@ $(document).ready(function () {
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
+
+    $('.animated-icon1').toggleClass('open');
     document.getElementById("buttonEvent1").classList.toggle("show");
+    
     document.getElementById("titlePage").classList.toggle("hide");
+   
+    
 }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropMenuButton')) {
+        if ($('.animated-icon1').hasClass('open')) {
+            $('.animated-icon1').removeClass('open');
+        }
+        else {
+
+        }
         var dropdowns = document.getElementsByClassName("dropMenuContent");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -72,6 +83,11 @@ window.onclick = function (event) {
         }
         if (document.getElementById("titlePage").classList.contains('hide')) {
             document.getElementById("titlePage").classList.remove('hide');
+           
+
+
+           
         }
+        
     }
 }

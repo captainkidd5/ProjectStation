@@ -2,55 +2,12 @@
 @model ProjectStation.Pages.ShopStuff.ShopModel
 @{
     ViewData["Title"] = "Shop";
+    Layout = "shopstuff/_Layout";
 }
 
 @inject SignInManager<IdentityUser> signInManager;
 
-@section TitleBlock {
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1">
-                <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg">
-            </div>
-            <div class="col-md-10 offset1">
-                <nav class="inlineNavBar">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="project">PROJECT</a></li>
-                        <li><a href="asiansquat">Asian Squat</a></li>
 
-                        @if (signInManager.IsSignedIn(User))
-                        {
-                            <li>
-                                <form method="post" asp-page="/Account/Logout">
-                                    <button type="submit" class="nav-link btn btn-link py-0">
-                                        Logout
-                                    </button>
-                                </form>
-                            </li>
-
-                        }
-                        else
-                        {
-                            <li><a asp-page="/Account/Login">LOGIN</a></li>
-                        }
-
-                        <li><a href="cart">CART</a></li>
-                        <li><a href="japanese">Japanese</a></li>
-                        <li><a asp-page="/Users/Index">View Users</a></li>
-                        <li><a asp-page="/Users/Edit">Add User</a></li>
-
-
-
-                    </ul>
-
-                </nav>
-            </div>
-
-        </div>
-
-    </div>
-}
 
 <body>
     <div class="container">
@@ -83,8 +40,8 @@
         </div>
 
 
-        <div class="row">
-            <div class="w3-content w3-section " style="max-width:800px; padding-top:100px;">
+        <div class="row col-md-12">
+            <div class="w3-content w3-section " style="max-width:1200px; padding-top:100px;">
                 <img class="mySlides w3-animate-fading" style="width:100%;" src="~/SiteAssets/shopstuff/m_04.jpg" title="michael ho">
                 <img class="mySlides w3-animate-fading" style=" width: 100%;" src="~/SiteAssets/shopstuff/m_05.jpg" title="michael ho">
                 <img class="mySlides w3-animate-fading" style="width: 100%;" src="~/SiteAssets/shopstuff/m_02.jpg" title="michael ho">
@@ -95,7 +52,7 @@
             <h1 class="centerTitle">TOPICS</h1>
         </div>
         <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="col-md-12 ">
                 <ul class="sideList">
                     <li class="borderedListElement"> 2019.10.30 <a href="contact" class="leftSideLink"> Tokyo International Gallery・Pop Up Shop特別トークイベント開催決定のお知らせ</a></li>
                     <li class="borderedListElement"> 2019.10.01 <a href="contact" class="leftSideLink"> SEQUENCE 1 Pop Up Shop</a></li>
@@ -110,7 +67,7 @@
 
 </body>
 
-<nav class="mobileNavBar">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom">
     <ul>
         <li>
             <a href="#" class="btn btn-info btn-lg">

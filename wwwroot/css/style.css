@@ -87,11 +87,11 @@
     margin-top: 40px; }
 
 .borderedListElement {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: -40px;
-  border-bottom: 2px solid #9D9393;
-  font-size: 20px;
-  line-height: 50px; }
+  border-bottom: 1px solid #9D9393;
+  font-size: 12px;
+  line-height: 32px; }
 
 .leftSideLink {
   color: black;

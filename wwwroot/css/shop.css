@@ -21,7 +21,7 @@
 .centralImage {
   transform: translate(-50%);
   margin-left: 55%;
-  width: 80%; }
+  width: 100%; }
 
 .bodyAllignment {
   position: relative;

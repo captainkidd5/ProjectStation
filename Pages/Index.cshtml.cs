@@ -15,17 +15,25 @@ namespace ProjectStation.Pages
 
 
         public List<NewsSnippet> NewsSnippets { get; set; }
+
         INewsSnippetRepository newsSnippetRepository;
 
 
         public IndexModel(INewsSnippetRepository newsSnippetRepository)
         {
             this.newsSnippetRepository = newsSnippetRepository;
+
         }
 
         public void OnGet()
         {
             this.NewsSnippets = newsSnippetRepository.GetAllNewsSnippets().ToList();
+
+
+            while(NewsSnippets.Count > 6)
+            {
+                NewsSnippets.RemoveAt(0);
+            }
         }
 
     }
