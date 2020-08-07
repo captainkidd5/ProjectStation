@@ -39,9 +39,9 @@
 
             </div>
         </div>
-        <div class="row"style="margin-top:-100px;">
+        <div class="row" style="margin-top:-100px;">
             <div class="col-md-1 offset-md-10" style="max-width:75px;">
-                <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " title="instagram page" /> </a> 
+                <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " title="instagram page" /> </a>
             </div>
             <div class="col-md-1 " style="max-width:75px;">
 
@@ -58,26 +58,28 @@
             </a>
         </div>
 
-        <div class="row"style="margin-top:400px;">
+        <div class="row" style="margin-top:400px;">
             <div class="col-md-6">
                 <div class="mediumHeader">
                     <div class=" mediumHeaderStyle">
                         News
                     </div>
-
-
-                    <div class="fadedLine"></div>
-                    <ul class="sideList">
-                        @for (int i = Model.NewsSnippets.Count() - 1; i >= 0; i--)
-                        {
-                            Models.Models.NewsSnippet newsSnippet = Model.NewsSnippets[i];
-                            <li class="borderedListElement">@newsSnippet.Date <a class= "leftSideLink"asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id" >@newsSnippet.Title</a></li>
-                        }
-                        <li class="borderedListElement">
-                            <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
-                        </li>
-                    </ul>
                 </div>
+
+                <div class="fadedLine"></div>
+                <ul class="sideList">
+                    @for (int i = Model.NewsSnippets.Count() - 1; i >= 0; i--)
+                    {
+                        Models.Models.NewsSnippet newsSnippet = Model.NewsSnippets[i];
+                        <li class="borderedListElement">@newsSnippet.Date <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a></li>
+                    }
+                    <li class="borderedListElement">
+                        <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
+                        <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
+
+                    </li>
+                </ul>
+
             </div>
 
 
@@ -89,15 +91,18 @@
                     </div>
                     <div class="fadedLine"></div>
                     <ul class="sideList">
-                          
+
                         <li class="borderedListElement">
-
                             <a href="contact" class="imageHashTag">#EXHIBITION</a>
-                            <a href="https/instagram.com"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
+                            <div class="card text-white">
 
-                            <div class="imageOverlay">
-                                <div class="textImageOverlay">I_AM_BECOME.pdf</div>
+                                <a href="https/instagram.com"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
 
+                                <div class="card-img-overlay ">
+
+                                    <p class="textImageOverlay">I_AM_BECOME.pdf</p>
+
+                                </div>
                             </div>
 
                         </li>
@@ -105,31 +110,38 @@
                         <li class="borderedListElement">
 
                             <a href="contact" class="imageHashTag">#ART FAIR</a>
-                            <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/tobi.jpg" title="instagram page"></a>
+                            <div class="card text-white">
 
-                            <div class="imageOverlay">
-                                <div class="textImageOverlay">
-                                    12-14 October 2018 Tobi Art Fair 2018
+                                <a href="https/instagram.com"><img src="~/SiteAssets/tobi.jpg" title="instagram page"></a>
+
+                                <div class="card-img-overlay ">
+
+                                    <p class="textImageOverlay">12-14 October 2018 Tobi Art Fair 2018</p>
+
                                 </div>
                             </div>
-
 
                         </li>
                         <li class="borderedListElement">
 
                             <a href="contact" class="imageHashTag">#ART FAIR #Hong Kong</a>
-                            <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/hongkong.jpg" title="instagram page"></a>
+                            <div class="card text-white">
 
+                                <a href="https/instagram.com"><img src="~/SiteAssets/hongkong.jpg" title="instagram page"></a>
 
-                            <div class="imageOverlay">
-                                <div class="textImageOverlay">17-22 March 2020 ART CENTRAL 2020</div>
+                                <div class="card-img-overlay ">
+
+                                    <p class="textImageOverlay">17-22 March 2020 ART CENTRAL 2020</p>
+
+                                </div>
                             </div>
+                            <a href="/exhibition" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
 
                         </li>
-                        <li class="readMore"> <a href="contact">Read More</a></li>
+
 
                     </ul>
-           
+
                 </div>
             </div>
         </div>

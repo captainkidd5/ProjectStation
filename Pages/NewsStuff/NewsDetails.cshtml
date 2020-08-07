@@ -14,13 +14,15 @@
                     @Model.NewsSnippet.Title
                 </div>
             </div>
-            <div class="fadedLine"></div>
-            <p class="newsSnippetDate">@Model.NewsSnippet.Date</p>
-            @(new Microsoft.AspNetCore.Html.HtmlString(Model.NewsSnippet.Description))
-
-
-
+            <div class="fadedLine" style="margin-bottom:50px;"></div>
         </div>
+    </div>
+    <div class="row">
+        <p class="newsSnippetDate">@Model.NewsSnippet.Date</p>
+        
+    </div>
+    <div class="row" style="margin-bottom:50px;">
+        @(new Microsoft.AspNetCore.Html.HtmlString(Model.NewsSnippet.Description))
     </div>
     <div class="row">
         @if (Model.NewsSnippetBackward != null)
@@ -32,7 +34,7 @@
 
         @if (Model.NewsSnippetForward != null)
         {
-            <div class="col-md-3 offset-8"style="display: inline-flex; flex-wrap: wrap;">
+            <div class="col-md-3 offset-6"style="display: inline-flex; flex-wrap: wrap;">
                 <a class="newsSnippetDate" asp-page="/NewsStuff/NewsDetails" asp-route-id="@Model.NewsSnippetForward.Id">@Model.NewsSnippetForward.Title&#187;</a>
             </div>
         }
