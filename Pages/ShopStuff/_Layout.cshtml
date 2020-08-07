@@ -22,7 +22,7 @@
 
 @inject SignInManager<IdentityUser> signInManager;
 
-<body>
+<body style="overflow-x:hidden;  max-width:100%;">
 
     @if (IsSectionDefined("TitleBlock"))
     {
@@ -33,7 +33,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-1">
-                    <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg">
+                    <a asp-page="/index">
+                        <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg">
+                    </a>
+                    
                 </div>
                 <div class="col-md-10 offset1">
                     <nav class="inlineNavBar">
@@ -58,7 +61,7 @@
                                 <li><a asp-page="/Account/Login">LOGIN</a></li>
                             }
 
-                            <li><a href="cart">CART</a></li>
+                            <li><a asp-page="/shopstuff/cart">CART</a></li>
                             <li><a href="japanese">Japanese</a></li>
                             @*<li><a asp-page="/Users/Index">View Users</a></li>
                                 <li><a asp-page="/Users/Edit">Add User</a></li>*@
@@ -79,19 +82,19 @@
 
 
 
-<div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
+    <div id="mySidebar" class="sidebar d-md-none">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
 
-    <a href="#">HOME</a>
-    <a href="#">PROJECT</a>
-    <a href="#">Asian Squat</a>
-    <a href="#">LOGIN</a>
-    <a href="#">CART</a>
-    <a href="#">Japanese</a>
-</div>
+        <a href="#">HOME</a>
+        <a href="#">PROJECT</a>
+        <a href="#">Asian Squat</a>
+        <a href="#">LOGIN</a>
+        <a asp-page="/shop/cart">CART</a>
+        <a href="#">Japanese</a>
+    </div>
 
-    <div class="fixed-top " id="main">
+    <div class="fixed-top d-md-none" id="main">
         <button class="openbtn" onclick="openNav()">☰</button>
     </div>
 
@@ -116,7 +119,7 @@
     <nav class=" bg-light  fixed-bottom d-md-none ">
         <div class="container">
 
-            <div class="collapse" style="max-height:30px;" id="navbarToggleSearchContent">
+            <div class="collapse" style="max-height:80px;" id="navbarToggleSearchContent">
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control " type="search" placeholder="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
