@@ -27,7 +27,7 @@ namespace ProjectStation.Pages.ShopStuff.Products
         {
 
             this.Product = productRepository.GetProduct(1);
-            this.Price = string.Format(Product.Price.ToString(), "{0:C}", CultureInfo.CreateSpecificCulture("ja-JP"));
+            this.Price = string.Format(Product.Price.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
         }
     }
 }
