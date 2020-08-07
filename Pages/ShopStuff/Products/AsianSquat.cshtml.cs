@@ -9,6 +9,11 @@ namespace ProjectStation.Pages.ShopStuff.Products
 {
     public class AsianSquatModel : PageModel
     {
+        public AsianSquatModel()
+        {
+
+        }
+
         public void OnGet()
         {
 

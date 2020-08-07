@@ -21,9 +21,9 @@ namespace Services
 
             context.Database.ExecuteSqlRaw("spInsertClient {0},{1},{2},{3}",
                                             newProduct.Name,
-                                            newProduct.Description,
+                                            newProduct.PhotoPath,
                                             newProduct.Price,
-                                            newProduct.PhotoPath);
+                                            newProduct.Amt);
 
 
             return newProduct;

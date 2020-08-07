@@ -96,6 +96,7 @@ namespace ProjectStation
             services.AddScoped<IClientRepository, SQLClientRepository>();
             services.AddScoped<IAccountRepository, SQLAccountRepository>();
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
+            services.AddScoped<IProductRepository, SQLProductRepository>();
 
             services.Configure<RouteOptions>(options =>
             {
