@@ -76,19 +76,47 @@
 
     }
 
+
+
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
+
+    <a href="#">HOME</a>
+    <a href="#">PROJECT</a>
+    <a href="#">Asian Squat</a>
+    <a href="#">LOGIN</a>
+    <a href="#">CART</a>
+    <a href="#">Japanese</a>
+</div>
+
+    <div class="fixed-top " id="main">
+        <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+
     <div>
         @RenderBody()
     </div>
 
 
-
-
     <nav class=" bg-light  fixed-bottom d-md-none ">
         <div class="container">
 
-           
-
-             <div class="collapse" style="max-height:30px;" id="navbarToggleSearchContent">
+            <div class="collapse" style="max-height:30px;" id="navbarToggleSearchContent">
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control " type="search" placeholder="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -114,19 +142,11 @@
                 </li>
 
             </ul>
-
-
-
         </div>
-
-
-
     </nav>
-
-
-
 </body>
 </html>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
