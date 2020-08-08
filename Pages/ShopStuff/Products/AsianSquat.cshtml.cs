@@ -16,6 +16,7 @@ namespace ProjectStation.Pages.ShopStuff.Products
         private readonly IProductRepository productRepository;
         public string Price { get; set; }
 
+        public List<string> ImagePaths { get; set; }
 
         public AsianSquatModel(IProductRepository productRepository)
         {
@@ -25,7 +26,14 @@ namespace ProjectStation.Pages.ShopStuff.Products
 
         public void OnGet()
         {
-
+            ImagePaths = new List<string>()
+            {
+                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_01.jpg",
+                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_02.jpg",
+                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_03.jpg",
+                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_04.jpg",
+                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_05.jpg",
+            };
             this.Product = productRepository.GetProduct(1);
             this.Price = string.Format(Product.Price.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
         }
