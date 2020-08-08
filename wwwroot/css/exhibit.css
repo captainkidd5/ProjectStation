@@ -52,6 +52,8 @@
 .exhibitionCard {
   margin-top: 50px;
   border-style: none; }
+  .exhibitionCard img {
+    max-height: 280px; }
 
 .readMoreStyle {
   display: inline-block;
@@ -60,7 +62,8 @@
   border-color: darkgray;
   border-width: 1px;
   border: solid;
-  color: gray; }
+  color: gray;
+  margin-top: 16px; }
   .readMoreStyle a {
     color: gray; }
   .readMoreStyle:hover {

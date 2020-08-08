@@ -175,4 +175,12 @@
   font-size: 12px;
   font-family: 'arial', 'Noto Sans JP', sans-serif; }
 
+.artistTitle {
+  font-size: 48px;
+  font-family: 'arial', 'Noto Sans JP', sans-serif; }
+
+.artistParagraph {
+  font-size: 16px;
+  font-family: 'arial', 'Noto Sans JP', sans-serif; }
+
 /*RESIZING*/

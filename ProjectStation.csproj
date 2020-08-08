@@ -58,6 +58,7 @@
   <ItemGroup>
     <Folder Include="Pages\Exhibition\" />
     <Folder Include="ViewComponents\" />
+    <Folder Include="wwwroot\SiteAssets\Artists\Michael\" />
     <Folder Include="wwwroot\SiteAssets\shopstuff\Products\AsianSquat\" />
   </ItemGroup>
 

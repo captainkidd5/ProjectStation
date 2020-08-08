@@ -63,6 +63,9 @@
 .exhibitionCard{
     margin-top:50px;
     border-style:none;
+    img{
+        max-height:280px;
+    }
 }
 
 .readMoreStyle {
@@ -73,6 +76,7 @@
     border-width: 1px;
     border: solid;
     color: gray;
+    margin-top:16px;
 
     a {
         color: gray;
