@@ -7,18 +7,20 @@ namespace Services.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             string procedure = @"Create procedure spGetNewsSnippetById
-                                @Id int
-                                as
-                                Begin
-	                                Select * from NewsSnippets
-	                                where Id = @Id
-                                End";
+                               @Id int
+                               as
+                               Begin
+	                           Select * from NewsSnippets
+	                           where Id = @Id
+                               End";
+
             migrationBuilder.Sql(procedure);
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            string procedure = @"Create procedure spGetNewsSnippetById";
+            string procedure = @"Drop procedure spGetNewsSnippetById ";
             migrationBuilder.Sql(procedure);
         }
     }

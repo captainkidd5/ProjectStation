@@ -10,8 +10,8 @@ using Services;
 namespace Services.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200806003355_seedNewsSnippetTable")]
-    partial class seedNewsSnippetTable
+    [Migration("20200808024410_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -262,19 +262,6 @@ namespace Services.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("NewsSnippets");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Date = "2019.03.18",
-                            Description = @"Tokyo International Gallery and Gallery Shimamura is participating in Tokyo International Art Fair 2019 (Roppongi) We cordially invite you to join us at Tokyo International Art Fair 2019. 
- Tokyo International Art Fair 2019 
-WHEN: Friday 7th June 2019 : 18.00pm – 21.00pm | Opening – Private View(invitations & tickets only) Saturday 8th June 2019 : 11.00am – 18.00pm | Open to Public(free entrance) 
- LOCATION: BELLE SALLE Roppongi Japan, 〒106 - 0032 Tokyo, 
- Minato, Roppongi, 7 Chome−18−18, 住友不動産六本木通ビル",
-                            Title = "Tokyo International Art Fair 2019 June 7-8, 2019"
-                        });
                 });
 
             modelBuilder.Entity("Models.Models.Product", b =>
@@ -284,8 +271,8 @@ WHEN: Friday 7th June 2019 : 18.00pm – 21.00pm | Opening – Private View(invi
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Amt")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

@@ -10,7 +10,7 @@ using Services;
 namespace Services.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200807205406_spGetProductById")]
+    [Migration("20200808171144_spGetProductById")]
     partial class spGetProductById
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

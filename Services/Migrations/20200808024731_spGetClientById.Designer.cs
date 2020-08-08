@@ -10,8 +10,8 @@ using Services;
 namespace Services.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200806014137_KeepNewsSnippet")]
-    partial class KeepNewsSnippet
+    [Migration("20200808024731_spGetClientById")]
+    partial class spGetClientById
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -271,8 +271,8 @@ namespace Services.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Amt")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
