@@ -49,23 +49,29 @@
   font-size: 20px;
   width: inherit; }
 
-.readMoreAllignLeft {
+.exhibitionCard {
+  margin-top: 50px;
+  border-style: none; }
+
+.readMoreStyle {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 10px 20px;
   text-align: center;
   border-color: darkgray;
-  margin-bottom: 10px;
   border-width: 1px;
   border: solid;
-  color: gray;
-  margin-left: 0; }
-  .readMoreAllignLeft a {
+  color: gray; }
+  .readMoreStyle a {
     color: gray; }
-  .readMoreAllignLeft:hover {
+  .readMoreStyle:hover {
     transition: ease-in-out .15s;
     opacity: .8;
     text-decoration-line: none;
     text-decoration-color: black; }
+
+.readMoreAllignLeft {
+  margin-bottom: 10px;
+  margin-left: 0; }
 
 @media only screen and (max-width: 640px) {
   .fullFadedLine {

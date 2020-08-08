@@ -60,25 +60,22 @@
     width:inherit;
 }
 
-.readMoreWrapper {
-
+.exhibitionCard{
+    margin-top:50px;
+    border-style:none;
 }
 
-.readMoreAllignLeft {
+.readMoreStyle {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 10px 20px;
     text-align: center;
     border-color: darkgray;
-    margin-bottom: 10px;
     border-width: 1px;
     border: solid;
     color: gray;
-    margin-left:0;
-
 
     a {
         color: gray;
-
     }
 
     &:hover {
@@ -87,6 +84,16 @@
         text-decoration-line: none;
         text-decoration-color: black;
     }
+}
+
+.readMoreAllignLeft {
+   
+    margin-bottom: 10px;
+    
+    margin-left:0;
+
+
+   
 }
 
 @media only screen and (max-width: 640px) {

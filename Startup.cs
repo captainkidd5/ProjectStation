@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using Services.News;
 using Stripe;
 using System.Configuration;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace ProjectStation
 {
@@ -33,7 +34,7 @@ namespace ProjectStation
         {
             services.AddDbContextPool<AppDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("ClientDbConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("TigDbConnection"));
             });
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
@@ -80,6 +81,7 @@ namespace ProjectStation
             services.AddScoped<IAccountRepository, SQLAccountRepository>();
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
+            //services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
             services.Configure<RouteOptions>(options =>
             {

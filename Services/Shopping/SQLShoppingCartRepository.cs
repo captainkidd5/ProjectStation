@@ -1,8 +1,10 @@
-﻿using Models.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace Services.Shopping
 {
@@ -50,7 +52,22 @@ namespace Services.Shopping
 
         public string GetCartID()
         {
+            //if (HttpContext.Current.Session[CartSessionKey] == null)
+            //{
+            //    if (!string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
+            //    {
+            //        HttpContext.Current.Session[CartSessionKey] = HttpContext.Current.User.Identity.Name;
+            //    }
+            //    else
+            //    {
+            //        // Generate a new random GUID using System.Guid class.     
+            //        Guid tempCartId = Guid.NewGuid();
+            //        HttpContext.Current.Session[CartSessionKey] = tempCartId.ToString();
+            //    }
+            //}
+            //return HttpContext.Current.Session[CartSessionKey].ToString();
             throw new NotImplementedException();
+            
         }
 
         public List<CartItem> GetItems(int itemID)
