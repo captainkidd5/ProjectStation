@@ -5,7 +5,19 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Works</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class=" img-fluid"src="@Url.Content(Model.ArtPiece.PhotoPath)" />
+            </div>
+            <div class="col-md-6">
+                @Model.ArtPiece.Name
+                @Model.ArtPiece.Description
+                <img  style="width:40%;" src="@Url.Content(Model.ArtPiece.QRPath)" />
+
+            </div>
+        </div>
+    </div>
 
 
 <div class="container">

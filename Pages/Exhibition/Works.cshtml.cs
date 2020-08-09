@@ -23,6 +23,8 @@ namespace ProjectStation.Pages.Exhibition
             if(id > 0)
             {
                 this.ArtPiece = artPieceRepository.GetArtPiece(id);
+                this.ArtPiece.PhotoPath = "~/SiteAssets/exhibitions/" + ArtPiece.PhotoPath;
+                this.ArtPiece.QRPath = "~/SiteAssets/exhibitions/" + ArtPiece.QRPath;
             }
         }
     }

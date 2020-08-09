@@ -35,7 +35,7 @@ namespace ProjectStation.Pages.Exhibition
             this.ArtPieces = artPieceRepository.GetExhibitionPieces(this.Exhibition).ToList();
             foreach(ArtPiece piece in ArtPieces)
             {
-                piece.PhotoPath = "~/SiteAssets/exhibitions/iambecome/" + piece.PhotoPath;
+                piece.PhotoPath = "~/SiteAssets/exhibitions/" + piece.PhotoPath;
             }
 
         }

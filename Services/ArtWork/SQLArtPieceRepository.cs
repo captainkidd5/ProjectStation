@@ -26,6 +26,8 @@ namespace Services.ArtWork
             throw new NotImplementedException();
         }
 
+
+
         public IEnumerable<ArtPiece> GetAllArtPieces()
         {
             return context.ArtPieces
@@ -35,7 +37,7 @@ namespace Services.ArtWork
 
         public ArtPiece GetArtPiece(int id)
         {
-            throw new NotImplementedException();
+            return context.ArtPieces.FirstOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<ArtPiece> GetExhibitionPieces(Exhibition exhibition)
