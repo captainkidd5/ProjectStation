@@ -19,7 +19,7 @@
         {
             <div class="row">
                 <div class="col-md-12">
-                    <a asp-page="/Exhibition/Works"><img src="@Model.ArtPieces[i].PhotoPath"/></a>
+                    <a asp-page="/Exhibition/Works" asp-route-id=@Model.ArtPieces[i].Id><img src="@Url.Content(Model.ArtPieces[i].PhotoPath)"/></a>
                 </div>
             </div>
         }
