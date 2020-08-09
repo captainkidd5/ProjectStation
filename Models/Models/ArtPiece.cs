@@ -10,6 +10,7 @@ namespace Models.Models
     {
         None,
         IamBecome,
+        TobiArtFair2019,
 
     }
 
