@@ -6,10 +6,19 @@ using System.Text;
 
 namespace Models.Models
 {
+    public enum Exhibition
+    {
+        None,
+        IamBecome,
+
+    }
+
     public class ArtPiece
     {
         public int Id { get; set; }
-        public string Exhibition { get; set; }
+
+        public Exhibition Exhibition { get; set; }
+
         public string Name { get; set; }
  
         public string Description { get; set; }

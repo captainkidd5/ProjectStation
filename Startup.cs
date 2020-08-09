@@ -17,6 +17,7 @@ using Services.News;
 using Stripe;
 using System.Configuration;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Services.ArtWork;
 
 namespace ProjectStation
 {
@@ -81,6 +82,7 @@ namespace ProjectStation
             services.AddScoped<IAccountRepository, SQLAccountRepository>();
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
+            services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
             //services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
             services.Configure<RouteOptions>(options =>
