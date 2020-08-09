@@ -6,29 +6,31 @@
 }
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="fullMediumHeader">I_AM_BECOME.pdf Michael Ho</div>
-                <div class="fadedLine"></div>
-                <div id="vrview"></div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="fullMediumHeader">I_AM_BECOME.pdf Michael Ho</div>
+            <div class="fadedLine"></div>
+            <div id="vrview"></div>
         </div>
+    </div>
 
-        @for (int i = 0; i < Model.ArtPieces.Count; i++)
+    <div class="row">
+        @foreach (var artPiece in Model.ArtPieces)
         {
-            <div class="row">
-                <div class="col-md-12">
-                    <a asp-page="/Exhibition/Works" asp-route-id=@Model.ArtPieces[i].Id><img src="@Url.Content(Model.ArtPieces[i].PhotoPath)"/></a>
-                </div>
+            <div class="col-md-6">
+                <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="img-fluid"src="@Url.Content(artPiece.PhotoPath)" /></a>
+                <p>@artPiece.Name</p>
             </div>
         }
+    </div>
 
-        @*@foreach (var artPiece in Model.ArtPieces)
+
+    @*@foreach (var artPiece in Model.ArtPieces)
         {
 
         }*@
-    </div>
+</div>
 
-    
+
 
