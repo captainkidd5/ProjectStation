@@ -63,6 +63,7 @@
     <Folder Include="wwwroot\SiteAssets\Exhibitions\tobiartfair2018\" />
     <Folder Include="wwwroot\SiteAssets\Exhibitions\TokyoInternationalArtFair2019\" />
     <Folder Include="wwwroot\SiteAssets\shopstuff\Products\AsianSquat\" />
+    <Folder Include="wwwroot\SiteAssets\shopstuff\Projects\Sequence1\" />
   </ItemGroup>
 
   <ItemGroup>
