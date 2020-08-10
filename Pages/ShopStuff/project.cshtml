@@ -1,17 +1,23 @@
 ﻿@page
-@model ProjectStation.Pages.ShopStuff.projectModel
+@model ProjectStation.Pages.ShopStuff.ProjectModel
 @{
-    ViewData["Title"] = "project";
+    ViewData["Title"] = "Project";
+    Layout = "~/Pages/ShopStuff/_Layout.cshtml";
 }
-
-
-@section TitleBlock {
-   
-}
-
 
 <body>
-    <p class="centerTitle">PROJECT</p>
-    <img class="centralImage" style="width:50%;"src="~/SiteAssets/shopstuff/yellowUnderwater.jpg">
-    <p class="underImageText" style="margin-left:20%;">SEQUENCE1</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex align-items-center justify-content-center projectTitle">PROJECT</div>
+        </div>
+        <div class="row">
+            <a asp-page="/shopstuff/projects/sequence1" class="col d-flex align-items-center justify-content-center"><img class="img-fluid" style="max-width:500px;" src="~/SiteAssets/shopstuff/yellowUnderwater.jpg"></a>
+        </div>
+        <div class="row" style="margin-bottom:200px;">
+            <p class="col d-flex  projectCaption" style="margin-left:28%;">SEQUENCE1</p>
+        </div>
+    </div>
+    
 </body>
+

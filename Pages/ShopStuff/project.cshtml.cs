@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ProjectStation.Pages.ShopStuff
 {
-    public class projectModel : PageModel
+    public class ProjectModel : PageModel
     {
         public void OnGet()
         {

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ProjectStation.Pages.ShopStuff
+namespace ProjectStation.Pages.ShopStuff.Projects
 {
-    public class sequence1Model : PageModel
+    public class Sequence1Model : PageModel
     {
         public void OnGet()
         {

@@ -35,9 +35,6 @@
 }
 
 
-
-
-
 .portraitImg {
    max-width:300px;
 }
@@ -55,7 +52,16 @@
     font-weight:400;
 }
 
-
+.projectTitle {
+    font-size: 30px;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
+    font-weight:bold;
+}
+.projectCaption {
+    font-size: 14px;
+    font-family: 'arial', 'Noto Sans JP', sans-serif;
+    font-weight: 200;
+}
 /////////LIGHTBOX////////
 
 
