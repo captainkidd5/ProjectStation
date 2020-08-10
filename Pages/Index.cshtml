@@ -79,7 +79,7 @@
 
                 <li class="borderedListElement">
                     <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
-                    <a class="leftSideImage" href="https/instagram.com"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
+                    <a class="leftSideImage" asp-page="/shop"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
 
 
                 </li>
@@ -99,14 +99,12 @@
 
                         <li class="borderedListElement">
                             <a href="contact" class="imageHashTag">#EXHIBITION</a>
+
                             <div class="card text-white">
+                                <a class="card-img" asp-page="Exhibition/TigSummer2020"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
 
-                                <a href="https/instagram.com"><img src="~/SiteAssets/vrImage.jpg" title="instagram page"></a>
-
-                                <div class="card-img-overlay ">
-
-                                    <p class="textImageOverlay">I_AM_BECOME.pdf</p>
-
+                                <div class="card-img-overlay align-content-center">
+                                    <h5 class="card-title">I_AM_BECOME.pdf</h5>
                                 </div>
                             </div>
 
@@ -115,32 +113,30 @@
                         <li class="borderedListElement">
 
                             <a href="contact" class="imageHashTag">#ART FAIR</a>
+
                             <div class="card text-white">
 
-                                <a href="https/instagram.com"><img src="~/SiteAssets/tobi.jpg" title="instagram page"></a>
+                                <a class="card-img" asp-page="Exhibition/TobiArtFair2018"><img src="~/SiteAssets/tobi.jpg" title="instagram page"></a>
 
-                                <div class="card-img-overlay ">
-
-                                    <p class="textImageOverlay">12-14 October 2018 Tobi Art Fair 2018</p>
-
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">12-14 October 2018 Tobi Art Fair 2018</h5>
                                 </div>
                             </div>
 
                         </li>
                         <li class="borderedListElement">
-
                             <a href="contact" class="imageHashTag">#ART FAIR #Hong Kong</a>
                             <div class="card text-white">
 
-                                <a href="https/instagram.com"><img src="~/SiteAssets/hongkong.jpg" title="instagram page"></a>
+                                <a class="card-img" asp-page="Exhibition/ArtCentralHongKong2020"><img src="~/SiteAssets/hongkong.jpg" title="instagram page"></a>
 
-                                <div class="card-img-overlay ">
-
-                                    <p class="textImageOverlay">17-22 March 2020 ART CENTRAL 2020</p>
-
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">17-22 March 2020 ART CENTRAL 2020</h5>
                                 </div>
                             </div>
-                            <a href="/exhibition" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
+
+
+                            <a asp-page="/exhibition" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
 
                         </li>
 
