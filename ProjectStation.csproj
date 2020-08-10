@@ -58,6 +58,10 @@
   <ItemGroup>
     <Folder Include="ViewComponents\" />
     <Folder Include="wwwroot\SiteAssets\Artists\Michael\" />
+    <Folder Include="wwwroot\SiteAssets\Exhibitions\ArtCentralHongKong2019\" />
+    <Folder Include="wwwroot\SiteAssets\Exhibitions\ArtCentral2020\" />
+    <Folder Include="wwwroot\SiteAssets\Exhibitions\tobiartfair2018\" />
+    <Folder Include="wwwroot\SiteAssets\Exhibitions\TokyoInternationalArtFair2019\" />
     <Folder Include="wwwroot\SiteAssets\shopstuff\Products\AsianSquat\" />
   </ItemGroup>
 

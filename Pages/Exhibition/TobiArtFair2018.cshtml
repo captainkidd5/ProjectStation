@@ -1,0 +1,27 @@
+﻿@page
+@model ProjectStation.Pages.Exhibition.TobiArtFair2018Model
+@{
+    ViewData["Title"] = "TobiArtFair2018";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="fullMediumHeader">ART CENTRAL HONG KONG 2019</div>
+            <div class="fadedLine"></div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var artPiece in Model.ArtPieces)
+        {
+            <div class="col-md-6">
+                <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="img-fluid" src="@Url.Content(artPiece.PhotoPath)" /></a>
+                <p>@artPiece.Name</p>
+            </div>
+        }
+    </div>
+
+</div>

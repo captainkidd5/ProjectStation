@@ -11,6 +11,10 @@ namespace Models.Models
         None,
         IamBecome,
         TobiArtFair2019,
+        ArtCentralHongKong2019,
+        ArtCentral2020,
+        TokyoInternationalArtFair,
+        TobiArtFair2018,
 
     }
 
