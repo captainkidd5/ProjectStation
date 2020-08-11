@@ -19,6 +19,7 @@ namespace Services
         public DbSet<Client> Clients { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<NewsSnippet> NewsSnippets { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<CartItem> ShoppingCartItems { get; set; }
         public DbSet<ArtPiece> ArtPieces { get; set; }
 

@@ -22,32 +22,32 @@ namespace Services.Shopping
 
         public CartItem AddItem(int itemID, int quantity)
         {
-            ShoppingCartID = GetCartID();
-            var cartItem = appDbContext.ShoppingCartItems.SingleOrDefault(
-                c => c.CartId == ShoppingCartID
-            && c.ProductId == itemID);
+            //ShoppingCartID = GetCartID();
+            //var cartItem = appDbContext.ShoppingCartItems.SingleOrDefault(
+            //    c => c.CartId == ShoppingCartID
+            //&& c.ProductId == itemID);
 
-            if(cartItem == null)
-            {
-                cartItem = new CartItem()
-                {
-                    ItemId = Guid.NewGuid().ToString(),
-                    ProductId = itemID,
-                    CartId = ShoppingCartID,
-                    Product = appDbContext.Products.SingleOrDefault(
-                p => p.ID == itemID),
-                    Quantity = 1,
-                    DateCreated = DateTime.Now
+            //if(cartItem == null)
+            //{
+            //    cartItem = new CartItem()
+            //    {
+            //        ItemId = Guid.NewGuid().ToString(),
+            //        ProductId = itemID,
+            //        CartId = ShoppingCartID,
+            //        Product = appDbContext.Products.SingleOrDefault(
+            //    p => p.ID == itemID),
+            //        Quantity = 1,
+            //        DateCreated = DateTime.Now
 
-                };
-                appDbContext.ShoppingCartItems.Add(cartItem);
-            }
-            else
-            {
-                cartItem.Quantity++;
-            }
-            appDbContext.SaveChanges();
-            return cartItem;
+            //    };
+            //    appDbContext.ShoppingCartItems.Add(cartItem);
+            //}
+            //else
+            //{
+            //    cartItem.Quantity++;
+            //}
+            //appDbContext.SaveChanges();
+            return new CartItem();
         }
 
         public string GetCartID()

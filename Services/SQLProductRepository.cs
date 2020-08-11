@@ -19,11 +19,11 @@ namespace Services
         public Product AddProduct(Product newProduct)
         {
 
-            context.Database.ExecuteSqlRaw("spInsertClient {0},{1},{2},{3}",
+            context.Database.ExecuteSqlRaw("spInsertClient {0},{1},{2}",
                                             newProduct.Name,
                                             newProduct.PhotoPath,
-                                            newProduct.Price,
-                                            newProduct.Amt);
+                                            newProduct.Price
+                                            );
 
 
             return newProduct;

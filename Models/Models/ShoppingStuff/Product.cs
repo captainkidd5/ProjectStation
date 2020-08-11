@@ -10,6 +10,5 @@ namespace Models.Models
         public string Name { get; set; }
         public string PhotoPath { get; set; }
         public int Price { get; set; }
-        public int Amt { get; set; }
     }
 }

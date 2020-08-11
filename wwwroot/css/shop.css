@@ -52,6 +52,10 @@
 .projectCardStyle {
   margin-bottom: 48px; }
 
+.thinLineSeparator {
+  border-bottom: solid;
+  border-bottom-color: lightgray; }
+
 .rowLightBox > .lightBoxColumn {
   padding: 0 8px; }
 
