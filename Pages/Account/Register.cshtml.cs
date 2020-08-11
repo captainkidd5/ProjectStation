@@ -75,6 +75,7 @@ namespace ProjectStation.Pages.Account
 
         public async Task<IActionResult> OnPost(UserAccount userAccount)
         {
+
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = userAccount.Email, Email = userAccount.Email };

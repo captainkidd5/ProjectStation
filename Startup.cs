@@ -18,6 +18,8 @@ using Stripe;
 using System.Configuration;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Services.ArtWork;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace ProjectStation
 {
@@ -53,14 +55,14 @@ namespace ProjectStation
                 options.Lockout.AllowedForNewUsers = true;
 
                 // User settings.
-                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedEmail = false;
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-           
+
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
@@ -72,8 +74,6 @@ namespace ProjectStation
                 options.SlidingExpiration = true;
             });
 
-         
-
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddControllers();
@@ -83,7 +83,7 @@ namespace ProjectStation
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
             services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
-            //services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
 
             services.Configure<RouteOptions>(options =>
             {
@@ -93,22 +93,35 @@ namespace ProjectStation
             });
 
             services.AddMvc().AddRazorRuntimeCompilation();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+      .AddRazorPagesOptions(options =>
+      {
+          options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+         options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+      });
 
-            //services.Configure<StripeConfiguration>((Configuration.GetSection("Stripe")))
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Identity/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
 
-              
+           services.AddSingleton<IEmailSender, EmailSender>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //services.Configure<StripeConfiguration>((Configuration.GetSection("Stripe")))
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+               // app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -120,7 +133,7 @@ namespace ProjectStation
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseStatusCodePagesWithRedirects("/Error");
+            //app.UseStatusCodePagesWithRedirects("/Error"); //enable to allow custom error page
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
