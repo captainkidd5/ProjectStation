@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Models.Models
@@ -14,7 +15,12 @@ namespace Models.Models
     }
     public class Order
     {
+        [Key]
         public int Id { get; set; }
+        public int CustomerId { get; set; }
+        public DateTime DateTime { get; set; }
+        public string Session { get; set; }
+        public float Total { get; set; }
         public OrderStatus OrderStatus { get; set; }
 
     }

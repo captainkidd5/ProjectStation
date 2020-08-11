@@ -1,0 +1,50 @@
+﻿@page
+@model ProjectStation.Pages.ArtCRUD.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/ShopStuff/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ArtPiece</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtPiece.Exhibition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArtPiece.Exhibition)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtPiece.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArtPiece.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtPiece.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArtPiece.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtPiece.PhotoPath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArtPiece.PhotoPath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArtPiece.QRPath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArtPiece.QRPath)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ArtPiece.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

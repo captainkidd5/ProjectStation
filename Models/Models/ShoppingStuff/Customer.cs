@@ -20,8 +20,10 @@ namespace Models.Models.ShoppingStuff
         [Required(ErrorMessage = "Postal code is required.")]
         public string PostalCode { get; set; }
         [Required(ErrorMessage = "Phone number is required.")]
+        [Phone(ErrorMessage = "Please enter a valid phone number.")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]
         public string Email { get; set; }
     }
 }

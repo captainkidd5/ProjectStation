@@ -1,0 +1,56 @@
+﻿@page
+@model ProjectStation.Pages.ArtCRUD.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/ShopStuff/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>ArtPiece</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ArtPiece.Id" />
+            <div class="form-group">
+                <label asp-for="ArtPiece.Exhibition" class="control-label"></label>
+                <select asp-for="ArtPiece.Exhibition" class="form-control"></select>
+                <span asp-validation-for="ArtPiece.Exhibition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtPiece.Name" class="control-label"></label>
+                <input asp-for="ArtPiece.Name" class="form-control" />
+                <span asp-validation-for="ArtPiece.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtPiece.Description" class="control-label"></label>
+                <input asp-for="ArtPiece.Description" class="form-control" />
+                <span asp-validation-for="ArtPiece.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtPiece.PhotoPath" class="control-label"></label>
+                <input asp-for="ArtPiece.PhotoPath" class="form-control" />
+                <span asp-validation-for="ArtPiece.PhotoPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtPiece.QRPath" class="control-label"></label>
+                <input asp-for="ArtPiece.QRPath" class="form-control" />
+                <span asp-validation-for="ArtPiece.QRPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

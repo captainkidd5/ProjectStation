@@ -29,7 +29,7 @@ namespace ProjectStation.Pages.Account
         }
         [BindProperty]
         public UserAccount UserAccount { get; set; }
-        public SignInManager<IdentityUser> SignInManager { get; }
+        private readonly SignInManager<IdentityUser> SignInManager;
 
         public void OnGet()
         {
@@ -104,9 +104,11 @@ namespace ProjectStation.Pages.Account
                         message.From = new MailAddress("sales@fourthcoffee.com");
                         await client.SendMailAsync(message);
                     }
-                    //return RedirectToAction("Login","Account);
-                    //await SignInManager.SignInAsync(user, isPersistent: false);
-                    //return RedirectToPage("/Shop");
+                    
+                    await SignInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToPage("/Shop");
+
+                    
 
 
 
