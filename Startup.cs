@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Services.ArtWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using ProjectStation.EmailService;
 
 namespace ProjectStation
 {
@@ -55,7 +56,8 @@ namespace ProjectStation
                 options.Lockout.AllowedForNewUsers = true;
 
                 // User settings.
-                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedAccount = true;
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;
@@ -107,7 +109,9 @@ namespace ProjectStation
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
+
            services.AddSingleton<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGrid"));
         }
 
         //services.Configure<StripeConfiguration>((Configuration.GetSection("Stripe")))
