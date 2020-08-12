@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
+using Models.Models;
 using ProjectStation.Components;
 using Services.Shopping;
 using Stripe.BillingPortal;
@@ -21,6 +22,7 @@ namespace ProjectStation.Pages.ShopStuff
         private readonly SignInManager<IdentityUser> signInManager;
 
         public ShoppingCart ShoppingCart { get; set; }
+        public List<CartItem> CartItems{ get; set; }
 
 
         public CartModel(IShoppingCartRepository cartRepository, SignInManager<IdentityUser> signInManager)
@@ -43,13 +45,16 @@ namespace ProjectStation.Pages.ShopStuff
             }
             else if(HttpContext.Session.Get("ShoppingCart") != null)
             {
-                ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("cart");
+                ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
+                CartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("ShoppingCart");
             }
             else
             {
                 ShoppingCart = new ShoppingCart()
                 { CartId = Guid.NewGuid().ToString(), DateCreated = DateTime.Now, UserId = null };
                 HttpContext.Session.SetObjectAsJson("ShoppingCart", ShoppingCart);
+                List<CartItem> cartItems = new List<CartItem>();
+                HttpContext.Session.SetObjectAsJson("ShoppingCart", cartItems);
                 this.ShoppingCart = ShoppingCart;
             }
 

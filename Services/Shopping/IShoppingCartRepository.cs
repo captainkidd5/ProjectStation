@@ -12,7 +12,7 @@ namespace Services.Shopping
         ShoppingCart GetCart(string id);
         CartItem AddItem(int itemID, int quantity);
         CartItem RemoveItem(int itemID, int quantity);
-        List<CartItem> GetItems(int itemID);
+        List<CartItem> GetItems(string cartId);
         double TotalCost();
         bool UpdateCartData();
 
