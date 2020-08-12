@@ -50,14 +50,14 @@
                 <p class="projectTitle">@Model.Price</p>
                 <p style="color:green;">在庫あり</p>
 
-                <form action="/contact">
-                    <div class="form-group row">
+                <form method="post">
+                    <label class="form-group row">
 
-                        <input class="form-control col-md-2" style="background-color:lightgray; width:64px;" type="text" id="fname" name="firstname">
+                        <input  asp-for="Quantity" class="form-control col-md-2" style="background-color:lightgray; width:64px;">
 
-                        <button type="submit" style="margin-left:8px;" value="submit " class="btn btn-primary bg-dark">カートに入れる</button>
+                        <button type="submit" style="margin-left:8px;" class="btn btn-primary bg-dark">カートに入れる</button>
 
-                    </div>
+                    </label>
                 </form>
                 <div class="thinLineSeparator"style="margin-top:48px;margin-bottom:20px;">
                    
