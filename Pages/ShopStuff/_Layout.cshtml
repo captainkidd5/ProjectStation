@@ -45,6 +45,10 @@
                             <li><a asp-page="/shopstuff/project">PROJECT</a></li>
                             <li><a asp-page="/shopstuff/products/asiansquat">Asian Squat</a></li>
 
+
+
+                            <li><a asp-page="/shopstuff/cart">CART</a></li>
+                            <li><a href="japanese">Japanese</a></li>
                             @if (signInManager.IsSignedIn(User))
                             {
                                 <li>
@@ -54,17 +58,15 @@
                                         </button>
                                     </form>
                                 </li>
-
+                                <li><a asp-area="identity" asp-page="/Account/Manage/index">Account</a></li>
                             }
                             else
                             {
                                 <li><a asp-area="identity" asp-page="/Account/Login">LOGIN</a></li>
                             }
 
-                            <li><a asp-page="/shopstuff/cart">CART</a></li>
-                            <li><a href="japanese">Japanese</a></li>
                             @*<li><a asp-page="/Users/Index">View Users</a></li>
-                                <li><a asp-page="/Users/Edit">Add User</a></li>*@
+        <li><a asp-page="/Users/Edit">Add User</a></li>*@
 
 
 

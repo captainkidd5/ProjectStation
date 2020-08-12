@@ -21,6 +21,7 @@ using Services.ArtWork;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using ProjectStation.EmailService;
+using Services.Shopping;
 
 namespace ProjectStation
 {
@@ -64,7 +65,7 @@ namespace ProjectStation
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-
+            
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
@@ -85,6 +86,7 @@ namespace ProjectStation
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
             services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
+            services.AddScoped<IShoppingCartRepository, SQLShoppingCartRepository>();
 
 
             services.Configure<RouteOptions>(options =>
@@ -109,8 +111,9 @@ namespace ProjectStation
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
-
-           services.AddSingleton<IEmailSender, EmailSender>();
+            services.Configure<DataProtectionTokenProviderOptions>(o =>
+       o.TokenLifespan = TimeSpan.FromHours(3));
+            services.AddSingleton<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGrid"));
         }
 
@@ -137,7 +140,13 @@ namespace ProjectStation
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            //app.UseStatusCodePagesWithRedirects("/Error"); //enable to allow custom error page
+
+            //COOKIES
+           // app.UseSession();
+
+            
+
+            app.UseStatusCodePagesWithRedirects("/Error"); //enable to allow custom error page
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
