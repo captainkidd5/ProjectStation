@@ -39,9 +39,9 @@ namespace ProjectStation.Pages.ShopStuff
 
             }
 
-            if(signInManager.IsSignedIn)
+            if(signInManager.IsSignedIn(User))
             {
-
+                ShoppingCart = cartRepository.GetCartID()
             }
             ShoppingCart = new ShoppingCart();
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Models;
 using Models.Models;
 using System;
 using System.Collections.Generic;
@@ -50,8 +51,9 @@ namespace Services.Shopping
             return new CartItem();
         }
 
-        public string GetCartID()
+        public ShoppingCart GetCart(string id = null)
         {
+            if(id)
             //if (HttpContext.Current.Session[CartSessionKey] == null)
             //{
             //    if (!string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
