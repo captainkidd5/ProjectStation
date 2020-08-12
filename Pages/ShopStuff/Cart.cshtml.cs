@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -28,6 +29,15 @@ namespace ProjectStation.Pages.ShopStuff
 
         public void OnGet()
         {
+            if (signInManager.IsSignedIn(User))
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                ShoppingCart = cartRepository.GetCart(userId);
+                if(ShoppingCart == null)
+                {
+                    cartRepository.crea
+                }
+            }
             if (Request.Cookies["CartCookie"] == null)
             {
                 Response.Cookies.Append(
@@ -39,10 +49,7 @@ namespace ProjectStation.Pages.ShopStuff
 
             }
 
-            if(signInManager.IsSignedIn(User))
-            {
-                ShoppingCart = cartRepository.GetCartID()
-            }
+            
             ShoppingCart = new ShoppingCart();
         }
     }

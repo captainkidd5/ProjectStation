@@ -51,9 +51,17 @@ namespace Services.Shopping
             return new CartItem();
         }
 
+        public ShoppingCart CreateCart(string id)
+        {
+
+        }
+
         public ShoppingCart GetCart(string id = null)
         {
-            if(id)
+            if(id == null)
+            {
+
+            }
             //if (HttpContext.Current.Session[CartSessionKey] == null)
             //{
             //    if (!string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
