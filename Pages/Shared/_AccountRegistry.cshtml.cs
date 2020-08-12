@@ -12,13 +12,11 @@ namespace ProjectStation.Pages.Shared
 {
     public class _AccountRegistryModel : PageModel
     {
-        private readonly IAccountRepository accountRepository;
         private readonly UserManager<IdentityUser> userManager;
 
-        public _AccountRegistryModel(IAccountRepository accountRepository, UserManager<IdentityUser> userManager,
+        public _AccountRegistryModel( UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager)
         {
-            this.accountRepository = accountRepository;
             this.userManager = userManager;
             this.SignInManager = signInManager;
         }

@@ -51,33 +51,26 @@ namespace Services.Shopping
             return new CartItem();
         }
 
-        public ShoppingCart CreateCart(string id)
+        public ShoppingCart CreateCart(string userID, string cartID)
         {
+            ShoppingCart shoppingCart = new ShoppingCart()
+            { DateCreated = DateTime.Now, CartId = cartID, UserId = userID };
 
+            appDbContext.ShoppingCarts.Add(shoppingCart);
+            appDbContext.SaveChanges();
+            return shoppingCart;
         }
 
         public ShoppingCart GetCart(string id = null)
         {
             if(id == null)
             {
-
+                throw new Exception("Cart does not exist!");
             }
-            //if (HttpContext.Current.Session[CartSessionKey] == null)
-            //{
-            //    if (!string.IsNullOrWhiteSpace(HttpContext.Current.User.Identity.Name))
-            //    {
-            //        HttpContext.Current.Session[CartSessionKey] = HttpContext.Current.User.Identity.Name;
-            //    }
-            //    else
-            //    {
-            //        // Generate a new random GUID using System.Guid class.     
-            //        Guid tempCartId = Guid.NewGuid();
-            //        HttpContext.Current.Session[CartSessionKey] = tempCartId.ToString();
-            //    }
-            //}
-            //return HttpContext.Current.Session[CartSessionKey].ToString();
-            throw new NotImplementedException();
-            
+            else
+            {
+                return appDbContext.ShoppingCarts.FirstOrDefault(x => x.CartId == id);
+            } 
         }
 
         public List<CartItem> GetItems(int itemID)

@@ -65,7 +65,16 @@ namespace ProjectStation
             }).AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-            
+
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
+
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings
@@ -82,7 +91,6 @@ namespace ProjectStation
             services.AddControllers();
 
             services.AddScoped<IClientRepository, SQLClientRepository>();
-            services.AddScoped<IAccountRepository, SQLAccountRepository>();
             services.AddScoped<INewsSnippetRepository, SQLNewsSnippetRepository>();
             services.AddScoped<IProductRepository, SQLProductRepository>();
             services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
@@ -142,7 +150,7 @@ namespace ProjectStation
             app.UseAuthorization();
 
             //COOKIES
-           // app.UseSession();
+             app.UseSession();
 
             
 

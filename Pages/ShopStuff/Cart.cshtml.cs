@@ -9,7 +9,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
+using ProjectStation.Components;
 using Services.Shopping;
+using Stripe.BillingPortal;
 
 namespace ProjectStation.Pages.ShopStuff
 {
@@ -31,26 +33,28 @@ namespace ProjectStation.Pages.ShopStuff
         {
             if (signInManager.IsSignedIn(User))
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
                 ShoppingCart = cartRepository.GetCart(userId);
                 if(ShoppingCart == null)
                 {
-                    cartRepository.crea
+                    string cartID = Guid.NewGuid().ToString();
+                    ShoppingCart = cartRepository.CreateCart(userId, cartID);
                 }
             }
-            if (Request.Cookies["CartCookie"] == null)
+            else if(HttpContext.Session.Get("ShoppingCart") != null)
             {
-                Response.Cookies.Append(
-                    "CartCookie",
-                    new Guid().ToString(), new CookieOptions()
-                    {
-                        Expires = DateTimeOffset.UtcNow.AddDays(30)
-                    });
-
+                ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("cart");
+            }
+            else
+            {
+                ShoppingCart = new ShoppingCart()
+                { CartId = Guid.NewGuid().ToString(), DateCreated = DateTime.Now, UserId = null };
+                HttpContext.Session.SetObjectAsJson("ShoppingCart", ShoppingCart);
+                this.ShoppingCart = ShoppingCart;
             }
 
             
-            ShoppingCart = new ShoppingCart();
+           
         }
     }
 }
