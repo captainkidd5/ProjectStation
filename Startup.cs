@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using ProjectStation.EmailService;
 using Services.Shopping;
+using ProjectStation.Stripe;
 
 namespace ProjectStation
 {
@@ -123,10 +124,12 @@ namespace ProjectStation
        o.TokenLifespan = TimeSpan.FromHours(3));
             services.AddSingleton<IEmailSender, EmailSender>();
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGrid"));
+
+            services.Configure<StripeSettings>((Configuration.GetSection("Stripe")));
+
         }
 
-        //services.Configure<StripeConfiguration>((Configuration.GetSection("Stripe")))
-
+       
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

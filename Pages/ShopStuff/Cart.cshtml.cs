@@ -13,7 +13,7 @@ using Models.Models;
 using ProjectStation.Components;
 using Services;
 using Services.Shopping;
-using Stripe.BillingPortal;
+
 
 namespace ProjectStation.Pages.ShopStuff
 {
@@ -79,21 +79,14 @@ namespace ProjectStation.Pages.ShopStuff
                 }
             }
 
-            this.ShoppingCart = GetShoppingCart();
-            foreach(CartItem cartItem in CartItems)
-            {
-                if (signInManager.IsSignedIn(User))
-                {
-                    cartRepository.UpdateQuantity(ShoppingCart.CartId, cartItem.ProductId, cartItem.Quantity);
-                }
-                else
-                {
-                    cartRepository.UpdateQuantity(ShoppingCart.CartId, cartItem.ProductId, cartItem.Quantity, HttpContext);
-                }
-                
-            }
+
             OnGet();
 
+        }
+
+        public IActionResult OnPostCheckout()
+        {
+            return RedirectToPage("/ShopStuff/Checkout");
         }
 
 
