@@ -70,6 +70,7 @@ namespace ProjectStation.Pages.ShopStuff
 
         public void OnPostUpdateCart()
         {
+            OnGet();
 
         }
     }
