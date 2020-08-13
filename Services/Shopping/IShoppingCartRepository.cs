@@ -14,7 +14,7 @@ namespace Services.Shopping
         CartItem AddItem(ShoppingCart cart, int productId, int quantity, string userID, HttpContext context = null);
         CartItem RemoveItem(int itemID, int quantity);
         List<CartItem> GetItems(string cartId, HttpContext context = null);
-        double TotalCost();
+        double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null);
         bool UpdateCartData();
 
     }

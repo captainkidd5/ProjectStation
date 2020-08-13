@@ -25,7 +25,7 @@ namespace ProjectStation.Pages.ShopStuff
 
         public ShoppingCart ShoppingCart { get; set; }
         public List<CartItem> CartItems{ get; set; }
-        public float TotalCost { get; set; }
+        public double TotalCost { get; set; }
 
         public CartModel(IShoppingCartRepository cartRepository,
             IProductRepository productRepository,SignInManager<IdentityUser> signInManager)
@@ -40,6 +40,11 @@ namespace ProjectStation.Pages.ShopStuff
             return productRepository.GetProduct(id).PhotoPath;
         }
 
+        public string GetProductName(int id)
+        {
+            return productRepository.GetProduct(id).Name;
+        }
+
         public void OnGet()
         {
             if (signInManager.IsSignedIn(User))
@@ -47,12 +52,16 @@ namespace ProjectStation.Pages.ShopStuff
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
                 ShoppingCart = cartRepository.GetCart(userId);
                 CartItems = cartRepository.GetItems(ShoppingCart.CartId);
+                this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository);
             }
             else
             {
                ShoppingCart = cartRepository.GetCart(null, HttpContext);
                 CartItems = cartRepository.GetItems(ShoppingCart.CartId, HttpContext);
+                this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository, HttpContext);
             }
+
+           
            
         }
     }

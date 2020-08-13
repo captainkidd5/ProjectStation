@@ -154,9 +154,19 @@ namespace Services.Shopping
             throw new NotImplementedException();
         }
 
-        public double TotalCost()
+        public double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null)
         {
-            throw new NotImplementedException();
+            List<CartItem> cartItems = GetItems(cartId, context);
+            double cost = 0d;
+            foreach(var item in cartItems)
+            {
+                for(int i =0; i < item.Quantity; i++)
+                {
+                    cost += productRepository.GetProduct(item.ProductId).Price;
+                }
+                
+            }
+            return cost;
         }
 
         public bool UpdateCartData()

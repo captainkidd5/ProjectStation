@@ -17,8 +17,8 @@
             @foreach (var item in Model.CartItems)
             {
                 <div class="card">
-                    <img class="card-img" src="@Model.GetProductImg(item.ProductId)" />
-                    <p class="card-body">@item.Quantity</p>
+                    <img class="card-img" style="max-width:300px;" src="@Url.Content(Model.GetProductImg(item.ProductId))" />
+                    <p class="card-body">@Model.GetProductName(item.ProductId) x @item.Quantity</p>
                 </div>
             }
         </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="row">
-        
+        <p>@Model.TotalCost.ToString()</p>
     </div>
 </div>
 
