@@ -17,7 +17,7 @@ namespace Models.Models
     {
         [Key]
         public int Id { get; set; }
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
         public DateTime DateTime { get; set; }
         public string Session { get; set; }
         public float Total { get; set; }

@@ -5,7 +5,12 @@
     Layout = "~/Pages/ShopStuff/_Layout.cshtml";
 }
     <div class="container">
-
+        @if(Model.AddToCartMessage != null)
+        {
+        <div class="alert alert-success" role="alert">
+            @Model.AddToCartMessage
+        </div>
+        }
         <div class="row" style="margin-top:100px;">
 
             <div class="col-6">
@@ -53,7 +58,7 @@
                 <form method="post">
                     <label class="form-group row">
 
-                        <input  asp-for="Quantity" class="form-control col-md-2" style="background-color:lightgray; width:64px;">
+                        <input min="0" asp-for="Quantity" class="form-control col-md-2" style="background-color:lightgray; width:64px;">
 
                         <button type="submit" style="margin-left:8px;" class="btn btn-primary bg-dark">カートに入れる</button>
 

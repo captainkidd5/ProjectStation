@@ -11,5 +11,6 @@ namespace Models
         public string CartId { get; set; }
         public string UserId { get; set; }
         public System.DateTime DateCreated { get; set; }
+        public bool CheckedOut { get; set; }
     }
 }

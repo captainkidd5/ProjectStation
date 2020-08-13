@@ -25,6 +25,7 @@ namespace ProjectStation.Pages.ShopStuff
 
         public ShoppingCart ShoppingCart { get; set; }
         public List<CartItem> CartItems{ get; set; }
+
         public double TotalCost { get; set; }
 
         public CartModel(IShoppingCartRepository cartRepository,
@@ -45,6 +46,11 @@ namespace ProjectStation.Pages.ShopStuff
             return productRepository.GetProduct(id).Name;
         }
 
+        public Product GetProduct(int id)
+        {
+            return productRepository.GetProduct(id);
+        }
+
         public void OnGet()
         {
             if (signInManager.IsSignedIn(User))
@@ -59,10 +65,12 @@ namespace ProjectStation.Pages.ShopStuff
                ShoppingCart = cartRepository.GetCart(null, HttpContext);
                 CartItems = cartRepository.GetItems(ShoppingCart.CartId, HttpContext);
                 this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository, HttpContext);
-            }
+            }             
+        }
 
-           
-           
+        public void OnPostUpdateCart()
+        {
+
         }
     }
 }

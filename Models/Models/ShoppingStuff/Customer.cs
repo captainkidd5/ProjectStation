@@ -8,7 +8,7 @@ namespace Models.Models.ShoppingStuff
     public class Customer
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required(ErrorMessage = "First name is required.")]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Last name is required.")]

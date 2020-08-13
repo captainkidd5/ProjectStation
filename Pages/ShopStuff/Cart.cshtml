@@ -5,28 +5,46 @@
     Layout = "~/Pages/ShopStuff/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="row" style="margin-top:164px;">
-        <div class="col-12">
+    <div class="container">
+        <div class="row" style="margin-top:164px;">
+            <div class="col-12">
 
-            <h2 class="text-center">カート</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card-deck">
-            @foreach (var item in Model.CartItems)
-            {
-                <div class="card">
-                    <img class="card-img" style="max-width:300px;" src="@Url.Content(Model.GetProductImg(item.ProductId))" />
-                    <p class="card-body">@Model.GetProductName(item.ProductId) x @item.Quantity</p>
-                </div>
-            }
+                <h2 class="text-center">カート</h2>
+            </div>
         </div>
 
-    </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
 
-    <div class="row">
-        <p>@Model.TotalCost.ToString()</p>
+                @for (int i = 0; i < Model.CartItems.Count; i++)
+                {
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img class="card-img" style="max-width:50px;" src="@Url.Content(Model.GetProductImg(Model.CartItems[i].ProductId))" /></td>
+                        <td>@Model.GetProduct(Model.CartItems[i].ProductId).Price</td>
+                        <td><input min="0" asp-for="@Model.CartItems[i].Quantity." class="form-control col-md-3" style="background-color:lightgray; width:64px;"></td>
+                        <td>@Model.TotalCost.ToString()</td>
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+        <form asp-page-handler="UpdateCart"method="post">
+            <label class="form-group row">
+                <button type="submit" style="margin-left:8px;" class="btn btn-primary bg-dark">Update Cart</button>
+            </label>
+        </form>
+
     </div>
-</div>
 

@@ -33,7 +33,8 @@ namespace ProjectStation.Pages.ShopStuff.Products
         public string Price { get; 
             private set; }
 
-        public List<string> ImagePaths { get; set; }
+        [TempData]
+        public string AddToCartMessage { get; set; }
 
         public AsianSquatModel(IShoppingCartRepository cartRepository, SignInManager<IdentityUser> signInManager, IProductRepository productRepository)
         {
@@ -45,14 +46,14 @@ namespace ProjectStation.Pages.ShopStuff.Products
 
         public void OnGet()
         {
-            ImagePaths = new List<string>()
-            {
-                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_01.jpg",
-                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_02.jpg",
-                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_03.jpg",
-                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_04.jpg",
-                 "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_05.jpg",
-            };
+            //ImagePaths = new List<string>()
+            //{
+            //     "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_01.jpg",
+            //     "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_02.jpg",
+            //     "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_03.jpg",
+            //     "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_04.jpg",
+            //     "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_05.jpg",
+            //};
             Product = productRepository.GetProduct(1);
             Price = string.Format(Product.Price.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
         }
@@ -82,7 +83,7 @@ namespace ProjectStation.Pages.ShopStuff.Products
             {
                 cartRepository.AddItem(ShoppingCart, Product.ID, Quantity,null, HttpContext);
             }
-
+            AddToCartMessage = "Your items have been added to the cart!";
             return Page();
            
         }
