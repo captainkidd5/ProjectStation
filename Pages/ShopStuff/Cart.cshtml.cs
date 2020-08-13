@@ -24,6 +24,8 @@ namespace ProjectStation.Pages.ShopStuff
         private readonly SignInManager<IdentityUser> signInManager;
 
         public ShoppingCart ShoppingCart { get; set; }
+
+        [BindProperty]
         public List<CartItem> CartItems{ get; set; }
 
         public double TotalCost { get; set; }
@@ -38,36 +40,13 @@ namespace ProjectStation.Pages.ShopStuff
             this.signInManager = signInManager;
         }
 
-        public string GetProductImg(int id)
-        {
-            return productRepository.GetProduct(id).PhotoPath;
-        }
-
-        public string GetProductName(int id)
-        {
-            return productRepository.GetProduct(id).Name;
-        }
-
-        public Product GetProduct(int id)
-        {
-            return productRepository.GetProduct(id);
-        }
+        
 
         public void OnGet()
         {
-            if (signInManager.IsSignedIn(User))
-            {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
-                ShoppingCart = cartRepository.GetCart(userId);
-                CartItems = cartRepository.GetItems(ShoppingCart.CartId);
-                this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository);
-            }
-            else
-            {
-               ShoppingCart = cartRepository.GetCart(null, HttpContext);
-                CartItems = cartRepository.GetItems(ShoppingCart.CartId, HttpContext);
-                this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository, HttpContext);
-            }       
+            this.ShoppingCart = GetShoppingCart();
+            this.CartItems = GetCartItems(this.ShoppingCart);
+            this.TotalCost = GetTotalCost(this.ShoppingCart);
             
             if(CartItems.Count <= 0)
             {
@@ -78,8 +57,92 @@ namespace ProjectStation.Pages.ShopStuff
 
         public void OnPostUpdateCart()
         {
+
+            int[] newQuantities = new int[CartItems.Count];
+            for (int i = 0; i < CartItems.Count; i++)
+            {
+                newQuantities[i] = CartItems[i].Quantity;
+            }
+
+
             OnGet();
 
+            for (int i = 0; i < CartItems.Count; i++)
+            {
+                if (signInManager.IsSignedIn(User))
+                {
+                    cartRepository.UpdateQuantity(ShoppingCart.CartId, CartItems[i].ProductId, newQuantities[i]); //use the new quantities
+                }
+                else
+                {
+                    cartRepository.UpdateQuantity(ShoppingCart.CartId, CartItems[i].ProductId, newQuantities[i], HttpContext);
+                }
+            }
+
+            this.ShoppingCart = GetShoppingCart();
+            foreach(CartItem cartItem in CartItems)
+            {
+                if (signInManager.IsSignedIn(User))
+                {
+                    cartRepository.UpdateQuantity(ShoppingCart.CartId, cartItem.ProductId, cartItem.Quantity);
+                }
+                else
+                {
+                    cartRepository.UpdateQuantity(ShoppingCart.CartId, cartItem.ProductId, cartItem.Quantity, HttpContext);
+                }
+                
+            }
+            OnGet();
+
+        }
+
+
+        public Product GetProduct(int id)
+        {
+            return productRepository.GetProduct(id);
+        }
+
+        private ShoppingCart GetShoppingCart()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            if (signInManager.IsSignedIn(User))
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
+                cart = cartRepository.GetCart(userId);
+            }
+            else
+            {
+                cart = cartRepository.GetCart(null, HttpContext);
+            }
+            return cart;
+        }
+
+        private List<CartItem> GetCartItems(ShoppingCart shoppingCart)
+        {
+            List<CartItem> cartItems = new List<CartItem>();
+            if (signInManager.IsSignedIn(User))
+            {
+                cartItems = cartRepository.GetItems(shoppingCart.CartId);
+            }
+            else
+            {
+                cartItems = cartRepository.GetItems(shoppingCart.CartId, HttpContext);
+            }
+            return cartItems;
+        }
+
+        private double GetTotalCost(ShoppingCart shoppingCart)
+        {
+            double cost = 0d;
+            if (signInManager.IsSignedIn(User))
+            {
+                cost = cartRepository.TotalCost(shoppingCart.CartId, productRepository);
+            }
+            else
+            {
+                cost = cartRepository.TotalCost(shoppingCart.CartId, productRepository, HttpContext);
+            }
+            return cost;
         }
     }
 }

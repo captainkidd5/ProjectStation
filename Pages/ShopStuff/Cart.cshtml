@@ -22,35 +22,35 @@
     else
     {
 
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Number</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @for (int i = 0; i < Model.CartItems.Count; i++)
-                {
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img class="card-img" style="max-width:50px;" src="@Url.Content(Model.GetProductImg(Model.CartItems[i].ProductId))" /></td>
-                        <td>@Model.GetProduct(Model.CartItems[i].ProductId).Price</td>
-                        <td><input min="0" asp-for="@Model.CartItems[i].Quantity." class="form-control col-md-3" style="background-color:lightgray; width:64px;"></td>
-                        <td>@Model.TotalCost.ToString()</td>
-                    </tr>
-
-                }
-
-            </tbody>
-
-        </table>
         <form asp-page-handler="UpdateCart" method="post">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for (int i = 0; i < Model.CartItems.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><img class="card-img" style="max-width:50px;" src="@Url.Content(Model.GetProduct(Model.CartItems[i].ProductId).PhotoPath)" /></td>
+                            <td>@Model.GetProduct(Model.CartItems[i].ProductId).Price</td>
+                            <td><input min="0" asp-for="@Model.CartItems[i].Quantity." class="form-control col-md-3" style="background-color:lightgray; width:64px;"></td>
+                            <td>@Model.TotalCost.ToString()</td>
+                        </tr>
+
+                    }
+
+                </tbody>
+
+            </table>
+
             <label class="form-group row">
                 <button type="submit" style="margin-left:8px;" class="btn btn-primary bg-dark">Update Cart</button>
             </label>

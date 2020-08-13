@@ -150,7 +150,7 @@ namespace Services.Shopping
         }
 
 
-        public bool UpdateQuantity(string cardId, int productId, int newQuantity, HttpContext context = null)
+        public bool UpdateQuantity(string cartId, int productId, int newQuantity, HttpContext context = null)
         {
             List<CartItem> cartItems = new List<CartItem>();
             if (context != null)
@@ -164,6 +164,10 @@ namespace Services.Shopping
                     throw new Exception("Cart items were handed to method null. Should not happen.");
 
                 }
+            }
+            else
+            {
+                cartItems = appDbContext.ShoppingCartItems.Where(x => x.CartId == cartId).ToList();
             }
 
             CartItem cartItem = cartItems.Find(x => x.ProductId == productId);
