@@ -50,7 +50,7 @@ namespace Services.Shopping
             else
             {
                 List<CartItem> cartItems = context.Session.GetObjectFromJson<List<CartItem>>("CartItems");
-                if(cartItems == null)
+                if (cartItems == null)
                 {
                     cartItems = new List<CartItem>();
                 }
@@ -150,15 +150,7 @@ namespace Services.Shopping
         }
 
 
-        /// <summary>
-        /// Leave context null if user is signed in.
-        /// </summary>
-        /// <param name="cartId"></param>
-        /// <param name="productId"></param>
-        /// <param name="quantity"></param>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public bool RemoveItem(string cartId,int productId, int quantity, HttpContext context = null)
+        public bool UpdateQuantity(string cardId, int productId, int newQuantity, HttpContext context = null)
         {
             List<CartItem> cartItems = new List<CartItem>();
             if (context != null)
@@ -170,17 +162,68 @@ namespace Services.Shopping
                 else
                 {
                     throw new Exception("Cart items were handed to method null. Should not happen.");
-                   
+
                 }
             }
 
             CartItem cartItem = cartItems.Find(x => x.ProductId == productId);
-            if(cartItem != null)
+            if (cartItem != null)
             {
-                if(cartItem.Quantity >= quantity)
+                if (newQuantity == 0)
+                {
+                    cartItems.Remove(cartItem);
+                }
+                else
+                {
+                    cartItem.Quantity = newQuantity;
+                }
+
+                if (context == null)
+                {
+                    appDbContext.SaveChanges();
+                }
+                else
+                {
+                    context.Session.SetObjectAsJson("CartItems", cartItems);
+                }
+                return true; //we were able to alter the collection               
+            }
+
+            throw new Exception("Tried to remove item which does not exist in collection");
+
+        }
+
+        /// <summary>
+        /// Leave context null if user is signed in.
+        /// </summary>
+        /// <param name="cartId"></param>
+        /// <param name="productId"></param>
+        /// <param name="quantity"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public bool RemoveItem(string cartId, int productId, int quantity, HttpContext context = null)
+        {
+            List<CartItem> cartItems = new List<CartItem>();
+            if (context != null)
+            {
+                if (context.Session.Get("CartItems") != null)
+                {
+                    cartItems = context.Session.GetObjectFromJson<List<CartItem>>("CartItems");
+                }
+                else
+                {
+                    throw new Exception("Cart items were handed to method null. Should not happen.");
+
+                }
+            }
+
+            CartItem cartItem = cartItems.Find(x => x.ProductId == productId);
+            if (cartItem != null)
+            {
+                if (cartItem.Quantity >= quantity)
                 {
                     cartItem.Quantity -= quantity;
-                    if(cartItem.Quantity == 0)
+                    if (cartItem.Quantity == 0)
                     {
                         cartItems.Remove(cartItem);
                     }
@@ -189,16 +232,16 @@ namespace Services.Shopping
                         appDbContext.SaveChanges();
                     }
                     else
-                    {    
+                    {
                         context.Session.SetObjectAsJson("CartItems", cartItems);
                     }
                     return true; //we were able to remove the items.
                 }
-                    return false; //tried to remove more items than are in the cart.                     
+                return false; //tried to remove more items than are in the cart.                     
             }
 
             throw new Exception("Tried to remove item which does not exist in collection");
-                return false; //Cart does not contain item to begin with 
+            return false; //Cart does not contain item to begin with 
 
 
 
@@ -208,13 +251,13 @@ namespace Services.Shopping
         {
             List<CartItem> cartItems = GetItems(cartId, context);
             double cost = 0d;
-            foreach(var item in cartItems)
+            foreach (var item in cartItems)
             {
-                for(int i =0; i < item.Quantity; i++)
+                for (int i = 0; i < item.Quantity; i++)
                 {
                     cost += productRepository.GetProduct(item.ProductId).Price;
                 }
-                
+
             }
             return cost;
         }

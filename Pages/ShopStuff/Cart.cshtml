@@ -5,13 +5,23 @@
     Layout = "~/Pages/ShopStuff/_Layout.cshtml";
 }
 
-    <div class="container">
-        <div class="row" style="margin-top:164px;">
-            <div class="col-12">
+<div class="container">
+    <div class="row" style="margin-top:164px;">
+        <div class="col-12">
 
-                <h2 class="text-center">カート</h2>
-            </div>
+            <h2 class="text-center">カート</h2>
         </div>
+    </div>
+    @if (Model.Empty)
+    {
+        <div class="alert alert-info" role="alert">
+            Your cart is empty.
+            <a asp-page="/Shop" class="alert-link">Click here to return to the shop.</a>.
+        </div>
+    }
+    else
+    {
+
 
         <table class="table table-striped">
             <thead>
@@ -40,11 +50,11 @@
             </tbody>
 
         </table>
-        <form asp-page-handler="UpdateCart"method="post">
+        <form asp-page-handler="UpdateCart" method="post">
             <label class="form-group row">
                 <button type="submit" style="margin-left:8px;" class="btn btn-primary bg-dark">Update Cart</button>
             </label>
         </form>
-
-    </div>
+    }
+</div>
 

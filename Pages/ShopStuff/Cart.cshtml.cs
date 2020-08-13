@@ -28,6 +28,8 @@ namespace ProjectStation.Pages.ShopStuff
 
         public double TotalCost { get; set; }
 
+        public bool Empty { get; set; }
+
         public CartModel(IShoppingCartRepository cartRepository,
             IProductRepository productRepository,SignInManager<IdentityUser> signInManager)
         {
@@ -65,7 +67,13 @@ namespace ProjectStation.Pages.ShopStuff
                ShoppingCart = cartRepository.GetCart(null, HttpContext);
                 CartItems = cartRepository.GetItems(ShoppingCart.CartId, HttpContext);
                 this.TotalCost = cartRepository.TotalCost(ShoppingCart.CartId, productRepository, HttpContext);
-            }             
+            }       
+            
+            if(CartItems.Count <= 0)
+            {
+                this.Empty = true;
+            }
+            
         }
 
         public void OnPostUpdateCart()
