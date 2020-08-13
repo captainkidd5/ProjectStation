@@ -12,7 +12,7 @@ namespace Services.Shopping
         ShoppingCart CreateCart(string userID, string cartID);
         ShoppingCart GetCart(string id, HttpContext context = null);
         CartItem AddItem(ShoppingCart cart, int productId, int quantity, string userID, HttpContext context = null);
-        CartItem RemoveItem(int itemID, int quantity);
+        bool RemoveItem(string cartId, int productId, int quantity, HttpContext context = null);
         List<CartItem> GetItems(string cartId, HttpContext context = null);
         double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null);
         bool UpdateCartData();

@@ -149,9 +149,59 @@ namespace Services.Shopping
             return appDbContext.ShoppingCartItems.Where(x => x.CartId == cartId).ToList();
         }
 
-        public CartItem RemoveItem(int itemID, int quantity)
+
+        /// <summary>
+        /// Leave context null if user is signed in.
+        /// </summary>
+        /// <param name="cartId"></param>
+        /// <param name="productId"></param>
+        /// <param name="quantity"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public bool RemoveItem(string cartId,int productId, int quantity, HttpContext context = null)
         {
-            throw new NotImplementedException();
+            List<CartItem> cartItems = new List<CartItem>();
+            if (context != null)
+            {
+                if (context.Session.Get("CartItems") != null)
+                {
+                    cartItems = context.Session.GetObjectFromJson<List<CartItem>>("CartItems");
+                }
+                else
+                {
+                    throw new Exception("Cart items were handed to method null. Should not happen.");
+                   
+                }
+            }
+
+            CartItem cartItem = cartItems.Find(x => x.ProductId == productId);
+            if(cartItem != null)
+            {
+                if(cartItem.Quantity >= quantity)
+                {
+                    cartItem.Quantity -= quantity;
+                    if(cartItem.Quantity == 0)
+                    {
+                        cartItems.Remove(cartItem);
+                    }
+                    if (context == null)
+                    {
+                        appDbContext.SaveChanges();
+                    }
+                    else
+                    {    
+                        context.Session.SetObjectAsJson("CartItems", cartItems);
+                    }
+                    return true; //we were able to remove the items.
+                }
+                    return false; //tried to remove more items than are in the cart.                     
+            }
+
+            throw new Exception("Tried to remove item which does not exist in collection");
+                return false; //Cart does not contain item to begin with 
+
+
+
         }
 
         public double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null)

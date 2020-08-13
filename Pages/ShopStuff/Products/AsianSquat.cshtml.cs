@@ -19,7 +19,8 @@ namespace ProjectStation.Pages.ShopStuff.Products
 {
     public class AsianSquatModel : PageModel
     {
-        public Product Product { get; set; }
+        [BindProperty]
+        public Product Product { get; private set; }
 
         [BindProperty]
         public int Quantity { get; set; }
@@ -27,8 +28,10 @@ namespace ProjectStation.Pages.ShopStuff.Products
         private readonly IShoppingCartRepository cartRepository;
         private readonly SignInManager<IdentityUser> signInManager;
         private readonly IProductRepository productRepository;
+
+        [BindProperty]
         public string Price { get; 
-            set; }
+            private set; }
 
         public List<string> ImagePaths { get; set; }
 
@@ -50,12 +53,13 @@ namespace ProjectStation.Pages.ShopStuff.Products
                  "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_04.jpg",
                  "~/SiteAssets/shopstuff/Products/AsianSquat/Asian-Squat_05.jpg",
             };
-            this.Product = productRepository.GetProduct(1);
-            this.Price = string.Format(Product.Price.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
+            Product = productRepository.GetProduct(1);
+            Price = string.Format(Product.Price.ToString("C", CultureInfo.CreateSpecificCulture("ja-JP")));
         }
         public ShoppingCart ShoppingCart { get; set; }
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            OnGet();
 
             if (signInManager.IsSignedIn(User))
             {
@@ -78,6 +82,8 @@ namespace ProjectStation.Pages.ShopStuff.Products
             {
                 cartRepository.AddItem(ShoppingCart, Product.ID, Quantity,null, HttpContext);
             }
+
+            return Page();
            
         }
     }
