@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
 using Models.Models;
 using ProjectStation.Components;
+using Services;
 using Services.Shopping;
 using Stripe.BillingPortal;
 
@@ -19,16 +20,24 @@ namespace ProjectStation.Pages.ShopStuff
     public class CartModel : PageModel
     {
         private readonly IShoppingCartRepository cartRepository;
+        private readonly IProductRepository productRepository;
         private readonly SignInManager<IdentityUser> signInManager;
 
         public ShoppingCart ShoppingCart { get; set; }
         public List<CartItem> CartItems{ get; set; }
+        public float TotalCost { get; set; }
 
-
-        public CartModel(IShoppingCartRepository cartRepository, SignInManager<IdentityUser> signInManager)
+        public CartModel(IShoppingCartRepository cartRepository,
+            IProductRepository productRepository,SignInManager<IdentityUser> signInManager)
         {
             this.cartRepository = cartRepository;
+            this.productRepository = productRepository;
             this.signInManager = signInManager;
+        }
+
+        public string GetProductImg(int id)
+        {
+            return productRepository.GetProduct(id).PhotoPath;
         }
 
         public void OnGet()
@@ -46,7 +55,7 @@ namespace ProjectStation.Pages.ShopStuff
             else if(HttpContext.Session.Get("ShoppingCart") != null)
             {
                 ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
-                CartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("ShoppingCart");
+                CartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("CartItems");
             }
             else
             {
@@ -56,6 +65,7 @@ namespace ProjectStation.Pages.ShopStuff
                 List<CartItem> cartItems = new List<CartItem>();
                 HttpContext.Session.SetObjectAsJson("ShoppingCart", cartItems);
                 this.ShoppingCart = ShoppingCart;
+                this.CartItems = cartItems;
             }
 
             
