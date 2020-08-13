@@ -8,25 +8,25 @@
 <div class="container">
     <div class="row" style="margin-top:164px;">
         <div class="col-12">
-     
+
             <h2 class="text-center">カート</h2>
         </div>
     </div>
     <div class="row">
         <div class="card-deck">
-            @foreach (var item in Model.CartItems) 
+            @foreach (var item in Model.CartItems)
             {
                 <div class="card">
-                    <img class="card-img" src="@Model.GetProductImg(item.ProductId)"/>
+                    <img class="card-img" src="@Model.GetProductImg(item.ProductId)" />
                     <p class="card-body">@item.Quantity</p>
                 </div>
             }
         </div>
-            
+
     </div>
 
     <div class="row">
-        <p>Cart Total: @</p>
+        
     </div>
-    </div>
+</div>
 

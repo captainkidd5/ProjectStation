@@ -46,29 +46,13 @@ namespace ProjectStation.Pages.ShopStuff
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
                 ShoppingCart = cartRepository.GetCart(userId);
-                if(ShoppingCart == null)
-                {
-                    string cartID = Guid.NewGuid().ToString();
-                    ShoppingCart = cartRepository.CreateCart(userId, cartID);
-                }
-            }
-            else if(HttpContext.Session.Get("ShoppingCart") != null)
-            {
-                ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
-                CartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("CartItems");
+                CartItems = cartRepository.GetItems(ShoppingCart.CartId);
             }
             else
             {
-                ShoppingCart = new ShoppingCart()
-                { CartId = Guid.NewGuid().ToString(), DateCreated = DateTime.Now, UserId = null };
-                HttpContext.Session.SetObjectAsJson("ShoppingCart", ShoppingCart);
-                List<CartItem> cartItems = new List<CartItem>();
-                HttpContext.Session.SetObjectAsJson("ShoppingCart", cartItems);
-                this.ShoppingCart = ShoppingCart;
-                this.CartItems = cartItems;
+               ShoppingCart = cartRepository.GetCart(null, HttpContext);
+                CartItems = cartRepository.GetItems(ShoppingCart.CartId, HttpContext);
             }
-
-            
            
         }
     }

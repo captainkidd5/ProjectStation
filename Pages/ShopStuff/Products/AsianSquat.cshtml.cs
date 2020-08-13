@@ -56,60 +56,29 @@ namespace ProjectStation.Pages.ShopStuff.Products
         public ShoppingCart ShoppingCart { get; set; }
         public void OnPost()
         {
-            this.Product = productRepository.GetProduct(1);
+
             if (signInManager.IsSignedIn(User))
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
                 ShoppingCart = cartRepository.GetCart(userId);
-                if (ShoppingCart == null)
-                {
-                    string cartID = Guid.NewGuid().ToString();
-                    ShoppingCart = cartRepository.CreateCart(userId, cartID);
-                }
-
-                cartRepository.AddItem(Product.ID, Quantity);
-            }
-            else if (HttpContext.Session.Get("ShoppingCart") != null)
-            {
-                AddToSessionCart();
             }
             else
             {
-                ShoppingCart = new ShoppingCart()
-                { CartId = Guid.NewGuid().ToString(), DateCreated = DateTime.Now, UserId = null };
-                HttpContext.Session.SetObjectAsJson("ShoppingCart", ShoppingCart);
-                List<CartItem> cartItems = new List<CartItem>();
-                HttpContext.Session.SetObjectAsJson("CartItems", cartItems);
-                this.ShoppingCart = ShoppingCart;
-
-                AddToSessionCart();
+                ShoppingCart = cartRepository.GetCart(null, HttpContext);
             }
-        }
 
-        private void AddToSessionCart()
-        {
-            List<CartItem> cartItems = new List<CartItem>();
-            ShoppingCart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
-            cartItems = HttpContext.Session.GetObjectFromJson<List<CartItem>>("CartItems");
+            this.Product = productRepository.GetProduct(1);
 
-            CartItem cartItem = cartItems.Find(x => x.ProductId == this.Product.ID);
-            if (cartItem != null)
+            if (signInManager.IsSignedIn(User))
             {
-                cartItem.Quantity += Quantity;
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
+                cartRepository.AddItem(ShoppingCart, Product.ID, Quantity, userId,null);
             }
             else
             {
-                cartItems.Add(new CartItem()
-                {
-                    CartId = ShoppingCart.CartId,
-                    DateCreated = DateTime.Now,
-                    Id = this.Product.ID,
-                    ProductId = this.Product.ID,
-                    Quantity = this.Quantity
-                });
+                cartRepository.AddItem(ShoppingCart, Product.ID, Quantity,null, HttpContext);
             }
-            
-            HttpContext.Session.SetObjectAsJson("CartItems", cartItems);
+           
         }
     }
 }
