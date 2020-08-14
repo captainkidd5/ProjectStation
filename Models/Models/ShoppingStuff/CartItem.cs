@@ -7,7 +7,7 @@ namespace Models.Models
 {
     public class CartItem
     {
-        public int Id { get; set; }
+        [Key]
         public string CartId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }

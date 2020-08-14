@@ -112,7 +112,7 @@ namespace Services.Shopping
             }
             else
             {
-                ShoppingCart cart = appDbContext.ShoppingCarts.FirstOrDefault(x => x.CartId == id);
+                ShoppingCart cart = appDbContext.ShoppingCarts.FirstOrDefault(x => x.UserId == id);
 
                 if (cart == null)
                 {
@@ -176,6 +176,7 @@ namespace Services.Shopping
                 if (newQuantity == 0)
                 {
                     cartItems.Remove(cartItem);
+                    appDbContext.ShoppingCartItems.Remove(cartItem);
                 }
                 else
                 {
