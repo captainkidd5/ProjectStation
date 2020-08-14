@@ -30,7 +30,7 @@ namespace ProjectStation.Pages.ShopStuff
         {
 
 
-           
+
 
 
             //var customerService = new CustomerService();
@@ -89,24 +89,33 @@ namespace ProjectStation.Pages.ShopStuff
         {
             var options = new SessionCreateOptions
             {
+                BillingAddressCollection = "required",
                 PaymentMethodTypes = new List<string>
-                  {
-                       "card",
-                  },
+                {
+                    "card",
+                },
+                ShippingAddressCollection = new SessionShippingAddressCollectionOptions
+                {
+                    AllowedCountries = new List<string>
+                 {
+                "US",
+                "CA",
+                "JP",
+                "KR",
+                "CN",
+                 },
+                },
                 LineItems = new List<SessionLineItemOptions>
                   {
                  new SessionLineItemOptions
                  {
                        PriceData = new SessionLineItemPriceDataOptions
                          {
-                          Currency = "usd",
-                          ProductData = new SessionLineItemPriceDataProductDataOptions
-                          {
-                                Name = "T-shirt",
-                          },
-                       UnitAmount = 2000,
+                          Currency = "jpy",
+                          Product= "prod_HpaIhTMMKDrtID",
+                          UnitAmount = 50000,
                  },
-                  Quantity = 1,
+                       Quantity = 1,
                  },
                   },
                 Mode = "payment",

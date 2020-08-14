@@ -7,25 +7,7 @@
 @using Microsoft.Extensions.Options;
 @inject IOptions<ProjectStation.Stripe.StripeSettings> Stripe
 
-<script>
 
-    var checkoutButton = document.getElementById('checkout-button');
-    checkoutButton.addEventListener('click', function () {
-        var stripe = Stripe('pk_test_51HDwJsAIBd311jybUxWKurSnOIr2IsNw6bL2py7507Y02v73utS0Ilwn9spNHopwg3FkNjRjrRQUe81uwuO0QIcn009kRWulWp')
-        stripe.redirectToCheckout({
-            // Make the id field from the Checkout Session creation API response
-            // available to this file, so you can provide it as argument here
-            // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-            sessionId: checkoutButton.value
-        }).then(function (result) {
-            // If `redirectToCheckout` fails due to a browser or network
-            // error, display the localized error message to your customer
-            // using `result.error.message`.
-            result.error.message;
-        });
-    });
-
-</script>
 
 <div class="container">
     <div class="row">
@@ -41,8 +23,21 @@
 
             </label>
         </form>*@
-
+        <script src="https://js.stripe.com/v3"></script>
+        
         <button id="checkout-button" value="@Model.Session.Id" style="margin-left:8px;" class="btn btn-success">Checkout</button>
     </div>
 </div>
+<script>
+    var stripe = Stripe('pk_test_51HDwJsAIBd311jybUxWKurSnOIr2IsNw6bL2py7507Y02v73utS0Ilwn9spNHopwg3FkNjRjrRQUe81uwuO0QIcn009kRWulWp');
+    var checkoutButton = document.getElementById('checkout-button');
+    checkoutButton.addEventListener('click', function () {
+
+        stripe.redirectToCheckout({
+            sessionId: checkoutButton.value
+        }).then(function (result) {
+
+            result.error.message;
+        });
+    });</script>
 

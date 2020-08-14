@@ -9,6 +9,7 @@
 
 
 
+
 window.addEventListener('load', onVrViewLoad);
 function onVrViewLoad() {
     // Selector '#vrview' finds element with id 'vrview'.
@@ -94,5 +95,6 @@ window.onclick = function (event) {
         
     }
 }
+
 
 
