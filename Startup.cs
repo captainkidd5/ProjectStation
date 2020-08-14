@@ -111,6 +111,7 @@ namespace ProjectStation
       {
           options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
          options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+          
       });
 
             services.ConfigureApplicationCookie(options =>
@@ -126,7 +127,10 @@ namespace ProjectStation
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGrid"));
 
             services.Configure<StripeSettings>((Configuration.GetSection("Stripe")));
-
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute { Permanent = true });
+            });
         }
 
        

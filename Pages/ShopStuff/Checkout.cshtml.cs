@@ -8,15 +8,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Razor;
 using Models.Models.ShoppingStuff;
 using Stripe;
+using Stripe.Checkout;
 
 namespace ProjectStation.Pages.ShopStuff
 {
+    [RequireHttps]
     public class CheckoutModel : PageModel
     {
         //[BindProperty]
         //public Customer Customer { get; set; }
 
         private readonly string WebHookSecret = "webhookSecret";
+        public Session Session { get; set; }
 
         public CheckoutModel()
         {
@@ -25,22 +28,27 @@ namespace ProjectStation.Pages.ShopStuff
 
         public IActionResult OnPostCharge(string stripeEmail, string stripeToken)
         {
-            var customerService = new CustomerService();
-            var chargeService = new ChargeService();
-            var customer = customerService.Create(new CustomerCreateOptions()
-            {
-                Email = stripeEmail,
-                Source = stripeToken,
-            });
 
-            var charge = chargeService.Create(new ChargeCreateOptions()
-            {
-                Amount = 500,
-                Description = "test",
-                Currency = "usd",
-                Customer = customer.Id
 
-            }) ;
+           
+
+
+            //var customerService = new CustomerService();
+            //var chargeService = new ChargeService();
+            //var customer = customerService.Create(new CustomerCreateOptions()
+            //{
+            //    Email = stripeEmail,
+            //    Source = stripeToken,
+            //});
+
+            //var charge = chargeService.Create(new ChargeCreateOptions()
+            //{
+            //    Amount = 500,
+            //    Description = "test",
+            //    Currency = "usd",
+            //    Customer = customer.Id
+
+            //});
 
             return Page();
         }
@@ -71,7 +79,7 @@ namespace ProjectStation.Pages.ShopStuff
             }
             catch (Exception e)
             {
-              //  e.Ship(HttpContext);
+                //  e.Ship(HttpContext);
                 return BadRequest();
             }
             return Page();
@@ -79,7 +87,37 @@ namespace ProjectStation.Pages.ShopStuff
 
         public void OnGet()
         {
-           // this.Customer = new Customer();
+            var options = new SessionCreateOptions
+            {
+                PaymentMethodTypes = new List<string>
+                  {
+                       "card",
+                  },
+                LineItems = new List<SessionLineItemOptions>
+                  {
+                 new SessionLineItemOptions
+                 {
+                       PriceData = new SessionLineItemPriceDataOptions
+                         {
+                          Currency = "usd",
+                          ProductData = new SessionLineItemPriceDataProductDataOptions
+                          {
+                                Name = "T-shirt",
+                          },
+                       UnitAmount = 2000,
+                 },
+                  Quantity = 1,
+                 },
+                  },
+                Mode = "payment",
+                SuccessUrl = "https://projectstation.com/shop",
+                CancelUrl = "https://projectstation.com/shopstuff/cart",
+            };
+
+            var service = new SessionService();
+            Session session = service.Create(options);
+
+            this.Session = session;
         }
     }
 }
