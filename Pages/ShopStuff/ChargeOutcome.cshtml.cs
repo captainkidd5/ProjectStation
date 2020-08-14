@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Stripe;
+using Stripe.Checkout;
 
 namespace ProjectStation.Pages.ShopStuff
 {
@@ -16,21 +19,41 @@ namespace ProjectStation.Pages.ShopStuff
     public class ChargeOutcomeModel : PageModel
     {
         public string ChargeOutcomeMessage { get; set; }
+        const string secret = "whsec_wKgJiX3S2yEPMqqagexK9D2tUWSTlFs6";
 
-        public void OnGet(int chargeOutCome)
+        public void OnGet()
         {
-            if ((ChargeOutCome)chargeOutCome == ChargeOutCome.Failed)
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> OnPost()
+        {
+            var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+
+            try
             {
-                ChargeOutcomeMessage = "Payment failed, please try again.";
+                var stripeEvent = EventUtility.ConstructEvent(json,
+                    Request.Headers["Stripe-Signature"], secret);
+
+                // Handle the checkout.session.completed event
+                if (stripeEvent.Type == Events.CheckoutSessionCompleted)
+                {
+                    var session = stripeEvent.Data.Object as Session;
+
+                    // Fulfill the purchase...
+                   // HandleCheckoutSession(session);
+                }
+                else
+                {
+                    return Page();
+                }
             }
-            else if ((ChargeOutCome)chargeOutCome == ChargeOutCome.Succeeded)
+            catch (StripeException e)
             {
-                ChargeOutcomeMessage = "Your payment has been received and your order is being processed!";
+                return BadRequest();
             }
-            else
-            {
-                throw new Exception("Not a valid enum value for chargeoutcome");
-            }
+            return Page();
         }
     }
 }

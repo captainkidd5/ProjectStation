@@ -40,7 +40,7 @@ namespace ProjectStation
         {
             services.AddDbContextPool<AppDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("TigDbConnection"));
+                options.UseSqlServer(Configuration["TigDbConnection"]);
             });
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
@@ -124,9 +124,23 @@ namespace ProjectStation
             services.Configure<DataProtectionTokenProviderOptions>(o =>
        o.TokenLifespan = TimeSpan.FromHours(3));
             services.AddSingleton<IEmailSender, EmailSender>();
-            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGrid"));
+            services.Configure<AuthMessageSenderOptions>(x =>
+            {
+                x.SendGridKey = Configuration["SendGridKey"];
 
-            services.Configure<StripeSettings>((Configuration.GetSection("Stripe")));
+                x.SendGridUser = Configuration["SendGridUser"];
+
+            });
+
+           
+
+            services.Configure<StripeSettings>(x =>
+            {
+                x.SecretKey = Configuration["StripeSecretKey"];
+
+                x.PublishableKey = "pk_test_51HDwJsAIBd311jybUxWKurSnOIr2IsNw6bL2py7507Y02v73utS0Ilwn9spNHopwg3FkNjRjrRQUe81uwuO0QIcn009kRWulWp";
+
+            });
             services.Configure<MvcOptions>(options =>
             {
                 options.Filters.Add(new RequireHttpsAttribute { Permanent = true });
@@ -148,7 +162,7 @@ namespace ProjectStation
                 app.UseHsts();
             }
 
-            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
+            StripeConfiguration.ApiKey = Configuration["StripeSecretKey"];
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

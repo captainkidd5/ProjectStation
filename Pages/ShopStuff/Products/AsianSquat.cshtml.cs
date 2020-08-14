@@ -60,6 +60,10 @@ namespace ProjectStation.Pages.ShopStuff.Products
         public ShoppingCart ShoppingCart { get; set; }
         public IActionResult OnPost()
         {
+            if(Quantity > 0)
+            {
+
+            
             OnGet();
 
             if (signInManager.IsSignedIn(User))
@@ -84,6 +88,7 @@ namespace ProjectStation.Pages.ShopStuff.Products
                 cartRepository.AddItem(ShoppingCart, Product.ID, Quantity,null, HttpContext);
             }
             AddToCartMessage = "Your items have been added to the cart!";
+            }
             return Page();
            
         }

@@ -9,52 +9,68 @@
 
 
 
-    <div class="container">
-        <row>
-            <div class="col-6 offset-5">
-                <div class="card text-center">
-                    <div class="card-header">
-                        Cart Summary
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Subtotal</td>
-                                    <td>@Model.TotalCost</td>
-                                </tr>
-                                <tr>
-                                    <td>Tax</td>
-                                    <td>@Model.TotalCost</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td>@Model.TotalCost</td>
-                                </tr>
+<div class="container">
+    <row>
+        <a asp-page="/ShopStuff/Cart" method="post" class="btn btn-success btn-group-lg">Return to cart</a>
+    </row>
+    <row>
+        <div class="col-6 offset-5">
+            <div class="card text-center">
+                <div class="card-header">
+                    Cart Summary
+                </div>
+                <div class="card-body">
+                    <table class="table alert-info">
+                        @for (int i = 0; i < Model.CartItems.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model.GetProduct(Model.CartItems[i].ProductId).Name x @Model.CartItems[i].Quantity</td>
+                                <td>@(Model.GetProduct(Model.CartItems[i].ProductId).Price * Model.CartItems[i].Quantity)</td>
+                            </tr>
 
-                            </tbody>
+                        }
+                    </table>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>@Model.TotalCost</td>
+                            </tr>
+                            <tr>
+                                <td>Tax</td>
+                                <td>@Model.TotalCost</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>@Model.TotalCost</td>
+                            </tr>
 
-                        </table>
-                    </div>
+                        </tbody>
+
+                    </table>
+                </div>
+                <div class="card-footer">
+
+                    <script src="https://js.stripe.com/v3"></script>
+
+                    <button id="checkout-button" value="@Model.Session.Id" style="margin-left:8px;" class="btn btn-success">Go to secure payment</button>
 
                 </div>
 
             </div>
 
-        </row>
-        <div class="row">
-
-            <script src="https://js.stripe.com/v3"></script>
-
-            <button id="checkout-button" value="@Model.Session.Id" style="margin-left:8px;" class="btn btn-success">Checkout</button>
         </div>
-    </div>
+
+    </row>
+
+</div>
 <script>
     var stripe = Stripe('pk_test_51HDwJsAIBd311jybUxWKurSnOIr2IsNw6bL2py7507Y02v73utS0Ilwn9spNHopwg3FkNjRjrRQUe81uwuO0QIcn009kRWulWp');
     var checkoutButton = document.getElementById('checkout-button');
