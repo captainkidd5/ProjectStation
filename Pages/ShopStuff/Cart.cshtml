@@ -56,11 +56,49 @@
             </label>
         </form>
 
-        <form asp-page-handler="Checkout" method="post">
-            <label class="form-group row">
-                <button type="submit" style="margin-left:8px;" class="btn btn-success">Checkout</button>
-            </label>
-        </form>
+        <row>
+            <div class="col-6 offset-5">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Cart Summary
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td>@Model.TotalCost</td>
+                                </tr>
+                                <tr>
+                                    <td>Tax</td>
+                                    <td>@Model.TotalCost</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>@Model.TotalCost</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="card-footer">
+
+                        <a asp-page="/ShopStuff/Checkout" method="post" class="btn btn-success btn-group-lg">Checkout</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </row>
+
     }
 </div>
 

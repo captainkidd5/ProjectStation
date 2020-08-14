@@ -15,7 +15,7 @@ namespace Services.Shopping
         bool UpdateQuantity(string cartId, int productId, int newQuantity, HttpContext context = null);
         bool RemoveItem(string cartId, int productId, int quantity, HttpContext context = null);
         List<CartItem> GetItems(string cartId, HttpContext context = null);
-        double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null);
+        float TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null);
         bool UpdateCartData();
 
     }

@@ -252,10 +252,10 @@ namespace Services.Shopping
 
         }
 
-        public double TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null)
+        public float TotalCost(string cartId, IProductRepository productRepository, HttpContext context = null)
         {
             List<CartItem> cartItems = GetItems(cartId, context);
-            double cost = 0d;
+            float cost = 0f;
             foreach (var item in cartItems)
             {
                 for (int i = 0; i < item.Quantity; i++)

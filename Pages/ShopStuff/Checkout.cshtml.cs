@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Razor;
+using Models;
+using Models.Models;
 using Models.Models.ShoppingStuff;
+using Services;
+using Services.Shopping;
 using Stripe;
 using Stripe.Checkout;
 
@@ -15,78 +21,79 @@ namespace ProjectStation.Pages.ShopStuff
     [RequireHttps]
     public class CheckoutModel : PageModel
     {
-        //[BindProperty]
-        //public Customer Customer { get; set; }
 
         private readonly string WebHookSecret = "webhookSecret";
+        private readonly IShoppingCartRepository cartRepository;
+        private readonly IProductRepository productRepository;
+        private readonly SignInManager<IdentityUser> signInManager;
+
         public Session Session { get; set; }
 
-        public CheckoutModel()
-        {
 
+        public ShoppingCart ShoppingCart { get; set; }
+
+        public List<CartItem> CartItems { get; set; }
+
+        public float TotalCost { get; set; }
+
+        public bool Empty { get; set; }
+
+        public double TotalAfterTax { get; set; }
+
+
+
+        public CheckoutModel(IShoppingCartRepository cartRepository,
+            IProductRepository productRepository, SignInManager<IdentityUser> signInManager)
+        {
+            this.cartRepository = cartRepository;
+            this.productRepository = productRepository;
+            this.signInManager = signInManager;
         }
 
-        public IActionResult OnPostCharge(string stripeEmail, string stripeToken)
-        {
 
-
-
-
-
-            //var customerService = new CustomerService();
-            //var chargeService = new ChargeService();
-            //var customer = customerService.Create(new CustomerCreateOptions()
-            //{
-            //    Email = stripeEmail,
-            //    Source = stripeToken,
-            //});
-
-            //var charge = chargeService.Create(new ChargeCreateOptions()
-            //{
-            //    Amount = 500,
-            //    Description = "test",
-            //    Currency = "usd",
-            //    Customer = customer.Id
-
-            //});
-
-            return Page();
-        }
 
         public IActionResult ChargeChange()
         {
-            var json = new StreamReader(HttpContext.Request.Body).ReadToEnd();
+            //var json = new StreamReader(HttpContext.Request.Body).ReadToEnd();
 
-            try
-            {
-                var stripeEvent = EventUtility.ConstructEvent(json,
-                    Request.Headers["Stripe-Signature"], WebHookSecret, throwOnApiVersionMismatch: true);
-                Charge charge = (Charge)stripeEvent.Data.Object;
-                switch (charge.Status)
-                {
-                    case "succeeded":
-                        //This is an example of what to do after a charge is successful
-                        charge.Metadata.TryGetValue("Product", out string Product);
-                        charge.Metadata.TryGetValue("Quantity", out string Quantity);
-                        //   Database.ReduceStock(Product, Quantity);
-                        RedirectToPage("/shopstuff/ChargeOutcome", new { id = 1 });
-                        break;
-                    case "failed":
-                        //Code to execute on a failed charge
-                        RedirectToPage("/shopstuff/ChargeOutcome", new { id = 0 });
-                        break;
-                }
-            }
-            catch (Exception e)
-            {
-                //  e.Ship(HttpContext);
-                return BadRequest();
-            }
-            return Page();
+            //try
+            //{
+            //    var stripeEvent = EventUtility.ConstructEvent(json,
+            //        Request.Headers["Stripe-Signature"], WebHookSecret, throwOnApiVersionMismatch: true);
+            //    Charge charge = (Charge)stripeEvent.Data.Object;
+            //    switch (charge.Status)
+            //    {
+            //        case "succeeded":
+            //            //This is an example of what to do after a charge is successful
+            //            charge.Metadata.TryGetValue("Product", out string Product);
+            //            charge.Metadata.TryGetValue("Quantity", out string Quantity);
+            //            //   Database.ReduceStock(Product, Quantity);
+            //            RedirectToPage("/shopstuff/ChargeOutcome", new { id = 1 });
+            //            break;
+            //        case "failed":
+            //            //Code to execute on a failed charge
+            //            RedirectToPage("/shopstuff/ChargeOutcome", new { id = 0 });
+            //            break;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    //  e.Ship(HttpContext);
+            //    return BadRequest();
+            //}
+            //return Page();
         }
 
         public void OnGet()
         {
+            this.ShoppingCart = GetShoppingCart();
+            this.CartItems = GetCartItems(this.ShoppingCart);
+            this.TotalCost = GetTotalCost(this.ShoppingCart);
+
+            if (CartItems.Count <= 0)
+            {
+                this.Empty = true;
+            }
             var options = new SessionCreateOptions
             {
                 BillingAddressCollection = "required",
@@ -127,6 +134,54 @@ namespace ProjectStation.Pages.ShopStuff
             Session session = service.Create(options);
 
             this.Session = session;
+        }
+
+        public Models.Models.Product GetProduct(int id)
+        {
+            return productRepository.GetProduct(id);
+        }
+
+        private ShoppingCart GetShoppingCart()
+        {
+            ShoppingCart cart = new ShoppingCart();
+            if (signInManager.IsSignedIn(User))
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier).ToString();
+                cart = cartRepository.GetCart(userId);
+            }
+            else
+            {
+                cart = cartRepository.GetCart(null, HttpContext);
+            }
+            return cart;
+        }
+
+        private List<CartItem> GetCartItems(ShoppingCart shoppingCart)
+        {
+            List<CartItem> cartItems = new List<CartItem>();
+            if (signInManager.IsSignedIn(User))
+            {
+                cartItems = cartRepository.GetItems(shoppingCart.CartId);
+            }
+            else
+            {
+                cartItems = cartRepository.GetItems(shoppingCart.CartId, HttpContext);
+            }
+            return cartItems;
+        }
+
+        private float GetTotalCost(ShoppingCart shoppingCart)
+        {
+            float cost = 0f;
+            if (signInManager.IsSignedIn(User))
+            {
+                cost = cartRepository.TotalCost(shoppingCart.CartId, productRepository);
+            }
+            else
+            {
+                cost = cartRepository.TotalCost(shoppingCart.CartId, productRepository, HttpContext);
+            }
+            return cost;
         }
     }
 }

@@ -32,6 +32,8 @@ namespace ProjectStation.Pages.ShopStuff
 
         public bool Empty { get; set; }
 
+        public double TotalAfterTax { get; set; }
+
         public CartModel(IShoppingCartRepository cartRepository,
             IProductRepository productRepository,SignInManager<IdentityUser> signInManager)
         {
@@ -84,11 +86,7 @@ namespace ProjectStation.Pages.ShopStuff
 
         }
 
-        public IActionResult OnPostCheckout()
-        {
-            return RedirectToPage("/ShopStuff/Checkout");
-        }
-
+        
 
         public Product GetProduct(int id)
         {
