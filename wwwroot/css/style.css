@@ -6,7 +6,7 @@
 
 .titleListFormat {
   list-style: none;
-  text-align: center;
+  text-align: left;
   white-space: nowrap; }
   .titleListFormat a {
     font-family: 'arial', 'Noto Sans JP', sans-serif;
