@@ -86,16 +86,16 @@
 
 
 
-    <div id="mySidebar" class="sidebar d-md-none">
+    <div id="mySidebar" class="sidebar d-md-none" >
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
+        <a asp-page="/shop">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
 
-        <a href="#">HOME</a>
-        <a href="#">PROJECT</a>
-        <a href="#">Asian Squat</a>
-        <a href="#">LOGIN</a>
-        <a asp-page="/shop/cart">CART</a>
-        <a href="#">Japanese</a>
+        <a asp-page="/shop">HOME</a>
+        <a asp-page="/shopstuff/projects/sequence1">PROJECT</a>
+        <a asp-page="/shopstuff/products/asiansquat">Asian Squat</a>
+        <a asp-page="/identity/account/login">LOGIN</a>
+        <a asp-page="/shopstuff/cart">CART</a>
+        <a asp-page="/shopstuff/cart">Japanese</a>
     </div>
 
     <div class="fixed-top d-md-none" id="main">

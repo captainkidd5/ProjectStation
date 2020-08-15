@@ -16,16 +16,16 @@
         <div class="col-md-5">
             <div class="card exhibitionCard">
                 <a href="contact" class="imageHashTag">#EXHIBITION</a>
-                <a asp-page="/exhibition/tigsummer2020"><img class="card-img-top" src="~/SiteAssets/vrImage.jpg" /></a>  />
+                <a asp-page="/exhibition/tigsummer2020"><img class="card-img-top" src="~/SiteAssets/vrImage.jpg" /></a> 
                 <div class="card-body">
                     <p class="underImageText">
                         I_AM_BECOME.pdf
                     </p>
 
-                    <div class="text-center">
-                        <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
-                        <a href="contact" class="card-link readMoreStyle">PRESS RELEASE</a>
-                        <a href="contact" class="card-link readMoreStyle">VR CATALOGUE</a>
+                    <div class="card-footer">
+                        <a asp-page="/exhibition/tigsummer2020" class=" readMoreStyle">LIST OF WORKS</a>
+                        <a href="contact" class=" readMoreStyle">PRESS RELEASE</a>
+                        <a href="contact" class=" readMoreStyle">VR CATALOGUE</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="card exhibitionCard">
                 <a href="contact" class="imageHashTag">#ART FAIR #HONG KONG</a>
 
-                <a asp-page="/exhibition/artcentralhongkong2020">
+                <a href="https://artcentralhongkong.com">
                     <img class="card-img-top" src="~/SiteAssets/hongkong.jpg" />
                 </a>
                 <div class="card-body">
@@ -49,14 +49,17 @@
                         9 Lung Wo Road, Central, Hong Kong
                     </p>
                     <div class="text-center">
-                        <div class="justify-content-md-center">
-                            <a href="https://goo.gl/maps/nExp3XQwbXegq7n6A" target="_blank" class="googleMapButton">Google map</a>
+                        
+
+
+                        <div class="card-footer">
+                            <div class="justify-content-md-center">
+                                <a href="https://goo.gl/maps/sBXuff2ms9cWxXHz9" target="_blank" class="googleMapButton">Google map</a>
+                            </div>
+                            <a asp-page="/exhibition/artcentralhongkong2020" class="card-link readMoreStyle">LIST OF WORKS</a>
+                            <a href="https://artcentralhongkong.com/" class="card-link readMoreStyle">OFFICIAL SITE</a>
                         </div>
-
-
-
-                        <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
-                        <a href="contact" class="card-link readMoreStyle">OFFICIAL SITE</a>
+                        
                     </div>
                 </div>
             </div>
@@ -68,29 +71,32 @@
             <div class="card exhibitionCard">
                 <a href="contact" class="imageHashTag">#ART FAIR</a>
                 <a asp-page="/exhibition/tobiartfair2019">
-                    <img class="card-img-top" src="~/SiteAssets/tobi.jpg" /></a>
-                    <div class="card-body">
-                        <p class="underImageText">
-                            TOBI ART FAIR 2019
-                        </p>
-                        <p class="underImageText">
-                            04-06 October 2019
-                        </p>
-                        <p class="underImageText">
-                            6-19-15 Shimbashi Minato-ku, Tokyo
-                        </p>
+                    <img class="card-img-top" src="~/SiteAssets/tobi.jpg" />
+                </a>
+                <div class="card-body">
+                    <p class="underImageText">
+                        TOBI ART FAIR 2019
+                    </p>
+                    <p class="underImageText">
+                        04-06 October 2019
+                    </p>
+                    <p class="underImageText">
+                        6-19-15 Shimbashi Minato-ku, Tokyo
+                    </p>
 
-                        <div class="text-center">
-                            <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
-                            <a href="contact" class="card-link readMoreStyle">COMING SOON...</a>
-                        </div>
+                    <div class="card-footer">
+                        <a asp-page="/exhibition/tobiartfair2019" class="card-link readMoreStyle">LIST OF WORKS</a>
+                        <a href="#" class="card-link readMoreStyle">COMING SOON...</a>
                     </div>
-</div>
+
+                </div>
+            </div>
         </div>
         <div class="col-md-5 offset-2">
             <div class="card exhibitionCard">
                 <a href="contact" class="imageHashTag">#ART FAIR</a>
-                <a asp-page="/exhibition/TokyoInternationalArtFair2019">
+                
+                <a href="https://www.tokyoartfair.com/">
                     <img class="card-img-top" src="~/SiteAssets/tokyoArtFair.jpg" />
                 </a>
                 <div class="card-body">
@@ -105,12 +111,12 @@
                         7-18-18 Roppongi Minato-ku, Tokyo
                     </p>
 
-                    <div class="text-center">
-                        <div class="justify-content-md-center">
+                    <div class="card-footer">
+                        <div class="justify-content-md-center text-center">
                             <a href="https://goo.gl/maps/nExp3XQwbXegq7n6A" target="_blank" class="googleMapButton">Google map</a>
                         </div>
 
-                        <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
+                        <a asp-page="/exhibition/TokyoInternationalArtFair2019" class="card-link readMoreStyle">LIST OF WORKS</a>
                         <a href="contact" class="card-link readMoreStyle">OFFICIAL SITE</a>
                     </div>
                 </div>
@@ -122,7 +128,7 @@
         <div class="col-md-5 ">
             <div class="card exhibitionCard">
 
-                <a asp-page="/exhibition/artcentralhongkong2019">
+                <a href="https://artcentralhongkong.com/">
                     <img class="card-img-top" src="~/SiteAssets/hongkong.jpg" />
                 </a>
                 <div class="card-body">
@@ -135,10 +141,14 @@
                     <p class="underImageText">
                         9 Lung Wo Road, Central, Hong Kong
                     </p>
-                    <div class="text-center">
-                        <div class="justify-content-md-center"><a href="https://goo.gl/maps/WMsjyJL8urDBTR8U9" target="_blank" class="googleMapButton">Google map</a></div>
-                        <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
-                        <a href="contact" class="card-link readMoreStyle">OFFICIAL SITE</a>
+  
+
+                    <div class="card-footer">
+                        <div class="justify-content-md-center text-center">
+                            <div class="justify-content-md-center"><a href="https://goo.gl/maps/WMsjyJL8urDBTR8U9" target="_blank" class="googleMapButton">Google map</a></div>
+                        </div>
+                        <a asp-page="/exhibition/artcentralhongkong2019" class="card-link readMoreStyle">LIST OF WORKS</a>
+                        <a href="https://artcentralhongkong.com/" class="card-link readMoreStyle">OFFICIAL SITE</a>
                     </div>
                 </div>
             </div>
@@ -161,14 +171,12 @@
                         6-19-15 Shimbashi Minato-ku, Tokyo
                     </p>
 
-
-                    <div class="text-center">
-                        <div class="justify-content-md-center">
+                    <div class="card-footer">
+                        <div class="justify-content-md-center text-center">
                             <a href="https://goo.gl/maps/cxq8qhPwz9WPBG6w8" target="_blank" class="googleMapButton">Google map</a>
                         </div>
-
-                        <a href="contact" class="card-link readMoreStyle">LIST OF WORKS</a>
-                        <a href="contact" class="card-link readMoreStyle">OFFICIAL SITE</a>
+                        <a asp-page="/exhibition/tobiartfair2018" class="card-link readMoreStyle">LIST OF WORKS</a>
+                        <a href="#" class="card-link readMoreStyle">COMING SOON...</a>
                     </div>
                 </div>
             </div>
