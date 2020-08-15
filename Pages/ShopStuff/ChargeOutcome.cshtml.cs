@@ -26,8 +26,7 @@ namespace ProjectStation.Pages.ShopStuff
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostIndex()
         {
             var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
 
