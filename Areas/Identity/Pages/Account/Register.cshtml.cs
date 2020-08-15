@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -23,17 +24,20 @@ namespace ProjectStation.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> roleManager;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            this.roleManager = roleManager;
         }
 
         [BindProperty]
@@ -75,7 +79,16 @@ namespace ProjectStation.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                //var adminRole = await roleManager.FindByNameAsync("Admin");
+                //if (adminRole == null)
+                //{
+                //    adminRole = new IdentityRole("Admin");
+                //    await roleManager.CreateAsync(adminRole);
+                    
+                //}
+                
                 var result = await _userManager.CreateAsync(user, Input.Password);
+             //   await _userManager.AddToRoleAsync(user, adminRole.Name); uncomment to add user to admin
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

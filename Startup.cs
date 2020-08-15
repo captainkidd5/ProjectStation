@@ -63,7 +63,7 @@ namespace ProjectStation
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<AppDbContext>()
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultUI()
             .AddDefaultTokenProviders();
 
 

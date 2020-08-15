@@ -11,7 +11,7 @@ using Services;
 
 namespace ProjectStation.Pages.ArtCRUD
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Admin")]
     public class DetailsModel : PageModel
     {
         private readonly Services.AppDbContext _context;
