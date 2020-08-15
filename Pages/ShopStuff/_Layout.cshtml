@@ -36,7 +36,7 @@
                     <a asp-page="/index">
                         <img class="smallLogo" src="~/SiteAssets/shopstuff/logo_2.jpg" style="max-width:64px;">
                     </a>
-                    
+
                 </div>
                 <div class="col-md-10 offset1">
                     <nav class="inlineNavBar">
@@ -66,7 +66,7 @@
                             }
 
                             @*<li><a asp-page="/Users/Index">View Users</a></li>
-        <li><a asp-page="/Users/Edit">Add User</a></li>*@
+                                <li><a asp-page="/Users/Edit">Add User</a></li>*@
 
 
 
@@ -86,7 +86,7 @@
 
 
 
-    <div id="mySidebar" class="sidebar d-md-none" >
+    <div id="mySidebar" class="sidebar d-md-none">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a asp-page="/shop">TOKYO INTERNATIONAL GALLERY ONLINE SHOP</a>
 
@@ -152,6 +152,42 @@
         </div>
     </nav>
 </body>
+
+<div class="container text-center">
+    <footer>
+
+        <div class="row" style="margin-bottom:50px;">
+            <div class="col-md-6 offset-6">
+                <div class="thinSeparator"></div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="card" style="border-style:none; margin-bottom:64px;">
+                <div class="row d-inline-block">
+                    <a class="footerShopLink" asp-page="/shopstuff/Law">特定商取引法に基づく表示</a>
+                    <a class="footerShopLink" asp-page="/privacy">プライバシーポリシー</a>
+                    <a class="footerShopLink" asp-page="/contact">お問い合わせ</a>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4">
+                        <img src="~/SiteAssets/tigLogo.png" class="card-img" alt="..." style="padding:28px; max-width:200px;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="card-title">Tokyo International Gallery</h5>
+                                <p class="card-text">2nd floor, Ginza Hacchoume Juban Building,</p>
+                                <p class="card-text">8-10-8 Ginza, Chūō, Tokyo, 104-0061</p>
+                                <a asp-page="/Access" class="btn btn-outline-secondary">Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 </html>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

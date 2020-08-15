@@ -56,6 +56,9 @@
   border-bottom: solid;
   border-bottom-color: lightgray; }
 
+.footerShopLink {
+  margin-right: 80px; }
+
 .rowLightBox > .lightBoxColumn {
   padding: 0 8px; }
 

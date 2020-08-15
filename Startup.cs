@@ -121,6 +121,7 @@ namespace ProjectStation
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
+
             services.Configure<DataProtectionTokenProviderOptions>(o =>
        o.TokenLifespan = TimeSpan.FromHours(3));
             services.AddSingleton<IEmailSender, EmailSender>();
