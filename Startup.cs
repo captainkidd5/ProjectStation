@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using ProjectStation.EmailService;
 using Services.Shopping;
 using ProjectStation.Stripe;
+using Microsoft.AspNetCore.Http;
 
 namespace ProjectStation
 {
@@ -68,6 +69,14 @@ namespace ProjectStation
 
 
             services.AddDistributedMemoryCache();
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential 
+                // cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                // requires using Microsoft.AspNetCore.Http;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromDays(1);
@@ -166,7 +175,7 @@ namespace ProjectStation
             StripeConfiguration.ApiKey = Configuration["StripeSecretKey"];
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

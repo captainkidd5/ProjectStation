@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
+
 <body id="section1" style="background-color:white; overflow-x:hidden;  max-width:100%">
 
 
@@ -48,17 +49,17 @@
 
         <a asp-page="/contact" class="dropMenuItem">Contact</a>
         <a asp-page="/shop" class="dropMenuItem">OnlineShop</a>
-       
+
         <div class="dropMenuItem">
             <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig_white.svg" style="max-width:60px;min-width:55px;" title="instagram page" /> </a>
 
             <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb_white.svg" style="max-width:60px;min-width:55px;" title="facebook page" /> </a>
 
         </div>
-            
+
 
     </div>
-
+    <partial name="_CookieConsentPartial" />
     @if (IsSectionDefined("TitleBlock"))
     {
         @RenderSection("TitleBlock")
@@ -96,7 +97,8 @@
                 <div class="col align-items-center justify-content-center">
                     <a href="/contact" class="btn btn-primary btn-lg btn-block rounded-pill" style="margin-top: 50px;
                      background-color: #9D9393;
-                     border-color: #9D9393;" role="button">Contact Us
+                     border-color: #9D9393;" role="button">
+                        Contact Us
                     </a>
 
                 </div>
