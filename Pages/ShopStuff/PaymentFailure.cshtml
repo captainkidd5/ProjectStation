@@ -1,0 +1,22 @@
+﻿@page
+@model ProjectStation.Pages.ShopStuff.PaymentFailureModel
+@{
+    ViewData["Title"] = "PaymentFailure";
+    Layout = "~/Pages/ShopStuff/_Layout.cshtml";
+}
+
+<div class="=container">
+    <div class="row">
+        <div class="col-12 justify-content-center text-center">
+            <div class="alert alert-danger" role="alert">
+                <a asp-page="/Shopstuff/cart" class="alert-link">
+                    Oops, something went wrong. Please double-check your billing information and try again.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+

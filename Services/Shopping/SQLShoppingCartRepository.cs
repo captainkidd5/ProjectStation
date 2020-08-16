@@ -94,7 +94,20 @@ namespace Services.Shopping
             {
                 if (context.Session.Get("ShoppingCart") != null)
                 {
-                    return context.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
+                    ShoppingCart cart = context.Session.GetObjectFromJson<ShoppingCart>("ShoppingCart");
+                    if (!cart.CheckedOut)
+                    {
+                        return cart;
+                    }
+                    else
+                    {
+                        ShoppingCart shoppingCart = new ShoppingCart()
+                        { CartId = Guid.NewGuid().ToString(), DateCreated = DateTime.Now, UserId = null };
+                        context.Session.SetObjectAsJson("ShoppingCart", shoppingCart);
+                        return shoppingCart;
+
+                    }
+
                 }
                 else
                 {
@@ -270,6 +283,16 @@ namespace Services.Shopping
         public bool UpdateCartData()
         {
             throw new NotImplementedException();
+        }
+
+        public bool SetCartToCheckedOut(ShoppingCart cart)
+        {
+            cart.CheckedOut = true;
+
+            var Cart = appDbContext.ShoppingCarts.Attach(cart);
+            Cart.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            appDbContext.SaveChanges();
+            return true;
         }
     }
 }

@@ -20,13 +20,11 @@ namespace Services.Shopping
 
         public bool Add(Order order)
         {
-            if(appDbContext.Orders.Find(order) != null)
-            {
+
                 appDbContext.Orders.Add(order);
                 appDbContext.SaveChanges();
                 return true;
-            }
-            return false;
+            
             
         }
 

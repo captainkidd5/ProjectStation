@@ -1,0 +1,21 @@
+﻿@page
+@model ProjectStation.Pages.ShopStuff.PaymentSuccessModel
+@{
+    ViewData["Title"] = "PaymentSuccess";
+    Layout = "~/Pages/ShopStuff/_Layout.cshtml";
+}
+
+<div class="=container">
+    <div class="row">
+        <div class="col-12 justify-content-center text-center">
+            <div class="alert alert-success" role="alert">
+                Payment success!
+                <a asp-page="/Shopstuff/shop" class="alert-link">
+                    Click here to return to the shop.
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
