@@ -22,7 +22,7 @@ namespace ProjectStation.Pages.ShopStuff
     public class CheckoutModel : PageModel
     {
 
-        private readonly string WebHookSecret = "webhookSecret";
+
         private readonly IShoppingCartRepository cartRepository;
         private readonly IProductRepository productRepository;
         private readonly SignInManager<IdentityUser> signInManager;
@@ -88,7 +88,10 @@ namespace ProjectStation.Pages.ShopStuff
                 LineItems = convertedOptions,
                 Mode = "payment",
                 SuccessUrl = "https://projectstation.azurewebsites.net/shopstuff/chargeoutcome",
-                CancelUrl = "https://projectstation.azurewebsites.net/shopstuff/chargeoutcome",
+                CancelUrl = "https://projectstation.azurewebsites.net/shopstuff/cart",
+                
+               
+                
             };
 
             var service = new SessionService();

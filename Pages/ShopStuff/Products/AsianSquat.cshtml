@@ -5,12 +5,17 @@
     Layout = "~/Pages/ShopStuff/_Layout.cshtml";
 }
     <div class="container">
-        @if(Model.AddToCartMessage != null)
+        @if (Model.AddToCartMessage != null)
         {
-        <div class="alert alert-success" role="alert">
-            @Model.AddToCartMessage
-            <a asp-page="/Shopstuff/Cart" class="alert-link">Click here to view your cart.</a>.
-        </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="max-height:50px;">
+                @Model.AddToCartMessage
+                <a asp-page="/Shopstuff/Cart" class="alert-link">Click here to view your cart.</a>.
+                <button class="close" data-dismiss="alert">&times;</button>
+
+            </div>
         }
         <div class="row" style="margin-top:100px;">
 

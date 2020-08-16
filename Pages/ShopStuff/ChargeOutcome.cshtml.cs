@@ -16,42 +16,24 @@ namespace ProjectStation.Pages.ShopStuff
         Succeeded = 1
     }
 
+    [RequireHttps]
     public class ChargeOutcomeModel : PageModel
     {
         public string ChargeOutcomeMessage { get; set; }
-        const string secret = "whsec_wKgJiX3S2yEPMqqagexK9D2tUWSTlFs6";
 
-        public void OnGet()
+
+        public ChargeOutcomeModel()
         {
 
         }
-
-        public async Task<IActionResult> OnPostIndex()
+        public void OnGetWebHook()
         {
-            var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+            string hi = "hi";
+        }
 
-            try
-            {
-                var stripeEvent = EventUtility.ConstructEvent(json,
-                    Request.Headers["Stripe-Signature"], secret);
-
-                // Handle the checkout.session.completed event
-                if (stripeEvent.Type == Events.CheckoutSessionCompleted)
-                {
-                    var session = stripeEvent.Data.Object as Session;
-
-                    // Fulfill the purchase...
-                   // HandleCheckoutSession(session);
-                }
-                else
-                {
-                    return Page();
-                }
-            }
-            catch (StripeException e)
-            {
-                return BadRequest();
-            }
+        public async Task<IActionResult> OnPost()
+        {
+            
             return Page();
         }
     }

@@ -8,23 +8,13 @@
 
 @if (showBanner)
 {
-    <div class="card" style="max-width:600px;max-height:200px;">
-        <div class="card-body">
-            <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-                We and our service providers use cookies, web beacons, and other technologies to receive
-                and store certain types of information whenever you interact with us or third-parties
-                that use our ssrvices. This information helps us recognize you, customize your website experience, and
-                store items in your cart. By clicking accept, or clicking out of this banner you acknowledge these terms.<a asp-page="/Privacy">Learn More</a>.
-                
-            </div>
-        </div>
-        <div class="card-body">
-            <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-                <span aria-hidden="true">Accept</span>
-            </button>
-        </div>
-    </div>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <nav id="cookieConsent" class="fixed-top alert alert-dark alert-dismissible fade show" role="alert">
+        <button type="button" class="btn btn-info float-right" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+            <span aria-hidden="true">Accept</span>
+        </button>
+        <p>This site uses cookies to analyse traffic, remember your preferences, and optimise your experience. <a asp-page="/Privacy">Learn More</a>.</p>
+    </nav>
     <script>
         (function () {
             var button = document.querySelector("#cookieConsent button[data-cookie-string]");

@@ -105,6 +105,7 @@ namespace ProjectStation
             services.AddScoped<IProductRepository, SQLProductRepository>();
             services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
             services.AddScoped<IShoppingCartRepository, SQLShoppingCartRepository>();
+            services.AddScoped<IOrderRepository, SQLOrderRepository>();
 
 
             services.Configure<RouteOptions>(options =>
