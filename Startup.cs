@@ -106,7 +106,14 @@ namespace ProjectStation
             services.AddScoped<IArtPieceRepository, SQLArtPieceRepository>();
             services.AddScoped<IShoppingCartRepository, SQLShoppingCartRepository>();
             services.AddScoped<IOrderRepository, SQLOrderRepository>();
+            services.Configure<CaptchaData>(x =>
+            {
+                x.PublicKey = Configuration["captcha-public"];
 
+                x.PrivateKey = Configuration["captcha-private"];
+
+            });
+            services.AddHttpClient();
 
             services.Configure<RouteOptions>(options =>
             {

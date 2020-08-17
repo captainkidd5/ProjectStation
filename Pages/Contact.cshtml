@@ -104,6 +104,10 @@
 
                     </div>
                     <div class="col-md-3 ">
+
+
+
+                        <div class="g-recaptcha" data-sitekey="@Model.CaptchaData.PublicKey"></div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
@@ -119,7 +123,7 @@
         }
     </div>
 </div>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     $.validator.addMethod("mustbetrue",
         function (value, element, parameters) {

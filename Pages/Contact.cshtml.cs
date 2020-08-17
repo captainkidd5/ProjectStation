@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Options;
 using Models.Models;
+using Newtonsoft.Json.Linq;
+using Services;
 
 namespace ProjectStation.Pages
 {
     public class ContactModel : PageModel
     {
+        private readonly IHttpClientFactory clientFactory;
+
+        public CaptchaData CaptchaData { get; set; }
+
         public string MessageSent { get; set; }
 
         [BindProperty]
@@ -18,9 +26,11 @@ namespace ProjectStation.Pages
 
         public IEmailSender EmailSender { get; }
 
-        public ContactModel(IEmailSender emailSender)
+        public ContactModel(IEmailSender emailSender, IOptions<CaptchaData> captchaData, IHttpClientFactory clientFactory)
         {
             this.EmailSender = emailSender;
+            this.clientFactory = clientFactory;
+            this.CaptchaData = captchaData.Value;
         }
 
         public void OnGet()
@@ -29,8 +39,38 @@ namespace ProjectStation.Pages
             MessageSent = null;
         }
 
-        public void OnPost()
+        public async Task OnPostAsync()
         {
+            string recaptchaResponse = this.Request.Form["g-recaptcha-response"];
+
+            var client = clientFactory.CreateClient();
+            try
+            {
+                var parameters = new Dictionary<string, string>
+            {
+                {"secret", CaptchaData.PrivateKey},
+                {"response", recaptchaResponse},
+                {"remoteip", this.HttpContext.Connection.RemoteIpAddress.ToString()}
+            };
+
+                HttpResponseMessage response = await client.PostAsync("https://www.google.com/recaptcha/api/siteverify", new FormUrlEncodedContent(parameters));
+                response.EnsureSuccessStatusCode();
+
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                dynamic apiJson = JObject.Parse(apiResponse);
+                if (apiJson.success != true)
+                {
+                    this.ModelState.AddModelError(string.Empty, "There was an unexpected problem processing this request. Please try again.");
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+               
+            }
+
+
+
+
             bool state = ContactForm.AgreePolicy;
             if (ModelState.IsValid)
             {
