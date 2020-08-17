@@ -18,7 +18,8 @@
       background-color: white;
       text-decoration-line: underline;
       text-decoration-color: black;
-      transition: ease-in 1s; }
+      color: black;
+      transition: ease-in .5s; }
 
 .logo {
   max-width: 300px;

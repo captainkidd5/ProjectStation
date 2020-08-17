@@ -61,10 +61,9 @@
 
 /*FADER ARROWS*/ ////////////
 .faderArrowContainer {
-    position: absolute;
+
     top: 0;
     padding: 10px 10px 10px 10px;
-    left: 90%;
     border-style: none;
     transform: translate(-50%,0);
 }
@@ -81,7 +80,7 @@
 
 
 @mixin arrowTopMixin {
-    margin-top: 5px;
+    margin-top: -8px;
     -webkit-animation: fade 1s alternate infinite;
     animation: fade 1s alternate infinite;
 }
@@ -89,7 +88,7 @@
 @mixin arrowBottomMixin {
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
-    margin-top: 5px;
+    margin-top: -8px;
     -webkit-animation: fade 1s alternate infinite;
     animation: fade 1s alternate infinite;
 }
@@ -263,3 +262,7 @@
     font-size: 16px;
 }
 
+@media only screen and (max-width: 768) {
+ 
+
+}

@@ -33,10 +33,8 @@
 
 /*FADER ARROWS*/
 .faderArrowContainer {
-  position: absolute;
   top: 0;
   padding: 10px 10px 10px 10px;
-  left: 90%;
   border-style: none;
   transform: translate(-50%, 0); }
 
@@ -51,7 +49,7 @@
 .faderArrow1Bottom {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .75s; }
@@ -59,7 +57,7 @@
 .faderArrow2Bottom {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .5s; }
@@ -67,25 +65,25 @@
 .faderArrow3Bottom {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .25s; }
 
 .faderArrow1Top {
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .25s; }
 
 .faderArrow2Top {
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .5s; }
 
 .faderArrow3Top {
-  margin-top: 5px;
+  margin-top: -8px;
   -webkit-animation: fade 1s alternate infinite;
   animation: fade 1s alternate infinite;
   animation-delay: .75s; }

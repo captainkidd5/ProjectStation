@@ -36,7 +36,8 @@ $mobileViewWidth: 95vw;
             background-color: $backGroundColor;
             text-decoration-line: underline;
             text-decoration-color: black;
-            transition: ease-in 1s;
+            color:black;
+            transition: ease-in .5s;
         }
     }
 }
