@@ -5,6 +5,14 @@ using System.Text;
 
 namespace Models.Models
 {
+    public enum Referal
+    {
+        Gallery = 1,
+        Friend = 2,
+        Facebook = 3,
+        Instagram = 4,
+        Other = 5
+    }
     public class ContactForm
     {
         [Required(ErrorMessage = "Name is required.")]
@@ -32,6 +40,9 @@ namespace Models.Models
         [Required]
         [MaxLength(500, ErrorMessage = "Max message length is 500 characters.")]
         public string Inquiry { get; set; }
+
+        [Required]
+        public Referal? Referal { get; set; }
 
         [Display(Name = "Privacy Policy")]
         [Range(typeof(bool), "true", "true", ErrorMessage = "You must review the privacy policy to submit an inquiry.")]

@@ -11,11 +11,10 @@ namespace ProjectStation.Pages
 {
     public class ContactModel : PageModel
     {
-        [BindProperty]
-        public ContactForm ContactForm{ get; set; }
+        public string MessageSent { get; set; }
 
         [BindProperty]
-        public bool EmailNotify { get; set; }
+        public ContactForm ContactForm{ get; set; }
 
         public IEmailSender EmailSender { get; }
 
@@ -27,13 +26,25 @@ namespace ProjectStation.Pages
         public void OnGet()
         {
             ContactForm = new ContactForm();
+            MessageSent = null;
         }
 
         public void OnPost()
         {
-            if(ModelState.IsValid)
+           
+            if (ModelState.IsValid)
             {
-
+                string msg = "Name: " + ContactForm.Name + "\n" +
+               "Name(Reading): " + ContactForm.NameReading + "\n" +
+               "Phone: " + ContactForm.PhoneNumber + "\n" +
+               "Email: " + ContactForm.Email + "\n" +
+               "Address: " + ContactForm.Address + "\n" +
+                "CompanyName: " + ContactForm.CompanyName + "\n" +
+                 "Referal: " + ContactForm.Referal.ToString() + "\n" +
+                 "Inquiry: " + ContactForm.Inquiry + "\n";
+                EmailSender.SendEmailAsync("tucker.higgins1@gmail.com", "Inquiry from " + ContactForm.Name + " " +
+                    ContactForm.NameReading, msg);
+                MessageSent = "Thank you, we have received your message.";
             }
         }
     }

@@ -11,104 +11,137 @@
 
         <div class="fadedLine"></div>
 
+        @if (string.IsNullOrEmpty(Model.MessageSent))
+        {
 
-        <form method="post" class="containerTable">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.Name" class="col-md-3 col-control-label mr-2">Name※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.Name" class="form-control" placeholder="Name">
-                    <span asp-validation-for="@Model.ContactForm.Name" class="text-white"></span>
-                </div>
+
+    <form method="post" class="containerTable">
+        <div asp-validation-summary="All" class="text-white"></div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.Name" class="col-md-3 col-control-label mr-2">Name※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.Name" class="form-control" placeholder="Name">
+                <span asp-validation-for="@Model.ContactForm.Name" class="text-white"></span>
             </div>
+        </div>
 
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.NameReading" class="col-md-3 col-control-label mr-2">Name (reading)※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.NameReading" class="form-control" placeholder="Name (reading)">
-                    <span asp-validation-for="@Model.ContactForm.NameReading" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.NameReading" class="col-md-3 col-control-label mr-2">Name (reading)※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.NameReading" class="form-control" placeholder="Name (reading)">
+                <span asp-validation-for="@Model.ContactForm.NameReading" class="text-white"></span>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.PhoneNumber" class="col-md-3 col-control-label mr-2">Phone Number※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.PhoneNumber" class="form-control" placeholder="Phone number">
-                    <span asp-validation-for="@Model.ContactForm.PhoneNumber" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.PhoneNumber" class="col-md-3 col-control-label mr-2">Phone Number※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.PhoneNumber" class="form-control" placeholder="Phone number">
+                <span asp-validation-for="@Model.ContactForm.PhoneNumber" class="text-white"></span>
             </div>
+        </div>
 
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.Email" class="col-md-3 col-control-label mr-2">Email※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.Email" class="form-control" placeholder="Email address">
-                    <span asp-validation-for="@Model.ContactForm.Email" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.Email" class="col-md-3 col-control-label mr-2">Email※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.Email" class="form-control" placeholder="Email address">
+                <span asp-validation-for="@Model.ContactForm.Email" class="text-white"></span>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.Address" class="col-md-3 col-control-label mr-2">Address※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.Address" class="form-control" placeholder="Address">
-                    <span asp-validation-for="@Model.ContactForm.Address" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.Address" class="col-md-3 col-control-label mr-2">Address※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.Address" class="form-control" placeholder="Address">
+                <span asp-validation-for="@Model.ContactForm.Address" class="text-white"></span>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.CompanyName" class="col-md-3 col-control-label mr-2">Company Name※</label>
-                <div class="col-md-8">
-                    <input asp-for="@Model.ContactForm.CompanyName" class="form-control" placeholder="CompanyName">
-                    <span asp-validation-for="@Model.ContactForm.CompanyName" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.CompanyName" class="col-md-3 col-control-label mr-2">Company Name※</label>
+            <div class="col-md-8">
+                <input asp-for="@Model.ContactForm.CompanyName" class="form-control" placeholder="CompanyName">
+                <span asp-validation-for="@Model.ContactForm.CompanyName" class="text-white"></span>
+                <span class="text-white">Enter "Individual" if you are not part of a company.</span>
             </div>
+        </div>
 
-            <div class="form-group row">
-                <label asp-for="@Model.ContactForm.Inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
-                <div class="col-md-8">
-                    <textarea asp-for="@Model.ContactForm.Inquiry" class="form-control" placeholder="Description" rows="5"></textarea>
-                    <span asp-validation-for="@Model.ContactForm.Inquiry" class="text-white"></span>
-                </div>
+        <div class="form-group row">
+            <label asp-for="@Model.ContactForm.Inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
+            <div class="col-md-8">
+                <textarea asp-for="@Model.ContactForm.Inquiry" class="form-control" placeholder="Description" rows="5"></textarea>
+                <span asp-validation-for="@Model.ContactForm.Inquiry" class="text-white"></span>
+                <span class="text-white">(500 character limit)</span>
             </div>
+        </div>
 
-            @*<div class="form-group row">
+        @*<div class="form-group row">
 
-                <label for="inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
-                <div class="col-md-8">
-                    <textarea class="form-control" type="text" placeholder="Description" id="inquiry" rows="5" name="companyname"></textarea>
-                </div>
-            </div>*@
-
-            <div class="form-group row">
-
+            <label for="inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
+            <div class="col-md-8">
+                <textarea class="form-control" type="text" placeholder="Description" id="inquiry" rows="5" name="companyname"></textarea>
             </div>
+        </div>*@
 
+        <div class="form-group row">
+            <div class="col-md-3"></div>
             <div class="col-md-8">
                 <p>How did you hear about Tokyo International Gallery?</p>
-                <select class="form-control">
-
-                    <option>Gallery Directory</option>
-                    <option>Through a Friend</option>
-                    <option>Other</option>
+                <select asp-for="@Model.ContactForm.Referal" asp-items="Html.GetEnumSelectList<Models.Models.Referal>()" class="form-control">
+                    <option value="">Choose a method.</option>
                 </select>
+                <span asp-validation-for="@Model.ContactForm.Referal" class="text-white"></span>
             </div>
-            <br />
-            <div class="form-check-inline col-md-8">
-                <label>
-                    <input type="checkbox" value="I have reviewed the privacy policy." />
-                    I have reviewed the privacy policy.
-                </label>
-            </div>
+        </div>
+        
+        <div class="form-group row">
+            <div class="col-md-4"></div>
+            <div class="col-md-7">
+                I have reviewed the privacy policy.
 
+                <input asp-for="@Model.ContactForm.AgreePolicy" style="width:30px;height:30px; " />
+                <span asp-validation-for="@Model.ContactForm.AgreePolicy" class="text-white"></span>
+
+            </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
             <div class="col-md-3 ">
-                <input type="submit" value="Submit">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
+        </div>
 
+    </form>
 
+        }
+        else
+        {
+            @Model.MessageSent
+        }
     </div>
 </div>
+
+<script>
+    // extend range validator method to treat checkboxes differently
+    var defaultRangeValidator = $.validator.methods.range;
+    $.validator.methods.range = function (value, element, param) {
+        if (element.type === 'checkbox') {
+            // if it's a checkbox return true if it is checked
+            return element.checked;
+        } else {
+            // otherwise run the default validation function
+            return defaultRangeValidator.call(this, value, element, param);
+        }
+    }
+</script>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
