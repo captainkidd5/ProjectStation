@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-
 namespace Models.Models
 {
     public enum Referal
@@ -44,8 +43,8 @@ namespace Models.Models
         [Required]
         public Referal? Referal { get; set; }
 
-        [Display(Name = "Privacy Policy")]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "You must review the privacy policy to submit an inquiry.")]
+        [Display(Name = "Privacy policy")]
+        [MustBeTrue(ErrorMessage = "Please accept our privacy policy!")]
         public bool AgreePolicy { get; set; }
     }
 }

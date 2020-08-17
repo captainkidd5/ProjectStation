@@ -31,7 +31,7 @@ namespace ProjectStation.Pages
 
         public void OnPost()
         {
-           
+            bool state = ContactForm.AgreePolicy;
             if (ModelState.IsValid)
             {
                 string msg = "Name: " + ContactForm.Name + "\n" +
