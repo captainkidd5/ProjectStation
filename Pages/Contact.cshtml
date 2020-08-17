@@ -12,66 +12,73 @@
         <div class="fadedLine"></div>
 
 
-        <form action="/contact" class="containerTable">
+        <form method="post" class="containerTable">
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group row">
-                <label for="fname" class="col-md-3 col-control-label mr-2">Name※</label>
+                <label asp-for="@Model.ContactForm.Name" class="col-md-3 col-control-label mr-2">Name※</label>
                 <div class="col-md-8">
-                    <input class="form-control" placeholder="Name" type="text" id="fname" name="firstname">
-                </div>
-
-
-            </div>
-            <div class="form-group row">
-
-                <label for="lname" class="col-md-3 col-control-label mr-2">Name (reading)※</label>
-
-                <div class="col-md-8">
-                    <input class="form-control" type="text" placeholder="Name (reading)" id="lname" name="lastname">
+                    <input asp-for="@Model.ContactForm.Name" class="form-control" placeholder="Name">
+                    <span asp-validation-for="@Model.ContactForm.Name" class="text-white"></span>
                 </div>
             </div>
 
-            <div class="form-group row">
 
-                <label for="phone" class="col-md-3 col-control-label mr-2">Phone Number※</label>
+            <div class="form-group row">
+                <label asp-for="@Model.ContactForm.NameReading" class="col-md-3 col-control-label mr-2">Name (reading)※</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="number" placeholder="Phone Number" id="phone" name="phone">
+                    <input asp-for="@Model.ContactForm.NameReading" class="form-control" placeholder="Name (reading)">
+                    <span asp-validation-for="@Model.ContactForm.NameReading" class="text-white"></span>
                 </div>
             </div>
 
             <div class="form-group row">
-
-                <label for="email" class="col-md-3 col-control-label mr-2">Email※</label>
+                <label asp-for="@Model.ContactForm.PhoneNumber" class="col-md-3 col-control-label mr-2">Phone Number※</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="email" placeholder="Email Address" id="email" name="email">
+                    <input asp-for="@Model.ContactForm.PhoneNumber" class="form-control" placeholder="Phone number">
+                    <span asp-validation-for="@Model.ContactForm.PhoneNumber" class="text-white"></span>
                 </div>
-            </div>
-
-            <div class="form-group row">
-
-                <label for="address" class="col-md-3 col-control-label mr-2">Address※</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" placeholder="Address" id="address" name="address">
-                </div>
-            </div>
-
-            <div class="form-group row">
-
-                <label for="address" class="col-md-3 col-control-label mr-2">Company Name※</label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" placeholder="Company Name" id="companyname" name="companyname">
-                    <small id="companyHelpBlock" class="form-text" style="color:white;font-size:14px;">Enter "individual"if you are an individual customer.</small>
-                </div>
-                
             </div>
 
 
             <div class="form-group row">
+                <label asp-for="@Model.ContactForm.Email" class="col-md-3 col-control-label mr-2">Email※</label>
+                <div class="col-md-8">
+                    <input asp-for="@Model.ContactForm.Email" class="form-control" placeholder="Email address">
+                    <span asp-validation-for="@Model.ContactForm.Email" class="text-white"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="@Model.ContactForm.Address" class="col-md-3 col-control-label mr-2">Address※</label>
+                <div class="col-md-8">
+                    <input asp-for="@Model.ContactForm.Address" class="form-control" placeholder="Address">
+                    <span asp-validation-for="@Model.ContactForm.Address" class="text-white"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="@Model.ContactForm.CompanyName" class="col-md-3 col-control-label mr-2">Company Name※</label>
+                <div class="col-md-8">
+                    <input asp-for="@Model.ContactForm.CompanyName" class="form-control" placeholder="CompanyName">
+                    <span asp-validation-for="@Model.ContactForm.CompanyName" class="text-white"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="@Model.ContactForm.Inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
+                <div class="col-md-8">
+                    <textarea asp-for="@Model.ContactForm.Inquiry" class="form-control" placeholder="Description" rows="5"></textarea>
+                    <span asp-validation-for="@Model.ContactForm.Inquiry" class="text-white"></span>
+                </div>
+            </div>
+
+            @*<div class="form-group row">
 
                 <label for="inquiry" class="col-md-3 col-control-label mr-2">Your Inquiry※</label>
                 <div class="col-md-8">
                     <textarea class="form-control" type="text" placeholder="Description" id="inquiry" rows="5" name="companyname"></textarea>
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group row">
 
@@ -102,3 +109,6 @@
 
     </div>
 </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
