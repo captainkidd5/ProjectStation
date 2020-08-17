@@ -8,19 +8,28 @@
 
 @if (showBanner)
 {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <nav id="cookieConsent" class="fixed-top alert alert-dark alert-dismissible fade show" role="alert">
-        <button type="button" class="btn btn-info float-right" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-            <span aria-hidden="true">Accept</span>
-        </button>
-        <p>This site uses cookies to analyse traffic, remember your preferences, and optimise your experience. <a asp-page="/Privacy">Learn More</a>.</p>
-    </nav>
+
+    <div id="cookieConsent"class=" alert alert-dismissible fade show" role="alert" 
+         style=" max-height: 100px;
+        width:100%;
+        background-color: none;
+        
+        position: fixed;
+        bottom: 0;
+        z-index:100;">
+
+        <button class="close" data-dismiss="alert" data-cookie-string="@cookieString">
+        <span aria-hidden="true" style="font-size: 12px; color: black;">Our site uses cookies to store your basic data in order to enhance your experience.</span>&times;</button>
+
+    </div>
+
     <script>
         (function () {
             var button = document.querySelector("#cookieConsent button[data-cookie-string]");
             button.addEventListener("click", function (event) {
                 document.cookie = button.dataset.cookieString;
+                
             }, false);
         })();
     </script>
-}
+} 
