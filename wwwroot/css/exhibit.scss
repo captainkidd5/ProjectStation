@@ -76,11 +76,13 @@
     border-width: 1px;
     border: solid;
     color: gray;
-    margin-top:8px;
-    width:160px;
+    margin-top: 8px;
+    width: 160px;
+    margin-left: 0 !important;
 
     a {
         color: gray;
+        margin-left: 0 !important;
     }
 
     &:hover {

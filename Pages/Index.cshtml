@@ -13,17 +13,17 @@
             <div class="col-md-2 d-none d-md-block ">
 
                 <ul class="titleListFormat">
-                    <li><a asp-page="index">Home</a></li>
-                    <li><a asp-page="news">News</a></li>
-                    <li><a asp-page="Artist/Michaelho">Artist</a></li>
-                    <li><a asp-page="exhibition">Exhibition</a></li>
-                    <li><a asp-page="about">About</a></li>
-                    <li><a asp-page="shop">Online Shop</a></li>
+                    <li><a asp-page="index">HOME</a></li>
+                    <li><a asp-page="news">NEWS</a></li>
+                    <li><a asp-page="Artist/Michaelho">ARTIST</a></li>
+                    <li><a asp-page="exhibition">EXHIBITION</a></li>
+                    <li><a asp-page="about">ABOUT</a></li>
+                    <li><a asp-page="shop">ONLINE SHOP</a></li>
                 </ul>
 
             </div>
             <div class="col-md-8">
-                <img src="~/SiteAssets/tokyointernationalgallery.svg" style="max-width:400px;display:block;margin:auto;" alt="Company logo">
+                <img src="~/SiteAssets/tokyointernationalgallery.svg" style="max-width:300px;display:block;margin:auto;" alt="Company logo">
 
             </div>
 
@@ -32,14 +32,14 @@
             <div class="col-md-2 d-none d-md-block ">
 
                 <ul class="titleListFormat" style="text-align:right;">
-                    <li><a asp-page="company">Company</a></li>
-                    <li><a asp-page="access">Access</a></li>
-                    <li><a asp-page="contact">Contact</a></li>
+                    <li><a asp-page="company">COMPANY</a></li>
+                    <li><a asp-page="access">ACCESS</a></li>
+                    <li><a asp-page="contact">CONTACT</a></li>
                     <li><a asp-page="news">Jp/Eng</a></li>
                     <li>
-                        <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:60px;min-width:55px;"title="instagram page" /> </a>
+                        <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:35px;min-width:30px;" title="instagram page" /> </a>
 
-                        <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:60px;min-width:55px;"title="facebook page" /> </a>
+                        <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:35px;min-width:30px;" title="facebook page" /> </a>
                     </li>
 
                 </ul>
@@ -56,7 +56,30 @@
             </a>
         </div>
 
-        <div  id="section2" class="row" style="margin-top:400px;">
+        <div id="section2" class="row" style="margin-top:400px;"> </div>
+        <div style="border-width:4px; border-style:solid;border-color:black;">
+            <div class="parallaxEffect"></div>
+
+        </div>
+        <div class="card">
+            <div class="card-body text-center" style="font-family: 'NotoSansJP-Light', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        font-family: 'NotoSansJP-Light', sans-serif;">
+
+                    Upcoming event: 
+                <a href="https://www.terrada.co.jp/ja/news/9166/" target="_blank"style="font-weight:800; text-decoration:underline;">GALLERY OPENING</a>
+                
+            </div>
+            <div class="card-footer text-center">
+                <a href="https://www.terrada.co.jp/ja/news/9166/" target="_blank"style="font-weight:800;">Read more >></a>
+            </div>
+        </div>
+        
+
+
+
+        <div  class="row" style="margin-top:100px;">
             <div class="col-md-6">
                 <div class="mediumHeader">
                     <div class=" mediumHeaderStyle">
@@ -66,21 +89,22 @@
 
                 <div class="fadedLine"></div>
                 <ul class="sideList">
-          
+
                     @for (int i = Model.NewsSnippets.Count() - 1; i >= 0; i--)
                     {
                         Models.Models.NewsSnippet newsSnippet = Model.NewsSnippets[i];
-                        <li class="borderedListElement">
-                            <div class="newsSnippetDate" style="display:inline;">@newsSnippet.Date </div>
-                    <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a></li>
+                    <li class="borderedListElement">
+                        <div class="newsSnippetDate" style="display:inline;">@newsSnippet.Date </div>
+                        <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a>
+                    </li>
                     }
 
-                <li class="borderedListElement">
-                    <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
-                    <a class="leftSideImage" asp-page="/shop"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
+                    <li class="borderedListElement">
+                        <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
+                        <a class="leftSideImage" asp-page="/shop"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
 
 
-                </li>
+                    </li>
                 </ul>
 
             </div>

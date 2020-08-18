@@ -9,8 +9,8 @@
   text-align: left;
   white-space: nowrap; }
   .titleListFormat a {
-    font-family: 'arial', 'Noto Sans JP', sans-serif;
-    font-size: 20px;
+    font-family: 'NotoSansJP-Light', sans-serif;
+    font-size: 16px;
     bottom: 15px;
     color: #9D9393;
     line-height: 55px; }
@@ -174,7 +174,7 @@
 .newsSnippetDate {
   color: #D4D0D0;
   font-size: 12px;
-  font-family: 'arial', 'Noto Sans JP', sans-serif; }
+  font-family: 'arial', 'NotoSansJP-Light', sans-serif; }
 
 .artistRow {
   margin-top: 50px; }

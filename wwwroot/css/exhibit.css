@@ -64,9 +64,11 @@
   border: solid;
   color: gray;
   margin-top: 8px;
-  width: 160px; }
+  width: 160px;
+  margin-left: 0 !important; }
   .readMoreStyle a {
-    color: gray; }
+    color: gray;
+    margin-left: 0 !important; }
   .readMoreStyle:hover {
     transition: ease-in-out .15s;
     opacity: .8;

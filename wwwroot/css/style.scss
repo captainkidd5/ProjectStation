@@ -23,20 +23,21 @@ $mobileViewWidth: 95vw;
 .titleListFormat {
     list-style: none;
     text-align: left;
-    white-space:nowrap;
+    white-space: nowrap;
+
     a {
-        font-family: 'arial', 'Noto Sans JP', sans-serif;
-        font-size: 20px;
+        font-family: 'NotoSansJP-Light', sans-serif;
+        font-size: 16px;
         bottom: 15px;
         color: $secondayGray;
         line-height: 55px;
-        
+
 
         &:hover {
             background-color: $backGroundColor;
             text-decoration-line: underline;
             text-decoration-color: black;
-            color:black;
+            color: black;
             transition: ease-in .5s;
         }
     }
@@ -267,7 +268,7 @@ $fadedLineWidth: 50%;
 .newsSnippetDate {
     color: #D4D0D0;
     font-size: 12px;
-    font-family: 'arial', 'Noto Sans JP', sans-serif;
+    font-family: 'arial', 'NotoSansJP-Light', sans-serif;
 }
 
 
