@@ -10,7 +10,7 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/station/databases/TigDB",
       "type": "mssql.azure",
       "connectionId": "TigDBConnection",
-      "secretStore": "AzureKeyVault"
+      "secretStore": "AzureAppSettings"
     }
   }
 }

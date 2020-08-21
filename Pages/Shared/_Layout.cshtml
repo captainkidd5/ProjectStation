@@ -26,62 +26,13 @@
         <partial name="_CookieConsentPartial" />
     </div>
 
-    <!--/.Navbar-->
-    <div class="dropMenu">
-
-
-        <button onclick="myFunction()" class="dropMenuButton">
-            <div class="animated-icon1" style="pointer-events:none;"><span></span><span></span><span></span></div>
-        </button>
-
-    </div>
-    <div id="buttonEvent1" class="dropMenuContent">
-
-        <a asp-page="/index" class="dropMenuItem">Home</a>
-        <a asp-page="/news" class="dropMenuItem">News</a>
-        <a asp-page="/exhibition" class="dropMenuItem">Exhibition</a>
-
-        <a asp-page="/artist/michaelho" class="dropMenuItem">Artist</a>
-
-
-
-        <a asp-page="/about" class="dropMenuItem">About</a>
-
-        <a asp-page="/company" class="dropMenuItem">Company</a>
-        <a asp-page="/access" class="dropMenuItem">Access</a>
-
-        <a asp-page="/contact" class="dropMenuItem">Contact</a>
-        <a asp-page="/shop" class="dropMenuItem">OnlineShop</a>
-
-        <div class="dropMenuItem">
-            <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig_white.svg" style="max-width:60px;min-width:55px;" title="instagram page" /> </a>
-
-            <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb_white.svg" style="max-width:60px;min-width:55px;" title="facebook page" /> </a>
-
-        </div>
-
-
-    </div>
-    <div class="container">
-
-
-        <div class="row" style="max-height:200px; position:absolute;">
-            <div class="row-md-12 justify-content-center text-center">
-
-            </div>
-
-        </div>
-    </div>
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <div class="container">
 
-        <nav id="topNav" class="navbar fixed-top navbar-expand-md  navbar-light justify-content-center topNav">
+        <nav id="topNav" class="navbar fixed-top navbar-expand-md  navbar-light  topNav .d-none .d-md-block .d-xl-none">
             <!-- Brand/logo -->
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
             <ul class="navbar-nav collapse navbar-collapse justify-content-center" id="navbarNav">
                 <li>
@@ -112,8 +63,51 @@
                     <a class="nav-link" href="#">en</a>
                 </li>
             </ul>
+            <div id="myNav" class="overlay d-md-none">
+                <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a asp-page="/index" class="dropMenuItem">Home</a>
+                    <a asp-page="/news" class="dropMenuItem">News</a>
+                    <a asp-page="/exhibition" class="dropMenuItem">Exhibition</a>
 
+                    <a asp-page="/artist/michaelho" class="dropMenuItem">Artist</a>
+
+
+
+                    <a asp-page="/about" class="dropMenuItem">About</a>
+
+                    <a asp-page="/company" class="dropMenuItem">Company</a>
+                    <a asp-page="/access" class="dropMenuItem">Access</a>
+
+                    <a asp-page="/contact" class="dropMenuItem">Contact</a>
+                    <a asp-page="/shop" class="dropMenuItem">OnlineShop</a>
+
+                    <form class="form-inline" asp-controller="Movies" asp-action="Index">
+                        <i class="fas  fas fa-search nav-link" style="display:inline !important;"> </i>
+                        <input type="text" name="SearchString" placeholder="Search site..." style="display:inline !important;">
+                        <button type="submit" class="btn btn-primary">Search</button>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <span class="d-md-none" style="font-size:30px;cursor:pointer">  <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;" alt="Company logo"></span>
+            <span class="d-md-none" style="font-size:30px;cursor:pointer; right:20px!important;" onclick="openNav()">&#9776;</span>
+
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                }
+
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                }
+            </script>
         </nav>
+
+
+
 
     </div>
     <script>
@@ -122,57 +116,40 @@
 
         function scrollFunction() {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.getElementById("topNav").style.padding = "30px 10px";
+                document.getElementById("topNav").style.padding = "10px 10px";
                 document.getElementById("topNav").style.borderBottomStyle = "solid";
 
                 document.getElementById("logo").style.fontSize = "25px";
             } else {
-                document.getElementById("topNav").style.padding = "80px 10px";
+                document.getElementById("topNav").style.padding = "40px 10px";
                 document.getElementById("topNav").style.borderBottomStyle = "none";
                 document.getElementById("logo").style.fontSize = "35px";
 
             }
         }
     </script>
-    @*<div class="navbar fixed-top navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Tokyo International Gallery</a>
-                <ul class="nav navbar-nav">
 
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="#">Exhibitions</a></li>
-                    <li><a href="#">Online Viewing</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-
-                </ul>
-
-            </div>
-        </div>*@
 
     @if (IsSectionDefined("TitleBlock"))
     {
-        @RenderSection("TitleBlock")
+    @RenderSection("TitleBlock")
     }
     else
     {
-        <div class="container">
-            <div class="row" style="margin-top:200px;">
-                <div class="col-md-12">
-                    <img src="~/SiteAssets/tigLogo.png" style="max-width:300px;display:block;margin:auto;" alt="Company logo">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1 ">
-                    <a asp-page="/index"><img class="returnHomeButton" src="~/SiteAssets/return_home.svg" title="return home"></a>
-                </div>
-
+    <div class="container">
+        <div class="row" style="margin-top:200px;">
+            <div class="col-md-12">
+                <img src="~/SiteAssets/tigLogo.png" style="max-width:300px;display:block;margin:auto;" alt="Company logo">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-1 ">
+                <a asp-page="/index"><img class="returnHomeButton" src="~/SiteAssets/return_home.svg" title="return home"></a>
+            </div>
 
+        </div>
+    </div>
     }
-
 
 
 
@@ -182,7 +159,7 @@
         </main>
     </div>
 
-    <div class="container" style="margin-top:64px; margin-bottom:32px;">
+    <div class="container" style=" margin-bottom:32px;">
         <footer>
             <div class="row">
                 <div class="col-md-8">

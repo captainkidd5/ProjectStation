@@ -56,12 +56,24 @@
             </a>
         </div>-->
 
-        <div id="section2" class="row" style="margin-top:200px;"> </div>
-        <div class="card" style=" border-style:none;">
-            <img src="~/SiteAssets/vrImage.jpg" />
+        <div id="section2" class="row" style="margin-top:48px;"> </div>
 
-
+        <div class="row col-md-12">
+            <div class="w3-content w3-section " style="max-width:1200px; padding-top:50px;">
+                <img class="mySlides w3-animate-fading" style="max-width: 100%; max-height: 800px;" src="~/SiteAssets/TestAssets/wheel.jpg" title="michael ho">
+                <img class="mySlides w3-animate-fading" style=" max-width: 100%;max-height: 800px;" src="~/SiteAssets/TestAssets/book.jpg" title="michael ho">
+                <img class="mySlides w3-animate-fading" style=" max-width: 100%; max-height: 800px;" src="~/SiteAssets/TestAssets/can.jpg" title="michael ho">
+            </div>
         </div>
+
+        @*<div class="card" style=" border-style:none;">
+
+                <img class="card-img" src="~/SiteAssets/TestAssets/wheel.jpg" />
+
+
+
+
+            </div>*@
 
     </div>
 
@@ -75,12 +87,12 @@
                     <div class="container bcontent">
 
                         <hr />
-                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                        <div class="card" style="max-width: 500px; background-color: #EDEDED; border-style:none;">
                             <div class="row no-gutters">
-                                <div class="col-sm-5">
+                                <div class="col-md-5">
                                     <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Suresh Dasari</h5>
                                         <p class="card-text">News text here.</p>
@@ -92,12 +104,12 @@
                 </div><div class="col-md-6">
                     <div class="container bcontent">
                         <hr />
-                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                        <div class="card" style="max-width: 500px; background-color: #EDEDED; border-style: none;">
                             <div class="row no-gutters">
-                                <div class="col-sm-5">
+                                <div class="col-md-5">
                                     <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Suresh Dasari</h5>
                                         <p class="card-text">News text here.</p>
@@ -115,12 +127,12 @@
                     <div class="container bcontent">
 
                         <hr />
-                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                        <div class="card" style="max-width: 500px; background-color: #EDEDED; border-style: none;">
                             <div class="row no-gutters">
-                                <div class="col-sm-5">
+                                <div class="col-md-5">
                                     <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Suresh Dasari</h5>
                                         <p class="card-text">News text here.</p>
@@ -132,12 +144,12 @@
                 </div><div class="col-md-6">
                     <div class="container bcontent">
                         <hr />
-                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                        <div class="card" style="max-width: 500px; background-color: #EDEDED; border-style: none;">
                             <div class="row no-gutters">
-                                <div class="col-sm-5">
+                                <div class="col-md-5">
                                     <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-md-7">
                                     <div class="card-body">
                                         <h5 class="card-title">Suresh Dasari</h5>
                                         <p class="card-text">News text here.</p>
@@ -161,7 +173,22 @@
 }
 
 
+<script>
+    var myIndex = 0;
+    carousel();
 
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) { myIndex = 1 }
+        x[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 9000);
+    }
+</script>
 
 
 @section Scripts {

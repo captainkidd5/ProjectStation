@@ -26,49 +26,50 @@
     background-color: white;
     outline: none; }
 
-.hamburgerContents {
-  position: absolute;
-  top: 25%;
-  height: 1px;
-  width: 40px;
-  background-color: #9D9393;
-  padding-top: 4px;
-  transform: translate(-50%); }
-
-.dropMenuContent {
-  display: block;
-  width: 120vw;
+.overlay {
+  height: 100%;
+  width: 0;
   position: fixed;
+  z-index: 1;
   top: 0;
-  background-color: #9d9393;
-  height: 0px;
-  overflow-y: hidden;
-  transition: height .5s ease-out;
-  font-family: 'arial', 'Noto Sans JP', sans-serif;
-  color: white;
-  font-size: 24px;
-  font-weight: 400;
-  z-index: 2; }
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s; }
 
-.show {
-  height: 1000px; }
+.overlay-content {
+  position: relative;
+  top: 16px;
+  width: 50%;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 24px; }
 
-.dropMenuItem {
-  width: 100vw;
-  height: 50px;
-  text-align: center;
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
   display: block;
-  color: white;
-  z-index: 3;
-  opacity: 1; }
-  .dropMenuItem a {
-    font-family: Courier New, Courier, monospace;
-    color: white;
-    z-index: 2; }
-  .dropMenuItem:hover {
-    opacity: 1;
-    background-color: lightgray;
-    transition: 1s; }
+  transition: 0.3s;
+  margin-right: auto; }
+
+.overlay a:hover, .overlay a:focus {
+  color: black; }
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px; }
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px; }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px; } }
 
 /* Icon 1 */
 .animated-icon1, .animated-icon2, .animated-icon3 {
