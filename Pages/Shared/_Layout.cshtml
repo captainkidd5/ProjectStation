@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&amp;subset=japanese" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    
-    
+
+
 </head>
 
 <body id="section1" style="background-color:white; overflow-x:hidden;  max-width:100%">
@@ -75,38 +75,41 @@
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <div class="container">
-
+        
         <nav id="topNav" class="navbar fixed-top navbar-expand-md  navbar-light justify-content-center topNav">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
-                <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;display:block;margin:auto;" alt="Company logo">
-            </a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Links --><div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav text-center">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Artists</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Exhibitions</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Online Viewing</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:35px;min-width:30px;" title="instagram page" /> </a>
-        </li>
-        <li> <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:35px;min-width:30px;" title="facebook page" /> </a></li>
-    </ul>
-</div>
+            
+            <ul class="navbar-nav collapse navbar-collapse justify-content-center" id="navbarNav">
+                <li>
+                    <a class="navbar-brand justify-content-center" href="/">
+                        <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;" alt="Company logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Exhibitions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Online Viewing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:35px;min-width:30px;" title="instagram page" /> </a>
+                </li>
+                <li> <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:35px;min-width:30px;" title="facebook page" /> </a></li>
+            </ul>
+            
         </nav>
 
     </div>
@@ -117,10 +120,14 @@
         function scrollFunction() {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
                 document.getElementById("topNav").style.padding = "30px 10px";
+                document.getElementById("topNav").style.borderBottomStyle = "solid";
+               
                 document.getElementById("logo").style.fontSize = "25px";
             } else {
                 document.getElementById("topNav").style.padding = "80px 10px";
+                document.getElementById("topNav").style.borderBottomStyle = "none";
                 document.getElementById("logo").style.fontSize = "35px";
+                
             }
         }
     </script>
