@@ -75,14 +75,14 @@
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <div class="container">
-        
+
         <nav id="topNav" class="navbar fixed-top navbar-expand-md  navbar-light justify-content-center topNav">
             <!-- Brand/logo -->
-            
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <ul class="navbar-nav collapse navbar-collapse justify-content-center" id="navbarNav">
                 <li>
                     <a class="navbar-brand justify-content-center" href="/">
@@ -108,8 +108,11 @@
                     <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:35px;min-width:30px;" title="instagram page" /> </a>
                 </li>
                 <li> <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:35px;min-width:30px;" title="facebook page" /> </a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">en</a>
+                </li>
             </ul>
-            
+
         </nav>
 
     </div>
@@ -121,13 +124,13 @@
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
                 document.getElementById("topNav").style.padding = "30px 10px";
                 document.getElementById("topNav").style.borderBottomStyle = "solid";
-               
+
                 document.getElementById("logo").style.fontSize = "25px";
             } else {
                 document.getElementById("topNav").style.padding = "80px 10px";
                 document.getElementById("topNav").style.borderBottomStyle = "none";
                 document.getElementById("logo").style.fontSize = "35px";
-                
+
             }
         }
     </script>
@@ -179,50 +182,24 @@
         </main>
     </div>
 
-    <div class="container text-center">
+    <div class="container" style="margin-top:64px; margin-bottom:32px;">
         <footer>
             <div class="row">
-                <div class="col align-items-center justify-content-center">
-                    <a href="/contact" class="btn btn-primary btn-lg btn-block rounded-pill" style="margin-top: 50px;
-                     background-color: #9D9393;
-                     border-color: #9D9393;" role="button">
-                        Contact Us
-                    </a>
-
-                </div>
-                <div class="col-md-1" style="">
-                    <a href="#section1" class="faderArrowContainer" id="scrollToTop">
-                        <div class="faderArrow1Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                        <div class="faderArrow2Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                        <div class="faderArrow3Bottom"><img src="~/SiteAssets/icon_arrow01.png" title="arro1"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom:50px;">
-                <div class="col-md-6 offset-6">
-                    <div class="thinSeparator"></div>
+                <div class="col-md-8">
+                    <p>
+                        © Copyright 2020 TOKYO INTERNATIONAL GALLERY. All Rights Reserved.
+                    </p>
                 </div>
 
-            </div>
-            <div class="row">
-                <div class="card" style="border-style:none; margin-bottom:64px;">
-                    <div class="row ">
-                        <div class="col-sm-4">
-                            <img src="~/SiteAssets/tigLogo.png" class="card-img" alt="..." style="padding:28px; max-width:200px;">
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="card-body">
-                                <div class="card-body">
-                                    <h5 class="card-title">Tokyo International Gallery</h5>
-                                    <p class="card-text">2nd floor, Ginza Hacchoume Juban Building,</p>
-                                    <p class="card-text">8-10-8 Ginza, Chūō, Tokyo, 104-0061</p>
-                                    <a asp-page="/Access" class="btn btn-outline-secondary">Access</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-2 offset-2">
+
+                    <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:15px;min-width:10px;" title="facebook page" /> </a>
+                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:15px;min-width:10px;" title="instagram page" /> </a>
+
                 </div>
             </div>
+
+
         </footer>
     </div>
 

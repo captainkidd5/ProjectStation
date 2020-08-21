@@ -10,22 +10,22 @@
 
     <div class="container">
         <!--<div class="row" style="margin-top:200px;margin-bottom:0px">
-            <div class="col-md-2 d-none d-md-block ">
+        <div class="col-md-2 d-none d-md-block ">
 
-                <ul class="titleListFormat">
-                    <li><a asp-page="index">HOME</a></li>
-                    <li><a asp-page="news">NEWS</a></li>
-                    <li><a asp-page="Artist/Michaelho">ARTIST</a></li>
-                    <li><a asp-page="exhibition">EXHIBITION</a></li>
-                    <li><a asp-page="about">ABOUT</a></li>
-                    <li><a asp-page="shop">ONLINE SHOP</a></li>
-                </ul>
+            <ul class="titleListFormat">
+                <li><a asp-page="index">HOME</a></li>
+                <li><a asp-page="news">NEWS</a></li>
+                <li><a asp-page="Artist/Michaelho">ARTIST</a></li>
+                <li><a asp-page="exhibition">EXHIBITION</a></li>
+                <li><a asp-page="about">ABOUT</a></li>
+                <li><a asp-page="shop">ONLINE SHOP</a></li>
+            </ul>
 
-            </div>
-            <div class="col-md-8">-->
-                @*<img src="~/SiteAssets/tokyointernationalgallery.svg" style="max-width:300px;display:block;margin:auto;" alt="Company logo">*@
+        </div>
+        <div class="col-md-8">-->
+        @*<img src="~/SiteAssets/tokyointernationalgallery.svg" style="max-width:300px;display:block;margin:auto;" alt="Company logo">*@
 
-            <!--</div>
+        <!--</div>
 
 
 
@@ -57,112 +57,105 @@
         </div>-->
 
         <div id="section2" class="row" style="margin-top:200px;"> </div>
-        <div style=" border-style:none;">
-            <div class="parallaxEffect"></div>
+        <div class="card" style=" border-style:none;">
+            <img src="~/SiteAssets/vrImage.jpg" />
+
 
         </div>
-        <div class="card">
-            <div class="card-body text-center" style="font-family: 'NotoSansJP-Light', sans-serif;
-        font-size: 24px;
-        font-weight: 400;
-        font-family: 'NotoSansJP-Light', sans-serif;">
 
-                    Upcoming event: 
-                <a href="https://www.terrada.co.jp/ja/news/9166/" target="_blank"style="font-weight:800; text-decoration:underline;">GALLERY OPENING</a>
-                
+    </div>
+
+    <div style="background-color: #EDEDED;">
+        <div class="container">
+            <div class=" mediumHeaderStyle">
+                News
             </div>
-            <div class="card-footer text-center">
-                <a href="https://www.terrada.co.jp/ja/news/9166/" target="_blank"style="font-weight:800;">Read more >></a>
-            </div>
-        </div>
-        
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container bcontent">
 
-
-
-        <div  class="row" style="margin-top:100px;">
-            <div class="col-md-6">
-                <div class="mediumHeader">
-                    <div class=" mediumHeaderStyle">
-                        News
+                        <hr />
+                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Suresh Dasari</h5>
+                                        <p class="card-text">News text here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-md-6">
+                    <div class="container bcontent">
+                        <hr />
+                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Suresh Dasari</h5>
+                                        <p class="card-text">News text here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="fadedLine"></div>
-                <ul class="sideList">
-
-                    @for (int i = Model.NewsSnippets.Count() - 1; i >= 0; i--)
-                    {
-                        Models.Models.NewsSnippet newsSnippet = Model.NewsSnippets[i];
-                    <li class="borderedListElement">
-                        <div class="newsSnippetDate" style="display:inline;">@newsSnippet.Date </div>
-                        <a class="leftSideLink" asp-page="NewsStuff/NewsDetails" asp-route-id="@newsSnippet.Id">@newsSnippet.Title</a>
-                    </li>
-                    }
-
-                    <li class="borderedListElement">
-                        <a href="/news" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
-                        <a class="leftSideImage" asp-page="/shop"><img src="~/SiteAssets/toy.jpg" title="instagram page"></a>
-
-
-                    </li>
-                </ul>
-
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="container bcontent">
 
-
-            <div class="col-md-6">
-                <div class="mediumHeader">
-                    <div class=" mediumHeaderStyle">
-                        Exhibition
+                        <hr />
+                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Suresh Dasari</h5>
+                                        <p class="card-text">News text here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="fadedLine"></div>
-                    <ul class="sideList">
-
-                        <li class="borderedListElement">
-                            <a href="contact" class="imageHashTag">#EXHIBITION</a>
-
-
-                            <a class="card-img" asp-page="/Exhibition/TigSummer2020"><img src="~/SiteAssets/vrImage.jpg" title="I_AM_BECOME"></a>
-                            <div class="card text-white">
-                                <div class="card-img-overlay align-content-center">
-                                    <h5 class="card-title">I_AM_BECOME.pdf</h5>
+                </div><div class="col-md-6">
+                    <div class="container bcontent">
+                        <hr />
+                        <div class="card" style="width: 500px; background-color: #EDEDED; border-style:none;">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <img class="card-img" src="~/SiteAssets/hongkong.jpg" alt="Suresh Dasari Card">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Suresh Dasari</h5>
+                                        <p class="card-text">News text here.</p>
+                                    </div>
                                 </div>
                             </div>
-
-                        </li>
-
-                        <li class="borderedListElement">
-
-                            <a href="contact" class="imageHashTag">#ART FAIR</a>
-
-
-                            <a class="card-img" asp-page="Exhibition/TobiArtFair2018"><img src="~/SiteAssets/tobi.jpg" title="tobi art fair"></a>
-                            <div class="card text-white">
-
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">12-14 October 2018 Tobi Art Fair 2018</h5>
-                                </div>
-                            </div>
-
-                        </li>
-                        <li class="borderedListElement">
-                            <a href="contact" class="imageHashTag">#ART FAIR #Hong Kong</a>
-
-
-                            <a class="card-img" asp-page="Exhibition/ArtCentralHongKong2020"><img src="~/SiteAssets/hongkong.jpg" title="Art Central 2020"></a>
-                            <div class="card text-white">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">17-22 March 2020 ART CENTRAL 2020</h5>
-                                </div>
-                            </div>
-
-                            <a asp-page="/exhibition" class="btn btn-outline-secondary btn-lg btn-block" style="margin-top:50px;" role="button">Read More</a>
-
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
+            <div class="row" style="margin-top:20px; margin-bottom:80px;margin-left:32px;">
+                <p>More news ➝</p>
+            </div>
+
+
+
         </div>
     </div>
 }
