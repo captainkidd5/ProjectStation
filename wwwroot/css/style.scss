@@ -11,13 +11,37 @@ $rightOffset: 300px;
 $mobileViewWidth: 95vw;
 
 .wrapper {
-   
-    z-index:-1;
-  
+    z-index: -1;
 }
 
 .hide {
     display: none;
+}
+.topNav {
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    transition: .5s;
+    background-color: white;
+    max-height: 200px;
+
+    li {
+        margin-left: 60px;
+        font-family: 'NotoSansJP-Light', sans-serif;
+        font-size: 16px;
+        font-weight:700;
+        color: black !important;
+    }
+}
+.navTopList {
+    margin-top: 64px;
+
+    li {
+        margin-left: 60px;
+        font-family: 'NotoSansJP-Light', sans-serif;
+        font-size: 16px;
+        color: black;
+    }
 }
 
 .titleListFormat {
@@ -45,26 +69,24 @@ $mobileViewWidth: 95vw;
 
 
 .logo {
-    max-width:300px;
+    max-width: 300px;
     z-index: -1;
-
 }
 
 
 
 
 .socialMediaIcons {
-    width:100px;
-    position:absolute;
-    right:-50px;
-    top:200px;
-    
+    width: 100px;
+    position: absolute;
+    right: -50px;
+    top: 200px;
 }
 
 #instagramButton {
-
     width: 50% !important;
-    display:inline;
+    display: inline;
+
     &:hover {
         filter: invert(50);
         transition: ease-in 1s;
@@ -81,22 +103,23 @@ $mobileViewWidth: 95vw;
         transition: ease-in 1s;
     }
 }
+
 .faderArrowContainerTop {
     position: absolute;
     margin-top: 400px;
-    margin-left:50%;
+    margin-left: 50%;
     padding: 10px 10px 10px 10px;
     border-style: none;
-
 }
+
 $fadedLineWidth: 50%;
 
 /*BOTTOM HALF OF PAGE*/
 .bottomHalf {
     margin-top: 400px;
-    left:0;
+    left: 0;
     position: relative;
-    width:100%;
+    width: 100%;
 }
 
 .halfContentBlock {
@@ -104,13 +127,11 @@ $fadedLineWidth: 50%;
     width: 90%;
     list-style: none;
     vertical-align: top;
-
-
 }
 
 .contentBlock {
     display: inline-block;
-    width:49%;
+    width: 49%;
     list-style: none;
     vertical-align: top;
 }
@@ -118,7 +139,6 @@ $fadedLineWidth: 50%;
 
 .mediumHeader {
     padding-top: 50px;
-
 }
 
 .mediumHeaderStyle {
@@ -129,15 +149,12 @@ $fadedLineWidth: 50%;
 }
 
 .sideList {
- 
-   
     list-style: none;
 
-        img {
-            width: 100%;
-            margin-top: 40px;
-        }
-    
+    img {
+        width: 100%;
+        margin-top: 40px;
+    }
 }
 
 .borderedListElement {
@@ -153,8 +170,9 @@ $fadedLineWidth: 50%;
 .leftSideLink {
     color: black;
     width: 100%;
-    &:hover{
-        color:black;
+
+    &:hover {
+        color: black;
     }
 }
 
@@ -169,10 +187,9 @@ $fadedLineWidth: 50%;
 
 
 
-.listImageContainer{
-    position:relative;
-    width:inherit;
-
+.listImageContainer {
+    position: relative;
+    width: inherit;
 }
 
 .leftSideImage {
@@ -185,14 +202,13 @@ $fadedLineWidth: 50%;
 }
 
 .imageHashTag {
-    display:inline;
+    display: inline;
     font-family: $standardFont;
     width: 100%;
     left: 0;
     top: -5px;
     color: black;
-
-        font-size: 15px !important;
+    font-size: 15px !important;
 
 
     &:hover {
@@ -202,23 +218,23 @@ $fadedLineWidth: 50%;
         transition: ease-in 1s;
     }
 }
+
 .imageOverlay {
     position: absolute;
     background-color: rgba(255, 255, 255, .75);
     z-index: 1;
-
-    height:30%; 
-    bottom:0;   
+    height: 30%;
+    bottom: 0;
 }
 
 .textImageOverlay {
-    position:absolute;
+    position: absolute;
     font-family: $standardFont;
     font-size: 20px;
-    bottom:5px;
-    text-align:center;
-    color:black;
-    text-wrap:normal;
+    bottom: 5px;
+    text-align: center;
+    color: black;
+    text-wrap: normal;
 }
 
 
@@ -226,7 +242,6 @@ $fadedLineWidth: 50%;
 .contentBlock a:link {
     font-size: 14px;
     color: black !important;
-
 }
 
 
@@ -251,6 +266,7 @@ $fadedLineWidth: 50%;
         text-decoration-color: black;
     }
 }
+
 .readMore {
     padding: 0px 30px;
     text-align: center;
@@ -258,7 +274,6 @@ $fadedLineWidth: 50%;
     border-width: 1px;
     border: solid;
     color: gray;
-
     white-space: nowrap;
 
 
@@ -272,8 +287,8 @@ $fadedLineWidth: 50%;
 }
 
 
-.artistRow{
-    margin-top:50px;
+.artistRow {
+    margin-top: 50px;
 }
 
 .artistTitle {
@@ -290,15 +305,7 @@ $fadedLineWidth: 50%;
 /*RESIZING*/
 
 @media only screen and (max-width: 1200px) {
-
-
-
 }
 
 @media only screen and (max-width: 990px) {
-
-
-
 }
-
-
