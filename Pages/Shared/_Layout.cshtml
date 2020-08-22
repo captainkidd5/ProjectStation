@@ -29,8 +29,8 @@
 
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <div class="container">
-        
-        <nav id="topNav" class="navbar fixed-top navbar-expand-md  navbar-light  topNav .d-none .d-md-block .d-xl-none">
+
+        <nav id="topNav" class="navbar fixed-top navbar-expand-lg  navbar-light  topNav .d-none .d-lg-block .d-xl-none">
             <!-- Brand/logo -->
 
 
@@ -38,6 +38,11 @@
                 <li>
                     <a class="navbar-brand justify-content-center" href="/">
                         <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;" alt="Company logo">
+                    </a>
+                </li>
+                <li>
+                    <a class="navbar-brand justify-content-center" href="/">
+                        <img src="~/SiteAssets/RawTig.jpg" style="height:64px;max-width:300px;" alt="Company logo">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -56,14 +61,14 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:35px;min-width:30px;" title="instagram page" /> </a>
+                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:25px;min-width:25px;" title="instagram page" /> </a>
                 </li>
-                <li> <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:35px;min-width:30px;" title="facebook page" /> </a></li>
+                <li> <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:25px;min-width:25px;" title="facebook page" /> </a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">en</a>
                 </li>
             </ul>
-            <div id="myNav" class="overlay d-md-none">
+            <div id="myNav" class="overlay d-lg-none">
                 <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <a asp-page="/index" class="dropMenuItem">Home</a>
@@ -92,8 +97,9 @@
                 </div>
             </div>
 
-            <span class="d-md-none" style="font-size:30px;cursor:pointer">  <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;" alt="Company logo"></span>
-            <span class="d-md-none" style="font-size:30px;cursor:pointer; right:20px!important;" onclick="openNav()">&#9776;</span>
+            <span class="d-lg-none" style="font-size:30px;cursor:pointer">  <img src="~/SiteAssets/tokyointernationalgallery.svg" style="height:64px;max-width:300px;" alt="Company logo"></span>
+            <span class="d-lg-none" style="font-size:30px;cursor:pointer">  <img src="~/SiteAssets/RawTig.jpg" style="height:64px;max-width:300px; right:50% !important" alt="Company logo"></span>
+            <span class="d-lg-none" style="font-size:30px;cursor:pointer; right:20%!important;" onclick="openNav()">&#9776;</span>
 
             <script>
                 function openNav() {
@@ -106,16 +112,14 @@
             </script>
         </nav>
 
-
-
-
     </div>
+
     <script>
         // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 90) {
                 document.getElementById("topNav").style.padding = "10px 10px";
                 document.getElementById("topNav").style.borderBottomStyle = "solid";
 
@@ -163,9 +167,9 @@
 
                 <div class="col-md-2 offset-2">
 
-                    <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:15px;min-width:10px;" title="facebook page" /> </a>
-                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:15px;min-width:10px;" title="instagram page" /> </a>
-
+                    <a href="https://www.facebook.com/Tokyointernationalgallery/" target="_blank"><img src="~/SiteAssets/icon_fb.svg" style="max-width:20px;min-width:10px; margin-right:20px;" title="facebook page" /> </a>
+                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><img src="~/SiteAssets/icon_ig.svg " style="max-width:20px;min-width:10px;margin-right:20px; " title="instagram page" /> </a>
+                    <a href="https://www.instagram.com/tig_official_jp/" target="_blank"><i class="fas fa-home" style="max-width:25px;min-width:25px;margin-right:20px; "></i></a>
                 </div>
             </div>
 
