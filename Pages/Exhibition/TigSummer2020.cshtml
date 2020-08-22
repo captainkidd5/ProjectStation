@@ -43,9 +43,10 @@
 
         @foreach (var artPiece in Model.ArtPieces)
         {
-            <div class="col-lg-3 d-flex align-items-stretch" style="margin-bottom:24px;">
-                <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="card-img" src="@Url.Content(artPiece.PhotoPath)" /></a>
-               
+            <div class="col-lg-3 " style="margin-bottom:24px;">
+                <div class="card">
+                    <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="card-img" src="@Url.Content(artPiece.PhotoPath)" /></a>
+                </div>
             </div>
         }
     </div>

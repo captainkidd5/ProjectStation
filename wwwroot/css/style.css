@@ -35,6 +35,24 @@
     font-size: 16px;
     color: black; }
 
+.titleListFormat {
+  list-style: none;
+  text-align: left;
+  white-space: nowrap;
+  margin-top: 120px; }
+  .titleListFormat a {
+    font-family: 'NotoSansJP-Light', sans-serif;
+    font-size: 16px;
+    bottom: 15px;
+    color: #9D9393;
+    line-height: 55px; }
+    .titleListFormat a:hover {
+      background-color: white;
+      text-decoration-line: underline;
+      text-decoration-color: black;
+      color: black;
+      transition: ease-in .5s; }
+
 .logo {
   max-width: 300px;
   z-index: -1; }
