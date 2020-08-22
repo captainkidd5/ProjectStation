@@ -40,7 +40,7 @@
     margin-top: 7px;
     font-weight:300;
     line-height: 22px;
-    font-size: 10px;
+    font-size: 16px;
     width:100%;
 }
 
@@ -101,6 +101,19 @@
 
 
    
+}
+
+
+.exhibitLinkYellowText {
+    color: #A08D1C;
+
+    a {
+        margin-top: 16px;
+    }
+
+    p {
+        margin-top: 16px;
+    }
 }
 
 @media only screen and (max-width: 640px) {

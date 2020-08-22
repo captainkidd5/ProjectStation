@@ -10,6 +10,15 @@ $rightOffset: 300px;
 
 $mobileViewWidth: 95vw;
 
+@font-face {
+    font-family: 'Noto-Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../SiteAssets/fonts/NotoSansJP-Regular.otf')format('opentype');
+    
+}
+
+
 .wrapper {
     z-index: -1;
 }
@@ -17,6 +26,11 @@ $mobileViewWidth: 95vw;
 .hide {
     display: none;
 }
+
+.sawarabi {
+    font-family: 'SawarabiMincho-Regular';
+}
+
 .topNav {
     border-bottom-color: gray;
     border-bottom-style: solid;
@@ -29,10 +43,11 @@ $mobileViewWidth: 95vw;
         margin-right: 48px;
         font-family: 'NotoSansJP-Light', sans-serif;
         font-size: 16px;
-        font-weight:700;
+        font-weight: 700;
         color: black !important;
     }
 }
+
 .navTopList {
     margin-top: 64px;
 
@@ -45,31 +60,6 @@ $mobileViewWidth: 95vw;
 }
 
 //Carousel
-
-
-.titleListFormat {
-    list-style: none;
-    text-align: left;
-    white-space: nowrap;
-
-    a {
-        font-family: 'NotoSansJP-Light', sans-serif;
-        font-size: 16px;
-        bottom: 15px;
-        color: $secondayGray;
-        line-height: 55px;
-
-
-        &:hover {
-            background-color: $backGroundColor;
-            text-decoration-line: underline;
-            text-decoration-color: black;
-            color: black;
-            transition: ease-in .5s;
-        }
-    }
-}
-
 
 .logo {
     max-width: 300px;

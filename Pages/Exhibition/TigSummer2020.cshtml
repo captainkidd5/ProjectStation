@@ -7,22 +7,76 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="fullMediumHeader">I_AM_BECOME.pdf Michael Ho</div>
-            <div class="fadedLine"></div>
-            <div id="vrview"></div>
+
+    <div class="row sawarabi" style="font-size:24px;">
+        <p>I_AM_BECOME.pdf</p>
+
+    </div>
+    <div class="row sawarabi" style="font-size:24px;"><p>Michael Ho - October 3 - October 12, 2020</p></div>
+    <div style="font-size: 16px; font-family: NotoSans;">
+
+
+
+        <div class="row">  <p>Michael Ho Born in 1996, he is an artist.</p></div>
+        <div class="row">   <p>Here is a long paragraph talking about the exhibition, for testing purposes.</p></div>
+        <div class="row">
+            <p>
+                This is also a long paragraph. Even longer, actually. Here is a good example of what some might call a run on sentence
+                and is pretty hard to look at and is useful for writing long things and that made no sense.
+            </p>
         </div>
+
+
     </div>
 
+
+    <div class="exhibitLinkYellowText">
+        <div class="row">  <a href="#">Exhibition Page</a></div>
+        <div class="row"> <a href="#">VR</a></div>
+        <div class="row"> <a href="#">Press Release</a></div>
+        <div class="row"> <a href="#">List</a></div>
+        <div class="row"><p>Contact: tig@tig.com / 123456789</p></div>
+    </div>
+    <div class="row" style="margin-top:120px;">  <h2>Works</h2></div>
     <div class="row">
+
         @foreach (var artPiece in Model.ArtPieces)
         {
-            <div class="col-md-6">
-                <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="img-fluid"src="@Url.Content(artPiece.PhotoPath)" /></a>
-                <p>@artPiece.Name</p>
+            <div class="col-md-3" style="margin-bottom:24px;">
+                <a asp-page="/Exhibition/Works" asp-route-id=@artPiece.Id><img class="img-fluid" src="@Url.Content(artPiece.PhotoPath)" /></a>
+                @*<p>@artPiece.Name</p>*@
             </div>
         }
+    </div>
+
+    <div class="row" style="margin-bottom:80px;">
+        <h2>Artist</h2>
+        <div class="card" style="border-style:none; ">
+            <div class="row ">
+                <div class="col-lg-4">
+                    <a asp-page="/artist/michaelho"><img class="card-img" style="padding:0px;" src="~/SiteAssets/shopstuff/mh_profile.jpg" title="michael ho"></a>
+
+                </div>
+                <div class="col-lg-8" style="padding-top: 0px;">
+
+                    <div class="card-body">
+                        <p> MICHAEL HO</p>
+                        <p class="card-text">
+                            Michael Ho was born and raised on the Big Island of Hawaii in 1996. He graduated summa cum laude with a BA in fine arts from the University of California at Los Angeles (UCLA) in 2018.
+                            Shortly after graduating, he moved to Tokyo, Japan in 2018 and began showing work in Tokyo and Hong Kong. Focusing on the visual semantics and quasi didacticism, his paintings and sculptures take from fleeting moments of American pop culture, investigating the more
+                            intricate ability for painting to engage in a contentious, active conversation with the viewer.
+                        </p>
+                        <p>
+                            マイケル・ホー
+                            1996年、アメリカ・ハワイ島で生まれ、同島で育つ。カリフォルニア大学ロサンゼルス校（UCLA）
+                            芸術学部で美術を学び、2018年に最優等賞を取得して卒業。美術学士。2018年、大学卒業後まもなく 拠点を東京に移し、東京と香港で作品の発表を開始。視覚意味論と疑似教訓主義に焦点を当てた絵画 や彫刻にアメリカのポップカルチャーを取り入れ、見る者との間に活発な対話が生じるような、より 複雑な絵画の可能性を追求している。
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
