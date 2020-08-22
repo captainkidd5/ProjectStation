@@ -57,27 +57,6 @@
   max-width: 300px;
   z-index: -1; }
 
-.socialMediaIcons {
-  width: 100px;
-  position: absolute;
-  right: -50px;
-  top: 200px; }
-
-#instagramButton {
-  width: 50% !important;
-  display: inline; }
-  #instagramButton:hover {
-    filter: invert(50);
-    transition: ease-in 1s; }
-
-#facebookButton {
-  display: inline;
-  width: 50px;
-  top: 0; }
-  #facebookButton:hover {
-    filter: invert(50);
-    transition: ease-in 1s; }
-
 .faderArrowContainerTop {
   position: absolute;
   margin-top: 400px;

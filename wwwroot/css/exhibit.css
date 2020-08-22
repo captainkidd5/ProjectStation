@@ -30,7 +30,7 @@
   vertical-align: top;
   color: black;
   margin-left: 5px;
-  margin-top: 7px;
+  margin-top: -4px;
   font-weight: 300;
   line-height: 22px;
   font-size: 16px;
@@ -50,22 +50,17 @@
   width: inherit; }
 
 .exhibitionCard {
+  font-family: 'SawarabiMincho-Regular';
   margin-top: 50px;
   border-style: none; }
   .exhibitionCard img {
     max-height: 280px; }
 
 .readMoreStyle {
-  display: inline-block;
-  padding: 10px 10px;
-  text-align: center;
-  border-color: darkgray;
-  border-width: 1px;
-  border: solid;
-  color: gray;
-  margin-top: 8px;
-  width: 160px;
-  margin-left: 0 !important; }
+  background-color: #A08D1C;
+  font-size: 18px;
+  border-style: none;
+  color: white; }
   .readMoreStyle a {
     color: gray;
     margin-left: 0 !important; }
