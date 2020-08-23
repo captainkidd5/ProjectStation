@@ -89,8 +89,7 @@ namespace ProjectStation.Pages.ShopStuff
                 Mode = "payment",
                 SuccessUrl = "https://projectstation.azurewebsites.net/shopstuff/PaymentSuccess",
                 CancelUrl = "https://projectstation.azurewebsites.net/shopstuff/PaymentFailure",
-                Customer = null,
-                CustomerEmail = null,
+
                 
                
                 

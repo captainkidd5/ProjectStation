@@ -27,7 +27,7 @@ namespace ProjectStation.Components
         public StripeWebHook(IOrderRepository orderRepository,
             IShoppingCartRepository shoppingCartRepository, SignInManager<IdentityUser> signInManager)
         {
-            this.orderRepository = orderRepository;
+      this.orderRepository = orderRepository;
             this.shoppingCartRepository = shoppingCartRepository;
             this.signInManager = signInManager;
         }
@@ -51,11 +51,11 @@ namespace ProjectStation.Components
                     // Fulfill the purchase...
                     // HandleCheckoutSession(session);
                     CompleteSession(session);
-                    return RedirectToPage("/shopstuff/chargeoutcome", "WebHook");
+                    return RedirectToPage("/shopstuff/paymentfailure", "WebHook");
                 }
                 else if(stripeEvent.Type == Events.PaymentIntentPaymentFailed)
                 {
-                    return RedirectToPage("/shopstuff/chargeoutcome", "WebHook");
+                    return RedirectToPage("/shopstuff/paymentsuccess", "WebHook");
                 }
                 else
                 {
@@ -84,6 +84,9 @@ namespace ProjectStation.Components
                 cart = shoppingCartRepository.GetCart(null, HttpContext);
             }
 
+            var customerInfo = new CustomerService();
+            var customer = customerInfo.Get(session.CustomerId);
+
             Models.Models.Order order = new Models.Models.Order()
             {
                 Id = session.Id,
@@ -94,8 +97,9 @@ namespace ProjectStation.Components
                 StreetNumber = session.Shipping.Address.Line1 + session.Shipping.Address.Line2,
                 State = session.Shipping.Address.State,
                 ZipCode = session.Shipping.Address.PostalCode,
-                
-                
+                EmailAddress = customer.Email,
+
+
                 DateTime = DateTime.Now,
                 OrderStatus = OrderStatus.Shipped
 

@@ -42,7 +42,7 @@
   margin-top: 120px; }
   .titleListFormat a {
     font-family: 'NotoSansJP-Light', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     bottom: 15px;
     color: #9D9393;
     line-height: 55px; }
@@ -56,6 +56,10 @@
 .logo {
   max-width: 300px;
   z-index: -1; }
+
+.w-100 {
+  width: 100% !important;
+  height: 75vh; }
 
 .faderArrowContainerTop {
   position: absolute;
