@@ -8,12 +8,16 @@
   <ItemGroup>
     <Compile Remove="Models\**" />
     <Compile Remove="Services\**" />
+    <Compile Remove="ViewComponents\**" />
     <Content Remove="Models\**" />
     <Content Remove="Services\**" />
+    <Content Remove="ViewComponents\**" />
     <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="ViewComponents\**" />
     <None Remove="Models\**" />
     <None Remove="Services\**" />
+    <None Remove="ViewComponents\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,7 +68,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewComponents\" />
+    <Folder Include="Pages\OrderCRUD\" />
     <Folder Include="wwwroot\SiteAssets\Artists\Michael\" />
     <Folder Include="wwwroot\SiteAssets\Exhibitions\ArtCentralHongKong2019\" />
     <Folder Include="wwwroot\SiteAssets\Exhibitions\ArtCentral2020\" />
