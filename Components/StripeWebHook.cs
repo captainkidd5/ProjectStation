@@ -72,6 +72,9 @@ namespace ProjectStation.Components
 
         public void CompleteSession(Session session)
         {
+            var customerInfo = new CustomerService();
+            var customer = customerInfo.Get(session.CustomerId);
+
             string userId = string.Empty;
             ShoppingCart cart = new ShoppingCart();
             if (signInManager.IsSignedIn(User))
@@ -81,11 +84,25 @@ namespace ProjectStation.Components
             }
             else
             {
-                cart = shoppingCartRepository.GetCart(null, HttpContext);
+                cart = shoppingCartRepository.GetCart(null, HttpContext); //get cookie cart
+                var cartItems = shoppingCartRepository.GetItems(cart.CartId, HttpContext); //get the cookie items
+
+
+
+                shoppingCartRepository.CreateCart("tempUser", cart.CartId); //now add card to database because order has gone thru.
+                
+                cart = shoppingCartRepository.GetCart(cart.CartId); //get the sql cart
+                foreach (CartItem item in cartItems) //add cookie items to Sql cart.
+                {
+                    shoppingCartRepository.AddItem(cart, item.ProductId, item.Quantity, "tempUser");
+                }
+
+                HttpContext.Session.Remove("ShoppingCart"); //get rid of card and items so that the user will create a brand
+                //new cart.
+                HttpContext.Session.Remove("CartItems");
             }
 
-            var customerInfo = new CustomerService();
-            var customer = customerInfo.Get(session.CustomerId);
+           
 
             Models.Models.Order order = new Models.Models.Order()
             {
@@ -98,7 +115,8 @@ namespace ProjectStation.Components
                 State = session.Shipping.Address.State,
                 ZipCode = session.Shipping.Address.PostalCode,
                 EmailAddress = customer.Email,
-
+                City = session.Shipping.Address.City,
+                PhoneNumber = customer.Phone,
 
                 DateTime = DateTime.Now,
                 OrderStatus = OrderStatus.Shipped
@@ -108,6 +126,7 @@ namespace ProjectStation.Components
             };
             if(orderRepository.Add(order))
             {
+                
                 shoppingCartRepository.SetCartToCheckedOut(cart);
             }
 
