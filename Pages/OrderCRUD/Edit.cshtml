@@ -79,10 +79,13 @@
                 <input asp-for="Order.DateTime" class="form-control" />
                 <span asp-validation-for="Order.DateTime" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
-                <label asp-for="Order.OrderStatus" class="control-label"></label>
-                <select asp-for="Order.OrderStatus" class="form-control"></select>
-                <span asp-validation-for="Order.OrderStatus" class="text-danger"></span>
+                <select asp-for="Order.OrderStatus" asp-items="Html.GetEnumSelectList<Models.Models.OrderStatus>()" class="form-control">
+                    <option value="">Choose a method.</option>
+                </select>
+                <span asp-validation-for="Order.OrderStatus" class="text-white"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Order.Total" class="control-label"></label>

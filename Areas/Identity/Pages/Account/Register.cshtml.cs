@@ -84,11 +84,11 @@ namespace ProjectStation.Areas.Identity.Pages.Account
                 //{
                 //    adminRole = new IdentityRole("Admin");
                 //    await roleManager.CreateAsync(adminRole);
-                    
+
                 //}
-                
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
-             //   await _userManager.AddToRoleAsync(user, adminRole.Name); uncomment to add user to admin
+                 //await _userManager.AddToRoleAsync(user, adminRole.Name); //uncomment to add user to admin
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
